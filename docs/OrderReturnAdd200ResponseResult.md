@@ -1,0 +1,10 @@
+
+# OrderReturnAdd200ResponseResult
+
+## Properties
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **returnId** | **kotlin.String** |  |  [optional] |
+
+
+
