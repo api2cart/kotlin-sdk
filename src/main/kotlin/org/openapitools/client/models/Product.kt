@@ -62,6 +62,7 @@ import com.squareup.moshi.JsonClass
  * @param weightUnit 
  * @param sortOrder 
  * @param inStock 
+ * @param onSale 
  * @param backorders 
  * @param manageStock 
  * @param isStockManaged 
@@ -182,6 +183,9 @@ data class Product (
 
     @Json(name = "in_stock")
     val inStock: kotlin.Boolean? = null,
+
+    @Json(name = "on_sale")
+    val onSale: kotlin.Boolean? = null,
 
     @Json(name = "backorders")
     val backorders: kotlin.String? = null,

@@ -501,5 +501,11 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.autoRenew shouldBe ("TODO")
         }
 
+        // to test the property `onSale` - Set whether the product on sale
+        should("test onSale") {
+            // uncomment below to test the property
+            //modelInstance.onSale shouldBe ("TODO")
+        }
+
     }
 }

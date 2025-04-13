@@ -103,6 +103,7 @@ import com.squareup.moshi.JsonClass
  * @param downloadable Defines whether the product is downloadable
  * @param materials A list of material strings for materials used in the product.
  * @param autoRenew When true, automatically renews a listing upon its expiration.
+ * @param onSale Set whether the product on sale
  */
 
 
@@ -420,7 +421,11 @@ data class ProductUpdate (
 
     /* When true, automatically renews a listing upon its expiration. */
     @Json(name = "auto_renew")
-    val autoRenew: kotlin.Boolean? = false
+    val autoRenew: kotlin.Boolean? = false,
+
+    /* Set whether the product on sale */
+    @Json(name = "on_sale")
+    val onSale: kotlin.Boolean? = false
 
 ) {
 

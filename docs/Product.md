@@ -34,6 +34,7 @@
 | **weightUnit** | **kotlin.String** |  |  [optional] |
 | **sortOrder** | **kotlin.Int** |  |  [optional] |
 | **inStock** | **kotlin.Boolean** |  |  [optional] |
+| **onSale** | **kotlin.Boolean** |  |  [optional] |
 | **backorders** | **kotlin.String** |  |  [optional] |
 | **manageStock** | **kotlin.String** |  |  [optional] |
 | **isStockManaged** | **kotlin.Boolean** |  |  [optional] |

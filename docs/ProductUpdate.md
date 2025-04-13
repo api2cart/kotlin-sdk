@@ -83,6 +83,7 @@
 | **downloadable** | **kotlin.Boolean** | Defines whether the product is downloadable |  [optional] |
 | **materials** | **kotlin.collections.List&lt;kotlin.String&gt;** | A list of material strings for materials used in the product. |  [optional] |
 | **autoRenew** | **kotlin.Boolean** | When true, automatically renews a listing upon its expiration. |  [optional] |
+| **onSale** | **kotlin.Boolean** | Set whether the product on sale |  [optional] |
 
 
 
