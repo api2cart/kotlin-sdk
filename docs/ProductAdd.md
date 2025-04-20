@@ -72,10 +72,12 @@
 | **specifics** | [**kotlin.collections.List&lt;ProductAddSpecificsInner&gt;**](ProductAddSpecificsInner.md) | An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields-&gt;product_specifics).         &lt;b&gt;The structure of the parameter is different for specific platforms.&lt;/b&gt; |  [optional] |
 | **imageUrl** | **kotlin.String** | Image Url |  [optional] |
 | **imageName** | **kotlin.String** | Defines image&#39;s name |  [optional] |
+| **additionalImageUrls** | [**kotlin.collections.List&lt;java.net.URI&gt;**](java.net.URI.md) | Image Url |  [optional] |
 | **reservePrice** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Defines reserve price value |  [optional] |
 | **buyitnowPrice** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Defines buy it now value |  [optional] |
 | **conditionDescription** | **kotlin.String** | Detailed description of the product condition. |  [optional] |
 | **auctionConfidentialityLevel** | **kotlin.String** | This allows buyers to remain anonymous when the bid or buy an item. |  [optional] |
+| **logisticInfo** | [**kotlin.collections.List&lt;ProductAddLogisticInfoInner&gt;**](ProductAddLogisticInfoInner.md) | Defines product&#39;s logistic channel settings |  [optional] |
 | **availFrom** | **kotlin.String** | Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time. |  [optional] |
 | **tags** | **kotlin.String** | Product tags |  [optional] |
 | **clearCache** | **kotlin.Boolean** | Is cache clear required |  [optional] |

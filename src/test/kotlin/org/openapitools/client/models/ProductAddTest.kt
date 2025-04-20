@@ -23,6 +23,7 @@ import org.openapitools.client.models.ProductAddBestOffer
 import org.openapitools.client.models.ProductAddCertificationsInner
 import org.openapitools.client.models.ProductAddFilesInner
 import org.openapitools.client.models.ProductAddGroupPricesInner
+import org.openapitools.client.models.ProductAddLogisticInfoInner
 import org.openapitools.client.models.ProductAddManufacturerInfo
 import org.openapitools.client.models.ProductAddPackageDetails
 import org.openapitools.client.models.ProductAddSalesTax
@@ -445,6 +446,12 @@ class ProductAddTest : ShouldSpec() {
             //modelInstance.imageName shouldBe ("TODO")
         }
 
+        // to test the property `additionalImageUrls` - Image Url
+        should("test additionalImageUrls") {
+            // uncomment below to test the property
+            //modelInstance.additionalImageUrls shouldBe ("TODO")
+        }
+
         // to test the property `reservePrice` - Defines reserve price value
         should("test reservePrice") {
             // uncomment below to test the property
@@ -467,6 +474,12 @@ class ProductAddTest : ShouldSpec() {
         should("test auctionConfidentialityLevel") {
             // uncomment below to test the property
             //modelInstance.auctionConfidentialityLevel shouldBe ("TODO")
+        }
+
+        // to test the property `logisticInfo` - Defines product's logistic channel settings
+        should("test logisticInfo") {
+            // uncomment below to test the property
+            //modelInstance.logisticInfo shouldBe ("TODO")
         }
 
         // to test the property `availFrom` - Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.

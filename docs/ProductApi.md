@@ -372,7 +372,7 @@ Configure ApiKeyAuth:
 
 <a id="productBrandList"></a>
 # **productBrandList**
-> ModelResponseProductBrandList productBrandList(start, count, pageCursor, params, brandIds, exclude, storeId, langId, createdFrom, createdTo, modifiedFrom, modifiedTo, parentId, responseFields, findWhere, findValue)
+> ModelResponseProductBrandList productBrandList(start, count, pageCursor, params, brandIds, exclude, categoryId, storeId, langId, createdFrom, createdTo, modifiedFrom, modifiedTo, parentId, responseFields, findWhere, findValue)
 
 product.brand.list
 
@@ -391,6 +391,7 @@ val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities v
 val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val brandIds : kotlin.String = 4,5 // kotlin.String | Retrieves brands specified by brand ids
 val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+val categoryId : kotlin.String = 6 // kotlin.String | Retrieves product brands specified by category id
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
 val langId : kotlin.String = 3 // kotlin.String | Language id
 val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
@@ -402,7 +403,7 @@ val responseFields : kotlin.String = {return_code,return_message,pagination,resu
 val findWhere : kotlin.String = name // kotlin.String | Entity search that is specified by the comma-separated unique fields
 val findValue : kotlin.String = Phone // kotlin.String | Entity search that is specified by some value
 try {
-    val result : ModelResponseProductBrandList = apiInstance.productBrandList(start, count, pageCursor, params, brandIds, exclude, storeId, langId, createdFrom, createdTo, modifiedFrom, modifiedTo, parentId, responseFields, findWhere, findValue)
+    val result : ModelResponseProductBrandList = apiInstance.productBrandList(start, count, pageCursor, params, brandIds, exclude, categoryId, storeId, langId, createdFrom, createdTo, modifiedFrom, modifiedTo, parentId, responseFields, findWhere, findValue)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProductApi#productBrandList")
@@ -420,6 +421,7 @@ try {
 | **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name,short_description,active,url&quot;] |
 | **brandIds** | **kotlin.String**| Retrieves brands specified by brand ids | [optional] |
 | **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **categoryId** | **kotlin.String**| Retrieves product brands specified by category id | [optional] |
 | **storeId** | **kotlin.String**| Store Id | [optional] |
 | **langId** | **kotlin.String**| Language id | [optional] |
 | **createdFrom** | **kotlin.String**| Retrieve entities from their creation date | [optional] |

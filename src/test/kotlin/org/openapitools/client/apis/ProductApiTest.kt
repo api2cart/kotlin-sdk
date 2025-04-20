@@ -153,6 +153,7 @@ class ProductApiTest : ShouldSpec() {
             //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val brandIds : kotlin.String = 4,5 // kotlin.String | Retrieves brands specified by brand ids
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+            //val categoryId : kotlin.String = 6 // kotlin.String | Retrieves product brands specified by category id
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val langId : kotlin.String = 3 // kotlin.String | Language id
             //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
@@ -163,7 +164,7 @@ class ProductApiTest : ShouldSpec() {
             //val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val findWhere : kotlin.String = name // kotlin.String | Entity search that is specified by the comma-separated unique fields
             //val findValue : kotlin.String = Phone // kotlin.String | Entity search that is specified by some value
-            //val result : ModelResponseProductBrandList = apiInstance.productBrandList(start, count, pageCursor, params, brandIds, exclude, storeId, langId, createdFrom, createdTo, modifiedFrom, modifiedTo, parentId, responseFields, findWhere, findValue)
+            //val result : ModelResponseProductBrandList = apiInstance.productBrandList(start, count, pageCursor, params, brandIds, exclude, categoryId, storeId, langId, createdFrom, createdTo, modifiedFrom, modifiedTo, parentId, responseFields, findWhere, findValue)
             //result shouldBe ("TODO")
         }
 

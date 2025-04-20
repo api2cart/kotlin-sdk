@@ -626,6 +626,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,short_description,active,url")
      * @param brandIds Retrieves brands specified by brand ids (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param categoryId Retrieves product brands specified by category id (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
@@ -645,8 +646,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productBrandList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, params: kotlin.String? = "id,name,short_description,active,url", brandIds: kotlin.String? = null, exclude: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, parentId: kotlin.String? = null, responseFields: kotlin.String? = null, findWhere: kotlin.String? = null, findValue: kotlin.String? = null) : ModelResponseProductBrandList {
-        val localVarResponse = productBrandListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, params = params, brandIds = brandIds, exclude = exclude, storeId = storeId, langId = langId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, parentId = parentId, responseFields = responseFields, findWhere = findWhere, findValue = findValue)
+    fun productBrandList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, params: kotlin.String? = "id,name,short_description,active,url", brandIds: kotlin.String? = null, exclude: kotlin.String? = null, categoryId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, parentId: kotlin.String? = null, responseFields: kotlin.String? = null, findWhere: kotlin.String? = null, findValue: kotlin.String? = null) : ModelResponseProductBrandList {
+        val localVarResponse = productBrandListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, params = params, brandIds = brandIds, exclude = exclude, categoryId = categoryId, storeId = storeId, langId = langId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, parentId = parentId, responseFields = responseFields, findWhere = findWhere, findValue = findValue)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseProductBrandList
@@ -672,6 +673,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,short_description,active,url")
      * @param brandIds Retrieves brands specified by brand ids (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param categoryId Retrieves product brands specified by category id (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
@@ -688,8 +690,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productBrandListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, params: kotlin.String?, brandIds: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, parentId: kotlin.String?, responseFields: kotlin.String?, findWhere: kotlin.String?, findValue: kotlin.String?) : ApiResponse<ModelResponseProductBrandList?> {
-        val localVariableConfig = productBrandListRequestConfig(start = start, count = count, pageCursor = pageCursor, params = params, brandIds = brandIds, exclude = exclude, storeId = storeId, langId = langId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, parentId = parentId, responseFields = responseFields, findWhere = findWhere, findValue = findValue)
+    fun productBrandListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, params: kotlin.String?, brandIds: kotlin.String?, exclude: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, parentId: kotlin.String?, responseFields: kotlin.String?, findWhere: kotlin.String?, findValue: kotlin.String?) : ApiResponse<ModelResponseProductBrandList?> {
+        val localVariableConfig = productBrandListRequestConfig(start = start, count = count, pageCursor = pageCursor, params = params, brandIds = brandIds, exclude = exclude, categoryId = categoryId, storeId = storeId, langId = langId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, parentId = parentId, responseFields = responseFields, findWhere = findWhere, findValue = findValue)
 
         return request<Unit, ModelResponseProductBrandList>(
             localVariableConfig
@@ -705,6 +707,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,short_description,active,url")
      * @param brandIds Retrieves brands specified by brand ids (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param categoryId Retrieves product brands specified by category id (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
@@ -717,7 +720,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param findValue Entity search that is specified by some value (optional)
      * @return RequestConfig
      */
-    fun productBrandListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, params: kotlin.String?, brandIds: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, parentId: kotlin.String?, responseFields: kotlin.String?, findWhere: kotlin.String?, findValue: kotlin.String?) : RequestConfig<Unit> {
+    fun productBrandListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, params: kotlin.String?, brandIds: kotlin.String?, exclude: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, parentId: kotlin.String?, responseFields: kotlin.String?, findWhere: kotlin.String?, findValue: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -738,6 +741,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
+                }
+                if (categoryId != null) {
+                    put("category_id", listOf(categoryId.toString()))
                 }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))

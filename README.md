@@ -496,6 +496,7 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
  - [org.openapitools.client.models.ProductAddCertificationsInnerImagesInner](docs/ProductAddCertificationsInnerImagesInner.md)
  - [org.openapitools.client.models.ProductAddFilesInner](docs/ProductAddFilesInner.md)
  - [org.openapitools.client.models.ProductAddGroupPricesInner](docs/ProductAddGroupPricesInner.md)
+ - [org.openapitools.client.models.ProductAddLogisticInfoInner](docs/ProductAddLogisticInfoInner.md)
  - [org.openapitools.client.models.ProductAddManufacturerInfo](docs/ProductAddManufacturerInfo.md)
  - [org.openapitools.client.models.ProductAddPackageDetails](docs/ProductAddPackageDetails.md)
  - [org.openapitools.client.models.ProductAddSalesTax](docs/ProductAddSalesTax.md)

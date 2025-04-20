@@ -19,6 +19,7 @@ import org.openapitools.client.models.ProductAddBestOffer
 import org.openapitools.client.models.ProductAddCertificationsInner
 import org.openapitools.client.models.ProductAddFilesInner
 import org.openapitools.client.models.ProductAddGroupPricesInner
+import org.openapitools.client.models.ProductAddLogisticInfoInner
 import org.openapitools.client.models.ProductAddManufacturerInfo
 import org.openapitools.client.models.ProductAddPackageDetails
 import org.openapitools.client.models.ProductAddSalesTax
@@ -102,10 +103,12 @@ import com.squareup.moshi.JsonClass
  * @param specifics An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b>
  * @param imageUrl Image Url
  * @param imageName Defines image's name
+ * @param additionalImageUrls Image Url
  * @param reservePrice Defines reserve price value
  * @param buyitnowPrice Defines buy it now value
  * @param conditionDescription Detailed description of the product condition.
  * @param auctionConfidentialityLevel This allows buyers to remain anonymous when the bid or buy an item.
+ * @param logisticInfo Defines product's logistic channel settings
  * @param availFrom Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.
  * @param tags Product tags
  * @param clearCache Is cache clear required
@@ -417,6 +420,10 @@ data class ProductAdd (
     @Json(name = "image_name")
     val imageName: kotlin.String? = null,
 
+    /* Image Url */
+    @Json(name = "additional_image_urls")
+    val additionalImageUrls: kotlin.collections.List<java.net.URI>? = null,
+
     /* Defines reserve price value */
     @Json(name = "reserve_price")
     val reservePrice: java.math.BigDecimal? = null,
@@ -432,6 +439,10 @@ data class ProductAdd (
     /* This allows buyers to remain anonymous when the bid or buy an item. */
     @Json(name = "auction_confidentiality_level")
     val auctionConfidentialityLevel: kotlin.String? = null,
+
+    /* Defines product's logistic channel settings */
+    @Json(name = "logistic_info")
+    val logisticInfo: kotlin.collections.List<ProductAddLogisticInfoInner>? = null,
 
     /* Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time. */
     @Json(name = "avail_from")
