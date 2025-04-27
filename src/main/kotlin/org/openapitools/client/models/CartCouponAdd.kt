@@ -27,9 +27,8 @@ import com.squareup.moshi.JsonClass
  * @param actionApplyTo Defines where discount should be applied
  * @param actionScope Specify how discount should be applied. If scope=matching_items, then discount will be applied to each of the items that match action conditions. Scope order means that discount will be applied once.
  * @param actionAmount Defines the discount amount value.
- * @param storeId Store Id
- * @param name Coupon name
  * @param codes Entity codes
+ * @param name Coupon name
  * @param dateStart Date start
  * @param dateEnd Defines when discount code will be expired.
  * @param usageLimit Usage limit for coupon.
@@ -39,6 +38,7 @@ import com.squareup.moshi.JsonClass
  * @param actionConditionOperator Defines condition operator.
  * @param actionConditionValue Defines condition attribute value/s. Can be comma separated string.
  * @param includeTax Indicates whether to apply a discount for taxes.
+ * @param storeId Store Id
  */
 
 
@@ -64,17 +64,13 @@ data class CartCouponAdd (
     @Json(name = "action_amount")
     val actionAmount: java.math.BigDecimal,
 
-    /* Store Id */
-    @Json(name = "store_id")
-    val storeId: kotlin.String? = null,
+    /* Entity codes */
+    @Json(name = "codes")
+    val codes: kotlin.collections.List<kotlin.String>? = null,
 
     /* Coupon name */
     @Json(name = "name")
     val name: kotlin.String? = null,
-
-    /* Entity codes */
-    @Json(name = "codes")
-    val codes: kotlin.collections.List<kotlin.String>? = null,
 
     /* Date start */
     @Json(name = "date_start")
@@ -110,7 +106,11 @@ data class CartCouponAdd (
 
     /* Indicates whether to apply a discount for taxes. */
     @Json(name = "include_tax")
-    val includeTax: kotlin.Boolean? = false
+    val includeTax: kotlin.Boolean? = false,
+
+    /* Store Id */
+    @Json(name = "store_id")
+    val storeId: kotlin.String? = null
 
 ) {
 

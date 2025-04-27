@@ -218,12 +218,12 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.catalog_price_rules.list
      * Get cart catalog price rules discounts.
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param ids Retrieves  catalog_price_rules by ids (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseCartCatalogPriceRulesList
      * @throws IllegalStateException If the request is not correctly configured
@@ -234,8 +234,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cartCatalogPriceRulesList(pageCursor: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, ids: kotlin.String? = null, params: kotlin.String? = "id,name,description", responseFields: kotlin.String? = null, exclude: kotlin.String? = null) : ModelResponseCartCatalogPriceRulesList {
-        val localVarResponse = cartCatalogPriceRulesListWithHttpInfo(pageCursor = pageCursor, start = start, count = count, ids = ids, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartCatalogPriceRulesList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, ids: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,name,description", exclude: kotlin.String? = null) : ModelResponseCartCatalogPriceRulesList {
+        val localVarResponse = cartCatalogPriceRulesListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, ids = ids, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCartCatalogPriceRulesList
@@ -255,12 +255,12 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.catalog_price_rules.list
      * Get cart catalog price rules discounts.
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param ids Retrieves  catalog_price_rules by ids (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseCartCatalogPriceRulesList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -268,8 +268,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cartCatalogPriceRulesListWithHttpInfo(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, ids: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartCatalogPriceRulesList?> {
-        val localVariableConfig = cartCatalogPriceRulesListRequestConfig(pageCursor = pageCursor, start = start, count = count, ids = ids, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartCatalogPriceRulesListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartCatalogPriceRulesList?> {
+        val localVariableConfig = cartCatalogPriceRulesListRequestConfig(start = start, count = count, pageCursor = pageCursor, ids = ids, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseCartCatalogPriceRulesList>(
             localVariableConfig
@@ -279,36 +279,36 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * To obtain the request config of the operation cartCatalogPriceRulesList
      *
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param ids Retrieves  catalog_price_rules by ids (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun cartCatalogPriceRulesListRequestConfig(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, ids: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun cartCatalogPriceRulesListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
                 if (ids != null) {
                     put("ids", listOf(ids.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
@@ -698,10 +698,10 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * @param key Defines condition entity attribute key
      * @param `operator` Defines condition operator
      * @param `value` Defines condition value, can be comma separated according to the operator.
-     * @param storeId Store Id (optional)
      * @param target Defines condition operator (optional, default to "coupon_prerequisite")
      * @param includeTax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param includeShipping Indicates whether to apply a discount for shipping. (optional, default to false)
+     * @param storeId Store Id (optional)
      * @return BasketLiveShippingServiceDelete200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -711,8 +711,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cartCouponConditionAdd(couponId: kotlin.String, entity: EntityCartCouponConditionAdd, key: KeyCartCouponConditionAdd, `operator`: kotlin.String, `value`: kotlin.String, storeId: kotlin.String? = null, target: kotlin.String? = "coupon_prerequisite", includeTax: kotlin.Boolean? = false, includeShipping: kotlin.Boolean? = false) : BasketLiveShippingServiceDelete200Response {
-        val localVarResponse = cartCouponConditionAddWithHttpInfo(couponId = couponId, entity = entity, key = key, `operator` = `operator`, `value` = `value`, storeId = storeId, target = target, includeTax = includeTax, includeShipping = includeShipping)
+    fun cartCouponConditionAdd(couponId: kotlin.String, entity: EntityCartCouponConditionAdd, key: KeyCartCouponConditionAdd, `operator`: kotlin.String, `value`: kotlin.String, target: kotlin.String? = "coupon_prerequisite", includeTax: kotlin.Boolean? = false, includeShipping: kotlin.Boolean? = false, storeId: kotlin.String? = null) : BasketLiveShippingServiceDelete200Response {
+        val localVarResponse = cartCouponConditionAddWithHttpInfo(couponId = couponId, entity = entity, key = key, `operator` = `operator`, `value` = `value`, target = target, includeTax = includeTax, includeShipping = includeShipping, storeId = storeId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as BasketLiveShippingServiceDelete200Response
@@ -737,18 +737,18 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * @param key Defines condition entity attribute key
      * @param `operator` Defines condition operator
      * @param `value` Defines condition value, can be comma separated according to the operator.
-     * @param storeId Store Id (optional)
      * @param target Defines condition operator (optional, default to "coupon_prerequisite")
      * @param includeTax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param includeShipping Indicates whether to apply a discount for shipping. (optional, default to false)
+     * @param storeId Store Id (optional)
      * @return ApiResponse<BasketLiveShippingServiceDelete200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cartCouponConditionAddWithHttpInfo(couponId: kotlin.String, entity: EntityCartCouponConditionAdd, key: KeyCartCouponConditionAdd, `operator`: kotlin.String, `value`: kotlin.String, storeId: kotlin.String?, target: kotlin.String?, includeTax: kotlin.Boolean?, includeShipping: kotlin.Boolean?) : ApiResponse<BasketLiveShippingServiceDelete200Response?> {
-        val localVariableConfig = cartCouponConditionAddRequestConfig(couponId = couponId, entity = entity, key = key, `operator` = `operator`, `value` = `value`, storeId = storeId, target = target, includeTax = includeTax, includeShipping = includeShipping)
+    fun cartCouponConditionAddWithHttpInfo(couponId: kotlin.String, entity: EntityCartCouponConditionAdd, key: KeyCartCouponConditionAdd, `operator`: kotlin.String, `value`: kotlin.String, target: kotlin.String?, includeTax: kotlin.Boolean?, includeShipping: kotlin.Boolean?, storeId: kotlin.String?) : ApiResponse<BasketLiveShippingServiceDelete200Response?> {
+        val localVariableConfig = cartCouponConditionAddRequestConfig(couponId = couponId, entity = entity, key = key, `operator` = `operator`, `value` = `value`, target = target, includeTax = includeTax, includeShipping = includeShipping, storeId = storeId)
 
         return request<Unit, BasketLiveShippingServiceDelete200Response>(
             localVariableConfig
@@ -763,32 +763,32 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * @param key Defines condition entity attribute key
      * @param `operator` Defines condition operator
      * @param `value` Defines condition value, can be comma separated according to the operator.
-     * @param storeId Store Id (optional)
      * @param target Defines condition operator (optional, default to "coupon_prerequisite")
      * @param includeTax Indicates whether to apply a discount for taxes. (optional, default to false)
      * @param includeShipping Indicates whether to apply a discount for shipping. (optional, default to false)
+     * @param storeId Store Id (optional)
      * @return RequestConfig
      */
-    fun cartCouponConditionAddRequestConfig(couponId: kotlin.String, entity: EntityCartCouponConditionAdd, key: KeyCartCouponConditionAdd, `operator`: kotlin.String, `value`: kotlin.String, storeId: kotlin.String?, target: kotlin.String?, includeTax: kotlin.Boolean?, includeShipping: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun cartCouponConditionAddRequestConfig(couponId: kotlin.String, entity: EntityCartCouponConditionAdd, key: KeyCartCouponConditionAdd, `operator`: kotlin.String, `value`: kotlin.String, target: kotlin.String?, includeTax: kotlin.Boolean?, includeShipping: kotlin.Boolean?, storeId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
                 put("coupon_id", listOf(couponId.toString()))
-                if (target != null) {
-                    put("target", listOf(target.toString()))
-                }
                 put("entity", listOf(entity.value))
                 put("key", listOf(key.value))
                 put("operator", listOf(`operator`.toString()))
                 put("value", listOf(`value`.toString()))
+                if (target != null) {
+                    put("target", listOf(target.toString()))
+                }
                 if (includeTax != null) {
                     put("include_tax", listOf(includeTax.toString()))
                 }
                 if (includeShipping != null) {
                     put("include_shipping", listOf(includeShipping.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -808,11 +808,11 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * cart.coupon.count
      * This method allows you to get the number of coupons. On some platforms, you can filter the coupons by the date they were active.
      * @param storeId Store Id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @param dateStartFrom Filter entity by date_start (greater or equal) (optional)
      * @param dateStartTo Filter entity by date_start (less or equal) (optional)
      * @param dateEndFrom Filter entity by date_end (greater or equal) (optional)
      * @param dateEndTo Filter entity by date_end (less or equal) (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @return CartCouponCount200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -822,8 +822,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cartCouponCount(storeId: kotlin.String? = null, dateStartFrom: kotlin.String? = null, dateStartTo: kotlin.String? = null, dateEndFrom: kotlin.String? = null, dateEndTo: kotlin.String? = null, avail: kotlin.Boolean? = true) : CartCouponCount200Response {
-        val localVarResponse = cartCouponCountWithHttpInfo(storeId = storeId, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo, avail = avail)
+    fun cartCouponCount(storeId: kotlin.String? = null, avail: kotlin.Boolean? = true, dateStartFrom: kotlin.String? = null, dateStartTo: kotlin.String? = null, dateEndFrom: kotlin.String? = null, dateEndTo: kotlin.String? = null) : CartCouponCount200Response {
+        val localVarResponse = cartCouponCountWithHttpInfo(storeId = storeId, avail = avail, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CartCouponCount200Response
@@ -844,19 +844,19 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * cart.coupon.count
      * This method allows you to get the number of coupons. On some platforms, you can filter the coupons by the date they were active.
      * @param storeId Store Id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @param dateStartFrom Filter entity by date_start (greater or equal) (optional)
      * @param dateStartTo Filter entity by date_start (less or equal) (optional)
      * @param dateEndFrom Filter entity by date_end (greater or equal) (optional)
      * @param dateEndTo Filter entity by date_end (less or equal) (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @return ApiResponse<CartCouponCount200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cartCouponCountWithHttpInfo(storeId: kotlin.String?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?, avail: kotlin.Boolean?) : ApiResponse<CartCouponCount200Response?> {
-        val localVariableConfig = cartCouponCountRequestConfig(storeId = storeId, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo, avail = avail)
+    fun cartCouponCountWithHttpInfo(storeId: kotlin.String?, avail: kotlin.Boolean?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?) : ApiResponse<CartCouponCount200Response?> {
+        val localVariableConfig = cartCouponCountRequestConfig(storeId = storeId, avail = avail, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo)
 
         return request<Unit, CartCouponCount200Response>(
             localVariableConfig
@@ -867,19 +867,22 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * To obtain the request config of the operation cartCouponCount
      *
      * @param storeId Store Id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @param dateStartFrom Filter entity by date_start (greater or equal) (optional)
      * @param dateStartTo Filter entity by date_start (less or equal) (optional)
      * @param dateEndFrom Filter entity by date_end (greater or equal) (optional)
      * @param dateEndTo Filter entity by date_end (less or equal) (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @return RequestConfig
      */
-    fun cartCouponCountRequestConfig(storeId: kotlin.String?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?, avail: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun cartCouponCountRequestConfig(storeId: kotlin.String?, avail: kotlin.Boolean?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
+                }
+                if (avail != null) {
+                    put("avail", listOf(avail.toString()))
                 }
                 if (dateStartFrom != null) {
                     put("date_start_from", listOf(dateStartFrom.toString()))
@@ -892,9 +895,6 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
                 }
                 if (dateEndTo != null) {
                     put("date_end_to", listOf(dateEndTo.toString()))
-                }
-                if (avail != null) {
-                    put("avail", listOf(avail.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -993,19 +993,19 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.coupon.list
      * Get cart coupon discounts.
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param couponsIds Filter coupons by ids (optional)
      * @param storeId Filter coupons by store id (optional)
+     * @param langId Language id (optional)
+     * @param avail Filter coupons by avail status (optional)
      * @param dateStartFrom Filter entity by date_start (greater or equal) (optional)
      * @param dateStartTo Filter entity by date_start (less or equal) (optional)
      * @param dateEndFrom Filter entity by date_end (greater or equal) (optional)
      * @param dateEndTo Filter entity by date_end (less or equal) (optional)
-     * @param avail Filter coupons by avail status (optional)
-     * @param langId Language id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name,description")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseCartCouponList
      * @throws IllegalStateException If the request is not correctly configured
@@ -1016,8 +1016,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cartCouponList(pageCursor: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, couponsIds: kotlin.String? = null, storeId: kotlin.String? = null, dateStartFrom: kotlin.String? = null, dateStartTo: kotlin.String? = null, dateEndFrom: kotlin.String? = null, dateEndTo: kotlin.String? = null, avail: kotlin.Boolean? = null, langId: kotlin.String? = null, params: kotlin.String? = "id,code,name,description", responseFields: kotlin.String? = null, exclude: kotlin.String? = null) : ModelResponseCartCouponList {
-        val localVarResponse = cartCouponListWithHttpInfo(pageCursor = pageCursor, start = start, count = count, couponsIds = couponsIds, storeId = storeId, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo, avail = avail, langId = langId, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartCouponList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, couponsIds: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, avail: kotlin.Boolean? = null, dateStartFrom: kotlin.String? = null, dateStartTo: kotlin.String? = null, dateEndFrom: kotlin.String? = null, dateEndTo: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,code,name,description", exclude: kotlin.String? = null) : ModelResponseCartCouponList {
+        val localVarResponse = cartCouponListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, couponsIds = couponsIds, storeId = storeId, langId = langId, avail = avail, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCartCouponList
@@ -1037,19 +1037,19 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.coupon.list
      * Get cart coupon discounts.
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param couponsIds Filter coupons by ids (optional)
      * @param storeId Filter coupons by store id (optional)
+     * @param langId Language id (optional)
+     * @param avail Filter coupons by avail status (optional)
      * @param dateStartFrom Filter entity by date_start (greater or equal) (optional)
      * @param dateStartTo Filter entity by date_start (less or equal) (optional)
      * @param dateEndFrom Filter entity by date_end (greater or equal) (optional)
      * @param dateEndTo Filter entity by date_end (less or equal) (optional)
-     * @param avail Filter coupons by avail status (optional)
-     * @param langId Language id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name,description")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseCartCouponList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1057,8 +1057,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cartCouponListWithHttpInfo(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, couponsIds: kotlin.String?, storeId: kotlin.String?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?, avail: kotlin.Boolean?, langId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartCouponList?> {
-        val localVariableConfig = cartCouponListRequestConfig(pageCursor = pageCursor, start = start, count = count, couponsIds = couponsIds, storeId = storeId, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo, avail = avail, langId = langId, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartCouponListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, couponsIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, avail: kotlin.Boolean?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartCouponList?> {
+        val localVariableConfig = cartCouponListRequestConfig(start = start, count = count, pageCursor = pageCursor, couponsIds = couponsIds, storeId = storeId, langId = langId, avail = avail, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseCartCouponList>(
             localVariableConfig
@@ -1068,40 +1068,46 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * To obtain the request config of the operation cartCouponList
      *
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param couponsIds Filter coupons by ids (optional)
      * @param storeId Filter coupons by store id (optional)
+     * @param langId Language id (optional)
+     * @param avail Filter coupons by avail status (optional)
      * @param dateStartFrom Filter entity by date_start (greater or equal) (optional)
      * @param dateStartTo Filter entity by date_start (less or equal) (optional)
      * @param dateEndFrom Filter entity by date_end (greater or equal) (optional)
      * @param dateEndTo Filter entity by date_end (less or equal) (optional)
-     * @param avail Filter coupons by avail status (optional)
-     * @param langId Language id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name,description")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun cartCouponListRequestConfig(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, couponsIds: kotlin.String?, storeId: kotlin.String?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?, avail: kotlin.Boolean?, langId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun cartCouponListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, couponsIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, avail: kotlin.Boolean?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
                 if (couponsIds != null) {
                     put("coupons_ids", listOf(couponsIds.toString()))
                 }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
+                }
+                if (langId != null) {
+                    put("lang_id", listOf(langId.toString()))
+                }
+                if (avail != null) {
+                    put("avail", listOf(avail.toString()))
                 }
                 if (dateStartFrom != null) {
                     put("date_start_from", listOf(dateStartFrom.toString()))
@@ -1115,17 +1121,11 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
                 if (dateEndTo != null) {
                     put("date_end_to", listOf(dateEndTo.toString()))
                 }
-                if (avail != null) {
-                    put("avail", listOf(avail.toString()))
-                }
-                if (langId != null) {
-                    put("lang_id", listOf(langId.toString()))
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (params != null) {
                     put("params", listOf(params.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
@@ -1635,12 +1635,12 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.giftcard.list
      * Get gift cards list.
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param storeId Store Id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseCartGiftCardList
      * @throws IllegalStateException If the request is not correctly configured
@@ -1651,8 +1651,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cartGiftcardList(pageCursor: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, storeId: kotlin.String? = null, params: kotlin.String? = "id,code,name", responseFields: kotlin.String? = null, exclude: kotlin.String? = null) : ModelResponseCartGiftCardList {
-        val localVarResponse = cartGiftcardListWithHttpInfo(pageCursor = pageCursor, start = start, count = count, storeId = storeId, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartGiftcardList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, storeId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,code,name", exclude: kotlin.String? = null) : ModelResponseCartGiftCardList {
+        val localVarResponse = cartGiftcardListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCartGiftCardList
@@ -1672,12 +1672,12 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.giftcard.list
      * Get gift cards list.
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param storeId Store Id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseCartGiftCardList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1685,8 +1685,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cartGiftcardListWithHttpInfo(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, storeId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartGiftCardList?> {
-        val localVariableConfig = cartGiftcardListRequestConfig(pageCursor = pageCursor, start = start, count = count, storeId = storeId, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartGiftcardListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartGiftCardList?> {
+        val localVariableConfig = cartGiftcardListRequestConfig(start = start, count = count, pageCursor = pageCursor, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseCartGiftCardList>(
             localVariableConfig
@@ -1696,36 +1696,36 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * To obtain the request config of the operation cartGiftcardList
      *
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param storeId Store Id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,code,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun cartGiftcardListRequestConfig(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, storeId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun cartGiftcardListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
@@ -1747,10 +1747,10 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.info
      * This method allows you to get various information about the store, including a list of stores (in the case of a multistore configuration), a list of supported languages, currencies, carriers, warehouses, and many other information. This information contains data that is relatively stable and rarely changes, so API2Cart can cache certain data to reduce the load on the store and speed up the execution of the request. We also recommend that you cache the response of this method on your side to save requests. If you need to clear the cache for a specific store, then use the cart.validate method.
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "store_name,store_url,db_prefix")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "store_name,store_url,db_prefix")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return CartInfo200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1760,8 +1760,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cartInfo(params: kotlin.String? = "store_name,store_url,db_prefix", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, storeId: kotlin.String? = null) : CartInfo200Response {
-        val localVarResponse = cartInfoWithHttpInfo(params = params, responseFields = responseFields, exclude = exclude, storeId = storeId)
+    fun cartInfo(storeId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "store_name,store_url,db_prefix", exclude: kotlin.String? = null) : CartInfo200Response {
+        val localVarResponse = cartInfoWithHttpInfo(storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CartInfo200Response
@@ -1781,18 +1781,18 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.info
      * This method allows you to get various information about the store, including a list of stores (in the case of a multistore configuration), a list of supported languages, currencies, carriers, warehouses, and many other information. This information contains data that is relatively stable and rarely changes, so API2Cart can cache certain data to reduce the load on the store and speed up the execution of the request. We also recommend that you cache the response of this method on your side to save requests. If you need to clear the cache for a specific store, then use the cart.validate method.
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "store_name,store_url,db_prefix")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "store_name,store_url,db_prefix")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<CartInfo200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cartInfoWithHttpInfo(params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?) : ApiResponse<CartInfo200Response?> {
-        val localVariableConfig = cartInfoRequestConfig(params = params, responseFields = responseFields, exclude = exclude, storeId = storeId)
+    fun cartInfoWithHttpInfo(storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<CartInfo200Response?> {
+        val localVariableConfig = cartInfoRequestConfig(storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, CartInfo200Response>(
             localVariableConfig
@@ -1802,27 +1802,27 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * To obtain the request config of the operation cartInfo
      *
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "store_name,store_url,db_prefix")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "store_name,store_url,db_prefix")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun cartInfoRequestConfig(params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun cartInfoRequestConfig(storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (params != null) {
-                    put("params", listOf(params.toString()))
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))
                 }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -1915,14 +1915,14 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * cart.meta_data.list
      * Using this method, you can get a list of metadata for various entities (products, options, customers, orders). Usually this is data created by third-party plugins.
      * @param entityId Entity Id
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param entity Entity (optional, default to "product")
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
      * @param key Key (optional)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "key,value")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "key,value")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseCartMetaDataList
      * @throws IllegalStateException If the request is not correctly configured
@@ -1933,8 +1933,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cartMetaDataList(entityId: kotlin.String, entity: kotlin.String? = "product", storeId: kotlin.String? = null, langId: kotlin.String? = null, key: kotlin.String? = null, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, params: kotlin.String? = "key,value", responseFields: kotlin.String? = null, exclude: kotlin.String? = null) : ModelResponseCartMetaDataList {
-        val localVarResponse = cartMetaDataListWithHttpInfo(entityId = entityId, entity = entity, storeId = storeId, langId = langId, key = key, count = count, pageCursor = pageCursor, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartMetaDataList(entityId: kotlin.String, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, entity: kotlin.String? = "product", storeId: kotlin.String? = null, langId: kotlin.String? = null, key: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "key,value", exclude: kotlin.String? = null) : ModelResponseCartMetaDataList {
+        val localVarResponse = cartMetaDataListWithHttpInfo(entityId = entityId, count = count, pageCursor = pageCursor, entity = entity, storeId = storeId, langId = langId, key = key, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCartMetaDataList
@@ -1955,14 +1955,14 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * cart.meta_data.list
      * Using this method, you can get a list of metadata for various entities (products, options, customers, orders). Usually this is data created by third-party plugins.
      * @param entityId Entity Id
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param entity Entity (optional, default to "product")
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
      * @param key Key (optional)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "key,value")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "key,value")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseCartMetaDataList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1970,8 +1970,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cartMetaDataListWithHttpInfo(entityId: kotlin.String, entity: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, key: kotlin.String?, count: kotlin.Int?, pageCursor: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartMetaDataList?> {
-        val localVariableConfig = cartMetaDataListRequestConfig(entityId = entityId, entity = entity, storeId = storeId, langId = langId, key = key, count = count, pageCursor = pageCursor, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartMetaDataListWithHttpInfo(entityId: kotlin.String, count: kotlin.Int?, pageCursor: kotlin.String?, entity: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, key: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartMetaDataList?> {
+        val localVariableConfig = cartMetaDataListRequestConfig(entityId = entityId, count = count, pageCursor = pageCursor, entity = entity, storeId = storeId, langId = langId, key = key, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseCartMetaDataList>(
             localVariableConfig
@@ -1982,21 +1982,27 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * To obtain the request config of the operation cartMetaDataList
      *
      * @param entityId Entity Id
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param entity Entity (optional, default to "product")
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
      * @param key Key (optional)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "key,value")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "key,value")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun cartMetaDataListRequestConfig(entityId: kotlin.String, entity: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, key: kotlin.String?, count: kotlin.Int?, pageCursor: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun cartMetaDataListRequestConfig(entityId: kotlin.String, count: kotlin.Int?, pageCursor: kotlin.String?, entity: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, key: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                if (count != null) {
+                    put("count", listOf(count.toString()))
+                }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
                 put("entity_id", listOf(entityId.toString()))
                 if (entity != null) {
                     put("entity", listOf(entity.toString()))
@@ -2010,17 +2016,11 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
                 if (key != null) {
                     put("key", listOf(key.toString()))
                 }
-                if (count != null) {
-                    put("count", listOf(count.toString()))
-                }
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (params != null) {
                     put("params", listOf(params.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
@@ -2117,6 +2117,9 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("entity_id", listOf(entityId.toString()))
+                put("key", listOf(key.toString()))
+                put("value", listOf(`value`.toString()))
+                put("namespace", listOf(namespace.toString()))
                 if (entity != null) {
                     put("entity", listOf(entity.toString()))
                 }
@@ -2126,9 +2129,6 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
                 if (langId != null) {
                     put("lang_id", listOf(langId.toString()))
                 }
-                put("key", listOf(key.toString()))
-                put("value", listOf(`value`.toString()))
-                put("namespace", listOf(namespace.toString()))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -2215,14 +2215,14 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("entity_id", listOf(entityId.toString()))
+                put("key", listOf(key.toString()))
+                put("id", listOf(id.toString()))
                 if (entity != null) {
                     put("entity", listOf(entity.toString()))
                 }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
-                put("key", listOf(key.toString()))
-                put("id", listOf(id.toString()))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -2308,9 +2308,9 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.plugin.list
      * Get a list of third-party plugins installed on the store.
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param storeId Store Id (optional)
      * @return CartPluginList200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2320,8 +2320,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cartPluginList(storeId: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10) : CartPluginList200Response {
-        val localVarResponse = cartPluginListWithHttpInfo(storeId = storeId, start = start, count = count)
+    fun cartPluginList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, storeId: kotlin.String? = null) : CartPluginList200Response {
+        val localVarResponse = cartPluginListWithHttpInfo(start = start, count = count, storeId = storeId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CartPluginList200Response
@@ -2341,17 +2341,17 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.plugin.list
      * Get a list of third-party plugins installed on the store.
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param storeId Store Id (optional)
      * @return ApiResponse<CartPluginList200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cartPluginListWithHttpInfo(storeId: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?) : ApiResponse<CartPluginList200Response?> {
-        val localVariableConfig = cartPluginListRequestConfig(storeId = storeId, start = start, count = count)
+    fun cartPluginListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, storeId: kotlin.String?) : ApiResponse<CartPluginList200Response?> {
+        val localVariableConfig = cartPluginListRequestConfig(start = start, count = count, storeId = storeId)
 
         return request<Unit, CartPluginList200Response>(
             localVariableConfig
@@ -2361,23 +2361,23 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * To obtain the request config of the operation cartPluginList
      *
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param storeId Store Id (optional)
      * @return RequestConfig
      */
-    fun cartPluginListRequestConfig(storeId: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?) : RequestConfig<Unit> {
+    fun cartPluginListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, storeId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -2594,17 +2594,17 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.script.list
      * Get scripts installed to the storefront
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param scriptIds Retrieves only scripts with specific ids (optional)
+     * @param storeId Store Id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param scriptIds Retrieves only scripts with specific ids (optional)
-     * @param storeId Store Id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseCartScriptList
      * @throws IllegalStateException If the request is not correctly configured
@@ -2615,8 +2615,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cartScriptList(pageCursor: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, scriptIds: kotlin.String? = null, storeId: kotlin.String? = null, params: kotlin.String? = "id,name,description", responseFields: kotlin.String? = null, exclude: kotlin.String? = null) : ModelResponseCartScriptList {
-        val localVarResponse = cartScriptListWithHttpInfo(pageCursor = pageCursor, start = start, count = count, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, scriptIds = scriptIds, storeId = storeId, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartScriptList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, scriptIds: kotlin.String? = null, storeId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,name,description", exclude: kotlin.String? = null) : ModelResponseCartScriptList {
+        val localVarResponse = cartScriptListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, scriptIds = scriptIds, storeId = storeId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCartScriptList
@@ -2636,17 +2636,17 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.script.list
      * Get scripts installed to the storefront
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param scriptIds Retrieves only scripts with specific ids (optional)
+     * @param storeId Store Id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param scriptIds Retrieves only scripts with specific ids (optional)
-     * @param storeId Store Id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseCartScriptList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -2654,8 +2654,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cartScriptListWithHttpInfo(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, scriptIds: kotlin.String?, storeId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartScriptList?> {
-        val localVariableConfig = cartScriptListRequestConfig(pageCursor = pageCursor, start = start, count = count, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, scriptIds = scriptIds, storeId = storeId, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartScriptListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, scriptIds: kotlin.String?, storeId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartScriptList?> {
+        val localVariableConfig = cartScriptListRequestConfig(start = start, count = count, pageCursor = pageCursor, scriptIds = scriptIds, storeId = storeId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseCartScriptList>(
             localVariableConfig
@@ -2665,32 +2665,38 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * To obtain the request config of the operation cartScriptList
      *
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param scriptIds Retrieves only scripts with specific ids (optional)
+     * @param storeId Store Id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param scriptIds Retrieves only scripts with specific ids (optional)
-     * @param storeId Store Id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun cartScriptListRequestConfig(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, scriptIds: kotlin.String?, storeId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun cartScriptListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, scriptIds: kotlin.String?, storeId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
+                }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
+                if (scriptIds != null) {
+                    put("script_ids", listOf(scriptIds.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
@@ -2704,17 +2710,11 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
                 }
-                if (scriptIds != null) {
-                    put("script_ids", listOf(scriptIds.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (params != null) {
                     put("params", listOf(params.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
@@ -2736,11 +2736,11 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.shipping_zones.list
      * Get list of shipping zones
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,enabled")
+     * @param storeId Store Id (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,enabled")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseCartShippingZonesList
      * @throws IllegalStateException If the request is not correctly configured
@@ -2751,8 +2751,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cartShippingZonesList(storeId: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, params: kotlin.String? = "id,name,enabled", responseFields: kotlin.String? = null, exclude: kotlin.String? = null) : ModelResponseCartShippingZonesList {
-        val localVarResponse = cartShippingZonesListWithHttpInfo(storeId = storeId, start = start, count = count, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartShippingZonesList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, storeId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,name,enabled", exclude: kotlin.String? = null) : ModelResponseCartShippingZonesList {
+        val localVarResponse = cartShippingZonesListWithHttpInfo(start = start, count = count, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCartShippingZonesList
@@ -2772,11 +2772,11 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * cart.shipping_zones.list
      * Get list of shipping zones
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,enabled")
+     * @param storeId Store Id (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,enabled")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseCartShippingZonesList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -2784,8 +2784,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cartShippingZonesListWithHttpInfo(storeId: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartShippingZonesList?> {
-        val localVariableConfig = cartShippingZonesListRequestConfig(storeId = storeId, start = start, count = count, params = params, responseFields = responseFields, exclude = exclude)
+    fun cartShippingZonesListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartShippingZonesList?> {
+        val localVariableConfig = cartShippingZonesListRequestConfig(start = start, count = count, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseCartShippingZonesList>(
             localVariableConfig
@@ -2795,32 +2795,32 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
     /**
      * To obtain the request config of the operation cartShippingZonesList
      *
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,enabled")
+     * @param storeId Store Id (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,enabled")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun cartShippingZonesListRequestConfig(storeId: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun cartShippingZonesListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))

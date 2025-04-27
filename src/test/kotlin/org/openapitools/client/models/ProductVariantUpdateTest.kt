@@ -26,12 +26,6 @@ class ProductVariantUpdateTest : ShouldSpec() {
         // uncomment below to create an instance of ProductVariantUpdate
         //val modelInstance = ProductVariantUpdate()
 
-        // to test the property `storeId` - Defines store id where the variant should be found
-        should("test storeId") {
-            // uncomment below to test the property
-            //modelInstance.storeId shouldBe ("TODO")
-        }
-
         // to test the property `id` - Defines variant update specified by variant id
         should("test id") {
             // uncomment below to test the property
@@ -42,6 +36,126 @@ class ProductVariantUpdateTest : ShouldSpec() {
         should("test productId") {
             // uncomment below to test the property
             //modelInstance.productId shouldBe ("TODO")
+        }
+
+        // to test the property `storeId` - Defines store id where the variant should be found
+        should("test storeId") {
+            // uncomment below to test the property
+            //modelInstance.storeId shouldBe ("TODO")
+        }
+
+        // to test the property `langId` - Language id
+        should("test langId") {
+            // uncomment below to test the property
+            //modelInstance.langId shouldBe ("TODO")
+        }
+
+        // to test the property `options` - Defines variant's options list
+        should("test options") {
+            // uncomment below to test the property
+            //modelInstance.options shouldBe ("TODO")
+        }
+
+        // to test the property `name` - Defines variant's name that has to be updated
+        should("test name") {
+            // uncomment below to test the property
+            //modelInstance.name shouldBe ("TODO")
+        }
+
+        // to test the property `description` - Specifies variant's description
+        should("test description") {
+            // uncomment below to test the property
+            //modelInstance.description shouldBe ("TODO")
+        }
+
+        // to test the property `shortDescription` - Defines short description
+        should("test shortDescription") {
+            // uncomment below to test the property
+            //modelInstance.shortDescription shouldBe ("TODO")
+        }
+
+        // to test the property `model` - Specifies variant's model that has to be added
+        should("test model") {
+            // uncomment below to test the property
+            //modelInstance.model shouldBe ("TODO")
+        }
+
+        // to test the property `sku` - Defines new product's variant sku
+        should("test sku") {
+            // uncomment below to test the property
+            //modelInstance.sku shouldBe ("TODO")
+        }
+
+        // to test the property `visible` - Set visibility status
+        should("test visible") {
+            // uncomment below to test the property
+            //modelInstance.visible shouldBe ("TODO")
+        }
+
+        // to test the property `status` - Defines product variant's status
+        should("test status") {
+            // uncomment below to test the property
+            //modelInstance.status shouldBe ("TODO")
+        }
+
+        // to test the property `backorderStatus` - Set backorder status
+        should("test backorderStatus") {
+            // uncomment below to test the property
+            //modelInstance.backorderStatus shouldBe ("TODO")
+        }
+
+        // to test the property `availableForSale` - Specifies the set of visible/invisible product's variants for sale
+        should("test availableForSale") {
+            // uncomment below to test the property
+            //modelInstance.availableForSale shouldBe ("TODO")
+        }
+
+        // to test the property `avail` - Defines category's visibility status
+        should("test avail") {
+            // uncomment below to test the property
+            //modelInstance.avail shouldBe ("TODO")
+        }
+
+        // to test the property `isDefault` - Defines as a default variant
+        should("test isDefault") {
+            // uncomment below to test the property
+            //modelInstance.isDefault shouldBe ("TODO")
+        }
+
+        // to test the property `isFreeShipping` - Specifies variant's free shipping flag that has to be added
+        should("test isFreeShipping") {
+            // uncomment below to test the property
+            //modelInstance.isFreeShipping shouldBe ("TODO")
+        }
+
+        // to test the property `taxable` - Specifies whether a tax is charged
+        should("test taxable") {
+            // uncomment below to test the property
+            //modelInstance.taxable shouldBe ("TODO")
+        }
+
+        // to test the property `taxClassId` - Defines tax classes where entity has to be added
+        should("test taxClassId") {
+            // uncomment below to test the property
+            //modelInstance.taxClassId shouldBe ("TODO")
+        }
+
+        // to test the property `isVirtual` - Defines whether the product is virtual
+        should("test isVirtual") {
+            // uncomment below to test the property
+            //modelInstance.isVirtual shouldBe ("TODO")
+        }
+
+        // to test the property `manageStock` - Defines inventory tracking for product variant
+        should("test manageStock") {
+            // uncomment below to test the property
+            //modelInstance.manageStock shouldBe ("TODO")
+        }
+
+        // to test the property `inStock` - Set stock status
+        should("test inStock") {
+            // uncomment below to test the property
+            //modelInstance.inStock shouldBe ("TODO")
         }
 
         // to test the property `warehouseId` - This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
@@ -122,78 +236,6 @@ class ProductVariantUpdateTest : ShouldSpec() {
             //modelInstance.spriceExpire shouldBe ("TODO")
         }
 
-        // to test the property `manageStock` - Defines inventory tracking for product variant
-        should("test manageStock") {
-            // uncomment below to test the property
-            //modelInstance.manageStock shouldBe ("TODO")
-        }
-
-        // to test the property `inStock` - Set stock status
-        should("test inStock") {
-            // uncomment below to test the property
-            //modelInstance.inStock shouldBe ("TODO")
-        }
-
-        // to test the property `name` - Defines variant's name that has to be updated
-        should("test name") {
-            // uncomment below to test the property
-            //modelInstance.name shouldBe ("TODO")
-        }
-
-        // to test the property `description` - Specifies variant's description
-        should("test description") {
-            // uncomment below to test the property
-            //modelInstance.description shouldBe ("TODO")
-        }
-
-        // to test the property `sku` - Defines new product's variant sku
-        should("test sku") {
-            // uncomment below to test the property
-            //modelInstance.sku shouldBe ("TODO")
-        }
-
-        // to test the property `metaTitle` - Defines unique meta title for each entity
-        should("test metaTitle") {
-            // uncomment below to test the property
-            //modelInstance.metaTitle shouldBe ("TODO")
-        }
-
-        // to test the property `metaDescription` - Defines unique meta description of a entity
-        should("test metaDescription") {
-            // uncomment below to test the property
-            //modelInstance.metaDescription shouldBe ("TODO")
-        }
-
-        // to test the property `metaKeywords` - Defines unique meta keywords for each entity
-        should("test metaKeywords") {
-            // uncomment below to test the property
-            //modelInstance.metaKeywords shouldBe ("TODO")
-        }
-
-        // to test the property `shortDescription` - Defines short description
-        should("test shortDescription") {
-            // uncomment below to test the property
-            //modelInstance.shortDescription shouldBe ("TODO")
-        }
-
-        // to test the property `visible` - Set visibility status
-        should("test visible") {
-            // uncomment below to test the property
-            //modelInstance.visible shouldBe ("TODO")
-        }
-
-        // to test the property `status` - Defines product variant's status
-        should("test status") {
-            // uncomment below to test the property
-            //modelInstance.status shouldBe ("TODO")
-        }
-
-        // to test the property `backorderStatus` - Set backorder status
-        should("test backorderStatus") {
-            // uncomment below to test the property
-            //modelInstance.backorderStatus shouldBe ("TODO")
-        }
-
         // to test the property `weight` - Weight
         should("test weight") {
             // uncomment below to test the property
@@ -204,36 +246,6 @@ class ProductVariantUpdateTest : ShouldSpec() {
         should("test barcode") {
             // uncomment below to test the property
             //modelInstance.barcode shouldBe ("TODO")
-        }
-
-        // to test the property `reindex` - Is reindex required
-        should("test reindex") {
-            // uncomment below to test the property
-            //modelInstance.reindex shouldBe ("TODO")
-        }
-
-        // to test the property `taxable` - Specifies whether a tax is charged
-        should("test taxable") {
-            // uncomment below to test the property
-            //modelInstance.taxable shouldBe ("TODO")
-        }
-
-        // to test the property `options` - Defines variant's options list
-        should("test options") {
-            // uncomment below to test the property
-            //modelInstance.options shouldBe ("TODO")
-        }
-
-        // to test the property `harmonizedSystemCode` - Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
-        should("test harmonizedSystemCode") {
-            // uncomment below to test the property
-            //modelInstance.harmonizedSystemCode shouldBe ("TODO")
-        }
-
-        // to test the property `countryOfOrigin` - The country where the inventory item was made
-        should("test countryOfOrigin") {
-            // uncomment below to test the property
-            //modelInstance.countryOfOrigin shouldBe ("TODO")
         }
 
         // to test the property `width` - Defines product's width
@@ -266,30 +278,6 @@ class ProductVariantUpdateTest : ShouldSpec() {
             //modelInstance.gtin shouldBe ("TODO")
         }
 
-        // to test the property `clearCache` - Is cache clear required
-        should("test clearCache") {
-            // uncomment below to test the property
-            //modelInstance.clearCache shouldBe ("TODO")
-        }
-
-        // to test the property `langId` - Language id
-        should("test langId") {
-            // uncomment below to test the property
-            //modelInstance.langId shouldBe ("TODO")
-        }
-
-        // to test the property `model` - Specifies variant's model that has to be added
-        should("test model") {
-            // uncomment below to test the property
-            //modelInstance.model shouldBe ("TODO")
-        }
-
-        // to test the property `availableForSale` - Specifies the set of visible/invisible product's variants for sale
-        should("test availableForSale") {
-            // uncomment below to test the property
-            //modelInstance.availableForSale shouldBe ("TODO")
-        }
-
         // to test the property `upc` - Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
         should("test upc") {
             // uncomment below to test the property
@@ -314,34 +302,46 @@ class ProductVariantUpdateTest : ShouldSpec() {
             //modelInstance.isbn shouldBe ("TODO")
         }
 
-        // to test the property `avail` - Defines category's visibility status
-        should("test avail") {
+        // to test the property `harmonizedSystemCode` - Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
+        should("test harmonizedSystemCode") {
             // uncomment below to test the property
-            //modelInstance.avail shouldBe ("TODO")
+            //modelInstance.harmonizedSystemCode shouldBe ("TODO")
         }
 
-        // to test the property `isDefault` - Defines as a default variant
-        should("test isDefault") {
+        // to test the property `countryOfOrigin` - The country where the inventory item was made
+        should("test countryOfOrigin") {
             // uncomment below to test the property
-            //modelInstance.isDefault shouldBe ("TODO")
+            //modelInstance.countryOfOrigin shouldBe ("TODO")
         }
 
-        // to test the property `isFreeShipping` - Specifies variant's free shipping flag that has to be added
-        should("test isFreeShipping") {
+        // to test the property `metaTitle` - Defines unique meta title for each entity
+        should("test metaTitle") {
             // uncomment below to test the property
-            //modelInstance.isFreeShipping shouldBe ("TODO")
+            //modelInstance.metaTitle shouldBe ("TODO")
         }
 
-        // to test the property `taxClassId` - Defines tax classes where entity has to be added
-        should("test taxClassId") {
+        // to test the property `metaDescription` - Defines unique meta description of a entity
+        should("test metaDescription") {
             // uncomment below to test the property
-            //modelInstance.taxClassId shouldBe ("TODO")
+            //modelInstance.metaDescription shouldBe ("TODO")
         }
 
-        // to test the property `isVirtual` - Defines whether the product is virtual
-        should("test isVirtual") {
+        // to test the property `metaKeywords` - Defines unique meta keywords for each entity
+        should("test metaKeywords") {
             // uncomment below to test the property
-            //modelInstance.isVirtual shouldBe ("TODO")
+            //modelInstance.metaKeywords shouldBe ("TODO")
+        }
+
+        // to test the property `reindex` - Is reindex required
+        should("test reindex") {
+            // uncomment below to test the property
+            //modelInstance.reindex shouldBe ("TODO")
+        }
+
+        // to test the property `clearCache` - Is cache clear required
+        should("test clearCache") {
+            // uncomment below to test the property
+            //modelInstance.clearCache shouldBe ("TODO")
         }
 
     }

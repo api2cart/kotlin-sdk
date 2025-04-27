@@ -228,7 +228,7 @@ Configure ApiKeyAuth:
 
 <a id="attributeAttributesetList"></a>
 # **attributeAttributesetList**
-> ModelResponseAttributeAttributesetList attributeAttributesetList(start, count, params, exclude, responseFields)
+> ModelResponseAttributeAttributesetList attributeAttributesetList(start, count, responseFields, params, exclude)
 
 attribute.attributeset.list
 
@@ -243,11 +243,11 @@ Get attribute_set list
 val apiInstance = AttributeApi()
 val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
 val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val params : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 try {
-    val result : ModelResponseAttributeAttributesetList = apiInstance.attributeAttributesetList(start, count, params, exclude, responseFields)
+    val result : ModelResponseAttributeAttributesetList = apiInstance.attributeAttributesetList(start, count, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AttributeApi#attributeAttributesetList")
@@ -261,11 +261,11 @@ try {
 ### Parameters
 | **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name&quot;] |
-| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -406,7 +406,7 @@ Configure ApiKeyAuth:
 
 <a id="attributeGroupList"></a>
 # **attributeGroupList**
-> ModelResponseAttributeGroupList attributeGroupList(start, count, langId, params, exclude, responseFields, attributeSetId)
+> ModelResponseAttributeGroupList attributeGroupList(start, count, attributeSetId, langId, responseFields, params, exclude)
 
 attribute.group.list
 
@@ -421,13 +421,13 @@ Get attribute group list
 val apiInstance = AttributeApi()
 val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
 val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+val attributeSetId : kotlin.String = 4 // kotlin.String | Attribute set id
 val langId : kotlin.String = 3 // kotlin.String | Language id
+val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val params : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-val attributeSetId : kotlin.String = 4 // kotlin.String | Attribute set id
 try {
-    val result : ModelResponseAttributeGroupList = apiInstance.attributeGroupList(start, count, langId, params, exclude, responseFields, attributeSetId)
+    val result : ModelResponseAttributeGroupList = apiInstance.attributeGroupList(start, count, attributeSetId, langId, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AttributeApi#attributeGroupList")
@@ -441,13 +441,13 @@ try {
 ### Parameters
 | **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **attributeSetId** | **kotlin.String**| Attribute set id | [optional] |
 | **langId** | **kotlin.String**| Language id | [optional] |
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name&quot;] |
-| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name&quot;] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **attributeSetId** | **kotlin.String**| Attribute set id | [optional] |
+| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -470,7 +470,7 @@ Configure ApiKeyAuth:
 
 <a id="attributeInfo"></a>
 # **attributeInfo**
-> AttributeInfo200Response attributeInfo(id, attributeSetId, storeId, langId, params, exclude, responseFields)
+> AttributeInfo200Response attributeInfo(id, attributeSetId, storeId, langId, responseFields, params, exclude)
 
 attribute.info
 
@@ -487,11 +487,11 @@ val id : kotlin.String = 10 // kotlin.String | Entity id
 val attributeSetId : kotlin.String = 4 // kotlin.String | Attribute set id
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
 val langId : kotlin.String = 3 // kotlin.String | Language id
+val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val params : kotlin.String = force_all // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 try {
-    val result : AttributeInfo200Response = apiInstance.attributeInfo(id, attributeSetId, storeId, langId, params, exclude, responseFields)
+    val result : AttributeInfo200Response = apiInstance.attributeInfo(id, attributeSetId, storeId, langId, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AttributeApi#attributeInfo")
@@ -507,11 +507,11 @@ try {
 | **attributeSetId** | **kotlin.String**| Attribute set id | [optional] |
 | **storeId** | **kotlin.String**| Store Id | [optional] |
 | **langId** | **kotlin.String**| Language id | [optional] |
+| **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;force_all&quot;] |
-| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -534,7 +534,7 @@ Configure ApiKeyAuth:
 
 <a id="attributeList"></a>
 # **attributeList**
-> ModelResponseAttributeList attributeList(start, count, type, attributeIds, attributeSetId, storeId, langId, params, exclude, responseFields, visible, required, system)
+> ModelResponseAttributeList attributeList(start, count, attributeIds, attributeSetId, storeId, langId, type, visible, required, system, responseFields, params, exclude)
 
 attribute.list
 
@@ -549,19 +549,19 @@ Get a list of global attributes.
 val apiInstance = AttributeApi()
 val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
 val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-val type : kotlin.String = text // kotlin.String | Defines attribute's type
 val attributeIds : kotlin.String = 1,2,3 // kotlin.String | Filter attributes by ids
 val attributeSetId : kotlin.String = 4 // kotlin.String | Filter items by attribute set id
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
 val langId : kotlin.String = 3 // kotlin.String | Retrieves attributes on specified language id
-val params : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-val exclude : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val type : kotlin.String = text // kotlin.String | Defines attribute's type
 val visible : kotlin.Boolean = true // kotlin.Boolean | Filter items by visibility status
 val required : kotlin.Boolean = true // kotlin.Boolean | Defines if the option is required
 val system : kotlin.Boolean = false // kotlin.Boolean | True if attribute is system
+val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val params : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val exclude : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : ModelResponseAttributeList = apiInstance.attributeList(start, count, type, attributeIds, attributeSetId, storeId, langId, params, exclude, responseFields, visible, required, system)
+    val result : ModelResponseAttributeList = apiInstance.attributeList(start, count, attributeIds, attributeSetId, storeId, langId, type, visible, required, system, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling AttributeApi#attributeList")
@@ -575,19 +575,19 @@ try {
 ### Parameters
 | **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **type** | **kotlin.String**| Defines attribute&#39;s type | [optional] |
 | **attributeIds** | **kotlin.String**| Filter attributes by ids | [optional] |
 | **attributeSetId** | **kotlin.String**| Filter items by attribute set id | [optional] |
 | **storeId** | **kotlin.String**| Store Id | [optional] |
 | **langId** | **kotlin.String**| Retrieves attributes on specified language id | [optional] |
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name,code,type&quot;] |
-| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-| **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **type** | **kotlin.String**| Defines attribute&#39;s type | [optional] |
 | **visible** | **kotlin.Boolean**| Filter items by visibility status | [optional] |
 | **required** | **kotlin.Boolean**| Defines if the option is required | [optional] |
+| **system** | **kotlin.Boolean**| True if attribute is system | [optional] |
+| **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name,code,type&quot;] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **system** | **kotlin.Boolean**| True if attribute is system | [optional] |
+| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 

@@ -64,29 +64,29 @@ class CustomerApiTest : ShouldSpec() {
             //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val langId : kotlin.String = 3 // kotlin.String | Language id
+            //val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val result : ModelResponseCustomerAttributeList = apiInstance.customerAttributeList(customerId, count, pageCursor, storeId, langId, params, exclude, responseFields)
+            //val result : ModelResponseCustomerAttributeList = apiInstance.customerAttributeList(customerId, count, pageCursor, storeId, langId, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
         // to test customerCount
         should("test customerCount") {
             // uncomment below to test customerCount
+            //val ids : kotlin.String = 24,25 // kotlin.String | Counts customers specified by ids
+            //val sinceId : kotlin.String = 56 // kotlin.String | Retrieve entities starting from the specified id.
+            //val customerListId : kotlin.String = exampleListId // kotlin.String | The numeric ID of the customer list in Demandware.
             //val groupId : kotlin.String = 3 // kotlin.String | Customer group_id
+            //val storeId : kotlin.String = 1 // kotlin.String | Counts customer specified by store id
+            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
+            //val findValue : kotlin.String = mail@gmail.com // kotlin.String | Entity search that is specified by some value
+            //val findWhere : kotlin.String = email // kotlin.String | Counts customers that are searched specified by field
             //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
             //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
             //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
             //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-            //val storeId : kotlin.String = 1 // kotlin.String | Counts customer specified by store id
-            //val customerListId : kotlin.String = exampleListId // kotlin.String | The numeric ID of the customer list in Demandware.
-            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
-            //val findValue : kotlin.String = mail@gmail.com // kotlin.String | Entity search that is specified by some value
-            //val findWhere : kotlin.String = email // kotlin.String | Counts customers that are searched specified by field
-            //val ids : kotlin.String = 24,25 // kotlin.String | Counts customers specified by ids
-            //val sinceId : kotlin.String = 56 // kotlin.String | Retrieve entities starting from the specified id.
-            //val result : CustomerCount200Response = apiInstance.customerCount(groupId, createdFrom, createdTo, modifiedFrom, modifiedTo, storeId, customerListId, avail, findValue, findWhere, ids, sinceId)
+            //val result : CustomerCount200Response = apiInstance.customerCount(ids, sinceId, customerListId, groupId, storeId, avail, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo)
             //result shouldBe ("TODO")
         }
 
@@ -122,17 +122,17 @@ class CustomerApiTest : ShouldSpec() {
         // to test customerGroupList
         should("test customerGroupList") {
             // uncomment below to test customerGroupList
-            //val disableCache : kotlin.Boolean = false // kotlin.Boolean | Disable cache for current request
-            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+            //val groupIds : kotlin.String = 1,2,3 // kotlin.String | Groups that will be assigned to a customer
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val langId : kotlin.String = 3 // kotlin.String | Language id
-            //val groupIds : kotlin.String = 1,2,3 // kotlin.String | Groups that will be assigned to a customer
+            //val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val result : ModelResponseCustomerGroupList = apiInstance.customerGroupList(disableCache, pageCursor, start, count, storeId, langId, groupIds, params, exclude, responseFields)
+            //val disableCache : kotlin.Boolean = false // kotlin.Boolean | Disable cache for current request
+            //val result : ModelResponseCustomerGroupList = apiInstance.customerGroupList(start, count, pageCursor, groupIds, storeId, langId, responseFields, params, exclude, disableCache)
             //result shouldBe ("TODO")
         }
 
@@ -140,38 +140,38 @@ class CustomerApiTest : ShouldSpec() {
         should("test customerInfo") {
             // uncomment below to test customerInfo
             //val id : kotlin.String = 10 // kotlin.String | Retrieves customer's info specified by customer id
-            //val params : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val responseFields : kotlin.String = {result{id,parent_id,sku,upc,images,combination}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
             //val storeId : kotlin.String = 1 // kotlin.String | Retrieves customer info specified by store id
-            //val result : CustomerInfo200Response = apiInstance.customerInfo(id, params, responseFields, exclude, storeId)
+            //val responseFields : kotlin.String = {result{id,parent_id,sku,upc,images,combination}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val exclude : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+            //val result : CustomerInfo200Response = apiInstance.customerInfo(id, storeId, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
         // to test customerList
         should("test customerList") {
             // uncomment below to test customerList
-            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+            //val ids : kotlin.String = 24,25 // kotlin.String | Retrieves customers specified by ids
+            //val sinceId : kotlin.String = 56 // kotlin.String | Retrieve entities starting from the specified id.
+            //val customerListId : kotlin.String = exampleListId // kotlin.String | The numeric ID of the customer list in Demandware.
+            //val groupId : kotlin.String = 3 // kotlin.String | Customer group_id
+            //val storeId : kotlin.String = 1 // kotlin.String | Retrieves customers specified by store id
+            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
+            //val findValue : kotlin.String = mail@gmail.com // kotlin.String | Entity search that is specified by some value
+            //val findWhere : kotlin.String = email // kotlin.String | Customer search that is specified by field
             //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
             //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
             //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
             //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-            //val params : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val responseFields : kotlin.String = {result{customer}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val groupId : kotlin.String = 3 // kotlin.String | Customer group_id
-            //val storeId : kotlin.String = 1 // kotlin.String | Retrieves customers specified by store id
-            //val customerListId : kotlin.String = exampleListId // kotlin.String | The numeric ID of the customer list in Demandware.
-            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
-            //val findValue : kotlin.String = mail@gmail.com // kotlin.String | Entity search that is specified by some value
-            //val findWhere : kotlin.String = email // kotlin.String | Customer search that is specified by field
             //val sortBy : kotlin.String = value_id // kotlin.String | Set field to sort by
             //val sortDirection : kotlin.String = asc // kotlin.String | Set sorting direction
-            //val ids : kotlin.String = 24,25 // kotlin.String | Retrieves customers specified by ids
-            //val sinceId : kotlin.String = 56 // kotlin.String | Retrieve entities starting from the specified id.
-            //val result : ModelResponseCustomerList = apiInstance.customerList(pageCursor, start, count, createdFrom, createdTo, modifiedFrom, modifiedTo, params, responseFields, exclude, groupId, storeId, customerListId, avail, findValue, findWhere, sortBy, sortDirection, ids, sinceId)
+            //val responseFields : kotlin.String = {result{customer}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val exclude : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+            //val result : ModelResponseCustomerList = apiInstance.customerList(start, count, pageCursor, ids, sinceId, customerListId, groupId, storeId, avail, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo, sortBy, sortDirection, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -187,13 +187,13 @@ class CustomerApiTest : ShouldSpec() {
         should("test customerWishlistList") {
             // uncomment below to test customerWishlistList
             //val customerId : kotlin.String = 5 // kotlin.String | Retrieves orders specified by customer id
-            //val id : kotlin.String = 10 // kotlin.String | Entity id
-            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
             //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+            //val id : kotlin.String = 10 // kotlin.String | Entity id
+            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val result : ModelResponseCustomerWishlistList = apiInstance.customerWishlistList(customerId, id, storeId, start, count, pageCursor, responseFields)
+            //val result : ModelResponseCustomerWishlistList = apiInstance.customerWishlistList(customerId, start, count, pageCursor, id, storeId, responseFields)
             //result shouldBe ("TODO")
         }
 

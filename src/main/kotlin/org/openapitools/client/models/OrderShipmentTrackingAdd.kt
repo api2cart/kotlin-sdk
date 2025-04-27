@@ -24,9 +24,9 @@ import com.squareup.moshi.JsonClass
  *
  * @param shipmentId Shipment id indicates the number of delivery
  * @param trackingNumber Defines tracking number
- * @param storeId Store Id
  * @param orderId Defines the order id
  * @param carrierId Defines tracking carrier id
+ * @param storeId Store Id
  * @param trackingProvider Defines name of the company which provides shipment tracking
  * @param trackingLink Defines custom tracking link
  * @param sendNotifications Send notifications to customer after tracking was created
@@ -43,10 +43,6 @@ data class OrderShipmentTrackingAdd (
     @Json(name = "tracking_number")
     val trackingNumber: kotlin.String,
 
-    /* Store Id */
-    @Json(name = "store_id")
-    val storeId: kotlin.String? = null,
-
     /* Defines the order id */
     @Json(name = "order_id")
     val orderId: kotlin.String? = null,
@@ -54,6 +50,10 @@ data class OrderShipmentTrackingAdd (
     /* Defines tracking carrier id */
     @Json(name = "carrier_id")
     val carrierId: kotlin.String? = null,
+
+    /* Store Id */
+    @Json(name = "store_id")
+    val storeId: kotlin.String? = null,
 
     /* Defines name of the company which provides shipment tracking */
     @Json(name = "tracking_provider")

@@ -51,11 +51,11 @@ class BatchApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * Get list of recent jobs
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param ids Filter batch jobs by ids (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param processedFrom Retrieve entities according to their processing datetime (optional)
      * @param processedTo Retrieve entities according to their processing datetime (optional)
-     * @param ids Filter batch jobs by ids (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "{return_code,return_message,pagination,result}")
      * @return ModelResponseBatchJobList
      * @throws IllegalStateException If the request is not correctly configured
@@ -66,8 +66,8 @@ class BatchApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun batchJobList(count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, processedFrom: kotlin.String? = null, processedTo: kotlin.String? = null, ids: kotlin.String? = null, responseFields: kotlin.String? = "{return_code,return_message,pagination,result}") : ModelResponseBatchJobList {
-        val localVarResponse = batchJobListWithHttpInfo(count = count, pageCursor = pageCursor, createdFrom = createdFrom, createdTo = createdTo, processedFrom = processedFrom, processedTo = processedTo, ids = ids, responseFields = responseFields)
+    fun batchJobList(count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, ids: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, processedFrom: kotlin.String? = null, processedTo: kotlin.String? = null, responseFields: kotlin.String? = "{return_code,return_message,pagination,result}") : ModelResponseBatchJobList {
+        val localVarResponse = batchJobListWithHttpInfo(count = count, pageCursor = pageCursor, ids = ids, createdFrom = createdFrom, createdTo = createdTo, processedFrom = processedFrom, processedTo = processedTo, responseFields = responseFields)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseBatchJobList
@@ -89,11 +89,11 @@ class BatchApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * Get list of recent jobs
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param ids Filter batch jobs by ids (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param processedFrom Retrieve entities according to their processing datetime (optional)
      * @param processedTo Retrieve entities according to their processing datetime (optional)
-     * @param ids Filter batch jobs by ids (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "{return_code,return_message,pagination,result}")
      * @return ApiResponse<ModelResponseBatchJobList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -101,8 +101,8 @@ class BatchApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun batchJobListWithHttpInfo(count: kotlin.Int?, pageCursor: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, processedFrom: kotlin.String?, processedTo: kotlin.String?, ids: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseBatchJobList?> {
-        val localVariableConfig = batchJobListRequestConfig(count = count, pageCursor = pageCursor, createdFrom = createdFrom, createdTo = createdTo, processedFrom = processedFrom, processedTo = processedTo, ids = ids, responseFields = responseFields)
+    fun batchJobListWithHttpInfo(count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, processedFrom: kotlin.String?, processedTo: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseBatchJobList?> {
+        val localVariableConfig = batchJobListRequestConfig(count = count, pageCursor = pageCursor, ids = ids, createdFrom = createdFrom, createdTo = createdTo, processedFrom = processedFrom, processedTo = processedTo, responseFields = responseFields)
 
         return request<Unit, ModelResponseBatchJobList>(
             localVariableConfig
@@ -114,15 +114,15 @@ class BatchApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      *
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param ids Filter batch jobs by ids (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param processedFrom Retrieve entities according to their processing datetime (optional)
      * @param processedTo Retrieve entities according to their processing datetime (optional)
-     * @param ids Filter batch jobs by ids (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "{return_code,return_message,pagination,result}")
      * @return RequestConfig
      */
-    fun batchJobListRequestConfig(count: kotlin.Int?, pageCursor: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, processedFrom: kotlin.String?, processedTo: kotlin.String?, ids: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun batchJobListRequestConfig(count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, processedFrom: kotlin.String?, processedTo: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -131,6 +131,9 @@ class BatchApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 }
                 if (pageCursor != null) {
                     put("page_cursor", listOf(pageCursor.toString()))
+                }
+                if (ids != null) {
+                    put("ids", listOf(ids.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
@@ -143,9 +146,6 @@ class BatchApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 }
                 if (processedTo != null) {
                     put("processed_to", listOf(processedTo.toString()))
-                }
-                if (ids != null) {
-                    put("ids", listOf(ids.toString()))
                 }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))

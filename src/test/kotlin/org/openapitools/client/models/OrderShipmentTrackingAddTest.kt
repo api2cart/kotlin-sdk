@@ -37,12 +37,6 @@ class OrderShipmentTrackingAddTest : ShouldSpec() {
             //modelInstance.trackingNumber shouldBe ("TODO")
         }
 
-        // to test the property `storeId` - Store Id
-        should("test storeId") {
-            // uncomment below to test the property
-            //modelInstance.storeId shouldBe ("TODO")
-        }
-
         // to test the property `orderId` - Defines the order id
         should("test orderId") {
             // uncomment below to test the property
@@ -53,6 +47,12 @@ class OrderShipmentTrackingAddTest : ShouldSpec() {
         should("test carrierId") {
             // uncomment below to test the property
             //modelInstance.carrierId shouldBe ("TODO")
+        }
+
+        // to test the property `storeId` - Store Id
+        should("test storeId") {
+            // uncomment below to test the property
+            //modelInstance.storeId shouldBe ("TODO")
         }
 
         // to test the property `trackingProvider` - Defines name of the company which provides shipment tracking

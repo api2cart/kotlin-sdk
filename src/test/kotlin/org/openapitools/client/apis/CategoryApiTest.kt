@@ -41,21 +41,21 @@ class CategoryApiTest : ShouldSpec() {
         should("test categoryAdd") {
             // uncomment below to test categoryAdd
             //val name : kotlin.String = Shoes // kotlin.String | Defines category's name that has to be added
-            //val parentId : kotlin.String = 6 // kotlin.String | Adds categories specified by parent id
-            //val storesIds : kotlin.String = 1,2 // kotlin.String | Create category in the stores that is specified by comma-separated stores' id
-            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val langId : kotlin.String = 3 // kotlin.String | Language id
-            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
-            //val sortOrder : kotlin.Int = 2 // kotlin.Int | Sort number in the list
-            //val createdTime : kotlin.String = 2014-01-30 15:58:41 // kotlin.String | Entity's date creation
-            //val modifiedTime : kotlin.String = 2014-07-30 15:58:41 // kotlin.String | Entity's date modification
             //val description : kotlin.String = Test category // kotlin.String | Defines category's description
             //val shortDescription : kotlin.String = Short description. This is very short description // kotlin.String | Defines short description
+            //val parentId : kotlin.String = 6 // kotlin.String | Adds categories specified by parent id
+            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
+            //val createdTime : kotlin.String = 2014-01-30 15:58:41 // kotlin.String | Entity's date creation
+            //val modifiedTime : kotlin.String = 2014-07-30 15:58:41 // kotlin.String | Entity's date modification
+            //val sortOrder : kotlin.Int = 2 // kotlin.Int | Sort number in the list
             //val metaTitle : kotlin.String = category,test // kotlin.String | Defines unique meta title for each entity
             //val metaDescription : kotlin.String = category,test // kotlin.String | Defines unique meta description of a entity
             //val metaKeywords : kotlin.String = category,test // kotlin.String | Defines unique meta keywords for each entity
             //val seoUrl : kotlin.String = category,test // kotlin.String | Defines unique category's URL for SEO
-            //val result : CategoryAdd200Response = apiInstance.categoryAdd(name, parentId, storesIds, storeId, langId, avail, sortOrder, createdTime, modifiedTime, description, shortDescription, metaTitle, metaDescription, metaKeywords, seoUrl)
+            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
+            //val storesIds : kotlin.String = 1,2 // kotlin.String | Create category in the stores that is specified by comma-separated stores' id
+            //val langId : kotlin.String = 3 // kotlin.String | Language id
+            //val result : CategoryAdd200Response = apiInstance.categoryAdd(name, description, shortDescription, parentId, avail, createdTime, modifiedTime, sortOrder, metaTitle, metaDescription, metaKeywords, seoUrl, storeId, storesIds, langId)
             //result shouldBe ("TODO")
         }
 
@@ -70,10 +70,10 @@ class CategoryApiTest : ShouldSpec() {
         // to test categoryAssign
         should("test categoryAssign") {
             // uncomment below to test categoryAssign
-            //val productId : kotlin.String = 10 // kotlin.String | Defines category assign to the product, specified by product id
             //val categoryId : kotlin.String = 6 // kotlin.String | Defines category assign, specified by category id
+            //val productId : kotlin.String = 10 // kotlin.String | Defines category assign to the product, specified by product id
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val result : CartConfigUpdate200Response = apiInstance.categoryAssign(productId, categoryId, storeId)
+            //val result : CartConfigUpdate200Response = apiInstance.categoryAssign(categoryId, productId, storeId)
             //result shouldBe ("TODO")
         }
 
@@ -83,17 +83,17 @@ class CategoryApiTest : ShouldSpec() {
             //val parentId : kotlin.String = 6 // kotlin.String | Counts categories specified by parent id
             //val storeId : kotlin.String = 1 // kotlin.String | Counts category specified by store id
             //val langId : kotlin.String = 3 // kotlin.String | Counts category specified by language id
+            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
             //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
             //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
             //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
             //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
             //val productType : kotlin.String = BICYCLE // kotlin.String | A categorization for the product
             //val findValue : kotlin.String = Demo category 1 // kotlin.String | Entity search that is specified by some value
             //val findWhere : kotlin.String = email // kotlin.String | Counts categories that are searched specified by field
             //val reportRequestId : kotlin.String = 105245017661 // kotlin.String | Report request id
             //val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable report cache for current request
-            //val result : CategoryCount200Response = apiInstance.categoryCount(parentId, storeId, langId, createdFrom, createdTo, modifiedFrom, modifiedTo, avail, productType, findValue, findWhere, reportRequestId, disableReportCache)
+            //val result : CategoryCount200Response = apiInstance.categoryCount(parentId, storeId, langId, avail, createdFrom, createdTo, modifiedFrom, modifiedTo, productType, findValue, findWhere, reportRequestId, disableReportCache)
             //result shouldBe ("TODO")
         }
 
@@ -125,11 +125,11 @@ class CategoryApiTest : ShouldSpec() {
             //val imageName : kotlin.String = bag-gray.png // kotlin.String | Defines image's name
             //val url : kotlin.String = http://docs.api2cart.com/img/logo.png // kotlin.String | Defines URL of the image that has to be added
             //val type : kotlin.String = base // kotlin.String | Defines image's types that are specified by comma-separated list
+            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val label : kotlin.String = This cool image // kotlin.String | Defines alternative text that has to be attached to the picture
             //val mime : kotlin.String = image/jpeg // kotlin.String | Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
             //val position : kotlin.Int = 5 // kotlin.Int | Defines image’s position in the list
-            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val result : CategoryImageAdd200Response = apiInstance.categoryImageAdd(categoryId, imageName, url, type, label, mime, position, storeId)
+            //val result : CategoryImageAdd200Response = apiInstance.categoryImageAdd(categoryId, imageName, url, type, storeId, label, mime, position)
             //result shouldBe ("TODO")
         }
 
@@ -147,15 +147,15 @@ class CategoryApiTest : ShouldSpec() {
         should("test categoryInfo") {
             // uncomment below to test categoryInfo
             //val id : kotlin.String = 10 // kotlin.String | Retrieves category's info specified by category id
-            //val params : kotlin.String = id,parent_id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val responseFields : kotlin.String = {result{id,name,parent_id,modified_at{value},images}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = id,parent_id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
             //val storeId : kotlin.String = 1 // kotlin.String | Retrieves category info  specified by store id
             //val langId : kotlin.String = 3 // kotlin.String | Retrieves category info  specified by language id
             //val schemaType : kotlin.String = LISTING // kotlin.String | The name of the requirements set for the provided schema.
+            //val responseFields : kotlin.String = {result{id,name,parent_id,modified_at{value},images}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,parent_id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val exclude : kotlin.String = id,parent_id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
             //val reportRequestId : kotlin.String = 105245017661 // kotlin.String | Report request id
             //val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable report cache for current request
-            //val result : CategoryInfo200Response = apiInstance.categoryInfo(id, params, responseFields, exclude, storeId, langId, schemaType, reportRequestId, disableReportCache)
+            //val result : CategoryInfo200Response = apiInstance.categoryInfo(id, storeId, langId, schemaType, responseFields, params, exclude, reportRequestId, disableReportCache)
             //result shouldBe ("TODO")
         }
 
@@ -165,24 +165,24 @@ class CategoryApiTest : ShouldSpec() {
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
             //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-            //val parentId : kotlin.String = 6 // kotlin.String | Retrieves categories specified by parent id
-            //val params : kotlin.String = id,parent_id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val responseFields : kotlin.String = {result{categories_count,category{id,parent_id,modified_at{value},images}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = id,parent_id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
             //val storeId : kotlin.String = 1 // kotlin.String | Retrieves categories specified by store id
             //val langId : kotlin.String = 3 // kotlin.String | Retrieves categorys specified by language id
+            //val parentId : kotlin.String = 6 // kotlin.String | Retrieves categories specified by parent id
+            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
+            //val productType : kotlin.String = BICYCLE // kotlin.String | A categorization for the product
             //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
             //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
             //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
             //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
-            //val productType : kotlin.String = BICYCLE // kotlin.String | A categorization for the product
             //val findValue : kotlin.String = Demo category 1 // kotlin.String | Entity search that is specified by some value
             //val findWhere : kotlin.String = name // kotlin.String | Category search that is specified by field
+            //val responseFields : kotlin.String = {result{categories_count,category{id,parent_id,modified_at{value},images}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,parent_id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val exclude : kotlin.String = id,parent_id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
             //val reportRequestId : kotlin.String = 105245017661 // kotlin.String | Report request id
             //val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable report cache for current request
             //val disableCache : kotlin.Boolean = false // kotlin.Boolean | Disable cache for current request
-            //val result : ModelResponseCategoryList = apiInstance.categoryList(start, count, pageCursor, parentId, params, responseFields, exclude, storeId, langId, createdFrom, createdTo, modifiedFrom, modifiedTo, avail, productType, findValue, findWhere, reportRequestId, disableReportCache, disableCache)
+            //val result : ModelResponseCategoryList = apiInstance.categoryList(start, count, pageCursor, storeId, langId, parentId, avail, productType, createdFrom, createdTo, modifiedFrom, modifiedTo, findValue, findWhere, responseFields, params, exclude, reportRequestId, disableReportCache, disableCache)
             //result shouldBe ("TODO")
         }
 
@@ -201,20 +201,20 @@ class CategoryApiTest : ShouldSpec() {
             // uncomment below to test categoryUpdate
             //val id : kotlin.String = 10 // kotlin.String | Defines category update specified by category id
             //val name : kotlin.String = NEW Shoes // kotlin.String | Defines new category’s name
+            //val description : kotlin.String = New test category // kotlin.String | Defines new category's description
+            //val shortDescription : kotlin.String = Short description. This is very short description // kotlin.String | Defines short description
             //val parentId : kotlin.String = 6 // kotlin.String | Defines new parent category id
-            //val storesIds : kotlin.String = 1,2 // kotlin.String | Update category in the stores that is specified by comma-separated stores' id
             //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
             //val sortOrder : kotlin.Int = 2 // kotlin.Int | Sort number in the list
             //val modifiedTime : kotlin.String = 2014-07-30 15:58:41 // kotlin.String | Entity's date modification
-            //val description : kotlin.String = New test category // kotlin.String | Defines new category's description
-            //val shortDescription : kotlin.String = Short description. This is very short description // kotlin.String | Defines short description
             //val metaTitle : kotlin.String = category,test // kotlin.String | Defines unique meta title for each entity
             //val metaDescription : kotlin.String = category,test // kotlin.String | Defines unique meta description of a entity
             //val metaKeywords : kotlin.String = category,test // kotlin.String | Defines unique meta keywords for each entity
             //val seoUrl : kotlin.String = category,test // kotlin.String | Defines unique category's URL for SEO
-            //val langId : kotlin.String = 3 // kotlin.String | Language id
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val result : AccountConfigUpdate200Response = apiInstance.categoryUpdate(id, name, parentId, storesIds, avail, sortOrder, modifiedTime, description, shortDescription, metaTitle, metaDescription, metaKeywords, seoUrl, langId, storeId)
+            //val storesIds : kotlin.String = 1,2 // kotlin.String | Update category in the stores that is specified by comma-separated stores' id
+            //val langId : kotlin.String = 3 // kotlin.String | Language id
+            //val result : AccountConfigUpdate200Response = apiInstance.categoryUpdate(id, name, description, shortDescription, parentId, avail, sortOrder, modifiedTime, metaTitle, metaDescription, metaKeywords, seoUrl, storeId, storesIds, langId)
             //result shouldBe ("TODO")
         }
 

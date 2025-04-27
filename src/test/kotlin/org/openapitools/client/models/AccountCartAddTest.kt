@@ -476,6 +476,12 @@ class AccountCartAddTest : ShouldSpec() {
             //modelInstance.shoplineAppSecret shouldBe ("TODO")
         }
 
+        // to test the property `shoplineSharedSecret` - Shopline Shared Secret
+        should("test shoplineSharedSecret") {
+            // uncomment below to test the property
+            //modelInstance.shoplineSharedSecret shouldBe ("TODO")
+        }
+
         // to test the property `shopifyAccessToken` - Access token authorizing the app to access resources on behalf of a user
         should("test shopifyAccessToken") {
             // uncomment below to test the property

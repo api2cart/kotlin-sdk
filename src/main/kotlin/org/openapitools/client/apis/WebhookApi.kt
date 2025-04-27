@@ -391,13 +391,13 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * webhook.list
      * List registered webhook on the store.
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,entity,action,callback")
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param entity The entity you want to filter webhooks by (e.g. order or product) (optional)
      * @param action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param active The webhook status you want to filter webhooks by (optional)
      * @param ids List of сomma-separated webhook ids (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,entity,action,callback")
      * @return WebhookList200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -407,8 +407,8 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun webhookList(params: kotlin.String? = "id,entity,action,callback", start: kotlin.Int? = 0, count: kotlin.Int? = 10, entity: kotlin.String? = null, action: kotlin.String? = null, active: kotlin.Boolean? = null, ids: kotlin.String? = null) : WebhookList200Response {
-        val localVarResponse = webhookListWithHttpInfo(params = params, start = start, count = count, entity = entity, action = action, active = active, ids = ids)
+    fun webhookList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, entity: kotlin.String? = null, action: kotlin.String? = null, active: kotlin.Boolean? = null, ids: kotlin.String? = null, params: kotlin.String? = "id,entity,action,callback") : WebhookList200Response {
+        val localVarResponse = webhookListWithHttpInfo(start = start, count = count, entity = entity, action = action, active = active, ids = ids, params = params)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as WebhookList200Response
@@ -428,21 +428,21 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * webhook.list
      * List registered webhook on the store.
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,entity,action,callback")
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param entity The entity you want to filter webhooks by (e.g. order or product) (optional)
      * @param action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param active The webhook status you want to filter webhooks by (optional)
      * @param ids List of сomma-separated webhook ids (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,entity,action,callback")
      * @return ApiResponse<WebhookList200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun webhookListWithHttpInfo(params: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, entity: kotlin.String?, action: kotlin.String?, active: kotlin.Boolean?, ids: kotlin.String?) : ApiResponse<WebhookList200Response?> {
-        val localVariableConfig = webhookListRequestConfig(params = params, start = start, count = count, entity = entity, action = action, active = active, ids = ids)
+    fun webhookListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, entity: kotlin.String?, action: kotlin.String?, active: kotlin.Boolean?, ids: kotlin.String?, params: kotlin.String?) : ApiResponse<WebhookList200Response?> {
+        val localVariableConfig = webhookListRequestConfig(start = start, count = count, entity = entity, action = action, active = active, ids = ids, params = params)
 
         return request<Unit, WebhookList200Response>(
             localVariableConfig
@@ -452,22 +452,19 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * To obtain the request config of the operation webhookList
      *
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,entity,action,callback")
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param entity The entity you want to filter webhooks by (e.g. order or product) (optional)
      * @param action The action you want to filter webhooks by (e.g. add, update, or delete) (optional)
      * @param active The webhook status you want to filter webhooks by (optional)
      * @param ids List of сomma-separated webhook ids (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,entity,action,callback")
      * @return RequestConfig
      */
-    fun webhookListRequestConfig(params: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, entity: kotlin.String?, action: kotlin.String?, active: kotlin.Boolean?, ids: kotlin.String?) : RequestConfig<Unit> {
+    fun webhookListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, entity: kotlin.String?, action: kotlin.String?, active: kotlin.Boolean?, ids: kotlin.String?, params: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
@@ -485,6 +482,9 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (ids != null) {
                     put("ids", listOf(ids.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

@@ -21,6 +21,7 @@ import io.kotlintest.specs.ShouldSpec
 import org.openapitools.client.models.ProductUpdate
 import org.openapitools.client.models.ProductAddManufacturerInfo
 import org.openapitools.client.models.ProductAddPackageDetails
+import org.openapitools.client.models.ProductAddTierPricesInner
 
 class ProductUpdateTest : ShouldSpec() {
     init {
@@ -39,16 +40,40 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.model shouldBe ("TODO")
         }
 
-        // to test the property `oldPrice` - Defines product's old price
-        should("test oldPrice") {
+        // to test the property `sku` - Defines new product's sku
+        should("test sku") {
             // uncomment below to test the property
-            //modelInstance.oldPrice shouldBe ("TODO")
+            //modelInstance.sku shouldBe ("TODO")
+        }
+
+        // to test the property `name` - Defines product's name that has to be updated
+        should("test name") {
+            // uncomment below to test the property
+            //modelInstance.name shouldBe ("TODO")
+        }
+
+        // to test the property `description` - Defines new product's description
+        should("test description") {
+            // uncomment below to test the property
+            //modelInstance.description shouldBe ("TODO")
+        }
+
+        // to test the property `shortDescription` - Defines short description
+        should("test shortDescription") {
+            // uncomment below to test the property
+            //modelInstance.shortDescription shouldBe ("TODO")
         }
 
         // to test the property `price` - Defines new product's price
         should("test price") {
             // uncomment below to test the property
             //modelInstance.price shouldBe ("TODO")
+        }
+
+        // to test the property `oldPrice` - Defines product's old price
+        should("test oldPrice") {
+            // uncomment below to test the property
+            //modelInstance.oldPrice shouldBe ("TODO")
         }
 
         // to test the property `specialPrice` - Defines new product's special price
@@ -87,10 +112,82 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.retailPrice shouldBe ("TODO")
         }
 
-        // to test the property `quantity` - Defines new product's quantity
-        should("test quantity") {
+        // to test the property `tierPrices` - Defines product's tier prices
+        should("test tierPrices") {
             // uncomment below to test the property
-            //modelInstance.quantity shouldBe ("TODO")
+            //modelInstance.tierPrices shouldBe ("TODO")
+        }
+
+        // to test the property `reservePrice` - Defines reserve price value
+        should("test reservePrice") {
+            // uncomment below to test the property
+            //modelInstance.reservePrice shouldBe ("TODO")
+        }
+
+        // to test the property `buyitnowPrice` - Defines buy it now value
+        should("test buyitnowPrice") {
+            // uncomment below to test the property
+            //modelInstance.buyitnowPrice shouldBe ("TODO")
+        }
+
+        // to test the property `taxable` - Specifies whether a tax is charged
+        should("test taxable") {
+            // uncomment below to test the property
+            //modelInstance.taxable shouldBe ("TODO")
+        }
+
+        // to test the property `taxClassId` - Defines tax classes where entity has to be added
+        should("test taxClassId") {
+            // uncomment below to test the property
+            //modelInstance.taxClassId shouldBe ("TODO")
+        }
+
+        // to test the property `type` - Defines product's type
+        should("test type") {
+            // uncomment below to test the property
+            //modelInstance.type shouldBe ("TODO")
+        }
+
+        // to test the property `status` - Defines product's status
+        should("test status") {
+            // uncomment below to test the property
+            //modelInstance.status shouldBe ("TODO")
+        }
+
+        // to test the property `condition` - The human-readable label for the condition (e.g., \"New\").
+        should("test condition") {
+            // uncomment below to test the property
+            //modelInstance.condition shouldBe ("TODO")
+        }
+
+        // to test the property `visible` - Set visibility status
+        should("test visible") {
+            // uncomment below to test the property
+            //modelInstance.visible shouldBe ("TODO")
+        }
+
+        // to test the property `inStock` - Set stock status
+        should("test inStock") {
+            // uncomment below to test the property
+            //modelInstance.inStock shouldBe ("TODO")
+        }
+
+        // to test the property `avail` - Defines category's visibility status
+        should("test avail") {
+            // uncomment below to test the property
+            //modelInstance.avail shouldBe ("TODO")
+        }
+
+        // to test the property `availFrom` - Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.
+        should("test availFrom") {
+            // uncomment below to test the property
+            //modelInstance.availFrom shouldBe ("TODO")
+        }
+
+        // to test the property `productClass` - A categorization for the product
+        should("test productClass") {
+            // uncomment below to test the property
+            //modelInstance.productClass shouldBe ("TODO")
         }
 
         // to test the property `availableForView` - Specifies the set of visible/invisible products for users
@@ -99,40 +196,28 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.availableForView shouldBe ("TODO")
         }
 
-        // to test the property `weight` - Weight
-        should("test weight") {
+        // to test the property `storesIds` - Assign product to the stores that is specified by comma-separated stores' id
+        should("test storesIds") {
             // uncomment below to test the property
-            //modelInstance.weight shouldBe ("TODO")
+            //modelInstance.storesIds shouldBe ("TODO")
         }
 
-        // to test the property `weightUnit` - Weight Unit
-        should("test weightUnit") {
+        // to test the property `storeId` - Defines store id where the product should be found
+        should("test storeId") {
             // uncomment below to test the property
-            //modelInstance.weightUnit shouldBe ("TODO")
+            //modelInstance.storeId shouldBe ("TODO")
         }
 
-        // to test the property `dimensionsUnit` - Weight Unit
-        should("test dimensionsUnit") {
+        // to test the property `langId` - Language id
+        should("test langId") {
             // uncomment below to test the property
-            //modelInstance.dimensionsUnit shouldBe ("TODO")
+            //modelInstance.langId shouldBe ("TODO")
         }
 
-        // to test the property `increaseQuantity` - Defines the incremental changes in product quantity
-        should("test increaseQuantity") {
+        // to test the property `quantity` - Defines new product's quantity
+        should("test quantity") {
             // uncomment below to test the property
-            //modelInstance.increaseQuantity shouldBe ("TODO")
-        }
-
-        // to test the property `reduceQuantity` - Defines the decrement changes in product quantity
-        should("test reduceQuantity") {
-            // uncomment below to test the property
-            //modelInstance.reduceQuantity shouldBe ("TODO")
-        }
-
-        // to test the property `warehouseId` - This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
-        should("test warehouseId") {
-            // uncomment below to test the property
-            //modelInstance.warehouseId shouldBe ("TODO")
+            //modelInstance.quantity shouldBe ("TODO")
         }
 
         // to test the property `reserveQuantity` - This parameter allows to reserve/unreserve product quantity.
@@ -153,22 +238,106 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.backorderStatus shouldBe ("TODO")
         }
 
-        // to test the property `name` - Defines product's name that has to be updated
-        should("test name") {
+        // to test the property `increaseQuantity` - Defines the incremental changes in product quantity
+        should("test increaseQuantity") {
             // uncomment below to test the property
-            //modelInstance.name shouldBe ("TODO")
+            //modelInstance.increaseQuantity shouldBe ("TODO")
         }
 
-        // to test the property `sku` - Defines new product's sku
-        should("test sku") {
+        // to test the property `reduceQuantity` - Defines the decrement changes in product quantity
+        should("test reduceQuantity") {
             // uncomment below to test the property
-            //modelInstance.sku shouldBe ("TODO")
+            //modelInstance.reduceQuantity shouldBe ("TODO")
         }
 
-        // to test the property `visible` - Set visibility status
-        should("test visible") {
+        // to test the property `warehouseId` - This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
+        should("test warehouseId") {
             // uncomment below to test the property
-            //modelInstance.visible shouldBe ("TODO")
+            //modelInstance.warehouseId shouldBe ("TODO")
+        }
+
+        // to test the property `weight` - Weight
+        should("test weight") {
+            // uncomment below to test the property
+            //modelInstance.weight shouldBe ("TODO")
+        }
+
+        // to test the property `weightUnit` - Weight Unit
+        should("test weightUnit") {
+            // uncomment below to test the property
+            //modelInstance.weightUnit shouldBe ("TODO")
+        }
+
+        // to test the property `height` - Defines product's height
+        should("test height") {
+            // uncomment below to test the property
+            //modelInstance.height shouldBe ("TODO")
+        }
+
+        // to test the property `length` - Defines product's length
+        should("test length") {
+            // uncomment below to test the property
+            //modelInstance.length shouldBe ("TODO")
+        }
+
+        // to test the property `width` - Defines product's width
+        should("test width") {
+            // uncomment below to test the property
+            //modelInstance.width shouldBe ("TODO")
+        }
+
+        // to test the property `dimensionsUnit` - Weight Unit
+        should("test dimensionsUnit") {
+            // uncomment below to test the property
+            //modelInstance.dimensionsUnit shouldBe ("TODO")
+        }
+
+        // to test the property `isVirtual` - Defines whether the product is virtual
+        should("test isVirtual") {
+            // uncomment below to test the property
+            //modelInstance.isVirtual shouldBe ("TODO")
+        }
+
+        // to test the property `isFreeShipping` - Specifies product free shipping flag that has to be updated
+        should("test isFreeShipping") {
+            // uncomment below to test the property
+            //modelInstance.isFreeShipping shouldBe ("TODO")
+        }
+
+        // to test the property `gtin` - Global Trade Item Number. An GTIN is an identifier for trade items.
+        should("test gtin") {
+            // uncomment below to test the property
+            //modelInstance.gtin shouldBe ("TODO")
+        }
+
+        // to test the property `upc` - Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
+        should("test upc") {
+            // uncomment below to test the property
+            //modelInstance.upc shouldBe ("TODO")
+        }
+
+        // to test the property `mpn` - Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
+        should("test mpn") {
+            // uncomment below to test the property
+            //modelInstance.mpn shouldBe ("TODO")
+        }
+
+        // to test the property `ean` - European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
+        should("test ean") {
+            // uncomment below to test the property
+            //modelInstance.ean shouldBe ("TODO")
+        }
+
+        // to test the property `isbn` - International Standard Book Number. An ISBN is a unique identifier for books.
+        should("test isbn") {
+            // uncomment below to test the property
+            //modelInstance.isbn shouldBe ("TODO")
+        }
+
+        // to test the property `barcode` - A barcode is a unique code composed of numbers used as a product identifier.
+        should("test barcode") {
+            // uncomment below to test the property
+            //modelInstance.barcode shouldBe ("TODO")
         }
 
         // to test the property `manufacturer` - Defines product's manufacturer
@@ -207,18 +376,6 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.crossSellProductsIds shouldBe ("TODO")
         }
 
-        // to test the property `description` - Defines new product's description
-        should("test description") {
-            // uncomment below to test the property
-            //modelInstance.description shouldBe ("TODO")
-        }
-
-        // to test the property `shortDescription` - Defines short description
-        should("test shortDescription") {
-            // uncomment below to test the property
-            //modelInstance.shortDescription shouldBe ("TODO")
-        }
-
         // to test the property `metaTitle` - Defines unique meta title for each entity
         should("test metaTitle") {
             // uncomment below to test the property
@@ -237,136 +394,10 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.metaDescription shouldBe ("TODO")
         }
 
-        // to test the property `storeId` - Defines store id where the product should be found
-        should("test storeId") {
-            // uncomment below to test the property
-            //modelInstance.storeId shouldBe ("TODO")
-        }
-
-        // to test the property `langId` - Language id
-        should("test langId") {
-            // uncomment below to test the property
-            //modelInstance.langId shouldBe ("TODO")
-        }
-
-        // to test the property `inStock` - Set stock status
-        should("test inStock") {
-            // uncomment below to test the property
-            //modelInstance.inStock shouldBe ("TODO")
-        }
-
-        // to test the property `status` - Defines product's status
-        should("test status") {
-            // uncomment below to test the property
-            //modelInstance.status shouldBe ("TODO")
-        }
-
         // to test the property `seoUrl` - Defines unique URL for SEO
         should("test seoUrl") {
             // uncomment below to test the property
             //modelInstance.seoUrl shouldBe ("TODO")
-        }
-
-        // to test the property `reportRequestId` - Report request id
-        should("test reportRequestId") {
-            // uncomment below to test the property
-            //modelInstance.reportRequestId shouldBe ("TODO")
-        }
-
-        // to test the property `disableReportCache` - Disable report cache for current request
-        should("test disableReportCache") {
-            // uncomment below to test the property
-            //modelInstance.disableReportCache shouldBe ("TODO")
-        }
-
-        // to test the property `reindex` - Is reindex required
-        should("test reindex") {
-            // uncomment below to test the property
-            //modelInstance.reindex shouldBe ("TODO")
-        }
-
-        // to test the property `tags` - Product tags
-        should("test tags") {
-            // uncomment below to test the property
-            //modelInstance.tags shouldBe ("TODO")
-        }
-
-        // to test the property `clearCache` - Is cache clear required
-        should("test clearCache") {
-            // uncomment below to test the property
-            //modelInstance.clearCache shouldBe ("TODO")
-        }
-
-        // to test the property `gtin` - Global Trade Item Number. An GTIN is an identifier for trade items.
-        should("test gtin") {
-            // uncomment below to test the property
-            //modelInstance.gtin shouldBe ("TODO")
-        }
-
-        // to test the property `upc` - Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
-        should("test upc") {
-            // uncomment below to test the property
-            //modelInstance.upc shouldBe ("TODO")
-        }
-
-        // to test the property `mpn` - Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
-        should("test mpn") {
-            // uncomment below to test the property
-            //modelInstance.mpn shouldBe ("TODO")
-        }
-
-        // to test the property `ean` - European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
-        should("test ean") {
-            // uncomment below to test the property
-            //modelInstance.ean shouldBe ("TODO")
-        }
-
-        // to test the property `isbn` - International Standard Book Number. An ISBN is a unique identifier for books.
-        should("test isbn") {
-            // uncomment below to test the property
-            //modelInstance.isbn shouldBe ("TODO")
-        }
-
-        // to test the property `taxable` - Specifies whether a tax is charged
-        should("test taxable") {
-            // uncomment below to test the property
-            //modelInstance.taxable shouldBe ("TODO")
-        }
-
-        // to test the property `productClass` - A categorization for the product
-        should("test productClass") {
-            // uncomment below to test the property
-            //modelInstance.productClass shouldBe ("TODO")
-        }
-
-        // to test the property `height` - Defines product's height
-        should("test height") {
-            // uncomment below to test the property
-            //modelInstance.height shouldBe ("TODO")
-        }
-
-        // to test the property `length` - Defines product's length
-        should("test length") {
-            // uncomment below to test the property
-            //modelInstance.length shouldBe ("TODO")
-        }
-
-        // to test the property `width` - Defines product's width
-        should("test width") {
-            // uncomment below to test the property
-            //modelInstance.width shouldBe ("TODO")
-        }
-
-        // to test the property `harmonizedSystemCode` - Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
-        should("test harmonizedSystemCode") {
-            // uncomment below to test the property
-            //modelInstance.harmonizedSystemCode shouldBe ("TODO")
-        }
-
-        // to test the property `countryOfOrigin` - The country where the inventory item was made
-        should("test countryOfOrigin") {
-            // uncomment below to test the property
-            //modelInstance.countryOfOrigin shouldBe ("TODO")
         }
 
         // to test the property `searchKeywords` - Defines unique search keywords
@@ -375,58 +406,10 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.searchKeywords shouldBe ("TODO")
         }
 
-        // to test the property `barcode` - A barcode is a unique code composed of numbers used as a product identifier.
-        should("test barcode") {
+        // to test the property `tags` - Product tags
+        should("test tags") {
             // uncomment below to test the property
-            //modelInstance.barcode shouldBe ("TODO")
-        }
-
-        // to test the property `isVirtual` - Defines whether the product is virtual
-        should("test isVirtual") {
-            // uncomment below to test the property
-            //modelInstance.isVirtual shouldBe ("TODO")
-        }
-
-        // to test the property `isFreeShipping` - Specifies product free shipping flag that has to be updated
-        should("test isFreeShipping") {
-            // uncomment below to test the property
-            //modelInstance.isFreeShipping shouldBe ("TODO")
-        }
-
-        // to test the property `reservePrice` - Defines reserve price value
-        should("test reservePrice") {
-            // uncomment below to test the property
-            //modelInstance.reservePrice shouldBe ("TODO")
-        }
-
-        // to test the property `buyitnowPrice` - Defines buy it now value
-        should("test buyitnowPrice") {
-            // uncomment below to test the property
-            //modelInstance.buyitnowPrice shouldBe ("TODO")
-        }
-
-        // to test the property `availFrom` - Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.
-        should("test availFrom") {
-            // uncomment below to test the property
-            //modelInstance.availFrom shouldBe ("TODO")
-        }
-
-        // to test the property `taxClassId` - Defines tax classes where entity has to be added
-        should("test taxClassId") {
-            // uncomment below to test the property
-            //modelInstance.taxClassId shouldBe ("TODO")
-        }
-
-        // to test the property `type` - Defines product's type
-        should("test type") {
-            // uncomment below to test the property
-            //modelInstance.type shouldBe ("TODO")
-        }
-
-        // to test the property `avail` - Defines category's visibility status
-        should("test avail") {
-            // uncomment below to test the property
-            //modelInstance.avail shouldBe ("TODO")
+            //modelInstance.tags shouldBe ("TODO")
         }
 
         // to test the property `deliveryCode` - The delivery promise that applies to offer
@@ -435,34 +418,22 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.deliveryCode shouldBe ("TODO")
         }
 
-        // to test the property `checkProcessStatus` - Disable or enable check process status. Please note that the response will be slower due to additional requests to the store.
-        should("test checkProcessStatus") {
-            // uncomment below to test the property
-            //modelInstance.checkProcessStatus shouldBe ("TODO")
-        }
-
         // to test the property `packageDetails`
         should("test packageDetails") {
             // uncomment below to test the property
             //modelInstance.packageDetails shouldBe ("TODO")
         }
 
-        // to test the property `storesIds` - Assign product to the stores that is specified by comma-separated stores' id
-        should("test storesIds") {
+        // to test the property `countryOfOrigin` - The country where the inventory item was made
+        should("test countryOfOrigin") {
             // uncomment below to test the property
-            //modelInstance.storesIds shouldBe ("TODO")
+            //modelInstance.countryOfOrigin shouldBe ("TODO")
         }
 
-        // to test the property `manufacturerInfo`
-        should("test manufacturerInfo") {
+        // to test the property `harmonizedSystemCode` - Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
+        should("test harmonizedSystemCode") {
             // uncomment below to test the property
-            //modelInstance.manufacturerInfo shouldBe ("TODO")
-        }
-
-        // to test the property `productionPartnerIds` - Defines product production partner ids that has to be updated
-        should("test productionPartnerIds") {
-            // uncomment below to test the property
-            //modelInstance.productionPartnerIds shouldBe ("TODO")
+            //modelInstance.harmonizedSystemCode shouldBe ("TODO")
         }
 
         // to test the property `shippingTemplateId` - The numeric ID of the shipping template associated with the products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field shipping_zones[]->id.
@@ -505,6 +476,48 @@ class ProductUpdateTest : ShouldSpec() {
         should("test onSale") {
             // uncomment below to test the property
             //modelInstance.onSale shouldBe ("TODO")
+        }
+
+        // to test the property `productionPartnerIds` - Defines product production partner ids that has to be updated
+        should("test productionPartnerIds") {
+            // uncomment below to test the property
+            //modelInstance.productionPartnerIds shouldBe ("TODO")
+        }
+
+        // to test the property `manufacturerInfo`
+        should("test manufacturerInfo") {
+            // uncomment below to test the property
+            //modelInstance.manufacturerInfo shouldBe ("TODO")
+        }
+
+        // to test the property `reportRequestId` - Report request id
+        should("test reportRequestId") {
+            // uncomment below to test the property
+            //modelInstance.reportRequestId shouldBe ("TODO")
+        }
+
+        // to test the property `disableReportCache` - Disable report cache for current request
+        should("test disableReportCache") {
+            // uncomment below to test the property
+            //modelInstance.disableReportCache shouldBe ("TODO")
+        }
+
+        // to test the property `reindex` - Is reindex required
+        should("test reindex") {
+            // uncomment below to test the property
+            //modelInstance.reindex shouldBe ("TODO")
+        }
+
+        // to test the property `clearCache` - Is cache clear required
+        should("test clearCache") {
+            // uncomment below to test the property
+            //modelInstance.clearCache shouldBe ("TODO")
+        }
+
+        // to test the property `checkProcessStatus` - Disable or enable check process status. Please note that the response will be slower due to additional requests to the store.
+        should("test checkProcessStatus") {
+            // uncomment below to test the property
+            //modelInstance.checkProcessStatus shouldBe ("TODO")
         }
 
     }

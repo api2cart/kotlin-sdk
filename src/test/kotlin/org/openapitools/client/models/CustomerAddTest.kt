@@ -63,6 +63,12 @@ class CustomerAddTest : ShouldSpec() {
             //modelInstance.groupIds shouldBe ("TODO")
         }
 
+        // to test the property `status` - Defines customer's status
+        should("test status") {
+            // uncomment below to test the property
+            //modelInstance.status shouldBe ("TODO")
+        }
+
         // to test the property `createdTime` - Entity's date creation
         should("test createdTime") {
             // uncomment below to test the property
@@ -93,12 +99,6 @@ class CustomerAddTest : ShouldSpec() {
             //modelInstance.birthDay shouldBe ("TODO")
         }
 
-        // to test the property `status` - Defines customer's status
-        should("test status") {
-            // uncomment below to test the property
-            //modelInstance.status shouldBe ("TODO")
-        }
-
         // to test the property `newsLetterSubscription` - Defines whether the newsletter subscription is available for the user
         should("test newsLetterSubscription") {
             // uncomment below to test the property
@@ -121,12 +121,6 @@ class CustomerAddTest : ShouldSpec() {
         should("test website") {
             // uncomment below to test the property
             //modelInstance.website shouldBe ("TODO")
-        }
-
-        // to test the property `storeId` - Store Id
-        should("test storeId") {
-            // uncomment below to test the property
-            //modelInstance.storeId shouldBe ("TODO")
         }
 
         // to test the property `fax` - Defines customer's fax
@@ -157,6 +151,12 @@ class CustomerAddTest : ShouldSpec() {
         should("test country") {
             // uncomment below to test the property
             //modelInstance.country shouldBe ("TODO")
+        }
+
+        // to test the property `storeId` - Store Id
+        should("test storeId") {
+            // uncomment below to test the property
+            //modelInstance.storeId shouldBe ("TODO")
         }
 
         // to test the property `address`

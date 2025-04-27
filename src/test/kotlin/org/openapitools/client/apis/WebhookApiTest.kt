@@ -73,14 +73,14 @@ class WebhookApiTest : ShouldSpec() {
         // to test webhookList
         should("test webhookList") {
             // uncomment below to test webhookList
-            //val params : kotlin.String = id,entity,callback,fields // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
             //val entity : kotlin.String = product // kotlin.String | The entity you want to filter webhooks by (e.g. order or product)
             //val action : kotlin.String = add // kotlin.String | The action you want to filter webhooks by (e.g. add, update, or delete)
             //val active : kotlin.Boolean = true // kotlin.Boolean | The webhook status you want to filter webhooks by
             //val ids : kotlin.String = 3,14,25 // kotlin.String | List of сomma-separated webhook ids
-            //val result : WebhookList200Response = apiInstance.webhookList(params, start, count, entity, action, active, ids)
+            //val params : kotlin.String = id,entity,callback,fields // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val result : WebhookList200Response = apiInstance.webhookList(start, count, entity, action, active, ids, params)
             //result shouldBe ("TODO")
         }
 

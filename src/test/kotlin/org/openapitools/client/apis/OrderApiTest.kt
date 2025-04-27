@@ -58,21 +58,21 @@ class OrderApiTest : ShouldSpec() {
         // to test orderAbandonedList
         should("test orderAbandonedList") {
             // uncomment below to test orderAbandonedList
+            //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
+            //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val customerId : kotlin.String = 5 // kotlin.String | Retrieves orders specified by customer id
             //val customerEmail : kotlin.String = jubari@hannsgroup.com // kotlin.String | Retrieves orders specified by customer email
-            //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
-            //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
-            //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-            //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
-            //val skipEmptyEmail : kotlin.Boolean = true // kotlin.Boolean | Filter empty emails
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-            //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-            //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
-            //val params : kotlin.String = force_all // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
+            //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
+            //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
+            //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
+            //val skipEmptyEmail : kotlin.Boolean = true // kotlin.Boolean | Filter empty emails
             //val responseFields : kotlin.String = {return_code,pagination,result{order{id,customer{email},created_at,totals{total},order_products}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = force_all // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = customer // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : ModelResponseOrderAbandonedList = apiInstance.orderAbandonedList(customerId, customerEmail, createdTo, createdFrom, modifiedTo, modifiedFrom, skipEmptyEmail, storeId, pageCursor, count, start, params, responseFields, exclude)
+            //val result : ModelResponseOrderAbandonedList = apiInstance.orderAbandonedList(start, count, pageCursor, customerId, customerEmail, storeId, createdFrom, createdTo, modifiedFrom, modifiedTo, skipEmptyEmail, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -87,17 +87,13 @@ class OrderApiTest : ShouldSpec() {
         // to test orderCount
         should("test orderCount") {
             // uncomment below to test orderCount
+            //val orderIds : kotlin.String = 24,25 // kotlin.String | Counts orders specified by order ids
+            //val ids : kotlin.String = 24,25 // kotlin.String | Counts orders specified by ids
             //val customerId : kotlin.String = 5 // kotlin.String | Counts orders quantity specified by customer id
+            //val storeId : kotlin.String = 1 // kotlin.String | Counts orders quantity specified by store id
             //val customerEmail : kotlin.String = jubari@hannsgroup.com // kotlin.String | Counts orders quantity specified by customer email
             //val orderStatus : kotlin.String = Completed // kotlin.String | Counts orders quantity specified by order status
             //val orderStatusIds : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | Retrieves orders specified by order statuses
-            //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
-            //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
-            //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-            //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
-            //val storeId : kotlin.String = 1 // kotlin.String | Counts orders quantity specified by store id
-            //val ids : kotlin.String = 24,25 // kotlin.String | Counts orders specified by ids
-            //val orderIds : kotlin.String = 24,25 // kotlin.String | Counts orders specified by order ids
             //val ebayOrderStatus : kotlin.String = Active // kotlin.String | Counts orders quantity specified by order status
             //val financialStatus : kotlin.String = paid // kotlin.String | Counts orders quantity specified by financial status
             //val financialStatusIds : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | Retrieves orders count specified by financial status ids
@@ -107,7 +103,11 @@ class OrderApiTest : ShouldSpec() {
             //val deliveryMethod : kotlin.String = local // kotlin.String | Retrieves order with delivery method
             //val tags : kotlin.String = tag1,tag2 // kotlin.String | Order tags
             //val shipNodeType : kotlin.String = SellerFulfilled // kotlin.String | Retrieves order with ship node type
-            //val result : OrderCount200Response = apiInstance.orderCount(customerId, customerEmail, orderStatus, orderStatusIds, createdTo, createdFrom, modifiedTo, modifiedFrom, storeId, ids, orderIds, ebayOrderStatus, financialStatus, financialStatusIds, fulfillmentChannel, fulfillmentStatus, shippingMethod, deliveryMethod, tags, shipNodeType)
+            //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
+            //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
+            //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
+            //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
+            //val result : OrderCount200Response = apiInstance.orderCount(orderIds, ids, customerId, storeId, customerEmail, orderStatus, orderStatusIds, ebayOrderStatus, financialStatus, financialStatusIds, fulfillmentChannel, fulfillmentStatus, shippingMethod, deliveryMethod, tags, shipNodeType, createdFrom, createdTo, modifiedFrom, modifiedTo)
             //result shouldBe ("TODO")
         }
 
@@ -121,19 +121,19 @@ class OrderApiTest : ShouldSpec() {
         // to test orderFind
         should("test orderFind") {
             // uncomment below to test orderFind
+            //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
+            //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
             //val customerId : kotlin.String = 5 // kotlin.String | Retrieves orders specified by customer id
             //val customerEmail : kotlin.String = jubari@hannsgroup.com // kotlin.String | Retrieves orders specified by customer email
             //val orderStatus : kotlin.String = Completed // kotlin.String | Retrieves orders specified by order status
-            //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
-            //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-            //val params : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+            //val financialStatus : kotlin.String = paid // kotlin.String | Retrieves orders specified by financial status
             //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
             //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
             //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
             //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
-            //val financialStatus : kotlin.String = paid // kotlin.String | Retrieves orders specified by financial status
-            //val result : OrderFind200Response = apiInstance.orderFind(customerId, customerEmail, orderStatus, start, count, params, exclude, createdTo, createdFrom, modifiedTo, modifiedFrom, financialStatus)
+            //val params : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val exclude : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+            //val result : OrderFind200Response = apiInstance.orderFind(start, count, customerId, customerEmail, orderStatus, financialStatus, createdTo, createdFrom, modifiedTo, modifiedFrom, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -148,60 +148,60 @@ class OrderApiTest : ShouldSpec() {
         // to test orderInfo
         should("test orderInfo") {
             // uncomment below to test orderInfo
-            //val orderId : kotlin.String = 25 // kotlin.String | Retrieves order’s info specified by order id
             //val id : kotlin.String = 10 // kotlin.String | Retrieves order info specified by id
+            //val orderId : kotlin.String = 25 // kotlin.String | Retrieves order’s info specified by order id
+            //val storeId : kotlin.String = 1 // kotlin.String | Defines store id where the order should be found
             //val params : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val responseFields : kotlin.String = {result{order_id,customer,totals,address,items,bundles,status}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val storeId : kotlin.String = 1 // kotlin.String | Defines store id where the order should be found
             //val enableCache : kotlin.Boolean = true // kotlin.Boolean | If the value is 'true' and order exist in our cache, we will return order.info response from cache
             //val useLatestApiVersion : kotlin.Boolean = true // kotlin.Boolean | Use the latest platform API version
-            //val result : OrderInfo200Response = apiInstance.orderInfo(orderId, id, params, responseFields, exclude, storeId, enableCache, useLatestApiVersion)
+            //val result : OrderInfo200Response = apiInstance.orderInfo(id, orderId, storeId, params, responseFields, exclude, enableCache, useLatestApiVersion)
             //result shouldBe ("TODO")
         }
 
         // to test orderList
         should("test orderList") {
             // uncomment below to test orderList
-            //val customerId : kotlin.String = 5 // kotlin.String | Retrieves orders specified by customer id
-            //val customerEmail : kotlin.String = jubari@hannsgroup.com // kotlin.String | Retrieves orders specified by customer email
-            //val phone : kotlin.String = 56686868654 // kotlin.String | Filter orders by customer's phone number
-            //val orderStatus : kotlin.String = Completed // kotlin.String | Retrieves orders specified by order status
-            //val orderStatusIds : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | Retrieves orders specified by order statuses
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
             //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve orders via cursor-based pagination (it can't be used with any other filtering parameter)
+            //val ids : kotlin.String = 24,25 // kotlin.String | Retrieves orders specified by ids
+            //val orderIds : kotlin.String = 24,25 // kotlin.String | Retrieves orders specified by order ids
+            //val sinceId : kotlin.String = 56 // kotlin.String | Retrieve entities starting from the specified id.
+            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
+            //val customerId : kotlin.String = 5 // kotlin.String | Retrieves orders specified by customer id
+            //val customerEmail : kotlin.String = jubari@hannsgroup.com // kotlin.String | Retrieves orders specified by customer email
+            //val basketId : kotlin.String = 1 // kotlin.String | Retrieves order’s info specified by basket id.
+            //val currencyId : kotlin.String = usd // kotlin.String | Currency Id
+            //val phone : kotlin.String = 56686868654 // kotlin.String | Filter orders by customer's phone number
+            //val orderStatus : kotlin.String = Completed // kotlin.String | Retrieves orders specified by order status
+            //val orderStatusIds : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | Retrieves orders specified by order statuses
+            //val ebayOrderStatus : kotlin.String = Active // kotlin.String | Retrieves orders specified by order status
+            //val financialStatus : kotlin.String = paid // kotlin.String | Retrieves orders specified by financial status
+            //val financialStatusIds : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | Retrieves orders specified by financial status ids
+            //val fulfillmentStatus : kotlin.String = fulfilled // kotlin.String | Create order with fulfillment status
+            //val returnStatus : kotlin.String = RETURNED // kotlin.String | Retrieves orders specified by return status
+            //val fulfillmentChannel : kotlin.String = local // kotlin.String | Retrieves order with a fulfillment channel
+            //val shippingMethod : kotlin.String = flatrate_flatrate // kotlin.String | Retrieve entities according to shipping method
+            //val skipOrderIds : kotlin.String = 24,25 // kotlin.String | Skipped orders by ids
+            //val isDeleted : kotlin.Boolean = true // kotlin.Boolean | Filter deleted orders
+            //val shippingCountryIso3 : kotlin.String = DEU // kotlin.String | Retrieve entities according to shipping country
+            //val deliveryMethod : kotlin.String = local // kotlin.String | Retrieves order with delivery method
+            //val shipNodeType : kotlin.String = SellerFulfilled // kotlin.String | Retrieves order with ship node type
+            //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
+            //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
+            //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
+            //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
+            //val tags : kotlin.String = tag1,tag2 // kotlin.String | Order tags
             //val sortBy : kotlin.String = modified_at // kotlin.String | Set field to sort by
             //val sortDirection : kotlin.String = asc // kotlin.String | Set sorting direction
             //val params : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val responseFields : kotlin.String = {return_code,pagination,result{order{order_id,customer,totals,address,items,bundles,status}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
-            //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
-            //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-            //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
-            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val ids : kotlin.String = 24,25 // kotlin.String | Retrieves orders specified by ids
-            //val orderIds : kotlin.String = 24,25 // kotlin.String | Retrieves orders specified by order ids
-            //val ebayOrderStatus : kotlin.String = Active // kotlin.String | Retrieves orders specified by order status
-            //val basketId : kotlin.String = 1 // kotlin.String | Retrieves order’s info specified by basket id.
-            //val financialStatus : kotlin.String = paid // kotlin.String | Retrieves orders specified by financial status
-            //val financialStatusIds : kotlin.collections.List<kotlin.String> =  // kotlin.collections.List<kotlin.String> | Retrieves orders specified by financial status ids
-            //val fulfillmentStatus : kotlin.String = fulfilled // kotlin.String | Create order with fulfillment status
-            //val fulfillmentChannel : kotlin.String = local // kotlin.String | Retrieves order with a fulfillment channel
-            //val shippingMethod : kotlin.String = flatrate_flatrate // kotlin.String | Retrieve entities according to shipping method
-            //val skipOrderIds : kotlin.String = 24,25 // kotlin.String | Skipped orders by ids
-            //val sinceId : kotlin.String = 56 // kotlin.String | Retrieve entities starting from the specified id.
-            //val isDeleted : kotlin.Boolean = true // kotlin.Boolean | Filter deleted orders
-            //val shippingCountryIso3 : kotlin.String = DEU // kotlin.String | Retrieve entities according to shipping country
             //val enableCache : kotlin.Boolean = true // kotlin.Boolean | If the value is 'true', we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add)
-            //val deliveryMethod : kotlin.String = local // kotlin.String | Retrieves order with delivery method
-            //val tags : kotlin.String = tag1,tag2 // kotlin.String | Order tags
-            //val shipNodeType : kotlin.String = SellerFulfilled // kotlin.String | Retrieves order with ship node type
-            //val currencyId : kotlin.String = usd // kotlin.String | Currency Id
-            //val returnStatus : kotlin.String = RETURNED // kotlin.String | Retrieves orders specified by return status
             //val useLatestApiVersion : kotlin.Boolean = true // kotlin.Boolean | Use the latest platform API version
-            //val result : ModelResponseOrderList = apiInstance.orderList(customerId, customerEmail, phone, orderStatus, orderStatusIds, start, count, pageCursor, sortBy, sortDirection, params, responseFields, exclude, createdTo, createdFrom, modifiedTo, modifiedFrom, storeId, ids, orderIds, ebayOrderStatus, basketId, financialStatus, financialStatusIds, fulfillmentStatus, fulfillmentChannel, shippingMethod, skipOrderIds, sinceId, isDeleted, shippingCountryIso3, enableCache, deliveryMethod, tags, shipNodeType, currencyId, returnStatus, useLatestApiVersion)
+            //val result : ModelResponseOrderList = apiInstance.orderList(start, count, pageCursor, ids, orderIds, sinceId, storeId, customerId, customerEmail, basketId, currencyId, phone, orderStatus, orderStatusIds, ebayOrderStatus, financialStatus, financialStatusIds, fulfillmentStatus, returnStatus, fulfillmentChannel, shippingMethod, skipOrderIds, isDeleted, shippingCountryIso3, deliveryMethod, shipNodeType, createdTo, createdFrom, modifiedTo, modifiedFrom, tags, sortBy, sortDirection, params, responseFields, exclude, enableCache, useLatestApiVersion)
             //result shouldBe ("TODO")
         }
 
@@ -279,11 +279,11 @@ class OrderApiTest : ShouldSpec() {
             //val id : kotlin.String = 10 // kotlin.String | Entity id
             //val orderId : kotlin.String = 25 // kotlin.String | Defines the order id
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
-            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val responseFields : kotlin.String = {result{id,order_id,shipment_provider,tracking_numbers{tracking_number},items{product_id,quantity}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val result : OrderShipmentInfo200Response = apiInstance.orderShipmentInfo(id, orderId, start, params, responseFields, exclude, storeId)
+            //val responseFields : kotlin.String = {result{id,order_id,shipment_provider,tracking_numbers{tracking_number},items{product_id,quantity}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+            //val result : OrderShipmentInfo200Response = apiInstance.orderShipmentInfo(id, orderId, start, storeId, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -291,18 +291,18 @@ class OrderApiTest : ShouldSpec() {
         should("test orderShipmentList") {
             // uncomment below to test orderShipmentList
             //val orderId : kotlin.String = 25 // kotlin.String | Retrieves shipments specified by order id
-            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val responseFields : kotlin.String = {status_code,pagination,result{shipment{id,order_id,shipment_provider,tracking_numbers{tracking_number},items{product_id,quantity}}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
             //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
             //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
             //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val result : ModelResponseOrderShipmentList = apiInstance.orderShipmentList(orderId, pageCursor, start, count, params, responseFields, exclude, createdFrom, createdTo, modifiedFrom, modifiedTo, storeId)
+            //val responseFields : kotlin.String = {status_code,pagination,result{shipment{id,order_id,shipment_provider,tracking_numbers{tracking_number},items{product_id,quantity}}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+            //val result : ModelResponseOrderShipmentList = apiInstance.orderShipmentList(orderId, start, count, pageCursor, storeId, createdFrom, createdTo, modifiedFrom, modifiedTo, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -337,12 +337,12 @@ class OrderApiTest : ShouldSpec() {
             // uncomment below to test orderTransactionList
             //val orderIds : kotlin.String = 24,25 // kotlin.String | Retrieves order transactions specified by order ids
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val responseFields : kotlin.String = {return_code,pagination,result{transactions_count,transactions{id,transaction_id,status,description,settlement_amount,gateway,card_brand,card_last_four}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-            //val result : ModelResponseOrderTransactionList = apiInstance.orderTransactionList(orderIds, count, storeId, params, responseFields, exclude, pageCursor)
+            //val result : ModelResponseOrderTransactionList = apiInstance.orderTransactionList(orderIds, count, pageCursor, storeId, params, responseFields, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -352,20 +352,20 @@ class OrderApiTest : ShouldSpec() {
             //val orderId : kotlin.String = 25 // kotlin.String | Defines the orders specified by order id
             //val storeId : kotlin.String = 1 // kotlin.String | Defines store id where the order should be found
             //val orderStatus : kotlin.String = Completed // kotlin.String | Defines new order's status
+            //val financialStatus : kotlin.String = paid // kotlin.String | Update order financial status to specified
+            //val fulfillmentStatus : kotlin.String = fulfilled // kotlin.String | Create order with fulfillment status
             //val cancellationReason : kotlin.String = ORDER_UNPAID // kotlin.String | Defines the cancellation reason when the order will be canceled
+            //val orderPaymentMethod : kotlin.String = PayPal // kotlin.String | Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
             //val comment : kotlin.String = This coole order // kotlin.String | Specifies order comment
             //val adminComment : kotlin.String = Test admin comment // kotlin.String | Specifies admin's order comment
             //val adminPrivateComment : kotlin.String = Test admin private comment // kotlin.String | Specifies private admin's order comment
+            //val invoiceAdminComment : kotlin.String = Test admin comment // kotlin.String | Specifies admin's order invoice comment
             //val dateModified : kotlin.String = 2014-05-05 05:05:00 // kotlin.String | Specifies order's  modification date
             //val dateFinished : kotlin.String = 2014-06-05 05:05:00 // kotlin.String | Specifies order's  finished date
-            //val financialStatus : kotlin.String = paid // kotlin.String | Update order financial status to specified
-            //val fulfillmentStatus : kotlin.String = fulfilled // kotlin.String | Create order with fulfillment status
-            //val orderPaymentMethod : kotlin.String = PayPal // kotlin.String | Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
             //val sendNotifications : kotlin.Boolean = true // kotlin.Boolean | Send notifications to customer after order was created
-            //val origin : kotlin.String = newsletter // kotlin.String | The source of the order
             //val createInvoice : kotlin.Boolean = true // kotlin.Boolean | Determines whether an invoice should be created if it has not already been created
-            //val invoiceAdminComment : kotlin.String = Test admin comment // kotlin.String | Specifies admin's order invoice comment
-            //val result : AccountConfigUpdate200Response = apiInstance.orderUpdate(orderId, storeId, orderStatus, cancellationReason, comment, adminComment, adminPrivateComment, dateModified, dateFinished, financialStatus, fulfillmentStatus, orderPaymentMethod, sendNotifications, origin, createInvoice, invoiceAdminComment)
+            //val origin : kotlin.String = newsletter // kotlin.String | The source of the order
+            //val result : AccountConfigUpdate200Response = apiInstance.orderUpdate(orderId, storeId, orderStatus, financialStatus, fulfillmentStatus, cancellationReason, orderPaymentMethod, comment, adminComment, adminPrivateComment, invoiceAdminComment, dateModified, dateFinished, sendNotifications, createInvoice, origin)
             //result shouldBe ("TODO")
         }
 

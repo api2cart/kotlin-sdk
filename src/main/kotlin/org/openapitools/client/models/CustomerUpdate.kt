@@ -37,9 +37,9 @@ import com.squareup.moshi.JsonClass
  * @param consents Defines consents to notifications
  * @param tags Customer tags
  * @param gender Defines customer's gender
- * @param storeId Store Id
  * @param note The customer note.
  * @param status Defines customer's status
+ * @param storeId Store Id
  * @param address 
  */
 
@@ -98,10 +98,6 @@ data class CustomerUpdate (
     @Json(name = "gender")
     val gender: kotlin.String? = null,
 
-    /* Store Id */
-    @Json(name = "store_id")
-    val storeId: kotlin.String? = null,
-
     /* The customer note. */
     @Json(name = "note")
     val note: kotlin.String? = null,
@@ -109,6 +105,10 @@ data class CustomerUpdate (
     /* Defines customer's status */
     @Json(name = "status")
     val status: kotlin.String? = null,
+
+    /* Store Id */
+    @Json(name = "store_id")
+    val storeId: kotlin.String? = null,
 
     @Json(name = "address")
     val address: kotlin.collections.List<CustomerUpdateAddressInner>? = null

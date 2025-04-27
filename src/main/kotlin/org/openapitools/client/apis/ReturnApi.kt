@@ -260,9 +260,9 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      * @param id Entity id
      * @param orderId Defines the order id (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_products")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ReturnInfo200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -272,8 +272,8 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun returnInfo(id: kotlin.String, orderId: kotlin.String? = null, storeId: kotlin.String? = null, params: kotlin.String? = "id,order_products", exclude: kotlin.String? = null, responseFields: kotlin.String? = null) : ReturnInfo200Response {
-        val localVarResponse = returnInfoWithHttpInfo(id = id, orderId = orderId, storeId = storeId, params = params, exclude = exclude, responseFields = responseFields)
+    fun returnInfo(id: kotlin.String, orderId: kotlin.String? = null, storeId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,order_products", exclude: kotlin.String? = null) : ReturnInfo200Response {
+        val localVarResponse = returnInfoWithHttpInfo(id = id, orderId = orderId, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ReturnInfo200Response
@@ -296,17 +296,17 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      * @param id Entity id
      * @param orderId Defines the order id (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_products")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ApiResponse<ReturnInfo200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun returnInfoWithHttpInfo(id: kotlin.String, orderId: kotlin.String?, storeId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ReturnInfo200Response?> {
-        val localVariableConfig = returnInfoRequestConfig(id = id, orderId = orderId, storeId = storeId, params = params, exclude = exclude, responseFields = responseFields)
+    fun returnInfoWithHttpInfo(id: kotlin.String, orderId: kotlin.String?, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ReturnInfo200Response?> {
+        val localVariableConfig = returnInfoRequestConfig(id = id, orderId = orderId, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ReturnInfo200Response>(
             localVariableConfig
@@ -319,12 +319,12 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      * @param id Entity id
      * @param orderId Defines the order id (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_products")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return RequestConfig
      */
-    fun returnInfoRequestConfig(id: kotlin.String, orderId: kotlin.String?, storeId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun returnInfoRequestConfig(id: kotlin.String, orderId: kotlin.String?, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -335,14 +335,14 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
                 if (params != null) {
                     put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -364,9 +364,6 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_products")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param orderId Defines the order id (optional)
      * @param orderIds Retrieves return requests specified by order ids (optional)
      * @param customerId Retrieves return requests specified by customer id (optional)
@@ -377,6 +374,9 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_products")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @return ModelResponseReturnList
@@ -388,8 +388,8 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun returnList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, params: kotlin.String? = "id,order_products", exclude: kotlin.String? = null, responseFields: kotlin.String? = null, orderId: kotlin.String? = null, orderIds: kotlin.String? = null, customerId: kotlin.String? = null, storeId: kotlin.String? = null, status: kotlin.String? = null, returnType: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false) : ModelResponseReturnList {
-        val localVarResponse = returnListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, params = params, exclude = exclude, responseFields = responseFields, orderId = orderId, orderIds = orderIds, customerId = customerId, storeId = storeId, status = status, returnType = returnType, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
+    fun returnList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, orderId: kotlin.String? = null, orderIds: kotlin.String? = null, customerId: kotlin.String? = null, storeId: kotlin.String? = null, status: kotlin.String? = null, returnType: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,order_products", exclude: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false) : ModelResponseReturnList {
+        val localVarResponse = returnListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, orderId = orderId, orderIds = orderIds, customerId = customerId, storeId = storeId, status = status, returnType = returnType, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseReturnList
@@ -412,9 +412,6 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_products")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param orderId Defines the order id (optional)
      * @param orderIds Retrieves return requests specified by order ids (optional)
      * @param customerId Retrieves return requests specified by customer id (optional)
@@ -425,6 +422,9 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_products")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @return ApiResponse<ModelResponseReturnList?>
@@ -433,8 +433,8 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun returnListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?, orderId: kotlin.String?, orderIds: kotlin.String?, customerId: kotlin.String?, storeId: kotlin.String?, status: kotlin.String?, returnType: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : ApiResponse<ModelResponseReturnList?> {
-        val localVariableConfig = returnListRequestConfig(start = start, count = count, pageCursor = pageCursor, params = params, exclude = exclude, responseFields = responseFields, orderId = orderId, orderIds = orderIds, customerId = customerId, storeId = storeId, status = status, returnType = returnType, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
+    fun returnListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, orderId: kotlin.String?, orderIds: kotlin.String?, customerId: kotlin.String?, storeId: kotlin.String?, status: kotlin.String?, returnType: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : ApiResponse<ModelResponseReturnList?> {
+        val localVariableConfig = returnListRequestConfig(start = start, count = count, pageCursor = pageCursor, orderId = orderId, orderIds = orderIds, customerId = customerId, storeId = storeId, status = status, returnType = returnType, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
 
         return request<Unit, ModelResponseReturnList>(
             localVariableConfig
@@ -447,9 +447,6 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_products")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param orderId Defines the order id (optional)
      * @param orderIds Retrieves return requests specified by order ids (optional)
      * @param customerId Retrieves return requests specified by customer id (optional)
@@ -460,11 +457,14 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_products")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @return RequestConfig
      */
-    fun returnListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?, orderId: kotlin.String?, orderIds: kotlin.String?, customerId: kotlin.String?, storeId: kotlin.String?, status: kotlin.String?, returnType: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun returnListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, orderId: kotlin.String?, orderIds: kotlin.String?, customerId: kotlin.String?, storeId: kotlin.String?, status: kotlin.String?, returnType: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -476,15 +476,6 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
                 }
                 if (pageCursor != null) {
                     put("page_cursor", listOf(pageCursor.toString()))
-                }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (orderId != null) {
                     put("order_id", listOf(orderId.toString()))
@@ -515,6 +506,15 @@ class ReturnApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
                 }
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
                 if (reportRequestId != null) {
                     put("report_request_id", listOf(reportRequestId.toString()))

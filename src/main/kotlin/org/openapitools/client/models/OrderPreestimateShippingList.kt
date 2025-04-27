@@ -25,10 +25,10 @@ import com.squareup.moshi.JsonClass
  *
  * @param shippCountry Specifies shipping country code
  * @param orderItem 
- * @param storeId Store Id
  * @param warehouseId This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
- * @param customerEmail Retrieves orders specified by customer email
  * @param customerId Retrieves orders specified by customer id
+ * @param customerEmail Retrieves orders specified by customer email
+ * @param storeId Store Id
  * @param shippAddress1 Specifies first shipping address
  * @param shippCity Specifies shipping city
  * @param shippPostcode Specifies shipping postcode
@@ -47,21 +47,21 @@ data class OrderPreestimateShippingList (
     @Json(name = "order_item")
     val orderItem: kotlin.collections.List<OrderPreestimateShippingListOrderItemInner>,
 
-    /* Store Id */
-    @Json(name = "store_id")
-    val storeId: kotlin.String? = null,
-
     /* This parameter is used for selecting a warehouse where you need to set/modify a product quantity. */
     @Json(name = "warehouse_id")
     val warehouseId: kotlin.String? = null,
+
+    /* Retrieves orders specified by customer id */
+    @Json(name = "customer_id")
+    val customerId: kotlin.String? = null,
 
     /* Retrieves orders specified by customer email */
     @Json(name = "customer_email")
     val customerEmail: kotlin.String? = null,
 
-    /* Retrieves orders specified by customer id */
-    @Json(name = "customer_id")
-    val customerId: kotlin.String? = null,
+    /* Store Id */
+    @Json(name = "store_id")
+    val storeId: kotlin.String? = null,
 
     /* Specifies first shipping address */
     @Json(name = "shipp_address_1")

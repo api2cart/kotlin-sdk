@@ -13,7 +13,7 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 
 <a id="basketInfo"></a>
 # **basketInfo**
-> BasketInfo200Response basketInfo(id, storeId, params, exclude, responseFields)
+> BasketInfo200Response basketInfo(id, storeId, responseFields, params, exclude)
 
 basket.info
 
@@ -28,11 +28,11 @@ Retrieve basket information.
 val apiInstance = BasketApi()
 val id : kotlin.String = 10 // kotlin.String | Entity id
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
+val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 try {
-    val result : BasketInfo200Response = apiInstance.basketInfo(id, storeId, params, exclude, responseFields)
+    val result : BasketInfo200Response = apiInstance.basketInfo(id, storeId, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling BasketApi#basketInfo")
@@ -46,11 +46,11 @@ try {
 ### Parameters
 | **id** | **kotlin.String**| Entity id | |
 | **storeId** | **kotlin.String**| Store Id | [optional] |
+| **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;force_all&quot;] |
-| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -241,7 +241,7 @@ Configure ApiKeyAuth:
 
 <a id="basketLiveShippingServiceList"></a>
 # **basketLiveShippingServiceList**
-> BasketLiveShippingServiceList200Response basketLiveShippingServiceList(storeId, start, count)
+> BasketLiveShippingServiceList200Response basketLiveShippingServiceList(start, count, storeId)
 
 basket.live_shipping_service.list
 
@@ -254,11 +254,11 @@ Retrieve a list of live shipping rate services.
 //import org.openapitools.client.models.*
 
 val apiInstance = BasketApi()
-val storeId : kotlin.String = 1 // kotlin.String | Store Id
 val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
 val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+val storeId : kotlin.String = 1 // kotlin.String | Store Id
 try {
-    val result : BasketLiveShippingServiceList200Response = apiInstance.basketLiveShippingServiceList(storeId, start, count)
+    val result : BasketLiveShippingServiceList200Response = apiInstance.basketLiveShippingServiceList(start, count, storeId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling BasketApi#basketLiveShippingServiceList")
@@ -270,11 +270,11 @@ try {
 ```
 
 ### Parameters
-| **storeId** | **kotlin.String**| Store Id | [optional] |
 | **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
+| **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **storeId** | **kotlin.String**| Store Id | [optional] |
 
 ### Return type
 

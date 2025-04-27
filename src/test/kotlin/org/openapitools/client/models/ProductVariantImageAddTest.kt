@@ -49,6 +49,12 @@ class ProductVariantImageAddTest : ShouldSpec() {
             //modelInstance.productId shouldBe ("TODO")
         }
 
+        // to test the property `storeId` - Store Id
+        should("test storeId") {
+            // uncomment below to test the property
+            //modelInstance.storeId shouldBe ("TODO")
+        }
+
         // to test the property `url` - Defines URL of the image that has to be added
         should("test url") {
             // uncomment below to test the property
@@ -77,12 +83,6 @@ class ProductVariantImageAddTest : ShouldSpec() {
         should("test position") {
             // uncomment below to test the property
             //modelInstance.position shouldBe ("TODO")
-        }
-
-        // to test the property `storeId` - Store Id
-        should("test storeId") {
-            // uncomment below to test the property
-            //modelInstance.storeId shouldBe ("TODO")
         }
 
         // to test the property `optionId` - Defines option id of the product variant for which the image will be added

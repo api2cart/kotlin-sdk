@@ -33,27 +33,27 @@ class TaxApiTest : ShouldSpec() {
             //val taxClassId : kotlin.String = 9 // kotlin.String | Retrieves taxes specified by class id
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val langId : kotlin.String = 3 // kotlin.String | Language id
-            //val params : kotlin.String = tax_class_id,tax // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val responseFields : kotlin.String = {result{id,name,tax,tax_rates{id,countries{id,name,states},cities,address,zip_codes{is_range,range,fields}}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = tax_class_id,tax // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = tax_class_id,tax // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : ModelResponseTaxClassInfo = apiInstance.taxClassInfo(taxClassId, storeId, langId, params, responseFields, exclude)
+            //val result : ModelResponseTaxClassInfo = apiInstance.taxClassInfo(taxClassId, storeId, langId, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
         // to test taxClassList
         should("test taxClassList") {
             // uncomment below to test taxClassList
+            //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
+            //val findValue : kotlin.String = tax // kotlin.String | Entity search that is specified by some value
+            //val findWhere : kotlin.String = name // kotlin.String | Tax class search that is specified by field
             //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
             //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
             //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
             //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
-            //val findValue : kotlin.String = tax // kotlin.String | Entity search that is specified by some value
-            //val findWhere : kotlin.String = name // kotlin.String | Tax class search that is specified by field
-            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val result : ModelResponseTaxClassList = apiInstance.taxClassList(createdTo, createdFrom, modifiedTo, modifiedFrom, findValue, findWhere, storeId, count, pageCursor, responseFields)
+            //val result : ModelResponseTaxClassList = apiInstance.taxClassList(count, pageCursor, storeId, findValue, findWhere, createdTo, createdFrom, modifiedTo, modifiedFrom, responseFields)
             //result shouldBe ("TODO")
         }
 

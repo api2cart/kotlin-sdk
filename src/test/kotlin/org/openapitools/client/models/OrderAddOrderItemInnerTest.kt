@@ -75,6 +75,12 @@ class OrderAddOrderItemInnerTest : ShouldSpec() {
             //modelInstance.orderItemTax shouldBe ("TODO")
         }
 
+        // to test the property `orderItemPriceIncludesTax` - Defines if item price includes tax
+        should("test orderItemPriceIncludesTax") {
+            // uncomment below to test the property
+            //modelInstance.orderItemPriceIncludesTax shouldBe ("TODO")
+        }
+
         // to test the property `orderItemParent` - Index of the parent grouped/bundle product
         should("test orderItemParent") {
             // uncomment below to test the property
@@ -97,12 +103,6 @@ class OrderAddOrderItemInnerTest : ShouldSpec() {
         should("test orderItemAllowShipItemsSeparately") {
             // uncomment below to test the property
             //modelInstance.orderItemAllowShipItemsSeparately shouldBe ("TODO")
-        }
-
-        // to test the property `orderItemPriceIncludesTax` - Defines if item price includes tax
-        should("test orderItemPriceIncludesTax") {
-            // uncomment below to test the property
-            //modelInstance.orderItemPriceIncludesTax shouldBe ("TODO")
         }
 
         // to test the property `orderItemOption`

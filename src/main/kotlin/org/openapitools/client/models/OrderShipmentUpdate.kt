@@ -24,14 +24,14 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param shipmentId Shipment id indicates the number of delivery
- * @param storeId Store Id
  * @param orderId Defines the order that will be updated
- * @param trackingNumbers Defines shipment's tracking numbers that have to be added</br> How set tracking numbers to appropriate carrier:<ul><li>tracking_numbers[]=a2c.demo1,a2c.demo2 - set default carrier</li><li>tracking_numbers[<b>carrier_id</b>]=a2c.demo - set appropriate carrier</li></ul>To get the list of carriers IDs that are available in your store, use the <a href = \"https://api2cart.com/docs/#/cart/CartInfo\">cart.info</a > method
- * @param replace Allows rewrite tracking numbers
- * @param isShipped Defines shipment's status
- * @param trackingLink Defines custom tracking link
- * @param deliveredAt Defines the date of delivery
+ * @param storeId Store Id
  * @param shipmentProvider Defines company name that provide tracking of shipment
+ * @param trackingNumbers Defines shipment's tracking numbers that have to be added</br> How set tracking numbers to appropriate carrier:<ul><li>tracking_numbers[]=a2c.demo1,a2c.demo2 - set default carrier</li><li>tracking_numbers[<b>carrier_id</b>]=a2c.demo - set appropriate carrier</li></ul>To get the list of carriers IDs that are available in your store, use the <a href = \"https://api2cart.com/docs/#/cart/CartInfo\">cart.info</a > method
+ * @param trackingLink Defines custom tracking link
+ * @param isShipped Defines shipment's status
+ * @param deliveredAt Defines the date of delivery
+ * @param replace Allows rewrite tracking numbers
  */
 
 
@@ -41,37 +41,37 @@ data class OrderShipmentUpdate (
     @Json(name = "shipment_id")
     val shipmentId: kotlin.String,
 
+    /* Defines the order that will be updated */
+    @Json(name = "order_id")
+    val orderId: kotlin.String? = null,
+
     /* Store Id */
     @Json(name = "store_id")
     val storeId: kotlin.String? = null,
 
-    /* Defines the order that will be updated */
-    @Json(name = "order_id")
-    val orderId: kotlin.String? = null,
+    /* Defines company name that provide tracking of shipment */
+    @Json(name = "shipment_provider")
+    val shipmentProvider: kotlin.String? = null,
 
     /* Defines shipment's tracking numbers that have to be added</br> How set tracking numbers to appropriate carrier:<ul><li>tracking_numbers[]=a2c.demo1,a2c.demo2 - set default carrier</li><li>tracking_numbers[<b>carrier_id</b>]=a2c.demo - set appropriate carrier</li></ul>To get the list of carriers IDs that are available in your store, use the <a href = \"https://api2cart.com/docs/#/cart/CartInfo\">cart.info</a > method */
     @Json(name = "tracking_numbers")
     val trackingNumbers: kotlin.collections.List<OrderShipmentAddTrackingNumbersInner>? = null,
 
-    /* Allows rewrite tracking numbers */
-    @Json(name = "replace")
-    val replace: kotlin.Boolean? = true,
+    /* Defines custom tracking link */
+    @Json(name = "tracking_link")
+    val trackingLink: kotlin.String? = null,
 
     /* Defines shipment's status */
     @Json(name = "is_shipped")
     val isShipped: kotlin.Boolean? = true,
 
-    /* Defines custom tracking link */
-    @Json(name = "tracking_link")
-    val trackingLink: kotlin.String? = null,
-
     /* Defines the date of delivery */
     @Json(name = "delivered_at")
     val deliveredAt: kotlin.String? = null,
 
-    /* Defines company name that provide tracking of shipment */
-    @Json(name = "shipment_provider")
-    val shipmentProvider: kotlin.String? = null
+    /* Allows rewrite tracking numbers */
+    @Json(name = "replace")
+    val replace: kotlin.Boolean? = true
 
 ) {
 

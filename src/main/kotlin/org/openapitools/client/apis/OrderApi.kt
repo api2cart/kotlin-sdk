@@ -77,19 +77,19 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * order.abandoned.list
      * Get list of orders that were left by customers before completing the order.
+     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param customerId Retrieves orders specified by customer id (optional)
      * @param customerEmail Retrieves orders specified by customer email (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param skipEmptyEmail Filter empty emails (optional, default to false)
      * @param storeId Store Id (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "customer,totals,items")
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param skipEmptyEmail Filter empty emails (optional, default to false)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "customer,totals,items")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseOrderAbandonedList
      * @throws IllegalStateException If the request is not correctly configured
@@ -100,8 +100,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun orderAbandonedList(customerId: kotlin.String? = null, customerEmail: kotlin.String? = null, createdTo: kotlin.String? = null, createdFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, skipEmptyEmail: kotlin.Boolean? = false, storeId: kotlin.String? = null, pageCursor: kotlin.String? = null, count: kotlin.Int? = 10, start: kotlin.Int? = 0, params: kotlin.String? = "customer,totals,items", responseFields: kotlin.String? = null, exclude: kotlin.String? = null) : ModelResponseOrderAbandonedList {
-        val localVarResponse = orderAbandonedListWithHttpInfo(customerId = customerId, customerEmail = customerEmail, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, skipEmptyEmail = skipEmptyEmail, storeId = storeId, pageCursor = pageCursor, count = count, start = start, params = params, responseFields = responseFields, exclude = exclude)
+    fun orderAbandonedList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, customerId: kotlin.String? = null, customerEmail: kotlin.String? = null, storeId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, skipEmptyEmail: kotlin.Boolean? = false, responseFields: kotlin.String? = null, params: kotlin.String? = "customer,totals,items", exclude: kotlin.String? = null) : ModelResponseOrderAbandonedList {
+        val localVarResponse = orderAbandonedListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, customerId = customerId, customerEmail = customerEmail, storeId = storeId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, skipEmptyEmail = skipEmptyEmail, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseOrderAbandonedList
@@ -121,19 +121,19 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * order.abandoned.list
      * Get list of orders that were left by customers before completing the order.
+     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param customerId Retrieves orders specified by customer id (optional)
      * @param customerEmail Retrieves orders specified by customer email (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param skipEmptyEmail Filter empty emails (optional, default to false)
      * @param storeId Store Id (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "customer,totals,items")
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param skipEmptyEmail Filter empty emails (optional, default to false)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "customer,totals,items")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseOrderAbandonedList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -141,8 +141,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun orderAbandonedListWithHttpInfo(customerId: kotlin.String?, customerEmail: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, skipEmptyEmail: kotlin.Boolean?, storeId: kotlin.String?, pageCursor: kotlin.String?, count: kotlin.Int?, start: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseOrderAbandonedList?> {
-        val localVariableConfig = orderAbandonedListRequestConfig(customerId = customerId, customerEmail = customerEmail, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, skipEmptyEmail = skipEmptyEmail, storeId = storeId, pageCursor = pageCursor, count = count, start = start, params = params, responseFields = responseFields, exclude = exclude)
+    fun orderAbandonedListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, customerId: kotlin.String?, customerEmail: kotlin.String?, storeId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, skipEmptyEmail: kotlin.Boolean?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseOrderAbandonedList?> {
+        val localVariableConfig = orderAbandonedListRequestConfig(start = start, count = count, pageCursor = pageCursor, customerId = customerId, customerEmail = customerEmail, storeId = storeId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, skipEmptyEmail = skipEmptyEmail, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseOrderAbandonedList>(
             localVariableConfig
@@ -152,64 +152,64 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * To obtain the request config of the operation orderAbandonedList
      *
+     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param customerId Retrieves orders specified by customer id (optional)
      * @param customerEmail Retrieves orders specified by customer email (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param skipEmptyEmail Filter empty emails (optional, default to false)
      * @param storeId Store Id (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "customer,totals,items")
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param skipEmptyEmail Filter empty emails (optional, default to false)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "customer,totals,items")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun orderAbandonedListRequestConfig(customerId: kotlin.String?, customerEmail: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, skipEmptyEmail: kotlin.Boolean?, storeId: kotlin.String?, pageCursor: kotlin.String?, count: kotlin.Int?, start: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun orderAbandonedListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, customerId: kotlin.String?, customerEmail: kotlin.String?, storeId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, skipEmptyEmail: kotlin.Boolean?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                if (start != null) {
+                    put("start", listOf(start.toString()))
+                }
+                if (count != null) {
+                    put("count", listOf(count.toString()))
+                }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
                 if (customerId != null) {
                     put("customer_id", listOf(customerId.toString()))
                 }
                 if (customerEmail != null) {
                     put("customer_email", listOf(customerEmail.toString()))
                 }
-                if (createdTo != null) {
-                    put("created_to", listOf(createdTo.toString()))
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
                 }
-                if (modifiedTo != null) {
-                    put("modified_to", listOf(modifiedTo.toString()))
+                if (createdTo != null) {
+                    put("created_to", listOf(createdTo.toString()))
                 }
                 if (modifiedFrom != null) {
                     put("modified_from", listOf(modifiedFrom.toString()))
                 }
+                if (modifiedTo != null) {
+                    put("modified_to", listOf(modifiedTo.toString()))
+                }
                 if (skipEmptyEmail != null) {
                     put("skip_empty_email", listOf(skipEmptyEmail.toString()))
                 }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
-                if (count != null) {
-                    put("count", listOf(count.toString()))
-                }
-                if (start != null) {
-                    put("start", listOf(start.toString()))
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (params != null) {
                     put("params", listOf(params.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
@@ -303,17 +303,13 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * order.count
      * Count orders in store
+     * @param orderIds Counts orders specified by order ids (optional)
+     * @param ids Counts orders specified by ids (optional)
      * @param customerId Counts orders quantity specified by customer id (optional)
+     * @param storeId Counts orders quantity specified by store id (optional)
      * @param customerEmail Counts orders quantity specified by customer email (optional)
      * @param orderStatus Counts orders quantity specified by order status (optional)
      * @param orderStatusIds Retrieves orders specified by order statuses (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param storeId Counts orders quantity specified by store id (optional)
-     * @param ids Counts orders specified by ids (optional)
-     * @param orderIds Counts orders specified by order ids (optional)
      * @param ebayOrderStatus Counts orders quantity specified by order status (optional)
      * @param financialStatus Counts orders quantity specified by financial status (optional)
      * @param financialStatusIds Retrieves orders count specified by financial status ids (optional)
@@ -323,6 +319,10 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param deliveryMethod Retrieves order with delivery method (optional)
      * @param tags Order tags (optional)
      * @param shipNodeType Retrieves order with ship node type (optional)
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
      * @return OrderCount200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -332,8 +332,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun orderCount(customerId: kotlin.String? = null, customerEmail: kotlin.String? = null, orderStatus: kotlin.String? = null, orderStatusIds: kotlin.collections.List<kotlin.String>? = null, createdTo: kotlin.String? = null, createdFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, storeId: kotlin.String? = null, ids: kotlin.String? = null, orderIds: kotlin.String? = null, ebayOrderStatus: kotlin.String? = null, financialStatus: kotlin.String? = null, financialStatusIds: kotlin.collections.List<kotlin.String>? = null, fulfillmentChannel: kotlin.String? = null, fulfillmentStatus: kotlin.String? = null, shippingMethod: kotlin.String? = null, deliveryMethod: kotlin.String? = null, tags: kotlin.String? = null, shipNodeType: kotlin.String? = null) : OrderCount200Response {
-        val localVarResponse = orderCountWithHttpInfo(customerId = customerId, customerEmail = customerEmail, orderStatus = orderStatus, orderStatusIds = orderStatusIds, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, storeId = storeId, ids = ids, orderIds = orderIds, ebayOrderStatus = ebayOrderStatus, financialStatus = financialStatus, financialStatusIds = financialStatusIds, fulfillmentChannel = fulfillmentChannel, fulfillmentStatus = fulfillmentStatus, shippingMethod = shippingMethod, deliveryMethod = deliveryMethod, tags = tags, shipNodeType = shipNodeType)
+    fun orderCount(orderIds: kotlin.String? = null, ids: kotlin.String? = null, customerId: kotlin.String? = null, storeId: kotlin.String? = null, customerEmail: kotlin.String? = null, orderStatus: kotlin.String? = null, orderStatusIds: kotlin.collections.List<kotlin.String>? = null, ebayOrderStatus: kotlin.String? = null, financialStatus: kotlin.String? = null, financialStatusIds: kotlin.collections.List<kotlin.String>? = null, fulfillmentChannel: kotlin.String? = null, fulfillmentStatus: kotlin.String? = null, shippingMethod: kotlin.String? = null, deliveryMethod: kotlin.String? = null, tags: kotlin.String? = null, shipNodeType: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null) : OrderCount200Response {
+        val localVarResponse = orderCountWithHttpInfo(orderIds = orderIds, ids = ids, customerId = customerId, storeId = storeId, customerEmail = customerEmail, orderStatus = orderStatus, orderStatusIds = orderStatusIds, ebayOrderStatus = ebayOrderStatus, financialStatus = financialStatus, financialStatusIds = financialStatusIds, fulfillmentChannel = fulfillmentChannel, fulfillmentStatus = fulfillmentStatus, shippingMethod = shippingMethod, deliveryMethod = deliveryMethod, tags = tags, shipNodeType = shipNodeType, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as OrderCount200Response
@@ -353,17 +353,13 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * order.count
      * Count orders in store
+     * @param orderIds Counts orders specified by order ids (optional)
+     * @param ids Counts orders specified by ids (optional)
      * @param customerId Counts orders quantity specified by customer id (optional)
+     * @param storeId Counts orders quantity specified by store id (optional)
      * @param customerEmail Counts orders quantity specified by customer email (optional)
      * @param orderStatus Counts orders quantity specified by order status (optional)
      * @param orderStatusIds Retrieves orders specified by order statuses (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param storeId Counts orders quantity specified by store id (optional)
-     * @param ids Counts orders specified by ids (optional)
-     * @param orderIds Counts orders specified by order ids (optional)
      * @param ebayOrderStatus Counts orders quantity specified by order status (optional)
      * @param financialStatus Counts orders quantity specified by financial status (optional)
      * @param financialStatusIds Retrieves orders count specified by financial status ids (optional)
@@ -373,14 +369,18 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param deliveryMethod Retrieves order with delivery method (optional)
      * @param tags Order tags (optional)
      * @param shipNodeType Retrieves order with ship node type (optional)
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
      * @return ApiResponse<OrderCount200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun orderCountWithHttpInfo(customerId: kotlin.String?, customerEmail: kotlin.String?, orderStatus: kotlin.String?, orderStatusIds: kotlin.collections.List<kotlin.String>?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, storeId: kotlin.String?, ids: kotlin.String?, orderIds: kotlin.String?, ebayOrderStatus: kotlin.String?, financialStatus: kotlin.String?, financialStatusIds: kotlin.collections.List<kotlin.String>?, fulfillmentChannel: kotlin.String?, fulfillmentStatus: kotlin.String?, shippingMethod: kotlin.String?, deliveryMethod: kotlin.String?, tags: kotlin.String?, shipNodeType: kotlin.String?) : ApiResponse<OrderCount200Response?> {
-        val localVariableConfig = orderCountRequestConfig(customerId = customerId, customerEmail = customerEmail, orderStatus = orderStatus, orderStatusIds = orderStatusIds, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, storeId = storeId, ids = ids, orderIds = orderIds, ebayOrderStatus = ebayOrderStatus, financialStatus = financialStatus, financialStatusIds = financialStatusIds, fulfillmentChannel = fulfillmentChannel, fulfillmentStatus = fulfillmentStatus, shippingMethod = shippingMethod, deliveryMethod = deliveryMethod, tags = tags, shipNodeType = shipNodeType)
+    fun orderCountWithHttpInfo(orderIds: kotlin.String?, ids: kotlin.String?, customerId: kotlin.String?, storeId: kotlin.String?, customerEmail: kotlin.String?, orderStatus: kotlin.String?, orderStatusIds: kotlin.collections.List<kotlin.String>?, ebayOrderStatus: kotlin.String?, financialStatus: kotlin.String?, financialStatusIds: kotlin.collections.List<kotlin.String>?, fulfillmentChannel: kotlin.String?, fulfillmentStatus: kotlin.String?, shippingMethod: kotlin.String?, deliveryMethod: kotlin.String?, tags: kotlin.String?, shipNodeType: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?) : ApiResponse<OrderCount200Response?> {
+        val localVariableConfig = orderCountRequestConfig(orderIds = orderIds, ids = ids, customerId = customerId, storeId = storeId, customerEmail = customerEmail, orderStatus = orderStatus, orderStatusIds = orderStatusIds, ebayOrderStatus = ebayOrderStatus, financialStatus = financialStatus, financialStatusIds = financialStatusIds, fulfillmentChannel = fulfillmentChannel, fulfillmentStatus = fulfillmentStatus, shippingMethod = shippingMethod, deliveryMethod = deliveryMethod, tags = tags, shipNodeType = shipNodeType, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo)
 
         return request<Unit, OrderCount200Response>(
             localVariableConfig
@@ -390,17 +390,13 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * To obtain the request config of the operation orderCount
      *
+     * @param orderIds Counts orders specified by order ids (optional)
+     * @param ids Counts orders specified by ids (optional)
      * @param customerId Counts orders quantity specified by customer id (optional)
+     * @param storeId Counts orders quantity specified by store id (optional)
      * @param customerEmail Counts orders quantity specified by customer email (optional)
      * @param orderStatus Counts orders quantity specified by order status (optional)
      * @param orderStatusIds Retrieves orders specified by order statuses (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param storeId Counts orders quantity specified by store id (optional)
-     * @param ids Counts orders specified by ids (optional)
-     * @param orderIds Counts orders specified by order ids (optional)
      * @param ebayOrderStatus Counts orders quantity specified by order status (optional)
      * @param financialStatus Counts orders quantity specified by financial status (optional)
      * @param financialStatusIds Retrieves orders count specified by financial status ids (optional)
@@ -410,14 +406,27 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param deliveryMethod Retrieves order with delivery method (optional)
      * @param tags Order tags (optional)
      * @param shipNodeType Retrieves order with ship node type (optional)
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
      * @return RequestConfig
      */
-    fun orderCountRequestConfig(customerId: kotlin.String?, customerEmail: kotlin.String?, orderStatus: kotlin.String?, orderStatusIds: kotlin.collections.List<kotlin.String>?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, storeId: kotlin.String?, ids: kotlin.String?, orderIds: kotlin.String?, ebayOrderStatus: kotlin.String?, financialStatus: kotlin.String?, financialStatusIds: kotlin.collections.List<kotlin.String>?, fulfillmentChannel: kotlin.String?, fulfillmentStatus: kotlin.String?, shippingMethod: kotlin.String?, deliveryMethod: kotlin.String?, tags: kotlin.String?, shipNodeType: kotlin.String?) : RequestConfig<Unit> {
+    fun orderCountRequestConfig(orderIds: kotlin.String?, ids: kotlin.String?, customerId: kotlin.String?, storeId: kotlin.String?, customerEmail: kotlin.String?, orderStatus: kotlin.String?, orderStatusIds: kotlin.collections.List<kotlin.String>?, ebayOrderStatus: kotlin.String?, financialStatus: kotlin.String?, financialStatusIds: kotlin.collections.List<kotlin.String>?, fulfillmentChannel: kotlin.String?, fulfillmentStatus: kotlin.String?, shippingMethod: kotlin.String?, deliveryMethod: kotlin.String?, tags: kotlin.String?, shipNodeType: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                if (orderIds != null) {
+                    put("order_ids", listOf(orderIds.toString()))
+                }
+                if (ids != null) {
+                    put("ids", listOf(ids.toString()))
+                }
                 if (customerId != null) {
                     put("customer_id", listOf(customerId.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (customerEmail != null) {
                     put("customer_email", listOf(customerEmail.toString()))
@@ -427,27 +436,6 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 }
                 if (orderStatusIds != null) {
                     put("order_status_ids", toMultiValue(orderStatusIds.toList(), "multi"))
-                }
-                if (createdTo != null) {
-                    put("created_to", listOf(createdTo.toString()))
-                }
-                if (createdFrom != null) {
-                    put("created_from", listOf(createdFrom.toString()))
-                }
-                if (modifiedTo != null) {
-                    put("modified_to", listOf(modifiedTo.toString()))
-                }
-                if (modifiedFrom != null) {
-                    put("modified_from", listOf(modifiedFrom.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
-                if (ids != null) {
-                    put("ids", listOf(ids.toString()))
-                }
-                if (orderIds != null) {
-                    put("order_ids", listOf(orderIds.toString()))
                 }
                 if (ebayOrderStatus != null) {
                     put("ebay_order_status", listOf(ebayOrderStatus.toString()))
@@ -475,6 +463,18 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 }
                 if (shipNodeType != null) {
                     put("ship_node_type", listOf(shipNodeType.toString()))
+                }
+                if (createdFrom != null) {
+                    put("created_from", listOf(createdFrom.toString()))
+                }
+                if (createdTo != null) {
+                    put("created_to", listOf(createdTo.toString()))
+                }
+                if (modifiedFrom != null) {
+                    put("modified_from", listOf(modifiedFrom.toString()))
+                }
+                if (modifiedTo != null) {
+                    put("modified_to", listOf(modifiedTo.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -561,18 +561,18 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * order.find
      * This method is deprecated and won&#39;t be supported in the future. Please use \&quot;order.list\&quot; instead.
+     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param customerId Retrieves orders specified by customer id (optional)
      * @param customerEmail Retrieves orders specified by customer email (optional)
      * @param orderStatus Retrieves orders specified by order status (optional)
-     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param financialStatus Retrieves orders specified by financial status (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param financialStatus Retrieves orders specified by financial status (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return OrderFind200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -583,9 +583,9 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    fun orderFind(customerId: kotlin.String? = null, customerEmail: kotlin.String? = null, orderStatus: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, params: kotlin.String? = "order_id,customer,totals,address,items,bundles,status", exclude: kotlin.String? = null, createdTo: kotlin.String? = null, createdFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, financialStatus: kotlin.String? = null) : OrderFind200Response {
+    fun orderFind(start: kotlin.Int? = 0, count: kotlin.Int? = 10, customerId: kotlin.String? = null, customerEmail: kotlin.String? = null, orderStatus: kotlin.String? = null, financialStatus: kotlin.String? = null, createdTo: kotlin.String? = null, createdFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, params: kotlin.String? = "order_id,customer,totals,address,items,bundles,status", exclude: kotlin.String? = null) : OrderFind200Response {
         @Suppress("DEPRECATION")
-        val localVarResponse = orderFindWithHttpInfo(customerId = customerId, customerEmail = customerEmail, orderStatus = orderStatus, start = start, count = count, params = params, exclude = exclude, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, financialStatus = financialStatus)
+        val localVarResponse = orderFindWithHttpInfo(start = start, count = count, customerId = customerId, customerEmail = customerEmail, orderStatus = orderStatus, financialStatus = financialStatus, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as OrderFind200Response
@@ -605,18 +605,18 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * order.find
      * This method is deprecated and won&#39;t be supported in the future. Please use \&quot;order.list\&quot; instead.
+     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param customerId Retrieves orders specified by customer id (optional)
      * @param customerEmail Retrieves orders specified by customer email (optional)
      * @param orderStatus Retrieves orders specified by order status (optional)
-     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param financialStatus Retrieves orders specified by financial status (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param financialStatus Retrieves orders specified by financial status (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<OrderFind200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -624,9 +624,9 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    fun orderFindWithHttpInfo(customerId: kotlin.String?, customerEmail: kotlin.String?, orderStatus: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, exclude: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, financialStatus: kotlin.String?) : ApiResponse<OrderFind200Response?> {
+    fun orderFindWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, customerId: kotlin.String?, customerEmail: kotlin.String?, orderStatus: kotlin.String?, financialStatus: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<OrderFind200Response?> {
         @Suppress("DEPRECATION")
-        val localVariableConfig = orderFindRequestConfig(customerId = customerId, customerEmail = customerEmail, orderStatus = orderStatus, start = start, count = count, params = params, exclude = exclude, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, financialStatus = financialStatus)
+        val localVariableConfig = orderFindRequestConfig(start = start, count = count, customerId = customerId, customerEmail = customerEmail, orderStatus = orderStatus, financialStatus = financialStatus, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, params = params, exclude = exclude)
 
         return request<Unit, OrderFind200Response>(
             localVariableConfig
@@ -636,25 +636,31 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * To obtain the request config of the operation orderFind
      *
+     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param customerId Retrieves orders specified by customer id (optional)
      * @param customerEmail Retrieves orders specified by customer email (optional)
      * @param orderStatus Retrieves orders specified by order status (optional)
-     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param financialStatus Retrieves orders specified by financial status (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param financialStatus Retrieves orders specified by financial status (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun orderFindRequestConfig(customerId: kotlin.String?, customerEmail: kotlin.String?, orderStatus: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, exclude: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, financialStatus: kotlin.String?) : RequestConfig<Unit> {
+    fun orderFindRequestConfig(start: kotlin.Int?, count: kotlin.Int?, customerId: kotlin.String?, customerEmail: kotlin.String?, orderStatus: kotlin.String?, financialStatus: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                if (start != null) {
+                    put("start", listOf(start.toString()))
+                }
+                if (count != null) {
+                    put("count", listOf(count.toString()))
+                }
                 if (customerId != null) {
                     put("customer_id", listOf(customerId.toString()))
                 }
@@ -664,17 +670,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 if (orderStatus != null) {
                     put("order_status", listOf(orderStatus.toString()))
                 }
-                if (start != null) {
-                    put("start", listOf(start.toString()))
-                }
-                if (count != null) {
-                    put("count", listOf(count.toString()))
-                }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
+                if (financialStatus != null) {
+                    put("financial_status", listOf(financialStatus.toString()))
                 }
                 if (createdTo != null) {
                     put("created_to", listOf(createdTo.toString()))
@@ -688,8 +685,11 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 if (modifiedFrom != null) {
                     put("modified_from", listOf(modifiedFrom.toString()))
                 }
-                if (financialStatus != null) {
-                    put("financial_status", listOf(financialStatus.toString()))
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -784,12 +784,12 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * order.info
      * Info about a specific order by ID
-     * @param orderId Retrieves order’s info specified by order id (optional)
      * @param id Retrieves order info specified by id (optional)
+     * @param orderId Retrieves order’s info specified by order id (optional)
+     * @param storeId Defines store id where the order should be found (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param storeId Defines store id where the order should be found (optional)
      * @param enableCache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return OrderInfo200Response
@@ -801,8 +801,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun orderInfo(orderId: kotlin.String? = null, id: kotlin.String? = null, params: kotlin.String? = "order_id,customer,totals,address,items,bundles,status", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, storeId: kotlin.String? = null, enableCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : OrderInfo200Response {
-        val localVarResponse = orderInfoWithHttpInfo(orderId = orderId, id = id, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId, enableCache = enableCache, useLatestApiVersion = useLatestApiVersion)
+    fun orderInfo(id: kotlin.String? = null, orderId: kotlin.String? = null, storeId: kotlin.String? = null, params: kotlin.String? = "order_id,customer,totals,address,items,bundles,status", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, enableCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : OrderInfo200Response {
+        val localVarResponse = orderInfoWithHttpInfo(id = id, orderId = orderId, storeId = storeId, params = params, responseFields = responseFields, exclude = exclude, enableCache = enableCache, useLatestApiVersion = useLatestApiVersion)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as OrderInfo200Response
@@ -822,12 +822,12 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * order.info
      * Info about a specific order by ID
-     * @param orderId Retrieves order’s info specified by order id (optional)
      * @param id Retrieves order info specified by id (optional)
+     * @param orderId Retrieves order’s info specified by order id (optional)
+     * @param storeId Defines store id where the order should be found (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param storeId Defines store id where the order should be found (optional)
      * @param enableCache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return ApiResponse<OrderInfo200Response?>
@@ -836,8 +836,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun orderInfoWithHttpInfo(orderId: kotlin.String?, id: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, enableCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<OrderInfo200Response?> {
-        val localVariableConfig = orderInfoRequestConfig(orderId = orderId, id = id, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId, enableCache = enableCache, useLatestApiVersion = useLatestApiVersion)
+    fun orderInfoWithHttpInfo(id: kotlin.String?, orderId: kotlin.String?, storeId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, enableCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<OrderInfo200Response?> {
+        val localVariableConfig = orderInfoRequestConfig(id = id, orderId = orderId, storeId = storeId, params = params, responseFields = responseFields, exclude = exclude, enableCache = enableCache, useLatestApiVersion = useLatestApiVersion)
 
         return request<Unit, OrderInfo200Response>(
             localVariableConfig
@@ -847,25 +847,28 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * To obtain the request config of the operation orderInfo
      *
-     * @param orderId Retrieves order’s info specified by order id (optional)
      * @param id Retrieves order info specified by id (optional)
+     * @param orderId Retrieves order’s info specified by order id (optional)
+     * @param storeId Defines store id where the order should be found (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param storeId Defines store id where the order should be found (optional)
      * @param enableCache If the value is &#39;true&#39; and order exist in our cache, we will return order.info response from cache (optional, default to false)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return RequestConfig
      */
-    fun orderInfoRequestConfig(orderId: kotlin.String?, id: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, enableCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun orderInfoRequestConfig(id: kotlin.String?, orderId: kotlin.String?, storeId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, enableCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                if (id != null) {
+                    put("id", listOf(id.toString()))
+                }
                 if (orderId != null) {
                     put("order_id", listOf(orderId.toString()))
                 }
-                if (id != null) {
-                    put("id", listOf(id.toString()))
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (params != null) {
                     put("params", listOf(params.toString()))
@@ -875,9 +878,6 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
                 }
                 if (enableCache != null) {
                     put("enable_cache", listOf(enableCache.toString()))
@@ -902,43 +902,43 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * order.list
      * Get list of orders from store.
-     * @param customerId Retrieves orders specified by customer id (optional)
-     * @param customerEmail Retrieves orders specified by customer email (optional)
-     * @param phone Filter orders by customer&#39;s phone number (optional)
-     * @param orderStatus Retrieves orders specified by order status (optional)
-     * @param orderStatusIds Retrieves orders specified by order statuses (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param ids Retrieves orders specified by ids (optional)
+     * @param orderIds Retrieves orders specified by order ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param storeId Store Id (optional)
+     * @param customerId Retrieves orders specified by customer id (optional)
+     * @param customerEmail Retrieves orders specified by customer email (optional)
+     * @param basketId Retrieves order’s info specified by basket id. (optional)
+     * @param currencyId Currency Id (optional)
+     * @param phone Filter orders by customer&#39;s phone number (optional)
+     * @param orderStatus Retrieves orders specified by order status (optional)
+     * @param orderStatusIds Retrieves orders specified by order statuses (optional)
+     * @param ebayOrderStatus Retrieves orders specified by order status (optional)
+     * @param financialStatus Retrieves orders specified by financial status (optional)
+     * @param financialStatusIds Retrieves orders specified by financial status ids (optional)
+     * @param fulfillmentStatus Create order with fulfillment status (optional)
+     * @param returnStatus Retrieves orders specified by return status (optional)
+     * @param fulfillmentChannel Retrieves order with a fulfillment channel (optional)
+     * @param shippingMethod Retrieve entities according to shipping method (optional)
+     * @param skipOrderIds Skipped orders by ids (optional)
+     * @param isDeleted Filter deleted orders (optional)
+     * @param shippingCountryIso3 Retrieve entities according to shipping country (optional)
+     * @param deliveryMethod Retrieves order with delivery method (optional)
+     * @param shipNodeType Retrieves order with ship node type (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param tags Order tags (optional)
      * @param sortBy Set field to sort by (optional, default to "order_id")
      * @param sortDirection Set sorting direction (optional, default to "asc")
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param storeId Store Id (optional)
-     * @param ids Retrieves orders specified by ids (optional)
-     * @param orderIds Retrieves orders specified by order ids (optional)
-     * @param ebayOrderStatus Retrieves orders specified by order status (optional)
-     * @param basketId Retrieves order’s info specified by basket id. (optional)
-     * @param financialStatus Retrieves orders specified by financial status (optional)
-     * @param financialStatusIds Retrieves orders specified by financial status ids (optional)
-     * @param fulfillmentStatus Create order with fulfillment status (optional)
-     * @param fulfillmentChannel Retrieves order with a fulfillment channel (optional)
-     * @param shippingMethod Retrieve entities according to shipping method (optional)
-     * @param skipOrderIds Skipped orders by ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
-     * @param isDeleted Filter deleted orders (optional)
-     * @param shippingCountryIso3 Retrieve entities according to shipping country (optional)
      * @param enableCache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
-     * @param deliveryMethod Retrieves order with delivery method (optional)
-     * @param tags Order tags (optional)
-     * @param shipNodeType Retrieves order with ship node type (optional)
-     * @param currencyId Currency Id (optional)
-     * @param returnStatus Retrieves orders specified by return status (optional)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return ModelResponseOrderList
      * @throws IllegalStateException If the request is not correctly configured
@@ -949,8 +949,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun orderList(customerId: kotlin.String? = null, customerEmail: kotlin.String? = null, phone: kotlin.String? = null, orderStatus: kotlin.String? = null, orderStatusIds: kotlin.collections.List<kotlin.String>? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, sortBy: kotlin.String? = "order_id", sortDirection: kotlin.String? = "asc", params: kotlin.String? = "order_id,customer,totals,address,items,bundles,status", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, createdTo: kotlin.String? = null, createdFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, storeId: kotlin.String? = null, ids: kotlin.String? = null, orderIds: kotlin.String? = null, ebayOrderStatus: kotlin.String? = null, basketId: kotlin.String? = null, financialStatus: kotlin.String? = null, financialStatusIds: kotlin.collections.List<kotlin.String>? = null, fulfillmentStatus: kotlin.String? = null, fulfillmentChannel: kotlin.String? = null, shippingMethod: kotlin.String? = null, skipOrderIds: kotlin.String? = null, sinceId: kotlin.String? = null, isDeleted: kotlin.Boolean? = null, shippingCountryIso3: kotlin.String? = null, enableCache: kotlin.Boolean? = false, deliveryMethod: kotlin.String? = null, tags: kotlin.String? = null, shipNodeType: kotlin.String? = null, currencyId: kotlin.String? = null, returnStatus: kotlin.String? = null, useLatestApiVersion: kotlin.Boolean? = false) : ModelResponseOrderList {
-        val localVarResponse = orderListWithHttpInfo(customerId = customerId, customerEmail = customerEmail, phone = phone, orderStatus = orderStatus, orderStatusIds = orderStatusIds, start = start, count = count, pageCursor = pageCursor, sortBy = sortBy, sortDirection = sortDirection, params = params, responseFields = responseFields, exclude = exclude, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, storeId = storeId, ids = ids, orderIds = orderIds, ebayOrderStatus = ebayOrderStatus, basketId = basketId, financialStatus = financialStatus, financialStatusIds = financialStatusIds, fulfillmentStatus = fulfillmentStatus, fulfillmentChannel = fulfillmentChannel, shippingMethod = shippingMethod, skipOrderIds = skipOrderIds, sinceId = sinceId, isDeleted = isDeleted, shippingCountryIso3 = shippingCountryIso3, enableCache = enableCache, deliveryMethod = deliveryMethod, tags = tags, shipNodeType = shipNodeType, currencyId = currencyId, returnStatus = returnStatus, useLatestApiVersion = useLatestApiVersion)
+    fun orderList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, ids: kotlin.String? = null, orderIds: kotlin.String? = null, sinceId: kotlin.String? = null, storeId: kotlin.String? = null, customerId: kotlin.String? = null, customerEmail: kotlin.String? = null, basketId: kotlin.String? = null, currencyId: kotlin.String? = null, phone: kotlin.String? = null, orderStatus: kotlin.String? = null, orderStatusIds: kotlin.collections.List<kotlin.String>? = null, ebayOrderStatus: kotlin.String? = null, financialStatus: kotlin.String? = null, financialStatusIds: kotlin.collections.List<kotlin.String>? = null, fulfillmentStatus: kotlin.String? = null, returnStatus: kotlin.String? = null, fulfillmentChannel: kotlin.String? = null, shippingMethod: kotlin.String? = null, skipOrderIds: kotlin.String? = null, isDeleted: kotlin.Boolean? = null, shippingCountryIso3: kotlin.String? = null, deliveryMethod: kotlin.String? = null, shipNodeType: kotlin.String? = null, createdTo: kotlin.String? = null, createdFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, tags: kotlin.String? = null, sortBy: kotlin.String? = "order_id", sortDirection: kotlin.String? = "asc", params: kotlin.String? = "order_id,customer,totals,address,items,bundles,status", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, enableCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : ModelResponseOrderList {
+        val localVarResponse = orderListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, ids = ids, orderIds = orderIds, sinceId = sinceId, storeId = storeId, customerId = customerId, customerEmail = customerEmail, basketId = basketId, currencyId = currencyId, phone = phone, orderStatus = orderStatus, orderStatusIds = orderStatusIds, ebayOrderStatus = ebayOrderStatus, financialStatus = financialStatus, financialStatusIds = financialStatusIds, fulfillmentStatus = fulfillmentStatus, returnStatus = returnStatus, fulfillmentChannel = fulfillmentChannel, shippingMethod = shippingMethod, skipOrderIds = skipOrderIds, isDeleted = isDeleted, shippingCountryIso3 = shippingCountryIso3, deliveryMethod = deliveryMethod, shipNodeType = shipNodeType, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, tags = tags, sortBy = sortBy, sortDirection = sortDirection, params = params, responseFields = responseFields, exclude = exclude, enableCache = enableCache, useLatestApiVersion = useLatestApiVersion)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseOrderList
@@ -970,43 +970,43 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * order.list
      * Get list of orders from store.
-     * @param customerId Retrieves orders specified by customer id (optional)
-     * @param customerEmail Retrieves orders specified by customer email (optional)
-     * @param phone Filter orders by customer&#39;s phone number (optional)
-     * @param orderStatus Retrieves orders specified by order status (optional)
-     * @param orderStatusIds Retrieves orders specified by order statuses (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param ids Retrieves orders specified by ids (optional)
+     * @param orderIds Retrieves orders specified by order ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param storeId Store Id (optional)
+     * @param customerId Retrieves orders specified by customer id (optional)
+     * @param customerEmail Retrieves orders specified by customer email (optional)
+     * @param basketId Retrieves order’s info specified by basket id. (optional)
+     * @param currencyId Currency Id (optional)
+     * @param phone Filter orders by customer&#39;s phone number (optional)
+     * @param orderStatus Retrieves orders specified by order status (optional)
+     * @param orderStatusIds Retrieves orders specified by order statuses (optional)
+     * @param ebayOrderStatus Retrieves orders specified by order status (optional)
+     * @param financialStatus Retrieves orders specified by financial status (optional)
+     * @param financialStatusIds Retrieves orders specified by financial status ids (optional)
+     * @param fulfillmentStatus Create order with fulfillment status (optional)
+     * @param returnStatus Retrieves orders specified by return status (optional)
+     * @param fulfillmentChannel Retrieves order with a fulfillment channel (optional)
+     * @param shippingMethod Retrieve entities according to shipping method (optional)
+     * @param skipOrderIds Skipped orders by ids (optional)
+     * @param isDeleted Filter deleted orders (optional)
+     * @param shippingCountryIso3 Retrieve entities according to shipping country (optional)
+     * @param deliveryMethod Retrieves order with delivery method (optional)
+     * @param shipNodeType Retrieves order with ship node type (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param tags Order tags (optional)
      * @param sortBy Set field to sort by (optional, default to "order_id")
      * @param sortDirection Set sorting direction (optional, default to "asc")
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param storeId Store Id (optional)
-     * @param ids Retrieves orders specified by ids (optional)
-     * @param orderIds Retrieves orders specified by order ids (optional)
-     * @param ebayOrderStatus Retrieves orders specified by order status (optional)
-     * @param basketId Retrieves order’s info specified by basket id. (optional)
-     * @param financialStatus Retrieves orders specified by financial status (optional)
-     * @param financialStatusIds Retrieves orders specified by financial status ids (optional)
-     * @param fulfillmentStatus Create order with fulfillment status (optional)
-     * @param fulfillmentChannel Retrieves order with a fulfillment channel (optional)
-     * @param shippingMethod Retrieve entities according to shipping method (optional)
-     * @param skipOrderIds Skipped orders by ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
-     * @param isDeleted Filter deleted orders (optional)
-     * @param shippingCountryIso3 Retrieve entities according to shipping country (optional)
      * @param enableCache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
-     * @param deliveryMethod Retrieves order with delivery method (optional)
-     * @param tags Order tags (optional)
-     * @param shipNodeType Retrieves order with ship node type (optional)
-     * @param currencyId Currency Id (optional)
-     * @param returnStatus Retrieves orders specified by return status (optional)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return ApiResponse<ModelResponseOrderList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1014,8 +1014,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun orderListWithHttpInfo(customerId: kotlin.String?, customerEmail: kotlin.String?, phone: kotlin.String?, orderStatus: kotlin.String?, orderStatusIds: kotlin.collections.List<kotlin.String>?, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, storeId: kotlin.String?, ids: kotlin.String?, orderIds: kotlin.String?, ebayOrderStatus: kotlin.String?, basketId: kotlin.String?, financialStatus: kotlin.String?, financialStatusIds: kotlin.collections.List<kotlin.String>?, fulfillmentStatus: kotlin.String?, fulfillmentChannel: kotlin.String?, shippingMethod: kotlin.String?, skipOrderIds: kotlin.String?, sinceId: kotlin.String?, isDeleted: kotlin.Boolean?, shippingCountryIso3: kotlin.String?, enableCache: kotlin.Boolean?, deliveryMethod: kotlin.String?, tags: kotlin.String?, shipNodeType: kotlin.String?, currencyId: kotlin.String?, returnStatus: kotlin.String?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ModelResponseOrderList?> {
-        val localVariableConfig = orderListRequestConfig(customerId = customerId, customerEmail = customerEmail, phone = phone, orderStatus = orderStatus, orderStatusIds = orderStatusIds, start = start, count = count, pageCursor = pageCursor, sortBy = sortBy, sortDirection = sortDirection, params = params, responseFields = responseFields, exclude = exclude, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, storeId = storeId, ids = ids, orderIds = orderIds, ebayOrderStatus = ebayOrderStatus, basketId = basketId, financialStatus = financialStatus, financialStatusIds = financialStatusIds, fulfillmentStatus = fulfillmentStatus, fulfillmentChannel = fulfillmentChannel, shippingMethod = shippingMethod, skipOrderIds = skipOrderIds, sinceId = sinceId, isDeleted = isDeleted, shippingCountryIso3 = shippingCountryIso3, enableCache = enableCache, deliveryMethod = deliveryMethod, tags = tags, shipNodeType = shipNodeType, currencyId = currencyId, returnStatus = returnStatus, useLatestApiVersion = useLatestApiVersion)
+    fun orderListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, orderIds: kotlin.String?, sinceId: kotlin.String?, storeId: kotlin.String?, customerId: kotlin.String?, customerEmail: kotlin.String?, basketId: kotlin.String?, currencyId: kotlin.String?, phone: kotlin.String?, orderStatus: kotlin.String?, orderStatusIds: kotlin.collections.List<kotlin.String>?, ebayOrderStatus: kotlin.String?, financialStatus: kotlin.String?, financialStatusIds: kotlin.collections.List<kotlin.String>?, fulfillmentStatus: kotlin.String?, returnStatus: kotlin.String?, fulfillmentChannel: kotlin.String?, shippingMethod: kotlin.String?, skipOrderIds: kotlin.String?, isDeleted: kotlin.Boolean?, shippingCountryIso3: kotlin.String?, deliveryMethod: kotlin.String?, shipNodeType: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, tags: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, enableCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ModelResponseOrderList?> {
+        val localVariableConfig = orderListRequestConfig(start = start, count = count, pageCursor = pageCursor, ids = ids, orderIds = orderIds, sinceId = sinceId, storeId = storeId, customerId = customerId, customerEmail = customerEmail, basketId = basketId, currencyId = currencyId, phone = phone, orderStatus = orderStatus, orderStatusIds = orderStatusIds, ebayOrderStatus = ebayOrderStatus, financialStatus = financialStatus, financialStatusIds = financialStatusIds, fulfillmentStatus = fulfillmentStatus, returnStatus = returnStatus, fulfillmentChannel = fulfillmentChannel, shippingMethod = shippingMethod, skipOrderIds = skipOrderIds, isDeleted = isDeleted, shippingCountryIso3 = shippingCountryIso3, deliveryMethod = deliveryMethod, shipNodeType = shipNodeType, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, tags = tags, sortBy = sortBy, sortDirection = sortDirection, params = params, responseFields = responseFields, exclude = exclude, enableCache = enableCache, useLatestApiVersion = useLatestApiVersion)
 
         return request<Unit, ModelResponseOrderList>(
             localVariableConfig
@@ -1025,55 +1025,82 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     /**
      * To obtain the request config of the operation orderList
      *
-     * @param customerId Retrieves orders specified by customer id (optional)
-     * @param customerEmail Retrieves orders specified by customer email (optional)
-     * @param phone Filter orders by customer&#39;s phone number (optional)
-     * @param orderStatus Retrieves orders specified by order status (optional)
-     * @param orderStatusIds Retrieves orders specified by order statuses (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve orders via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param ids Retrieves orders specified by ids (optional)
+     * @param orderIds Retrieves orders specified by order ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param storeId Store Id (optional)
+     * @param customerId Retrieves orders specified by customer id (optional)
+     * @param customerEmail Retrieves orders specified by customer email (optional)
+     * @param basketId Retrieves order’s info specified by basket id. (optional)
+     * @param currencyId Currency Id (optional)
+     * @param phone Filter orders by customer&#39;s phone number (optional)
+     * @param orderStatus Retrieves orders specified by order status (optional)
+     * @param orderStatusIds Retrieves orders specified by order statuses (optional)
+     * @param ebayOrderStatus Retrieves orders specified by order status (optional)
+     * @param financialStatus Retrieves orders specified by financial status (optional)
+     * @param financialStatusIds Retrieves orders specified by financial status ids (optional)
+     * @param fulfillmentStatus Create order with fulfillment status (optional)
+     * @param returnStatus Retrieves orders specified by return status (optional)
+     * @param fulfillmentChannel Retrieves order with a fulfillment channel (optional)
+     * @param shippingMethod Retrieve entities according to shipping method (optional)
+     * @param skipOrderIds Skipped orders by ids (optional)
+     * @param isDeleted Filter deleted orders (optional)
+     * @param shippingCountryIso3 Retrieve entities according to shipping country (optional)
+     * @param deliveryMethod Retrieves order with delivery method (optional)
+     * @param shipNodeType Retrieves order with ship node type (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param tags Order tags (optional)
      * @param sortBy Set field to sort by (optional, default to "order_id")
      * @param sortDirection Set sorting direction (optional, default to "asc")
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param storeId Store Id (optional)
-     * @param ids Retrieves orders specified by ids (optional)
-     * @param orderIds Retrieves orders specified by order ids (optional)
-     * @param ebayOrderStatus Retrieves orders specified by order status (optional)
-     * @param basketId Retrieves order’s info specified by basket id. (optional)
-     * @param financialStatus Retrieves orders specified by financial status (optional)
-     * @param financialStatusIds Retrieves orders specified by financial status ids (optional)
-     * @param fulfillmentStatus Create order with fulfillment status (optional)
-     * @param fulfillmentChannel Retrieves order with a fulfillment channel (optional)
-     * @param shippingMethod Retrieve entities according to shipping method (optional)
-     * @param skipOrderIds Skipped orders by ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
-     * @param isDeleted Filter deleted orders (optional)
-     * @param shippingCountryIso3 Retrieve entities according to shipping country (optional)
      * @param enableCache If the value is &#39;true&#39;, we will cache orders for a 15 minutes in order to increase speed and reduce requests throttling for some methods and shoping platforms (for example order.shipment.add) (optional, default to false)
-     * @param deliveryMethod Retrieves order with delivery method (optional)
-     * @param tags Order tags (optional)
-     * @param shipNodeType Retrieves order with ship node type (optional)
-     * @param currencyId Currency Id (optional)
-     * @param returnStatus Retrieves orders specified by return status (optional)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return RequestConfig
      */
-    fun orderListRequestConfig(customerId: kotlin.String?, customerEmail: kotlin.String?, phone: kotlin.String?, orderStatus: kotlin.String?, orderStatusIds: kotlin.collections.List<kotlin.String>?, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, storeId: kotlin.String?, ids: kotlin.String?, orderIds: kotlin.String?, ebayOrderStatus: kotlin.String?, basketId: kotlin.String?, financialStatus: kotlin.String?, financialStatusIds: kotlin.collections.List<kotlin.String>?, fulfillmentStatus: kotlin.String?, fulfillmentChannel: kotlin.String?, shippingMethod: kotlin.String?, skipOrderIds: kotlin.String?, sinceId: kotlin.String?, isDeleted: kotlin.Boolean?, shippingCountryIso3: kotlin.String?, enableCache: kotlin.Boolean?, deliveryMethod: kotlin.String?, tags: kotlin.String?, shipNodeType: kotlin.String?, currencyId: kotlin.String?, returnStatus: kotlin.String?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun orderListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, orderIds: kotlin.String?, sinceId: kotlin.String?, storeId: kotlin.String?, customerId: kotlin.String?, customerEmail: kotlin.String?, basketId: kotlin.String?, currencyId: kotlin.String?, phone: kotlin.String?, orderStatus: kotlin.String?, orderStatusIds: kotlin.collections.List<kotlin.String>?, ebayOrderStatus: kotlin.String?, financialStatus: kotlin.String?, financialStatusIds: kotlin.collections.List<kotlin.String>?, fulfillmentStatus: kotlin.String?, returnStatus: kotlin.String?, fulfillmentChannel: kotlin.String?, shippingMethod: kotlin.String?, skipOrderIds: kotlin.String?, isDeleted: kotlin.Boolean?, shippingCountryIso3: kotlin.String?, deliveryMethod: kotlin.String?, shipNodeType: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, tags: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, enableCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                if (start != null) {
+                    put("start", listOf(start.toString()))
+                }
+                if (count != null) {
+                    put("count", listOf(count.toString()))
+                }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
+                if (ids != null) {
+                    put("ids", listOf(ids.toString()))
+                }
+                if (orderIds != null) {
+                    put("order_ids", listOf(orderIds.toString()))
+                }
+                if (sinceId != null) {
+                    put("since_id", listOf(sinceId.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
+                }
                 if (customerId != null) {
                     put("customer_id", listOf(customerId.toString()))
                 }
                 if (customerEmail != null) {
                     put("customer_email", listOf(customerEmail.toString()))
+                }
+                if (basketId != null) {
+                    put("basket_id", listOf(basketId.toString()))
+                }
+                if (currencyId != null) {
+                    put("currency_id", listOf(currencyId.toString()))
                 }
                 if (phone != null) {
                     put("phone", listOf(phone.toString()))
@@ -1084,14 +1111,56 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 if (orderStatusIds != null) {
                     put("order_status_ids", toMultiValue(orderStatusIds.toList(), "multi"))
                 }
-                if (start != null) {
-                    put("start", listOf(start.toString()))
+                if (ebayOrderStatus != null) {
+                    put("ebay_order_status", listOf(ebayOrderStatus.toString()))
                 }
-                if (count != null) {
-                    put("count", listOf(count.toString()))
+                if (financialStatus != null) {
+                    put("financial_status", listOf(financialStatus.toString()))
                 }
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
+                if (financialStatusIds != null) {
+                    put("financial_status_ids", toMultiValue(financialStatusIds.toList(), "multi"))
+                }
+                if (fulfillmentStatus != null) {
+                    put("fulfillment_status", listOf(fulfillmentStatus.toString()))
+                }
+                if (returnStatus != null) {
+                    put("return_status", listOf(returnStatus.toString()))
+                }
+                if (fulfillmentChannel != null) {
+                    put("fulfillment_channel", listOf(fulfillmentChannel.toString()))
+                }
+                if (shippingMethod != null) {
+                    put("shipping_method", listOf(shippingMethod.toString()))
+                }
+                if (skipOrderIds != null) {
+                    put("skip_order_ids", listOf(skipOrderIds.toString()))
+                }
+                if (isDeleted != null) {
+                    put("is_deleted", listOf(isDeleted.toString()))
+                }
+                if (shippingCountryIso3 != null) {
+                    put("shipping_country_iso3", listOf(shippingCountryIso3.toString()))
+                }
+                if (deliveryMethod != null) {
+                    put("delivery_method", listOf(deliveryMethod.toString()))
+                }
+                if (shipNodeType != null) {
+                    put("ship_node_type", listOf(shipNodeType.toString()))
+                }
+                if (createdTo != null) {
+                    put("created_to", listOf(createdTo.toString()))
+                }
+                if (createdFrom != null) {
+                    put("created_from", listOf(createdFrom.toString()))
+                }
+                if (modifiedTo != null) {
+                    put("modified_to", listOf(modifiedTo.toString()))
+                }
+                if (modifiedFrom != null) {
+                    put("modified_from", listOf(modifiedFrom.toString()))
+                }
+                if (tags != null) {
+                    put("tags", listOf(tags.toString()))
                 }
                 if (sortBy != null) {
                     put("sort_by", listOf(sortBy.toString()))
@@ -1108,77 +1177,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
                 }
-                if (createdTo != null) {
-                    put("created_to", listOf(createdTo.toString()))
-                }
-                if (createdFrom != null) {
-                    put("created_from", listOf(createdFrom.toString()))
-                }
-                if (modifiedTo != null) {
-                    put("modified_to", listOf(modifiedTo.toString()))
-                }
-                if (modifiedFrom != null) {
-                    put("modified_from", listOf(modifiedFrom.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
-                if (ids != null) {
-                    put("ids", listOf(ids.toString()))
-                }
-                if (orderIds != null) {
-                    put("order_ids", listOf(orderIds.toString()))
-                }
-                if (ebayOrderStatus != null) {
-                    put("ebay_order_status", listOf(ebayOrderStatus.toString()))
-                }
-                if (basketId != null) {
-                    put("basket_id", listOf(basketId.toString()))
-                }
-                if (financialStatus != null) {
-                    put("financial_status", listOf(financialStatus.toString()))
-                }
-                if (financialStatusIds != null) {
-                    put("financial_status_ids", toMultiValue(financialStatusIds.toList(), "multi"))
-                }
-                if (fulfillmentStatus != null) {
-                    put("fulfillment_status", listOf(fulfillmentStatus.toString()))
-                }
-                if (fulfillmentChannel != null) {
-                    put("fulfillment_channel", listOf(fulfillmentChannel.toString()))
-                }
-                if (shippingMethod != null) {
-                    put("shipping_method", listOf(shippingMethod.toString()))
-                }
-                if (skipOrderIds != null) {
-                    put("skip_order_ids", listOf(skipOrderIds.toString()))
-                }
-                if (sinceId != null) {
-                    put("since_id", listOf(sinceId.toString()))
-                }
-                if (isDeleted != null) {
-                    put("is_deleted", listOf(isDeleted.toString()))
-                }
-                if (shippingCountryIso3 != null) {
-                    put("shipping_country_iso3", listOf(shippingCountryIso3.toString()))
-                }
                 if (enableCache != null) {
                     put("enable_cache", listOf(enableCache.toString()))
-                }
-                if (deliveryMethod != null) {
-                    put("delivery_method", listOf(deliveryMethod.toString()))
-                }
-                if (tags != null) {
-                    put("tags", listOf(tags.toString()))
-                }
-                if (shipNodeType != null) {
-                    put("ship_node_type", listOf(shipNodeType.toString()))
-                }
-                if (currencyId != null) {
-                    put("currency_id", listOf(currencyId.toString()))
-                }
-                if (returnStatus != null) {
-                    put("return_status", listOf(returnStatus.toString()))
                 }
                 if (useLatestApiVersion != null) {
                     put("use_latest_api_version", listOf(useLatestApiVersion.toString()))
@@ -1803,10 +1803,10 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param id Entity id
      * @param orderId Defines the order id
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return OrderShipmentInfo200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1816,8 +1816,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun orderShipmentInfo(id: kotlin.String, orderId: kotlin.String, start: kotlin.Int? = 0, params: kotlin.String? = "id,order_id,items,tracking_numbers", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, storeId: kotlin.String? = null) : OrderShipmentInfo200Response {
-        val localVarResponse = orderShipmentInfoWithHttpInfo(id = id, orderId = orderId, start = start, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId)
+    fun orderShipmentInfo(id: kotlin.String, orderId: kotlin.String, start: kotlin.Int? = 0, storeId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,order_id,items,tracking_numbers", exclude: kotlin.String? = null) : OrderShipmentInfo200Response {
+        val localVarResponse = orderShipmentInfoWithHttpInfo(id = id, orderId = orderId, start = start, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as OrderShipmentInfo200Response
@@ -1840,18 +1840,18 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param id Entity id
      * @param orderId Defines the order id
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<OrderShipmentInfo200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun orderShipmentInfoWithHttpInfo(id: kotlin.String, orderId: kotlin.String, start: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?) : ApiResponse<OrderShipmentInfo200Response?> {
-        val localVariableConfig = orderShipmentInfoRequestConfig(id = id, orderId = orderId, start = start, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId)
+    fun orderShipmentInfoWithHttpInfo(id: kotlin.String, orderId: kotlin.String, start: kotlin.Int?, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<OrderShipmentInfo200Response?> {
+        val localVariableConfig = orderShipmentInfoRequestConfig(id = id, orderId = orderId, start = start, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, OrderShipmentInfo200Response>(
             localVariableConfig
@@ -1864,32 +1864,32 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param id Entity id
      * @param orderId Defines the order id
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun orderShipmentInfoRequestConfig(id: kotlin.String, orderId: kotlin.String, start: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun orderShipmentInfoRequestConfig(id: kotlin.String, orderId: kotlin.String, start: kotlin.Int?, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                put("id", listOf(id.toString()))
-                put("order_id", listOf(orderId.toString()))
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
+                put("id", listOf(id.toString()))
+                put("order_id", listOf(orderId.toString()))
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))
                 }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -1909,17 +1909,17 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * order.shipment.list
      * Get list of shipments by orders.
      * @param orderId Retrieves shipments specified by order id
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param storeId Store Id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseOrderShipmentList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1929,8 +1929,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun orderShipmentList(orderId: kotlin.String, pageCursor: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, params: kotlin.String? = "id,order_id,items,tracking_numbers", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, storeId: kotlin.String? = null) : ModelResponseOrderShipmentList {
-        val localVarResponse = orderShipmentListWithHttpInfo(orderId = orderId, pageCursor = pageCursor, start = start, count = count, params = params, responseFields = responseFields, exclude = exclude, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, storeId = storeId)
+    fun orderShipmentList(orderId: kotlin.String, start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, storeId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,order_id,items,tracking_numbers", exclude: kotlin.String? = null) : ModelResponseOrderShipmentList {
+        val localVarResponse = orderShipmentListWithHttpInfo(orderId = orderId, start = start, count = count, pageCursor = pageCursor, storeId = storeId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseOrderShipmentList
@@ -1951,25 +1951,25 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * order.shipment.list
      * Get list of shipments by orders.
      * @param orderId Retrieves shipments specified by order id
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param storeId Store Id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseOrderShipmentList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun orderShipmentListWithHttpInfo(orderId: kotlin.String, pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, storeId: kotlin.String?) : ApiResponse<ModelResponseOrderShipmentList?> {
-        val localVariableConfig = orderShipmentListRequestConfig(orderId = orderId, pageCursor = pageCursor, start = start, count = count, params = params, responseFields = responseFields, exclude = exclude, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, storeId = storeId)
+    fun orderShipmentListWithHttpInfo(orderId: kotlin.String, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseOrderShipmentList?> {
+        val localVariableConfig = orderShipmentListRequestConfig(orderId = orderId, start = start, count = count, pageCursor = pageCursor, storeId = storeId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseOrderShipmentList>(
             localVariableConfig
@@ -1980,41 +1980,35 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * To obtain the request config of the operation orderShipmentList
      *
      * @param orderId Retrieves shipments specified by order id
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param storeId Store Id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,items,tracking_numbers")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun orderShipmentListRequestConfig(orderId: kotlin.String, pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun orderShipmentListRequestConfig(orderId: kotlin.String, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                put("order_id", listOf(orderId.toString()))
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
                 }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
+                put("order_id", listOf(orderId.toString()))
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
@@ -2028,8 +2022,14 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
                 }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -2282,11 +2282,11 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * Retrieve list of order transaction
      * @param orderIds Retrieves order transactions specified by order ids
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param storeId Store Id (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,amount,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @return ModelResponseOrderTransactionList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2296,8 +2296,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun orderTransactionList(orderIds: kotlin.String, count: kotlin.Int? = 10, storeId: kotlin.String? = null, params: kotlin.String? = "id,order_id,amount,description", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, pageCursor: kotlin.String? = null) : ModelResponseOrderTransactionList {
-        val localVarResponse = orderTransactionListWithHttpInfo(orderIds = orderIds, count = count, storeId = storeId, params = params, responseFields = responseFields, exclude = exclude, pageCursor = pageCursor)
+    fun orderTransactionList(orderIds: kotlin.String, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, storeId: kotlin.String? = null, params: kotlin.String? = "id,order_id,amount,description", responseFields: kotlin.String? = null, exclude: kotlin.String? = null) : ModelResponseOrderTransactionList {
+        val localVarResponse = orderTransactionListWithHttpInfo(orderIds = orderIds, count = count, pageCursor = pageCursor, storeId = storeId, params = params, responseFields = responseFields, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseOrderTransactionList
@@ -2319,19 +2319,19 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * Retrieve list of order transaction
      * @param orderIds Retrieves order transactions specified by order ids
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param storeId Store Id (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,amount,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @return ApiResponse<ModelResponseOrderTransactionList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun orderTransactionListWithHttpInfo(orderIds: kotlin.String, count: kotlin.Int?, storeId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, pageCursor: kotlin.String?) : ApiResponse<ModelResponseOrderTransactionList?> {
-        val localVariableConfig = orderTransactionListRequestConfig(orderIds = orderIds, count = count, storeId = storeId, params = params, responseFields = responseFields, exclude = exclude, pageCursor = pageCursor)
+    fun orderTransactionListWithHttpInfo(orderIds: kotlin.String, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseOrderTransactionList?> {
+        val localVariableConfig = orderTransactionListRequestConfig(orderIds = orderIds, count = count, pageCursor = pageCursor, storeId = storeId, params = params, responseFields = responseFields, exclude = exclude)
 
         return request<Unit, ModelResponseOrderTransactionList>(
             localVariableConfig
@@ -2343,19 +2343,22 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      *
      * @param orderIds Retrieves order transactions specified by order ids
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param storeId Store Id (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,order_id,amount,description")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @return RequestConfig
      */
-    fun orderTransactionListRequestConfig(orderIds: kotlin.String, count: kotlin.Int?, storeId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, pageCursor: kotlin.String?) : RequestConfig<Unit> {
+    fun orderTransactionListRequestConfig(orderIds: kotlin.String, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (count != null) {
                     put("count", listOf(count.toString()))
+                }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
                 }
                 put("order_ids", listOf(orderIds.toString()))
                 if (storeId != null) {
@@ -2369,9 +2372,6 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -2393,19 +2393,19 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param orderId Defines the orders specified by order id
      * @param storeId Defines store id where the order should be found (optional)
      * @param orderStatus Defines new order&#39;s status (optional)
+     * @param financialStatus Update order financial status to specified (optional)
+     * @param fulfillmentStatus Create order with fulfillment status (optional)
      * @param cancellationReason Defines the cancellation reason when the order will be canceled (optional)
+     * @param orderPaymentMethod Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param comment Specifies order comment (optional)
      * @param adminComment Specifies admin&#39;s order comment (optional)
      * @param adminPrivateComment Specifies private admin&#39;s order comment (optional)
+     * @param invoiceAdminComment Specifies admin&#39;s order invoice comment (optional)
      * @param dateModified Specifies order&#39;s  modification date (optional)
      * @param dateFinished Specifies order&#39;s  finished date (optional)
-     * @param financialStatus Update order financial status to specified (optional)
-     * @param fulfillmentStatus Create order with fulfillment status (optional)
-     * @param orderPaymentMethod Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param sendNotifications Send notifications to customer after order was created (optional, default to false)
-     * @param origin The source of the order (optional)
      * @param createInvoice Determines whether an invoice should be created if it has not already been created (optional)
-     * @param invoiceAdminComment Specifies admin&#39;s order invoice comment (optional)
+     * @param origin The source of the order (optional)
      * @return AccountConfigUpdate200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2415,8 +2415,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun orderUpdate(orderId: kotlin.String, storeId: kotlin.String? = null, orderStatus: kotlin.String? = null, cancellationReason: kotlin.String? = null, comment: kotlin.String? = null, adminComment: kotlin.String? = null, adminPrivateComment: kotlin.String? = null, dateModified: kotlin.String? = null, dateFinished: kotlin.String? = null, financialStatus: kotlin.String? = null, fulfillmentStatus: kotlin.String? = null, orderPaymentMethod: kotlin.String? = null, sendNotifications: kotlin.Boolean? = false, origin: kotlin.String? = null, createInvoice: kotlin.Boolean? = null, invoiceAdminComment: kotlin.String? = null) : AccountConfigUpdate200Response {
-        val localVarResponse = orderUpdateWithHttpInfo(orderId = orderId, storeId = storeId, orderStatus = orderStatus, cancellationReason = cancellationReason, comment = comment, adminComment = adminComment, adminPrivateComment = adminPrivateComment, dateModified = dateModified, dateFinished = dateFinished, financialStatus = financialStatus, fulfillmentStatus = fulfillmentStatus, orderPaymentMethod = orderPaymentMethod, sendNotifications = sendNotifications, origin = origin, createInvoice = createInvoice, invoiceAdminComment = invoiceAdminComment)
+    fun orderUpdate(orderId: kotlin.String, storeId: kotlin.String? = null, orderStatus: kotlin.String? = null, financialStatus: kotlin.String? = null, fulfillmentStatus: kotlin.String? = null, cancellationReason: kotlin.String? = null, orderPaymentMethod: kotlin.String? = null, comment: kotlin.String? = null, adminComment: kotlin.String? = null, adminPrivateComment: kotlin.String? = null, invoiceAdminComment: kotlin.String? = null, dateModified: kotlin.String? = null, dateFinished: kotlin.String? = null, sendNotifications: kotlin.Boolean? = false, createInvoice: kotlin.Boolean? = null, origin: kotlin.String? = null) : AccountConfigUpdate200Response {
+        val localVarResponse = orderUpdateWithHttpInfo(orderId = orderId, storeId = storeId, orderStatus = orderStatus, financialStatus = financialStatus, fulfillmentStatus = fulfillmentStatus, cancellationReason = cancellationReason, orderPaymentMethod = orderPaymentMethod, comment = comment, adminComment = adminComment, adminPrivateComment = adminPrivateComment, invoiceAdminComment = invoiceAdminComment, dateModified = dateModified, dateFinished = dateFinished, sendNotifications = sendNotifications, createInvoice = createInvoice, origin = origin)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as AccountConfigUpdate200Response
@@ -2439,27 +2439,27 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param orderId Defines the orders specified by order id
      * @param storeId Defines store id where the order should be found (optional)
      * @param orderStatus Defines new order&#39;s status (optional)
+     * @param financialStatus Update order financial status to specified (optional)
+     * @param fulfillmentStatus Create order with fulfillment status (optional)
      * @param cancellationReason Defines the cancellation reason when the order will be canceled (optional)
+     * @param orderPaymentMethod Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param comment Specifies order comment (optional)
      * @param adminComment Specifies admin&#39;s order comment (optional)
      * @param adminPrivateComment Specifies private admin&#39;s order comment (optional)
+     * @param invoiceAdminComment Specifies admin&#39;s order invoice comment (optional)
      * @param dateModified Specifies order&#39;s  modification date (optional)
      * @param dateFinished Specifies order&#39;s  finished date (optional)
-     * @param financialStatus Update order financial status to specified (optional)
-     * @param fulfillmentStatus Create order with fulfillment status (optional)
-     * @param orderPaymentMethod Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param sendNotifications Send notifications to customer after order was created (optional, default to false)
-     * @param origin The source of the order (optional)
      * @param createInvoice Determines whether an invoice should be created if it has not already been created (optional)
-     * @param invoiceAdminComment Specifies admin&#39;s order invoice comment (optional)
+     * @param origin The source of the order (optional)
      * @return ApiResponse<AccountConfigUpdate200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun orderUpdateWithHttpInfo(orderId: kotlin.String, storeId: kotlin.String?, orderStatus: kotlin.String?, cancellationReason: kotlin.String?, comment: kotlin.String?, adminComment: kotlin.String?, adminPrivateComment: kotlin.String?, dateModified: kotlin.String?, dateFinished: kotlin.String?, financialStatus: kotlin.String?, fulfillmentStatus: kotlin.String?, orderPaymentMethod: kotlin.String?, sendNotifications: kotlin.Boolean?, origin: kotlin.String?, createInvoice: kotlin.Boolean?, invoiceAdminComment: kotlin.String?) : ApiResponse<AccountConfigUpdate200Response?> {
-        val localVariableConfig = orderUpdateRequestConfig(orderId = orderId, storeId = storeId, orderStatus = orderStatus, cancellationReason = cancellationReason, comment = comment, adminComment = adminComment, adminPrivateComment = adminPrivateComment, dateModified = dateModified, dateFinished = dateFinished, financialStatus = financialStatus, fulfillmentStatus = fulfillmentStatus, orderPaymentMethod = orderPaymentMethod, sendNotifications = sendNotifications, origin = origin, createInvoice = createInvoice, invoiceAdminComment = invoiceAdminComment)
+    fun orderUpdateWithHttpInfo(orderId: kotlin.String, storeId: kotlin.String?, orderStatus: kotlin.String?, financialStatus: kotlin.String?, fulfillmentStatus: kotlin.String?, cancellationReason: kotlin.String?, orderPaymentMethod: kotlin.String?, comment: kotlin.String?, adminComment: kotlin.String?, adminPrivateComment: kotlin.String?, invoiceAdminComment: kotlin.String?, dateModified: kotlin.String?, dateFinished: kotlin.String?, sendNotifications: kotlin.Boolean?, createInvoice: kotlin.Boolean?, origin: kotlin.String?) : ApiResponse<AccountConfigUpdate200Response?> {
+        val localVariableConfig = orderUpdateRequestConfig(orderId = orderId, storeId = storeId, orderStatus = orderStatus, financialStatus = financialStatus, fulfillmentStatus = fulfillmentStatus, cancellationReason = cancellationReason, orderPaymentMethod = orderPaymentMethod, comment = comment, adminComment = adminComment, adminPrivateComment = adminPrivateComment, invoiceAdminComment = invoiceAdminComment, dateModified = dateModified, dateFinished = dateFinished, sendNotifications = sendNotifications, createInvoice = createInvoice, origin = origin)
 
         return request<Unit, AccountConfigUpdate200Response>(
             localVariableConfig
@@ -2472,22 +2472,22 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param orderId Defines the orders specified by order id
      * @param storeId Defines store id where the order should be found (optional)
      * @param orderStatus Defines new order&#39;s status (optional)
+     * @param financialStatus Update order financial status to specified (optional)
+     * @param fulfillmentStatus Create order with fulfillment status (optional)
      * @param cancellationReason Defines the cancellation reason when the order will be canceled (optional)
+     * @param orderPaymentMethod Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param comment Specifies order comment (optional)
      * @param adminComment Specifies admin&#39;s order comment (optional)
      * @param adminPrivateComment Specifies private admin&#39;s order comment (optional)
+     * @param invoiceAdminComment Specifies admin&#39;s order invoice comment (optional)
      * @param dateModified Specifies order&#39;s  modification date (optional)
      * @param dateFinished Specifies order&#39;s  finished date (optional)
-     * @param financialStatus Update order financial status to specified (optional)
-     * @param fulfillmentStatus Create order with fulfillment status (optional)
-     * @param orderPaymentMethod Defines order payment method.&lt;br/&gt;Setting order_payment_method on Shopify will also change financial_status field value to &#39;paid&#39; (optional)
      * @param sendNotifications Send notifications to customer after order was created (optional, default to false)
-     * @param origin The source of the order (optional)
      * @param createInvoice Determines whether an invoice should be created if it has not already been created (optional)
-     * @param invoiceAdminComment Specifies admin&#39;s order invoice comment (optional)
+     * @param origin The source of the order (optional)
      * @return RequestConfig
      */
-    fun orderUpdateRequestConfig(orderId: kotlin.String, storeId: kotlin.String?, orderStatus: kotlin.String?, cancellationReason: kotlin.String?, comment: kotlin.String?, adminComment: kotlin.String?, adminPrivateComment: kotlin.String?, dateModified: kotlin.String?, dateFinished: kotlin.String?, financialStatus: kotlin.String?, fulfillmentStatus: kotlin.String?, orderPaymentMethod: kotlin.String?, sendNotifications: kotlin.Boolean?, origin: kotlin.String?, createInvoice: kotlin.Boolean?, invoiceAdminComment: kotlin.String?) : RequestConfig<Unit> {
+    fun orderUpdateRequestConfig(orderId: kotlin.String, storeId: kotlin.String?, orderStatus: kotlin.String?, financialStatus: kotlin.String?, fulfillmentStatus: kotlin.String?, cancellationReason: kotlin.String?, orderPaymentMethod: kotlin.String?, comment: kotlin.String?, adminComment: kotlin.String?, adminPrivateComment: kotlin.String?, invoiceAdminComment: kotlin.String?, dateModified: kotlin.String?, dateFinished: kotlin.String?, sendNotifications: kotlin.Boolean?, createInvoice: kotlin.Boolean?, origin: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -2498,8 +2498,17 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 if (orderStatus != null) {
                     put("order_status", listOf(orderStatus.toString()))
                 }
+                if (financialStatus != null) {
+                    put("financial_status", listOf(financialStatus.toString()))
+                }
+                if (fulfillmentStatus != null) {
+                    put("fulfillment_status", listOf(fulfillmentStatus.toString()))
+                }
                 if (cancellationReason != null) {
                     put("cancellation_reason", listOf(cancellationReason.toString()))
+                }
+                if (orderPaymentMethod != null) {
+                    put("order_payment_method", listOf(orderPaymentMethod.toString()))
                 }
                 if (comment != null) {
                     put("comment", listOf(comment.toString()))
@@ -2510,32 +2519,23 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 if (adminPrivateComment != null) {
                     put("admin_private_comment", listOf(adminPrivateComment.toString()))
                 }
+                if (invoiceAdminComment != null) {
+                    put("invoice_admin_comment", listOf(invoiceAdminComment.toString()))
+                }
                 if (dateModified != null) {
                     put("date_modified", listOf(dateModified.toString()))
                 }
                 if (dateFinished != null) {
                     put("date_finished", listOf(dateFinished.toString()))
                 }
-                if (financialStatus != null) {
-                    put("financial_status", listOf(financialStatus.toString()))
-                }
-                if (fulfillmentStatus != null) {
-                    put("fulfillment_status", listOf(fulfillmentStatus.toString()))
-                }
-                if (orderPaymentMethod != null) {
-                    put("order_payment_method", listOf(orderPaymentMethod.toString()))
-                }
                 if (sendNotifications != null) {
                     put("send_notifications", listOf(sendNotifications.toString()))
-                }
-                if (origin != null) {
-                    put("origin", listOf(origin.toString()))
                 }
                 if (createInvoice != null) {
                     put("create_invoice", listOf(createInvoice.toString()))
                 }
-                if (invoiceAdminComment != null) {
-                    put("invoice_admin_comment", listOf(invoiceAdminComment.toString()))
+                if (origin != null) {
+                    put("origin", listOf(origin.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

@@ -17,9 +17,9 @@
 | **consents** | [**kotlin.collections.List&lt;CustomerAddConsentsInner&gt;**](CustomerAddConsentsInner.md) | Defines consents to notifications |  [optional] |
 | **tags** | **kotlin.String** | Customer tags |  [optional] |
 | **gender** | **kotlin.String** | Defines customer&#39;s gender |  [optional] |
-| **storeId** | **kotlin.String** | Store Id |  [optional] |
 | **note** | **kotlin.String** | The customer note. |  [optional] |
 | **status** | **kotlin.String** | Defines customer&#39;s status |  [optional] |
+| **storeId** | **kotlin.String** | Store Id |  [optional] |
 | **address** | [**kotlin.collections.List&lt;CustomerUpdateAddressInner&gt;**](CustomerUpdateAddressInner.md) |  |  [optional] |
 
 

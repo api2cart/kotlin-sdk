@@ -79,6 +79,7 @@
 | **shoplineAccessToken** | **kotlin.String** | Shopline APP Key |  [optional] |
 | **shoplineAppKey** | **kotlin.String** | Shopline APP Key |  [optional] |
 | **shoplineAppSecret** | **kotlin.String** | Shopline App Secret |  [optional] |
+| **shoplineSharedSecret** | **kotlin.String** | Shopline Shared Secret |  [optional] |
 | **shopifyAccessToken** | **kotlin.String** | Access token authorizing the app to access resources on behalf of a user |  [optional] |
 | **shopifyApiKey** | **kotlin.String** | Shopify API Key |  [optional] |
 | **shopifyApiPassword** | **kotlin.String** | Shopify API Password |  [optional] |

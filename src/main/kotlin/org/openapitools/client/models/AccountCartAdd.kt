@@ -98,6 +98,7 @@ import com.squareup.moshi.JsonClass
  * @param shoplineAccessToken Shopline APP Key
  * @param shoplineAppKey Shopline APP Key
  * @param shoplineAppSecret Shopline App Secret
+ * @param shoplineSharedSecret Shopline Shared Secret
  * @param shopifyAccessToken Access token authorizing the app to access resources on behalf of a user
  * @param shopifyApiKey Shopify API Key
  * @param shopifyApiPassword Shopify API Password
@@ -475,6 +476,10 @@ data class AccountCartAdd (
     /* Shopline App Secret */
     @Json(name = "shopline_app_secret")
     val shoplineAppSecret: kotlin.String? = null,
+
+    /* Shopline Shared Secret */
+    @Json(name = "shopline_shared_secret")
+    val shoplineSharedSecret: kotlin.String? = null,
 
     /* Access token authorizing the app to access resources on behalf of a user */
     @Json(name = "shopify_access_token")

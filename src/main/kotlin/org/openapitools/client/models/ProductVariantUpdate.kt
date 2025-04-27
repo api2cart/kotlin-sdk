@@ -23,9 +23,28 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param storeId Defines store id where the variant should be found
  * @param id Defines variant update specified by variant id
  * @param productId Defines product's id where the variant has to be updated
+ * @param storeId Defines store id where the variant should be found
+ * @param langId Language id
+ * @param options Defines variant's options list
+ * @param name Defines variant's name that has to be updated
+ * @param description Specifies variant's description
+ * @param shortDescription Defines short description
+ * @param model Specifies variant's model that has to be added
+ * @param sku Defines new product's variant sku
+ * @param visible Set visibility status
+ * @param status Defines product variant's status
+ * @param backorderStatus Set backorder status
+ * @param availableForSale Specifies the set of visible/invisible product's variants for sale
+ * @param avail Defines category's visibility status
+ * @param isDefault Defines as a default variant
+ * @param isFreeShipping Specifies variant's free shipping flag that has to be added
+ * @param taxable Specifies whether a tax is charged
+ * @param taxClassId Defines tax classes where entity has to be added
+ * @param isVirtual Defines whether the product is virtual
+ * @param manageStock Defines inventory tracking for product variant
+ * @param inStock Set stock status
  * @param warehouseId This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
  * @param reserveQuantity This parameter allows to reserve/unreserve product variants quantity.
  * @param quantity Defines new products' variants quantity
@@ -39,51 +58,28 @@ import com.squareup.moshi.JsonClass
  * @param fixedCostShippingPrice Specifies fixed cost shipping price
  * @param spriceCreate Defines the date of special price creation
  * @param spriceExpire Defines the term of special price offer duration
- * @param manageStock Defines inventory tracking for product variant
- * @param inStock Set stock status
- * @param name Defines variant's name that has to be updated
- * @param description Specifies variant's description
- * @param sku Defines new product's variant sku
- * @param metaTitle Defines unique meta title for each entity
- * @param metaDescription Defines unique meta description of a entity
- * @param metaKeywords Defines unique meta keywords for each entity
- * @param shortDescription Defines short description
- * @param visible Set visibility status
- * @param status Defines product variant's status
- * @param backorderStatus Set backorder status
  * @param weight Weight
  * @param barcode A barcode is a unique code composed of numbers used as a product identifier.
- * @param reindex Is reindex required
- * @param taxable Specifies whether a tax is charged
- * @param options Defines variant's options list
- * @param harmonizedSystemCode Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
- * @param countryOfOrigin The country where the inventory item was made
  * @param width Defines product's width
  * @param weightUnit Weight Unit
  * @param height Defines product's height
  * @param length Defines product's length
  * @param gtin Global Trade Item Number. An GTIN is an identifier for trade items.
- * @param clearCache Is cache clear required
- * @param langId Language id
- * @param model Specifies variant's model that has to be added
- * @param availableForSale Specifies the set of visible/invisible product's variants for sale
  * @param upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products.
  * @param mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
  * @param ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
  * @param isbn International Standard Book Number. An ISBN is a unique identifier for books.
- * @param avail Defines category's visibility status
- * @param isDefault Defines as a default variant
- * @param isFreeShipping Specifies variant's free shipping flag that has to be added
- * @param taxClassId Defines tax classes where entity has to be added
- * @param isVirtual Defines whether the product is virtual
+ * @param harmonizedSystemCode Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
+ * @param countryOfOrigin The country where the inventory item was made
+ * @param metaTitle Defines unique meta title for each entity
+ * @param metaDescription Defines unique meta description of a entity
+ * @param metaKeywords Defines unique meta keywords for each entity
+ * @param reindex Is reindex required
+ * @param clearCache Is cache clear required
  */
 
 
 data class ProductVariantUpdate (
-
-    /* Defines store id where the variant should be found */
-    @Json(name = "store_id")
-    val storeId: kotlin.String? = null,
 
     /* Defines variant update specified by variant id */
     @Json(name = "id")
@@ -92,6 +88,86 @@ data class ProductVariantUpdate (
     /* Defines product's id where the variant has to be updated */
     @Json(name = "product_id")
     val productId: kotlin.String? = null,
+
+    /* Defines store id where the variant should be found */
+    @Json(name = "store_id")
+    val storeId: kotlin.String? = null,
+
+    /* Language id */
+    @Json(name = "lang_id")
+    val langId: kotlin.String? = null,
+
+    /* Defines variant's options list */
+    @Json(name = "options")
+    val options: kotlin.collections.List<ProductVariantUpdateOptionsInner>? = null,
+
+    /* Defines variant's name that has to be updated */
+    @Json(name = "name")
+    val name: kotlin.String? = null,
+
+    /* Specifies variant's description */
+    @Json(name = "description")
+    val description: kotlin.String? = null,
+
+    /* Defines short description */
+    @Json(name = "short_description")
+    val shortDescription: kotlin.String? = null,
+
+    /* Specifies variant's model that has to be added */
+    @Json(name = "model")
+    val model: kotlin.String? = null,
+
+    /* Defines new product's variant sku */
+    @Json(name = "sku")
+    val sku: kotlin.String? = null,
+
+    /* Set visibility status */
+    @Json(name = "visible")
+    val visible: kotlin.String? = null,
+
+    /* Defines product variant's status */
+    @Json(name = "status")
+    val status: kotlin.String? = null,
+
+    /* Set backorder status */
+    @Json(name = "backorder_status")
+    val backorderStatus: kotlin.String? = null,
+
+    /* Specifies the set of visible/invisible product's variants for sale */
+    @Json(name = "available_for_sale")
+    val availableForSale: kotlin.Boolean? = true,
+
+    /* Defines category's visibility status */
+    @Json(name = "avail")
+    val avail: kotlin.Boolean? = true,
+
+    /* Defines as a default variant */
+    @Json(name = "is_default")
+    val isDefault: kotlin.Boolean? = null,
+
+    /* Specifies variant's free shipping flag that has to be added */
+    @Json(name = "is_free_shipping")
+    val isFreeShipping: kotlin.Boolean? = null,
+
+    /* Specifies whether a tax is charged */
+    @Json(name = "taxable")
+    val taxable: kotlin.Boolean? = true,
+
+    /* Defines tax classes where entity has to be added */
+    @Json(name = "tax_class_id")
+    val taxClassId: kotlin.String? = null,
+
+    /* Defines whether the product is virtual */
+    @Json(name = "is_virtual")
+    val isVirtual: kotlin.Boolean? = false,
+
+    /* Defines inventory tracking for product variant */
+    @Json(name = "manage_stock")
+    val manageStock: kotlin.Boolean? = null,
+
+    /* Set stock status */
+    @Json(name = "in_stock")
+    val inStock: kotlin.Boolean? = null,
 
     /* This parameter is used for selecting a warehouse where you need to set/modify a product quantity. */
     @Json(name = "warehouse_id")
@@ -145,54 +221,6 @@ data class ProductVariantUpdate (
     @Json(name = "sprice_expire")
     val spriceExpire: kotlin.String? = null,
 
-    /* Defines inventory tracking for product variant */
-    @Json(name = "manage_stock")
-    val manageStock: kotlin.Boolean? = null,
-
-    /* Set stock status */
-    @Json(name = "in_stock")
-    val inStock: kotlin.Boolean? = null,
-
-    /* Defines variant's name that has to be updated */
-    @Json(name = "name")
-    val name: kotlin.String? = null,
-
-    /* Specifies variant's description */
-    @Json(name = "description")
-    val description: kotlin.String? = null,
-
-    /* Defines new product's variant sku */
-    @Json(name = "sku")
-    val sku: kotlin.String? = null,
-
-    /* Defines unique meta title for each entity */
-    @Json(name = "meta_title")
-    val metaTitle: kotlin.String? = null,
-
-    /* Defines unique meta description of a entity */
-    @Json(name = "meta_description")
-    val metaDescription: kotlin.String? = null,
-
-    /* Defines unique meta keywords for each entity */
-    @Json(name = "meta_keywords")
-    val metaKeywords: kotlin.String? = null,
-
-    /* Defines short description */
-    @Json(name = "short_description")
-    val shortDescription: kotlin.String? = null,
-
-    /* Set visibility status */
-    @Json(name = "visible")
-    val visible: kotlin.String? = null,
-
-    /* Defines product variant's status */
-    @Json(name = "status")
-    val status: kotlin.String? = null,
-
-    /* Set backorder status */
-    @Json(name = "backorder_status")
-    val backorderStatus: kotlin.String? = null,
-
     /* Weight */
     @Json(name = "weight")
     val weight: java.math.BigDecimal? = java.math.BigDecimal("0"),
@@ -200,26 +228,6 @@ data class ProductVariantUpdate (
     /* A barcode is a unique code composed of numbers used as a product identifier. */
     @Json(name = "barcode")
     val barcode: kotlin.String? = null,
-
-    /* Is reindex required */
-    @Json(name = "reindex")
-    val reindex: kotlin.Boolean? = true,
-
-    /* Specifies whether a tax is charged */
-    @Json(name = "taxable")
-    val taxable: kotlin.Boolean? = true,
-
-    /* Defines variant's options list */
-    @Json(name = "options")
-    val options: kotlin.collections.List<ProductVariantUpdateOptionsInner>? = null,
-
-    /* Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes */
-    @Json(name = "harmonized_system_code")
-    val harmonizedSystemCode: kotlin.String? = null,
-
-    /* The country where the inventory item was made */
-    @Json(name = "country_of_origin")
-    val countryOfOrigin: kotlin.String? = null,
 
     /* Defines product's width */
     @Json(name = "width")
@@ -241,22 +249,6 @@ data class ProductVariantUpdate (
     @Json(name = "gtin")
     val gtin: kotlin.String? = null,
 
-    /* Is cache clear required */
-    @Json(name = "clear_cache")
-    val clearCache: kotlin.Boolean? = true,
-
-    /* Language id */
-    @Json(name = "lang_id")
-    val langId: kotlin.String? = null,
-
-    /* Specifies variant's model that has to be added */
-    @Json(name = "model")
-    val model: kotlin.String? = null,
-
-    /* Specifies the set of visible/invisible product's variants for sale */
-    @Json(name = "available_for_sale")
-    val availableForSale: kotlin.Boolean? = true,
-
     /* Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. */
     @Json(name = "upc")
     val upc: kotlin.String? = null,
@@ -273,25 +265,33 @@ data class ProductVariantUpdate (
     @Json(name = "isbn")
     val isbn: kotlin.String? = null,
 
-    /* Defines category's visibility status */
-    @Json(name = "avail")
-    val avail: kotlin.Boolean? = true,
+    /* Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes */
+    @Json(name = "harmonized_system_code")
+    val harmonizedSystemCode: kotlin.String? = null,
 
-    /* Defines as a default variant */
-    @Json(name = "is_default")
-    val isDefault: kotlin.Boolean? = null,
+    /* The country where the inventory item was made */
+    @Json(name = "country_of_origin")
+    val countryOfOrigin: kotlin.String? = null,
 
-    /* Specifies variant's free shipping flag that has to be added */
-    @Json(name = "is_free_shipping")
-    val isFreeShipping: kotlin.Boolean? = null,
+    /* Defines unique meta title for each entity */
+    @Json(name = "meta_title")
+    val metaTitle: kotlin.String? = null,
 
-    /* Defines tax classes where entity has to be added */
-    @Json(name = "tax_class_id")
-    val taxClassId: kotlin.String? = null,
+    /* Defines unique meta description of a entity */
+    @Json(name = "meta_description")
+    val metaDescription: kotlin.String? = null,
 
-    /* Defines whether the product is virtual */
-    @Json(name = "is_virtual")
-    val isVirtual: kotlin.Boolean? = false
+    /* Defines unique meta keywords for each entity */
+    @Json(name = "meta_keywords")
+    val metaKeywords: kotlin.String? = null,
+
+    /* Is reindex required */
+    @Json(name = "reindex")
+    val reindex: kotlin.Boolean? = true,
+
+    /* Is cache clear required */
+    @Json(name = "clear_cache")
+    val clearCache: kotlin.Boolean? = true
 
 ) {
 

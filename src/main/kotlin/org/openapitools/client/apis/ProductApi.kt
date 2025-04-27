@@ -245,19 +245,19 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * product.attribute.list
      * Get list of attributes and values.
      * @param productId Retrieves attributes specified by product id
-     * @param attributeId Retrieves info for specified attribute_id (optional)
-     * @param variantId Defines product&#39;s variants specified by variant id (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param attributeId Retrieves info for specified attribute_id (optional)
+     * @param variantId Defines product&#39;s variants specified by variant id (optional)
      * @param attributeGroupId Filter by attribute_group_id (optional)
-     * @param setName Retrieves attributes specified by set_name in Magento (optional)
      * @param langId Retrieves attributes specified by language id (optional)
      * @param storeId Retrieves attributes specified by store id (optional)
+     * @param setName Retrieves attributes specified by set_name in Magento (optional)
      * @param sortBy Set field to sort by (optional, default to "attribute_id")
      * @param sortDirection Set sorting direction (optional, default to "asc")
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "attribute_id,name")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "attribute_id,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseProductAttributeList
      * @throws IllegalStateException If the request is not correctly configured
@@ -268,8 +268,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productAttributeList(productId: kotlin.String, attributeId: kotlin.String? = null, variantId: kotlin.String? = null, pageCursor: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, attributeGroupId: kotlin.String? = null, setName: kotlin.String? = null, langId: kotlin.String? = null, storeId: kotlin.String? = null, sortBy: kotlin.String? = "attribute_id", sortDirection: kotlin.String? = "asc", params: kotlin.String? = "attribute_id,name", responseFields: kotlin.String? = null, exclude: kotlin.String? = null) : ModelResponseProductAttributeList {
-        val localVarResponse = productAttributeListWithHttpInfo(productId = productId, attributeId = attributeId, variantId = variantId, pageCursor = pageCursor, start = start, count = count, attributeGroupId = attributeGroupId, setName = setName, langId = langId, storeId = storeId, sortBy = sortBy, sortDirection = sortDirection, params = params, responseFields = responseFields, exclude = exclude)
+    fun productAttributeList(productId: kotlin.String, start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, attributeId: kotlin.String? = null, variantId: kotlin.String? = null, attributeGroupId: kotlin.String? = null, langId: kotlin.String? = null, storeId: kotlin.String? = null, setName: kotlin.String? = null, sortBy: kotlin.String? = "attribute_id", sortDirection: kotlin.String? = "asc", responseFields: kotlin.String? = null, params: kotlin.String? = "attribute_id,name", exclude: kotlin.String? = null) : ModelResponseProductAttributeList {
+        val localVarResponse = productAttributeListWithHttpInfo(productId = productId, start = start, count = count, pageCursor = pageCursor, attributeId = attributeId, variantId = variantId, attributeGroupId = attributeGroupId, langId = langId, storeId = storeId, setName = setName, sortBy = sortBy, sortDirection = sortDirection, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseProductAttributeList
@@ -290,19 +290,19 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * product.attribute.list
      * Get list of attributes and values.
      * @param productId Retrieves attributes specified by product id
-     * @param attributeId Retrieves info for specified attribute_id (optional)
-     * @param variantId Defines product&#39;s variants specified by variant id (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param attributeId Retrieves info for specified attribute_id (optional)
+     * @param variantId Defines product&#39;s variants specified by variant id (optional)
      * @param attributeGroupId Filter by attribute_group_id (optional)
-     * @param setName Retrieves attributes specified by set_name in Magento (optional)
      * @param langId Retrieves attributes specified by language id (optional)
      * @param storeId Retrieves attributes specified by store id (optional)
+     * @param setName Retrieves attributes specified by set_name in Magento (optional)
      * @param sortBy Set field to sort by (optional, default to "attribute_id")
      * @param sortDirection Set sorting direction (optional, default to "asc")
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "attribute_id,name")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "attribute_id,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseProductAttributeList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -310,8 +310,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productAttributeListWithHttpInfo(productId: kotlin.String, attributeId: kotlin.String?, variantId: kotlin.String?, pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, attributeGroupId: kotlin.String?, setName: kotlin.String?, langId: kotlin.String?, storeId: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseProductAttributeList?> {
-        val localVariableConfig = productAttributeListRequestConfig(productId = productId, attributeId = attributeId, variantId = variantId, pageCursor = pageCursor, start = start, count = count, attributeGroupId = attributeGroupId, setName = setName, langId = langId, storeId = storeId, sortBy = sortBy, sortDirection = sortDirection, params = params, responseFields = responseFields, exclude = exclude)
+    fun productAttributeListWithHttpInfo(productId: kotlin.String, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, attributeId: kotlin.String?, variantId: kotlin.String?, attributeGroupId: kotlin.String?, langId: kotlin.String?, storeId: kotlin.String?, setName: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseProductAttributeList?> {
+        val localVariableConfig = productAttributeListRequestConfig(productId = productId, start = start, count = count, pageCursor = pageCursor, attributeId = attributeId, variantId = variantId, attributeGroupId = attributeGroupId, langId = langId, storeId = storeId, setName = setName, sortBy = sortBy, sortDirection = sortDirection, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseProductAttributeList>(
             localVariableConfig
@@ -322,26 +322,35 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * To obtain the request config of the operation productAttributeList
      *
      * @param productId Retrieves attributes specified by product id
-     * @param attributeId Retrieves info for specified attribute_id (optional)
-     * @param variantId Defines product&#39;s variants specified by variant id (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param attributeId Retrieves info for specified attribute_id (optional)
+     * @param variantId Defines product&#39;s variants specified by variant id (optional)
      * @param attributeGroupId Filter by attribute_group_id (optional)
-     * @param setName Retrieves attributes specified by set_name in Magento (optional)
      * @param langId Retrieves attributes specified by language id (optional)
      * @param storeId Retrieves attributes specified by store id (optional)
+     * @param setName Retrieves attributes specified by set_name in Magento (optional)
      * @param sortBy Set field to sort by (optional, default to "attribute_id")
      * @param sortDirection Set sorting direction (optional, default to "asc")
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "attribute_id,name")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "attribute_id,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun productAttributeListRequestConfig(productId: kotlin.String, attributeId: kotlin.String?, variantId: kotlin.String?, pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, attributeGroupId: kotlin.String?, setName: kotlin.String?, langId: kotlin.String?, storeId: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun productAttributeListRequestConfig(productId: kotlin.String, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, attributeId: kotlin.String?, variantId: kotlin.String?, attributeGroupId: kotlin.String?, langId: kotlin.String?, storeId: kotlin.String?, setName: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                if (start != null) {
+                    put("start", listOf(start.toString()))
+                }
+                if (count != null) {
+                    put("count", listOf(count.toString()))
+                }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
                 put("product_id", listOf(productId.toString()))
                 if (attributeId != null) {
                     put("attribute_id", listOf(attributeId.toString()))
@@ -349,20 +358,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (variantId != null) {
                     put("variant_id", listOf(variantId.toString()))
                 }
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
-                if (start != null) {
-                    put("start", listOf(start.toString()))
-                }
-                if (count != null) {
-                    put("count", listOf(count.toString()))
-                }
                 if (attributeGroupId != null) {
                     put("attribute_group_id", listOf(attributeGroupId.toString()))
-                }
-                if (setName != null) {
-                    put("set_name", listOf(setName.toString()))
                 }
                 if (langId != null) {
                     put("lang_id", listOf(langId.toString()))
@@ -370,17 +367,20 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
+                if (setName != null) {
+                    put("set_name", listOf(setName.toString()))
+                }
                 if (sortBy != null) {
                     put("sort_by", listOf(sortBy.toString()))
                 }
                 if (sortDirection != null) {
                     put("sort_direction", listOf(sortDirection.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
@@ -623,20 +623,20 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,short_description,active,url")
      * @param brandIds Retrieves brands specified by brand ids (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param categoryId Retrieves product brands specified by category id (optional)
+     * @param parentId Retrieves brands specified by parent id (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
+     * @param findWhere Entity search that is specified by the comma-separated unique fields (optional)
+     * @param findValue Entity search that is specified by some value (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param parentId Retrieves brands specified by parent id (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param findWhere Entity search that is specified by the comma-separated unique fields (optional)
-     * @param findValue Entity search that is specified by some value (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,short_description,active,url")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseProductBrandList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -646,8 +646,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productBrandList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, params: kotlin.String? = "id,name,short_description,active,url", brandIds: kotlin.String? = null, exclude: kotlin.String? = null, categoryId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, parentId: kotlin.String? = null, responseFields: kotlin.String? = null, findWhere: kotlin.String? = null, findValue: kotlin.String? = null) : ModelResponseProductBrandList {
-        val localVarResponse = productBrandListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, params = params, brandIds = brandIds, exclude = exclude, categoryId = categoryId, storeId = storeId, langId = langId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, parentId = parentId, responseFields = responseFields, findWhere = findWhere, findValue = findValue)
+    fun productBrandList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, brandIds: kotlin.String? = null, categoryId: kotlin.String? = null, parentId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, findWhere: kotlin.String? = null, findValue: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,name,short_description,active,url", exclude: kotlin.String? = null) : ModelResponseProductBrandList {
+        val localVarResponse = productBrandListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, brandIds = brandIds, categoryId = categoryId, parentId = parentId, storeId = storeId, langId = langId, findWhere = findWhere, findValue = findValue, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseProductBrandList
@@ -670,28 +670,28 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,short_description,active,url")
      * @param brandIds Retrieves brands specified by brand ids (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param categoryId Retrieves product brands specified by category id (optional)
+     * @param parentId Retrieves brands specified by parent id (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
+     * @param findWhere Entity search that is specified by the comma-separated unique fields (optional)
+     * @param findValue Entity search that is specified by some value (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param parentId Retrieves brands specified by parent id (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param findWhere Entity search that is specified by the comma-separated unique fields (optional)
-     * @param findValue Entity search that is specified by some value (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,short_description,active,url")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseProductBrandList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productBrandListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, params: kotlin.String?, brandIds: kotlin.String?, exclude: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, parentId: kotlin.String?, responseFields: kotlin.String?, findWhere: kotlin.String?, findValue: kotlin.String?) : ApiResponse<ModelResponseProductBrandList?> {
-        val localVariableConfig = productBrandListRequestConfig(start = start, count = count, pageCursor = pageCursor, params = params, brandIds = brandIds, exclude = exclude, categoryId = categoryId, storeId = storeId, langId = langId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, parentId = parentId, responseFields = responseFields, findWhere = findWhere, findValue = findValue)
+    fun productBrandListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, brandIds: kotlin.String?, categoryId: kotlin.String?, parentId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, findWhere: kotlin.String?, findValue: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseProductBrandList?> {
+        val localVariableConfig = productBrandListRequestConfig(start = start, count = count, pageCursor = pageCursor, brandIds = brandIds, categoryId = categoryId, parentId = parentId, storeId = storeId, langId = langId, findWhere = findWhere, findValue = findValue, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseProductBrandList>(
             localVariableConfig
@@ -704,23 +704,23 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,short_description,active,url")
      * @param brandIds Retrieves brands specified by brand ids (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param categoryId Retrieves product brands specified by category id (optional)
+     * @param parentId Retrieves brands specified by parent id (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
+     * @param findWhere Entity search that is specified by the comma-separated unique fields (optional)
+     * @param findValue Entity search that is specified by some value (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param parentId Retrieves brands specified by parent id (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param findWhere Entity search that is specified by the comma-separated unique fields (optional)
-     * @param findValue Entity search that is specified by some value (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,short_description,active,url")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun productBrandListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, params: kotlin.String?, brandIds: kotlin.String?, exclude: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, parentId: kotlin.String?, responseFields: kotlin.String?, findWhere: kotlin.String?, findValue: kotlin.String?) : RequestConfig<Unit> {
+    fun productBrandListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, brandIds: kotlin.String?, categoryId: kotlin.String?, parentId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, findWhere: kotlin.String?, findValue: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -733,23 +733,26 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (pageCursor != null) {
                     put("page_cursor", listOf(pageCursor.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
                 if (brandIds != null) {
                     put("brand_ids", listOf(brandIds.toString()))
                 }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
                 if (categoryId != null) {
                     put("category_id", listOf(categoryId.toString()))
+                }
+                if (parentId != null) {
+                    put("parent_id", listOf(parentId.toString()))
                 }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
                 if (langId != null) {
                     put("lang_id", listOf(langId.toString()))
+                }
+                if (findWhere != null) {
+                    put("find_where", listOf(findWhere.toString()))
+                }
+                if (findValue != null) {
+                    put("find_value", listOf(findValue.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
@@ -763,17 +766,14 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
                 }
-                if (parentId != null) {
-                    put("parent_id", listOf(parentId.toString()))
-                }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))
                 }
-                if (findWhere != null) {
-                    put("find_where", listOf(findWhere.toString()))
+                if (params != null) {
+                    put("params", listOf(params.toString()))
                 }
-                if (findValue != null) {
-                    put("find_value", listOf(findValue.toString()))
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -888,12 +888,12 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * Get child for specific product.
      * @param productId Filter by parent product id
      * @param id Entity id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
      * @param currencyId Currency Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return ProductChildItemInfo200Response
      * @throws IllegalStateException If the request is not correctly configured
@@ -904,8 +904,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productChildItemInfo(productId: kotlin.String, id: kotlin.String, params: kotlin.String? = "force_all", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, currencyId: kotlin.String? = null, useLatestApiVersion: kotlin.Boolean? = false) : ProductChildItemInfo200Response {
-        val localVarResponse = productChildItemInfoWithHttpInfo(productId = productId, id = id, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId, langId = langId, currencyId = currencyId, useLatestApiVersion = useLatestApiVersion)
+    fun productChildItemInfo(productId: kotlin.String, id: kotlin.String, storeId: kotlin.String? = null, langId: kotlin.String? = null, currencyId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null, useLatestApiVersion: kotlin.Boolean? = false) : ProductChildItemInfo200Response {
+        val localVarResponse = productChildItemInfoWithHttpInfo(productId = productId, id = id, storeId = storeId, langId = langId, currencyId = currencyId, responseFields = responseFields, params = params, exclude = exclude, useLatestApiVersion = useLatestApiVersion)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ProductChildItemInfo200Response
@@ -927,12 +927,12 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * Get child for specific product.
      * @param productId Filter by parent product id
      * @param id Entity id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
      * @param currencyId Currency Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return ApiResponse<ProductChildItemInfo200Response?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -940,8 +940,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productChildItemInfoWithHttpInfo(productId: kotlin.String, id: kotlin.String, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ProductChildItemInfo200Response?> {
-        val localVariableConfig = productChildItemInfoRequestConfig(productId = productId, id = id, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId, langId = langId, currencyId = currencyId, useLatestApiVersion = useLatestApiVersion)
+    fun productChildItemInfoWithHttpInfo(productId: kotlin.String, id: kotlin.String, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ProductChildItemInfo200Response?> {
+        val localVariableConfig = productChildItemInfoRequestConfig(productId = productId, id = id, storeId = storeId, langId = langId, currencyId = currencyId, responseFields = responseFields, params = params, exclude = exclude, useLatestApiVersion = useLatestApiVersion)
 
         return request<Unit, ProductChildItemInfo200Response>(
             localVariableConfig
@@ -953,28 +953,19 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      *
      * @param productId Filter by parent product id
      * @param id Entity id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
      * @param currencyId Currency Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return RequestConfig
      */
-    fun productChildItemInfoRequestConfig(productId: kotlin.String, id: kotlin.String, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun productChildItemInfoRequestConfig(productId: kotlin.String, id: kotlin.String, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
                 put("product_id", listOf(productId.toString()))
                 put("id", listOf(id.toString()))
                 if (storeId != null) {
@@ -985,6 +976,15 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (currencyId != null) {
                     put("currency_id", listOf(currencyId.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
                 if (useLatestApiVersion != null) {
                     put("use_latest_api_version", listOf(useLatestApiVersion.toString()))
@@ -1006,16 +1006,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * product.child_item.list
      * Get a list of a product&#39;s child items, such as variants or bundle components. The total_count field in the response indicates the total number of items in the context of the current filter.
-     * @param pageCursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param pageCursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param productId Filter by parent product id (optional)
      * @param productIds Filter by parent product ids (optional)
      * @param sku Filter by products variant&#39;s sku (optional)
@@ -1025,10 +1018,17 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param availSale Specifies the set of available/not available products for sale (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Child products search that is specified by field (optional)
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
-     * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
      * @return ModelResponseProductChildItemList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1038,8 +1038,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productChildItemList(pageCursor: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, params: kotlin.String? = "force_all", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, productId: kotlin.String? = null, productIds: kotlin.String? = null, sku: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, currencyId: kotlin.String? = null, availSale: kotlin.Boolean? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false, returnGlobal: kotlin.Boolean? = false) : ModelResponseProductChildItemList {
-        val localVarResponse = productChildItemListWithHttpInfo(pageCursor = pageCursor, start = start, count = count, params = params, responseFields = responseFields, exclude = exclude, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, productId = productId, productIds = productIds, sku = sku, storeId = storeId, langId = langId, currencyId = currencyId, availSale = availSale, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion, returnGlobal = returnGlobal)
+    fun productChildItemList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, productId: kotlin.String? = null, productIds: kotlin.String? = null, sku: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, currencyId: kotlin.String? = null, availSale: kotlin.Boolean? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, returnGlobal: kotlin.Boolean? = false, responseFields: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : ModelResponseProductChildItemList {
+        val localVarResponse = productChildItemListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, productId = productId, productIds = productIds, sku = sku, storeId = storeId, langId = langId, currencyId = currencyId, availSale = availSale, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, returnGlobal = returnGlobal, responseFields = responseFields, params = params, exclude = exclude, reportRequestId = reportRequestId, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseProductChildItemList
@@ -1059,16 +1059,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * product.child_item.list
      * Get a list of a product&#39;s child items, such as variants or bundle components. The total_count field in the response indicates the total number of items in the context of the current filter.
-     * @param pageCursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param pageCursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param productId Filter by parent product id (optional)
      * @param productIds Filter by parent product ids (optional)
      * @param sku Filter by products variant&#39;s sku (optional)
@@ -1078,18 +1071,25 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param availSale Specifies the set of available/not available products for sale (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Child products search that is specified by field (optional)
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
-     * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
      * @return ApiResponse<ModelResponseProductChildItemList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productChildItemListWithHttpInfo(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, productId: kotlin.String?, productIds: kotlin.String?, sku: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, availSale: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?, returnGlobal: kotlin.Boolean?) : ApiResponse<ModelResponseProductChildItemList?> {
-        val localVariableConfig = productChildItemListRequestConfig(pageCursor = pageCursor, start = start, count = count, params = params, responseFields = responseFields, exclude = exclude, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, productId = productId, productIds = productIds, sku = sku, storeId = storeId, langId = langId, currencyId = currencyId, availSale = availSale, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion, returnGlobal = returnGlobal)
+    fun productChildItemListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, productId: kotlin.String?, productIds: kotlin.String?, sku: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, availSale: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, returnGlobal: kotlin.Boolean?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ModelResponseProductChildItemList?> {
+        val localVariableConfig = productChildItemListRequestConfig(start = start, count = count, pageCursor = pageCursor, productId = productId, productIds = productIds, sku = sku, storeId = storeId, langId = langId, currencyId = currencyId, availSale = availSale, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, returnGlobal = returnGlobal, responseFields = responseFields, params = params, exclude = exclude, reportRequestId = reportRequestId, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return request<Unit, ModelResponseProductChildItemList>(
             localVariableConfig
@@ -1099,16 +1099,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * To obtain the request config of the operation productChildItemList
      *
-     * @param pageCursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param pageCursor Used to retrieve products child items via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param productId Filter by parent product id (optional)
      * @param productIds Filter by parent product ids (optional)
      * @param sku Filter by products variant&#39;s sku (optional)
@@ -1118,45 +1111,31 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param availSale Specifies the set of available/not available products for sale (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Child products search that is specified by field (optional)
+     * @param createdFrom Retrieve entities from their creation date (optional)
+     * @param createdTo Retrieve entities to their creation date (optional)
+     * @param modifiedFrom Retrieve entities from their modification date (optional)
+     * @param modifiedTo Retrieve entities to their modification date (optional)
+     * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
-     * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
      * @return RequestConfig
      */
-    fun productChildItemListRequestConfig(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, productId: kotlin.String?, productIds: kotlin.String?, sku: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, availSale: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?, returnGlobal: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun productChildItemListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, productId: kotlin.String?, productIds: kotlin.String?, sku: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, availSale: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, returnGlobal: kotlin.Boolean?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
-                if (createdFrom != null) {
-                    put("created_from", listOf(createdFrom.toString()))
-                }
-                if (createdTo != null) {
-                    put("created_to", listOf(createdTo.toString()))
-                }
-                if (modifiedFrom != null) {
-                    put("modified_from", listOf(modifiedFrom.toString()))
-                }
-                if (modifiedTo != null) {
-                    put("modified_to", listOf(modifiedTo.toString()))
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
                 }
                 if (productId != null) {
                     put("product_id", listOf(productId.toString()))
@@ -1185,6 +1164,30 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (findWhere != null) {
                     put("find_where", listOf(findWhere.toString()))
                 }
+                if (createdFrom != null) {
+                    put("created_from", listOf(createdFrom.toString()))
+                }
+                if (createdTo != null) {
+                    put("created_to", listOf(createdTo.toString()))
+                }
+                if (modifiedFrom != null) {
+                    put("modified_from", listOf(modifiedFrom.toString()))
+                }
+                if (modifiedTo != null) {
+                    put("modified_to", listOf(modifiedTo.toString()))
+                }
+                if (returnGlobal != null) {
+                    put("return_global", listOf(returnGlobal.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
+                }
                 if (reportRequestId != null) {
                     put("report_request_id", listOf(reportRequestId.toString()))
                 }
@@ -1193,9 +1196,6 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (useLatestApiVersion != null) {
                     put("use_latest_api_version", listOf(useLatestApiVersion.toString()))
-                }
-                if (returnGlobal != null) {
-                    put("return_global", listOf(returnGlobal.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -1214,28 +1214,28 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * product.count
      * Count products in store.
+     * @param productIds Counts products specified by product ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
      * @param categoryId Counts products specified by category id (optional)
+     * @param storeId Counts products specified by store id (optional)
+     * @param langId Counts products specified by language id (optional)
+     * @param availView Specifies the set of visible/invisible products (optional)
+     * @param availSale Specifies the set of available/not available products for sale (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param availView Specifies the set of visible/invisible products (optional)
-     * @param availSale Specifies the set of available/not available products for sale (optional)
-     * @param storeId Counts products specified by store id (optional)
-     * @param langId Counts products specified by language id (optional)
-     * @param productIds Counts products specified by product ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
-     * @param reportRequestId Report request id (optional)
-     * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param brandName Retrieves brands specified by brand name (optional)
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts products that are searched specified by field (optional)
-     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
+     * @param reportRequestId Report request id (optional)
      * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
+     * @param disableReportCache Disable report cache for current request (optional, default to false)
+     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return ProductCount200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1245,8 +1245,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productCount(categoryId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, availView: kotlin.Boolean? = null, availSale: kotlin.Boolean? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, productIds: kotlin.String? = null, sinceId: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false, brandName: kotlin.String? = null, productAttributes: kotlin.collections.List<kotlin.String>? = null, status: kotlin.String? = null, type: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, useLatestApiVersion: kotlin.Boolean? = false, returnGlobal: kotlin.Boolean? = false, categoriesIds: kotlin.String? = null) : ProductCount200Response {
-        val localVarResponse = productCountWithHttpInfo(categoryId = categoryId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, availView = availView, availSale = availSale, storeId = storeId, langId = langId, productIds = productIds, sinceId = sinceId, reportRequestId = reportRequestId, disableReportCache = disableReportCache, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, useLatestApiVersion = useLatestApiVersion, returnGlobal = returnGlobal, categoriesIds = categoriesIds)
+    fun productCount(productIds: kotlin.String? = null, sinceId: kotlin.String? = null, categoriesIds: kotlin.String? = null, categoryId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, availView: kotlin.Boolean? = null, availSale: kotlin.Boolean? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, brandName: kotlin.String? = null, productAttributes: kotlin.collections.List<kotlin.String>? = null, status: kotlin.String? = null, type: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, reportRequestId: kotlin.String? = null, returnGlobal: kotlin.Boolean? = false, disableReportCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : ProductCount200Response {
+        val localVarResponse = productCountWithHttpInfo(productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, returnGlobal = returnGlobal, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ProductCount200Response
@@ -1266,36 +1266,36 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * product.count
      * Count products in store.
+     * @param productIds Counts products specified by product ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
      * @param categoryId Counts products specified by category id (optional)
+     * @param storeId Counts products specified by store id (optional)
+     * @param langId Counts products specified by language id (optional)
+     * @param availView Specifies the set of visible/invisible products (optional)
+     * @param availSale Specifies the set of available/not available products for sale (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param availView Specifies the set of visible/invisible products (optional)
-     * @param availSale Specifies the set of available/not available products for sale (optional)
-     * @param storeId Counts products specified by store id (optional)
-     * @param langId Counts products specified by language id (optional)
-     * @param productIds Counts products specified by product ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
-     * @param reportRequestId Report request id (optional)
-     * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param brandName Retrieves brands specified by brand name (optional)
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts products that are searched specified by field (optional)
-     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
+     * @param reportRequestId Report request id (optional)
      * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
+     * @param disableReportCache Disable report cache for current request (optional, default to false)
+     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return ApiResponse<ProductCount200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productCountWithHttpInfo(categoryId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, storeId: kotlin.String?, langId: kotlin.String?, productIds: kotlin.String?, sinceId: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, useLatestApiVersion: kotlin.Boolean?, returnGlobal: kotlin.Boolean?, categoriesIds: kotlin.String?) : ApiResponse<ProductCount200Response?> {
-        val localVariableConfig = productCountRequestConfig(categoryId = categoryId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, availView = availView, availSale = availSale, storeId = storeId, langId = langId, productIds = productIds, sinceId = sinceId, reportRequestId = reportRequestId, disableReportCache = disableReportCache, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, useLatestApiVersion = useLatestApiVersion, returnGlobal = returnGlobal, categoriesIds = categoriesIds)
+    fun productCountWithHttpInfo(productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, returnGlobal: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ProductCount200Response?> {
+        val localVariableConfig = productCountRequestConfig(productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, returnGlobal = returnGlobal, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return request<Unit, ProductCount200Response>(
             localVariableConfig
@@ -1305,36 +1305,57 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * To obtain the request config of the operation productCount
      *
+     * @param productIds Counts products specified by product ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
      * @param categoryId Counts products specified by category id (optional)
+     * @param storeId Counts products specified by store id (optional)
+     * @param langId Counts products specified by language id (optional)
+     * @param availView Specifies the set of visible/invisible products (optional)
+     * @param availSale Specifies the set of available/not available products for sale (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param availView Specifies the set of visible/invisible products (optional)
-     * @param availSale Specifies the set of available/not available products for sale (optional)
-     * @param storeId Counts products specified by store id (optional)
-     * @param langId Counts products specified by language id (optional)
-     * @param productIds Counts products specified by product ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
-     * @param reportRequestId Report request id (optional)
-     * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param brandName Retrieves brands specified by brand name (optional)
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts products that are searched specified by field (optional)
-     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
+     * @param reportRequestId Report request id (optional)
      * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
+     * @param disableReportCache Disable report cache for current request (optional, default to false)
+     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return RequestConfig
      */
-    fun productCountRequestConfig(categoryId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, storeId: kotlin.String?, langId: kotlin.String?, productIds: kotlin.String?, sinceId: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, useLatestApiVersion: kotlin.Boolean?, returnGlobal: kotlin.Boolean?, categoriesIds: kotlin.String?) : RequestConfig<Unit> {
+    fun productCountRequestConfig(productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, returnGlobal: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                if (productIds != null) {
+                    put("product_ids", listOf(productIds.toString()))
+                }
+                if (sinceId != null) {
+                    put("since_id", listOf(sinceId.toString()))
+                }
+                if (categoriesIds != null) {
+                    put("categories_ids", listOf(categoriesIds.toString()))
+                }
                 if (categoryId != null) {
                     put("category_id", listOf(categoryId.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
+                }
+                if (langId != null) {
+                    put("lang_id", listOf(langId.toString()))
+                }
+                if (availView != null) {
+                    put("avail_view", listOf(availView.toString()))
+                }
+                if (availSale != null) {
+                    put("avail_sale", listOf(availSale.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
@@ -1347,30 +1368,6 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
-                }
-                if (availView != null) {
-                    put("avail_view", listOf(availView.toString()))
-                }
-                if (availSale != null) {
-                    put("avail_sale", listOf(availSale.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
-                if (langId != null) {
-                    put("lang_id", listOf(langId.toString()))
-                }
-                if (productIds != null) {
-                    put("product_ids", listOf(productIds.toString()))
-                }
-                if (sinceId != null) {
-                    put("since_id", listOf(sinceId.toString()))
-                }
-                if (reportRequestId != null) {
-                    put("report_request_id", listOf(reportRequestId.toString()))
-                }
-                if (disableReportCache != null) {
-                    put("disable_report_cache", listOf(disableReportCache.toString()))
                 }
                 if (brandName != null) {
                     put("brand_name", listOf(brandName.toString()))
@@ -1390,14 +1387,17 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (findWhere != null) {
                     put("find_where", listOf(findWhere.toString()))
                 }
-                if (useLatestApiVersion != null) {
-                    put("use_latest_api_version", listOf(useLatestApiVersion.toString()))
+                if (reportRequestId != null) {
+                    put("report_request_id", listOf(reportRequestId.toString()))
                 }
                 if (returnGlobal != null) {
                     put("return_global", listOf(returnGlobal.toString()))
                 }
-                if (categoriesIds != null) {
-                    put("categories_ids", listOf(categoriesIds.toString()))
+                if (disableReportCache != null) {
+                    put("disable_report_cache", listOf(disableReportCache.toString()))
+                }
+                if (useLatestApiVersion != null) {
+                    put("use_latest_api_version", listOf(useLatestApiVersion.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -1526,12 +1526,12 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * Get list of currencies
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "name,iso3,default,avail")
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param default Specifies the set of default/not default currencies (optional)
      * @param avail Specifies the set of available/not available currencies (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "name,iso3,default,avail")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseProductCurrencyList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1541,8 +1541,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productCurrencyList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, params: kotlin.String? = "name,iso3,default,avail", pageCursor: kotlin.String? = null, exclude: kotlin.String? = null, responseFields: kotlin.String? = null, default: kotlin.Boolean? = null, avail: kotlin.Boolean? = null) : ModelResponseProductCurrencyList {
-        val localVarResponse = productCurrencyListWithHttpInfo(start = start, count = count, params = params, pageCursor = pageCursor, exclude = exclude, responseFields = responseFields, default = default, avail = avail)
+    fun productCurrencyList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, default: kotlin.Boolean? = null, avail: kotlin.Boolean? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "name,iso3,default,avail", exclude: kotlin.String? = null) : ModelResponseProductCurrencyList {
+        val localVarResponse = productCurrencyListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, default = default, avail = avail, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseProductCurrencyList
@@ -1564,20 +1564,20 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * Get list of currencies
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "name,iso3,default,avail")
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param default Specifies the set of default/not default currencies (optional)
      * @param avail Specifies the set of available/not available currencies (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "name,iso3,default,avail")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseProductCurrencyList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productCurrencyListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, pageCursor: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?, default: kotlin.Boolean?, avail: kotlin.Boolean?) : ApiResponse<ModelResponseProductCurrencyList?> {
-        val localVariableConfig = productCurrencyListRequestConfig(start = start, count = count, params = params, pageCursor = pageCursor, exclude = exclude, responseFields = responseFields, default = default, avail = avail)
+    fun productCurrencyListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, default: kotlin.Boolean?, avail: kotlin.Boolean?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseProductCurrencyList?> {
+        val localVariableConfig = productCurrencyListRequestConfig(start = start, count = count, pageCursor = pageCursor, default = default, avail = avail, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseProductCurrencyList>(
             localVariableConfig
@@ -1589,15 +1589,15 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      *
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "name,iso3,default,avail")
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param default Specifies the set of default/not default currencies (optional)
      * @param avail Specifies the set of available/not available currencies (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "name,iso3,default,avail")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun productCurrencyListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, pageCursor: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?, default: kotlin.Boolean?, avail: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun productCurrencyListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, default: kotlin.Boolean?, avail: kotlin.Boolean?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -1607,23 +1607,23 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
                 if (pageCursor != null) {
                     put("page_cursor", listOf(pageCursor.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (default != null) {
                     put("default", listOf(default.toString()))
                 }
                 if (avail != null) {
                     put("avail", listOf(avail.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -2130,12 +2130,12 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param productId Defines product id where the image should be updated
      * @param id Defines image update specified by image id
      * @param variantIds Defines product&#39;s variants ids (optional)
+     * @param storeId Store Id (optional)
+     * @param langId Language id (optional)
      * @param imageName Defines image&#39;s name (optional)
      * @param type Defines image&#39;s types that are specified by comma-separated list (optional, default to "additional")
      * @param label Defines alternative text that has to be attached to the picture (optional)
      * @param position Defines image’s position in the list (optional)
-     * @param storeId Store Id (optional)
-     * @param langId Language id (optional)
      * @param hidden Define is hide image (optional)
      * @return ProductImageUpdate200Response
      * @throws IllegalStateException If the request is not correctly configured
@@ -2146,8 +2146,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productImageUpdate(productId: kotlin.String, id: kotlin.String, variantIds: kotlin.String? = null, imageName: kotlin.String? = null, type: kotlin.String? = "additional", label: kotlin.String? = null, position: kotlin.Int? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, hidden: kotlin.Boolean? = null) : ProductImageUpdate200Response {
-        val localVarResponse = productImageUpdateWithHttpInfo(productId = productId, id = id, variantIds = variantIds, imageName = imageName, type = type, label = label, position = position, storeId = storeId, langId = langId, hidden = hidden)
+    fun productImageUpdate(productId: kotlin.String, id: kotlin.String, variantIds: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, imageName: kotlin.String? = null, type: kotlin.String? = "additional", label: kotlin.String? = null, position: kotlin.Int? = null, hidden: kotlin.Boolean? = null) : ProductImageUpdate200Response {
+        val localVarResponse = productImageUpdateWithHttpInfo(productId = productId, id = id, variantIds = variantIds, storeId = storeId, langId = langId, imageName = imageName, type = type, label = label, position = position, hidden = hidden)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ProductImageUpdate200Response
@@ -2170,12 +2170,12 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param productId Defines product id where the image should be updated
      * @param id Defines image update specified by image id
      * @param variantIds Defines product&#39;s variants ids (optional)
+     * @param storeId Store Id (optional)
+     * @param langId Language id (optional)
      * @param imageName Defines image&#39;s name (optional)
      * @param type Defines image&#39;s types that are specified by comma-separated list (optional, default to "additional")
      * @param label Defines alternative text that has to be attached to the picture (optional)
      * @param position Defines image’s position in the list (optional)
-     * @param storeId Store Id (optional)
-     * @param langId Language id (optional)
      * @param hidden Define is hide image (optional)
      * @return ApiResponse<ProductImageUpdate200Response?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -2183,8 +2183,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productImageUpdateWithHttpInfo(productId: kotlin.String, id: kotlin.String, variantIds: kotlin.String?, imageName: kotlin.String?, type: kotlin.String?, label: kotlin.String?, position: kotlin.Int?, storeId: kotlin.String?, langId: kotlin.String?, hidden: kotlin.Boolean?) : ApiResponse<ProductImageUpdate200Response?> {
-        val localVariableConfig = productImageUpdateRequestConfig(productId = productId, id = id, variantIds = variantIds, imageName = imageName, type = type, label = label, position = position, storeId = storeId, langId = langId, hidden = hidden)
+    fun productImageUpdateWithHttpInfo(productId: kotlin.String, id: kotlin.String, variantIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, imageName: kotlin.String?, type: kotlin.String?, label: kotlin.String?, position: kotlin.Int?, hidden: kotlin.Boolean?) : ApiResponse<ProductImageUpdate200Response?> {
+        val localVariableConfig = productImageUpdateRequestConfig(productId = productId, id = id, variantIds = variantIds, storeId = storeId, langId = langId, imageName = imageName, type = type, label = label, position = position, hidden = hidden)
 
         return request<Unit, ProductImageUpdate200Response>(
             localVariableConfig
@@ -2197,22 +2197,29 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param productId Defines product id where the image should be updated
      * @param id Defines image update specified by image id
      * @param variantIds Defines product&#39;s variants ids (optional)
+     * @param storeId Store Id (optional)
+     * @param langId Language id (optional)
      * @param imageName Defines image&#39;s name (optional)
      * @param type Defines image&#39;s types that are specified by comma-separated list (optional, default to "additional")
      * @param label Defines alternative text that has to be attached to the picture (optional)
      * @param position Defines image’s position in the list (optional)
-     * @param storeId Store Id (optional)
-     * @param langId Language id (optional)
      * @param hidden Define is hide image (optional)
      * @return RequestConfig
      */
-    fun productImageUpdateRequestConfig(productId: kotlin.String, id: kotlin.String, variantIds: kotlin.String?, imageName: kotlin.String?, type: kotlin.String?, label: kotlin.String?, position: kotlin.Int?, storeId: kotlin.String?, langId: kotlin.String?, hidden: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun productImageUpdateRequestConfig(productId: kotlin.String, id: kotlin.String, variantIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, imageName: kotlin.String?, type: kotlin.String?, label: kotlin.String?, position: kotlin.Int?, hidden: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("product_id", listOf(productId.toString()))
+                put("id", listOf(id.toString()))
                 if (variantIds != null) {
                     put("variant_ids", listOf(variantIds.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
+                }
+                if (langId != null) {
+                    put("lang_id", listOf(langId.toString()))
                 }
                 if (imageName != null) {
                     put("image_name", listOf(imageName.toString()))
@@ -2225,13 +2232,6 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (position != null) {
                     put("position", listOf(position.toString()))
-                }
-                put("id", listOf(id.toString()))
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
-                if (langId != null) {
-                    put("lang_id", listOf(langId.toString()))
                 }
                 if (hidden != null) {
                     put("hidden", listOf(hidden.toString()))
@@ -2254,12 +2254,12 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * product.info
      * Get information about a specific product by its ID. In the case of a multistore configuration, use the store_id filter to get a response in the context of a specific store.
      * @param id Retrieves product&#39;s info specified by product id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves product info specified by store id (optional)
      * @param langId Retrieves product info specified by language id (optional)
      * @param currencyId Currency Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
@@ -2272,8 +2272,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productInfo(id: kotlin.String, params: kotlin.String? = "id,name,description,price,categories_ids", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, currencyId: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : ProductInfo200Response {
-        val localVarResponse = productInfoWithHttpInfo(id = id, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId, langId = langId, currencyId = currencyId, reportRequestId = reportRequestId, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
+    fun productInfo(id: kotlin.String, storeId: kotlin.String? = null, langId: kotlin.String? = null, currencyId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,name,description,price,categories_ids", exclude: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : ProductInfo200Response {
+        val localVarResponse = productInfoWithHttpInfo(id = id, storeId = storeId, langId = langId, currencyId = currencyId, responseFields = responseFields, params = params, exclude = exclude, reportRequestId = reportRequestId, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ProductInfo200Response
@@ -2294,12 +2294,12 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * product.info
      * Get information about a specific product by its ID. In the case of a multistore configuration, use the store_id filter to get a response in the context of a specific store.
      * @param id Retrieves product&#39;s info specified by product id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves product info specified by store id (optional)
      * @param langId Retrieves product info specified by language id (optional)
      * @param currencyId Currency Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
@@ -2309,8 +2309,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productInfoWithHttpInfo(id: kotlin.String, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ProductInfo200Response?> {
-        val localVariableConfig = productInfoRequestConfig(id = id, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId, langId = langId, currencyId = currencyId, reportRequestId = reportRequestId, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
+    fun productInfoWithHttpInfo(id: kotlin.String, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ProductInfo200Response?> {
+        val localVariableConfig = productInfoRequestConfig(id = id, storeId = storeId, langId = langId, currencyId = currencyId, responseFields = responseFields, params = params, exclude = exclude, reportRequestId = reportRequestId, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return request<Unit, ProductInfo200Response>(
             localVariableConfig
@@ -2321,31 +2321,22 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * To obtain the request config of the operation productInfo
      *
      * @param id Retrieves product&#39;s info specified by product id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves product info specified by store id (optional)
      * @param langId Retrieves product info specified by language id (optional)
      * @param currencyId Currency Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return RequestConfig
      */
-    fun productInfoRequestConfig(id: kotlin.String, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun productInfoRequestConfig(id: kotlin.String, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("id", listOf(id.toString()))
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
@@ -2354,6 +2345,15 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (currencyId != null) {
                     put("currency_id", listOf(currencyId.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
                 if (reportRequestId != null) {
                     put("report_request_id", listOf(reportRequestId.toString()))
@@ -2381,39 +2381,39 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * product.list
      * Get list of products from your store. Returns 10 products by default.
-     * @param pageCursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param pageCursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param productIds Retrieves products specified by product ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param categoriesIds Retrieves products specified by categories ids (optional)
      * @param categoryId Retrieves products specified by category id (optional)
+     * @param storeId Retrieves products specified by store id (optional)
+     * @param langId Retrieves products specified by language id (optional)
+     * @param currencyId Currency Id (optional)
+     * @param availView Specifies the set of visible/invisible products (optional)
+     * @param availSale Specifies the set of available/not available products for sale (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param availView Specifies the set of visible/invisible products (optional)
-     * @param availSale Specifies the set of available/not available products for sale (optional)
-     * @param storeId Retrieves products specified by store id (optional)
-     * @param langId Retrieves products specified by language id (optional)
-     * @param currencyId Currency Id (optional)
-     * @param productIds Retrieves products specified by product ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
-     * @param reportRequestId Report request id (optional)
-     * @param disableReportCache Disable report cache for current request (optional, default to false)
-     * @param sortBy Set field to sort by (optional, default to "id")
-     * @param sortDirection Set sorting direction (optional, default to "asc")
      * @param sku Filter by product&#39;s sku (optional)
-     * @param disableCache Disable cache for current request (optional, default to false)
      * @param brandName Retrieves brands specified by brand name (optional)
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Product search that is specified by field (optional)
-     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param categoriesIds Retrieves products specified by categories ids (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param sortBy Set field to sort by (optional, default to "id")
+     * @param sortDirection Set sorting direction (optional, default to "asc")
+     * @param reportRequestId Report request id (optional)
+     * @param disableCache Disable cache for current request (optional, default to false)
+     * @param disableReportCache Disable report cache for current request (optional, default to false)
+     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return ModelResponseProductList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2423,8 +2423,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productList(pageCursor: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, params: kotlin.String? = "id,name,description,price,categories_ids", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, categoryId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, availView: kotlin.Boolean? = null, availSale: kotlin.Boolean? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, currencyId: kotlin.String? = null, productIds: kotlin.String? = null, sinceId: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false, sortBy: kotlin.String? = "id", sortDirection: kotlin.String? = "asc", sku: kotlin.String? = null, disableCache: kotlin.Boolean? = false, brandName: kotlin.String? = null, productAttributes: kotlin.collections.List<kotlin.String>? = null, status: kotlin.String? = null, type: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, useLatestApiVersion: kotlin.Boolean? = false, returnGlobal: kotlin.Boolean? = false, categoriesIds: kotlin.String? = null) : ModelResponseProductList {
-        val localVarResponse = productListWithHttpInfo(pageCursor = pageCursor, start = start, count = count, params = params, responseFields = responseFields, exclude = exclude, categoryId = categoryId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, availView = availView, availSale = availSale, storeId = storeId, langId = langId, currencyId = currencyId, productIds = productIds, sinceId = sinceId, reportRequestId = reportRequestId, disableReportCache = disableReportCache, sortBy = sortBy, sortDirection = sortDirection, sku = sku, disableCache = disableCache, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, useLatestApiVersion = useLatestApiVersion, returnGlobal = returnGlobal, categoriesIds = categoriesIds)
+    fun productList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, productIds: kotlin.String? = null, sinceId: kotlin.String? = null, categoriesIds: kotlin.String? = null, categoryId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, currencyId: kotlin.String? = null, availView: kotlin.Boolean? = null, availSale: kotlin.Boolean? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, sku: kotlin.String? = null, brandName: kotlin.String? = null, productAttributes: kotlin.collections.List<kotlin.String>? = null, status: kotlin.String? = null, type: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, returnGlobal: kotlin.Boolean? = false, params: kotlin.String? = "id,name,description,price,categories_ids", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, sortBy: kotlin.String? = "id", sortDirection: kotlin.String? = "asc", reportRequestId: kotlin.String? = null, disableCache: kotlin.Boolean? = false, disableReportCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : ModelResponseProductList {
+        val localVarResponse = productListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, currencyId = currencyId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sku = sku, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, returnGlobal = returnGlobal, params = params, responseFields = responseFields, exclude = exclude, sortBy = sortBy, sortDirection = sortDirection, reportRequestId = reportRequestId, disableCache = disableCache, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseProductList
@@ -2444,47 +2444,47 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * product.list
      * Get list of products from your store. Returns 10 products by default.
-     * @param pageCursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param pageCursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param productIds Retrieves products specified by product ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param categoriesIds Retrieves products specified by categories ids (optional)
      * @param categoryId Retrieves products specified by category id (optional)
+     * @param storeId Retrieves products specified by store id (optional)
+     * @param langId Retrieves products specified by language id (optional)
+     * @param currencyId Currency Id (optional)
+     * @param availView Specifies the set of visible/invisible products (optional)
+     * @param availSale Specifies the set of available/not available products for sale (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param availView Specifies the set of visible/invisible products (optional)
-     * @param availSale Specifies the set of available/not available products for sale (optional)
-     * @param storeId Retrieves products specified by store id (optional)
-     * @param langId Retrieves products specified by language id (optional)
-     * @param currencyId Currency Id (optional)
-     * @param productIds Retrieves products specified by product ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
-     * @param reportRequestId Report request id (optional)
-     * @param disableReportCache Disable report cache for current request (optional, default to false)
-     * @param sortBy Set field to sort by (optional, default to "id")
-     * @param sortDirection Set sorting direction (optional, default to "asc")
      * @param sku Filter by product&#39;s sku (optional)
-     * @param disableCache Disable cache for current request (optional, default to false)
      * @param brandName Retrieves brands specified by brand name (optional)
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Product search that is specified by field (optional)
-     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param categoriesIds Retrieves products specified by categories ids (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param sortBy Set field to sort by (optional, default to "id")
+     * @param sortDirection Set sorting direction (optional, default to "asc")
+     * @param reportRequestId Report request id (optional)
+     * @param disableCache Disable cache for current request (optional, default to false)
+     * @param disableReportCache Disable report cache for current request (optional, default to false)
+     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return ApiResponse<ModelResponseProductList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productListWithHttpInfo(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, categoryId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, productIds: kotlin.String?, sinceId: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, sortBy: kotlin.String?, sortDirection: kotlin.String?, sku: kotlin.String?, disableCache: kotlin.Boolean?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, useLatestApiVersion: kotlin.Boolean?, returnGlobal: kotlin.Boolean?, categoriesIds: kotlin.String?) : ApiResponse<ModelResponseProductList?> {
-        val localVariableConfig = productListRequestConfig(pageCursor = pageCursor, start = start, count = count, params = params, responseFields = responseFields, exclude = exclude, categoryId = categoryId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, availView = availView, availSale = availSale, storeId = storeId, langId = langId, currencyId = currencyId, productIds = productIds, sinceId = sinceId, reportRequestId = reportRequestId, disableReportCache = disableReportCache, sortBy = sortBy, sortDirection = sortDirection, sku = sku, disableCache = disableCache, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, useLatestApiVersion = useLatestApiVersion, returnGlobal = returnGlobal, categoriesIds = categoriesIds)
+    fun productListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sku: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, returnGlobal: kotlin.Boolean?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, reportRequestId: kotlin.String?, disableCache: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ModelResponseProductList?> {
+        val localVariableConfig = productListRequestConfig(start = start, count = count, pageCursor = pageCursor, productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, currencyId = currencyId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sku = sku, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, returnGlobal = returnGlobal, params = params, responseFields = responseFields, exclude = exclude, sortBy = sortBy, sortDirection = sortDirection, reportRequestId = reportRequestId, disableCache = disableCache, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return request<Unit, ModelResponseProductList>(
             localVariableConfig
@@ -2494,65 +2494,80 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     /**
      * To obtain the request config of the operation productList
      *
-     * @param pageCursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param pageCursor Used to retrieve products via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param productIds Retrieves products specified by product ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param categoriesIds Retrieves products specified by categories ids (optional)
      * @param categoryId Retrieves products specified by category id (optional)
+     * @param storeId Retrieves products specified by store id (optional)
+     * @param langId Retrieves products specified by language id (optional)
+     * @param currencyId Currency Id (optional)
+     * @param availView Specifies the set of visible/invisible products (optional)
+     * @param availSale Specifies the set of available/not available products for sale (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param availView Specifies the set of visible/invisible products (optional)
-     * @param availSale Specifies the set of available/not available products for sale (optional)
-     * @param storeId Retrieves products specified by store id (optional)
-     * @param langId Retrieves products specified by language id (optional)
-     * @param currencyId Currency Id (optional)
-     * @param productIds Retrieves products specified by product ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
-     * @param reportRequestId Report request id (optional)
-     * @param disableReportCache Disable report cache for current request (optional, default to false)
-     * @param sortBy Set field to sort by (optional, default to "id")
-     * @param sortDirection Set sorting direction (optional, default to "asc")
      * @param sku Filter by product&#39;s sku (optional)
-     * @param disableCache Disable cache for current request (optional, default to false)
      * @param brandName Retrieves brands specified by brand name (optional)
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Product search that is specified by field (optional)
-     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
-     * @param categoriesIds Retrieves products specified by categories ids (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price,categories_ids")
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param sortBy Set field to sort by (optional, default to "id")
+     * @param sortDirection Set sorting direction (optional, default to "asc")
+     * @param reportRequestId Report request id (optional)
+     * @param disableCache Disable cache for current request (optional, default to false)
+     * @param disableReportCache Disable report cache for current request (optional, default to false)
+     * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return RequestConfig
      */
-    fun productListRequestConfig(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, categoryId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, productIds: kotlin.String?, sinceId: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, sortBy: kotlin.String?, sortDirection: kotlin.String?, sku: kotlin.String?, disableCache: kotlin.Boolean?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, useLatestApiVersion: kotlin.Boolean?, returnGlobal: kotlin.Boolean?, categoriesIds: kotlin.String?) : RequestConfig<Unit> {
+    fun productListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sku: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, returnGlobal: kotlin.Boolean?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, reportRequestId: kotlin.String?, disableCache: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
                 }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
+                if (productIds != null) {
+                    put("product_ids", listOf(productIds.toString()))
                 }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
+                if (sinceId != null) {
+                    put("since_id", listOf(sinceId.toString()))
+                }
+                if (categoriesIds != null) {
+                    put("categories_ids", listOf(categoriesIds.toString()))
                 }
                 if (categoryId != null) {
                     put("category_id", listOf(categoryId.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
+                }
+                if (langId != null) {
+                    put("lang_id", listOf(langId.toString()))
+                }
+                if (currencyId != null) {
+                    put("currency_id", listOf(currencyId.toString()))
+                }
+                if (availView != null) {
+                    put("avail_view", listOf(availView.toString()))
+                }
+                if (availSale != null) {
+                    put("avail_sale", listOf(availSale.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
@@ -2566,44 +2581,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
                 }
-                if (availView != null) {
-                    put("avail_view", listOf(availView.toString()))
-                }
-                if (availSale != null) {
-                    put("avail_sale", listOf(availSale.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
-                if (langId != null) {
-                    put("lang_id", listOf(langId.toString()))
-                }
-                if (currencyId != null) {
-                    put("currency_id", listOf(currencyId.toString()))
-                }
-                if (productIds != null) {
-                    put("product_ids", listOf(productIds.toString()))
-                }
-                if (sinceId != null) {
-                    put("since_id", listOf(sinceId.toString()))
-                }
-                if (reportRequestId != null) {
-                    put("report_request_id", listOf(reportRequestId.toString()))
-                }
-                if (disableReportCache != null) {
-                    put("disable_report_cache", listOf(disableReportCache.toString()))
-                }
-                if (sortBy != null) {
-                    put("sort_by", listOf(sortBy.toString()))
-                }
-                if (sortDirection != null) {
-                    put("sort_direction", listOf(sortDirection.toString()))
-                }
                 if (sku != null) {
                     put("sku", listOf(sku.toString()))
-                }
-                if (disableCache != null) {
-                    put("disable_cache", listOf(disableCache.toString()))
                 }
                 if (brandName != null) {
                     put("brand_name", listOf(brandName.toString()))
@@ -2623,14 +2602,35 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (findWhere != null) {
                     put("find_where", listOf(findWhere.toString()))
                 }
-                if (useLatestApiVersion != null) {
-                    put("use_latest_api_version", listOf(useLatestApiVersion.toString()))
-                }
                 if (returnGlobal != null) {
                     put("return_global", listOf(returnGlobal.toString()))
                 }
-                if (categoriesIds != null) {
-                    put("categories_ids", listOf(categoriesIds.toString()))
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
+                }
+                if (sortBy != null) {
+                    put("sort_by", listOf(sortBy.toString()))
+                }
+                if (sortDirection != null) {
+                    put("sort_direction", listOf(sortDirection.toString()))
+                }
+                if (reportRequestId != null) {
+                    put("report_request_id", listOf(reportRequestId.toString()))
+                }
+                if (disableCache != null) {
+                    put("disable_cache", listOf(disableCache.toString()))
+                }
+                if (disableReportCache != null) {
+                    put("disable_report_cache", listOf(disableReportCache.toString()))
+                }
+                if (useLatestApiVersion != null) {
+                    put("use_latest_api_version", listOf(useLatestApiVersion.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -2993,12 +2993,12 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * Get list of options.
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param productId Retrieves products&#39; options specified by product id (optional)
      * @param langId Language id (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseProductOptionList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -3008,8 +3008,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productOptionList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, params: kotlin.String? = "id,name,description", exclude: kotlin.String? = null, responseFields: kotlin.String? = null, productId: kotlin.String? = null, langId: kotlin.String? = null, storeId: kotlin.String? = null) : ModelResponseProductOptionList {
-        val localVarResponse = productOptionListWithHttpInfo(start = start, count = count, params = params, exclude = exclude, responseFields = responseFields, productId = productId, langId = langId, storeId = storeId)
+    fun productOptionList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, productId: kotlin.String? = null, langId: kotlin.String? = null, storeId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,name,description", exclude: kotlin.String? = null) : ModelResponseProductOptionList {
+        val localVarResponse = productOptionListWithHttpInfo(start = start, count = count, productId = productId, langId = langId, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseProductOptionList
@@ -3031,20 +3031,20 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * Get list of options.
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param productId Retrieves products&#39; options specified by product id (optional)
      * @param langId Language id (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseProductOptionList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productOptionListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?, productId: kotlin.String?, langId: kotlin.String?, storeId: kotlin.String?) : ApiResponse<ModelResponseProductOptionList?> {
-        val localVariableConfig = productOptionListRequestConfig(start = start, count = count, params = params, exclude = exclude, responseFields = responseFields, productId = productId, langId = langId, storeId = storeId)
+    fun productOptionListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, productId: kotlin.String?, langId: kotlin.String?, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseProductOptionList?> {
+        val localVariableConfig = productOptionListRequestConfig(start = start, count = count, productId = productId, langId = langId, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseProductOptionList>(
             localVariableConfig
@@ -3056,15 +3056,15 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      *
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param productId Retrieves products&#39; options specified by product id (optional)
      * @param langId Language id (optional)
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun productOptionListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?, productId: kotlin.String?, langId: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun productOptionListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, productId: kotlin.String?, langId: kotlin.String?, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -3074,15 +3074,6 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
-                }
                 if (productId != null) {
                     put("product_id", listOf(productId.toString()))
                 }
@@ -3091,6 +3082,15 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -3733,14 +3733,14 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * Get reviews of a specific product.
      * @param productId Product id
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param ids Retrieves reviews specified by ids (optional)
      * @param storeId Store Id (optional)
      * @param status Defines status (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ModelResponseProductReviewList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -3750,8 +3750,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productReviewList(productId: kotlin.String, start: kotlin.Int? = 0, pageCursor: kotlin.String? = null, count: kotlin.Int? = 10, ids: kotlin.String? = null, storeId: kotlin.String? = null, status: kotlin.String? = null, params: kotlin.String? = "id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time", exclude: kotlin.String? = null, responseFields: kotlin.String? = null) : ModelResponseProductReviewList {
-        val localVarResponse = productReviewListWithHttpInfo(productId = productId, start = start, pageCursor = pageCursor, count = count, ids = ids, storeId = storeId, status = status, params = params, exclude = exclude, responseFields = responseFields)
+    fun productReviewList(productId: kotlin.String, start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, ids: kotlin.String? = null, storeId: kotlin.String? = null, status: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time", exclude: kotlin.String? = null) : ModelResponseProductReviewList {
+        val localVarResponse = productReviewListWithHttpInfo(productId = productId, start = start, count = count, pageCursor = pageCursor, ids = ids, storeId = storeId, status = status, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseProductReviewList
@@ -3773,22 +3773,22 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * Get reviews of a specific product.
      * @param productId Product id
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param ids Retrieves reviews specified by ids (optional)
      * @param storeId Store Id (optional)
      * @param status Defines status (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ApiResponse<ModelResponseProductReviewList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productReviewListWithHttpInfo(productId: kotlin.String, start: kotlin.Int?, pageCursor: kotlin.String?, count: kotlin.Int?, ids: kotlin.String?, storeId: kotlin.String?, status: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseProductReviewList?> {
-        val localVariableConfig = productReviewListRequestConfig(productId = productId, start = start, pageCursor = pageCursor, count = count, ids = ids, storeId = storeId, status = status, params = params, exclude = exclude, responseFields = responseFields)
+    fun productReviewListWithHttpInfo(productId: kotlin.String, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, storeId: kotlin.String?, status: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseProductReviewList?> {
+        val localVariableConfig = productReviewListRequestConfig(productId = productId, start = start, count = count, pageCursor = pageCursor, ids = ids, storeId = storeId, status = status, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseProductReviewList>(
             localVariableConfig
@@ -3800,28 +3800,28 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      *
      * @param productId Product id
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param ids Retrieves reviews specified by ids (optional)
      * @param storeId Store Id (optional)
      * @param status Defines status (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return RequestConfig
      */
-    fun productReviewListRequestConfig(productId: kotlin.String, start: kotlin.Int?, pageCursor: kotlin.String?, count: kotlin.Int?, ids: kotlin.String?, storeId: kotlin.String?, status: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun productReviewListRequestConfig(productId: kotlin.String, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, storeId: kotlin.String?, status: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
                 if (count != null) {
                     put("count", listOf(count.toString()))
+                }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
                 }
                 put("product_id", listOf(productId.toString()))
                 if (ids != null) {
@@ -3833,14 +3833,14 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (status != null) {
                     put("status", listOf(status.toString()))
                 }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
                 if (params != null) {
                     put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -4298,12 +4298,12 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * product.variant.count
      * Get count variants.
      * @param productId Retrieves products&#39; variants specified by product id
+     * @param categoryId Counts products’ variants specified by category id (optional)
+     * @param storeId Retrieves variants specified by store id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param categoryId Counts products’ variants specified by category id (optional)
-     * @param storeId Retrieves variants specified by store id (optional)
      * @return ProductVariantCount200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -4314,9 +4314,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    fun productVariantCount(productId: kotlin.String, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, categoryId: kotlin.String? = null, storeId: kotlin.String? = null) : ProductVariantCount200Response {
+    fun productVariantCount(productId: kotlin.String, categoryId: kotlin.String? = null, storeId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null) : ProductVariantCount200Response {
         @Suppress("DEPRECATION")
-        val localVarResponse = productVariantCountWithHttpInfo(productId = productId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, categoryId = categoryId, storeId = storeId)
+        val localVarResponse = productVariantCountWithHttpInfo(productId = productId, categoryId = categoryId, storeId = storeId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ProductVariantCount200Response
@@ -4337,12 +4337,12 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * product.variant.count
      * Get count variants.
      * @param productId Retrieves products&#39; variants specified by product id
+     * @param categoryId Counts products’ variants specified by category id (optional)
+     * @param storeId Retrieves variants specified by store id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param categoryId Counts products’ variants specified by category id (optional)
-     * @param storeId Retrieves variants specified by store id (optional)
      * @return ApiResponse<ProductVariantCount200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -4350,9 +4350,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    fun productVariantCountWithHttpInfo(productId: kotlin.String, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?) : ApiResponse<ProductVariantCount200Response?> {
+    fun productVariantCountWithHttpInfo(productId: kotlin.String, categoryId: kotlin.String?, storeId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?) : ApiResponse<ProductVariantCount200Response?> {
         @Suppress("DEPRECATION")
-        val localVariableConfig = productVariantCountRequestConfig(productId = productId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, categoryId = categoryId, storeId = storeId)
+        val localVariableConfig = productVariantCountRequestConfig(productId = productId, categoryId = categoryId, storeId = storeId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo)
 
         return request<Unit, ProductVariantCount200Response>(
             localVariableConfig
@@ -4363,19 +4363,26 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * To obtain the request config of the operation productVariantCount
      *
      * @param productId Retrieves products&#39; variants specified by product id
+     * @param categoryId Counts products’ variants specified by category id (optional)
+     * @param storeId Retrieves variants specified by store id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param categoryId Counts products’ variants specified by category id (optional)
-     * @param storeId Retrieves variants specified by store id (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun productVariantCountRequestConfig(productId: kotlin.String, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun productVariantCountRequestConfig(productId: kotlin.String, categoryId: kotlin.String?, storeId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                put("product_id", listOf(productId.toString()))
+                if (categoryId != null) {
+                    put("category_id", listOf(categoryId.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
+                }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
                 }
@@ -4387,13 +4394,6 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
-                }
-                if (categoryId != null) {
-                    put("category_id", listOf(categoryId.toString()))
-                }
-                put("product_id", listOf(productId.toString()))
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -4729,9 +4729,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * product.variant.info
      * Get variant info. This method is deprecated, and its development is stopped. Please use \&quot;product.child_item.info\&quot; instead.
      * @param id Retrieves variant&#39;s info specified by variant id
+     * @param storeId Retrieves variant info specified by store id (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param storeId Retrieves variant info specified by store id (optional)
      * @return ProductInfo200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -4742,9 +4742,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    fun productVariantInfo(id: kotlin.String, params: kotlin.String? = "id,name,description,price", exclude: kotlin.String? = null, storeId: kotlin.String? = null) : ProductInfo200Response {
+    fun productVariantInfo(id: kotlin.String, storeId: kotlin.String? = null, params: kotlin.String? = "id,name,description,price", exclude: kotlin.String? = null) : ProductInfo200Response {
         @Suppress("DEPRECATION")
-        val localVarResponse = productVariantInfoWithHttpInfo(id = id, params = params, exclude = exclude, storeId = storeId)
+        val localVarResponse = productVariantInfoWithHttpInfo(id = id, storeId = storeId, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ProductInfo200Response
@@ -4765,9 +4765,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * product.variant.info
      * Get variant info. This method is deprecated, and its development is stopped. Please use \&quot;product.child_item.info\&quot; instead.
      * @param id Retrieves variant&#39;s info specified by variant id
+     * @param storeId Retrieves variant info specified by store id (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param storeId Retrieves variant info specified by store id (optional)
      * @return ApiResponse<ProductInfo200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -4775,9 +4775,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    fun productVariantInfoWithHttpInfo(id: kotlin.String, params: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?) : ApiResponse<ProductInfo200Response?> {
+    fun productVariantInfoWithHttpInfo(id: kotlin.String, storeId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ProductInfo200Response?> {
         @Suppress("DEPRECATION")
-        val localVariableConfig = productVariantInfoRequestConfig(id = id, params = params, exclude = exclude, storeId = storeId)
+        val localVariableConfig = productVariantInfoRequestConfig(id = id, storeId = storeId, params = params, exclude = exclude)
 
         return request<Unit, ProductInfo200Response>(
             localVariableConfig
@@ -4788,25 +4788,25 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * To obtain the request config of the operation productVariantInfo
      *
      * @param id Retrieves variant&#39;s info specified by variant id
+     * @param storeId Retrieves variant info specified by store id (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param storeId Retrieves variant info specified by store id (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun productVariantInfoRequestConfig(id: kotlin.String, params: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun productVariantInfoRequestConfig(id: kotlin.String, storeId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                put("id", listOf(id.toString()))
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
+                }
                 if (params != null) {
                     put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                put("id", listOf(id.toString()))
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -4827,15 +4827,15 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * Get a list of variants. This method is deprecated, and its development is stopped. Please use \&quot;product.child_item.list\&quot; instead.
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param productId Retrieves products&#39; variants specified by product id (optional)
+     * @param categoryId Retrieves products’ variants specified by category id (optional)
+     * @param storeId Retrieves variants specified by store id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param categoryId Retrieves products’ variants specified by category id (optional)
-     * @param productId Retrieves products&#39; variants specified by product id (optional)
-     * @param storeId Retrieves variants specified by store id (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ProductVariantList200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -4846,9 +4846,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
     @Deprecated(message = "This operation is deprecated.")
-    fun productVariantList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, params: kotlin.String? = "id,name,description,price", exclude: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, categoryId: kotlin.String? = null, productId: kotlin.String? = null, storeId: kotlin.String? = null) : ProductVariantList200Response {
+    fun productVariantList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, productId: kotlin.String? = null, categoryId: kotlin.String? = null, storeId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, params: kotlin.String? = "id,name,description,price", exclude: kotlin.String? = null) : ProductVariantList200Response {
         @Suppress("DEPRECATION")
-        val localVarResponse = productVariantListWithHttpInfo(start = start, count = count, params = params, exclude = exclude, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, categoryId = categoryId, productId = productId, storeId = storeId)
+        val localVarResponse = productVariantListWithHttpInfo(start = start, count = count, productId = productId, categoryId = categoryId, storeId = storeId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ProductVariantList200Response
@@ -4870,15 +4870,15 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * Get a list of variants. This method is deprecated, and its development is stopped. Please use \&quot;product.child_item.list\&quot; instead.
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param productId Retrieves products&#39; variants specified by product id (optional)
+     * @param categoryId Retrieves products’ variants specified by category id (optional)
+     * @param storeId Retrieves variants specified by store id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param categoryId Retrieves products’ variants specified by category id (optional)
-     * @param productId Retrieves products&#39; variants specified by product id (optional)
-     * @param storeId Retrieves variants specified by store id (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ProductVariantList200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -4886,9 +4886,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
     @Deprecated(message = "This operation is deprecated.")
-    fun productVariantListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, exclude: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, categoryId: kotlin.String?, productId: kotlin.String?, storeId: kotlin.String?) : ApiResponse<ProductVariantList200Response?> {
+    fun productVariantListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, productId: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ProductVariantList200Response?> {
         @Suppress("DEPRECATION")
-        val localVariableConfig = productVariantListRequestConfig(start = start, count = count, params = params, exclude = exclude, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, categoryId = categoryId, productId = productId, storeId = storeId)
+        val localVariableConfig = productVariantListRequestConfig(start = start, count = count, productId = productId, categoryId = categoryId, storeId = storeId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, params = params, exclude = exclude)
 
         return request<Unit, ProductVariantList200Response>(
             localVariableConfig
@@ -4900,19 +4900,19 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      *
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
+     * @param productId Retrieves products&#39; variants specified by product id (optional)
+     * @param categoryId Retrieves products’ variants specified by category id (optional)
+     * @param storeId Retrieves variants specified by store id (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param categoryId Retrieves products’ variants specified by category id (optional)
-     * @param productId Retrieves products&#39; variants specified by product id (optional)
-     * @param storeId Retrieves variants specified by store id (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,description,price")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
     @Deprecated(message = "This operation is deprecated.")
-    fun productVariantListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, exclude: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, categoryId: kotlin.String?, productId: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun productVariantListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, productId: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -4922,11 +4922,14 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
+                if (productId != null) {
+                    put("product_id", listOf(productId.toString()))
                 }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
+                if (categoryId != null) {
+                    put("category_id", listOf(categoryId.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
@@ -4940,14 +4943,11 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
                 }
-                if (categoryId != null) {
-                    put("category_id", listOf(categoryId.toString()))
+                if (params != null) {
+                    put("params", listOf(params.toString()))
                 }
-                if (productId != null) {
-                    put("product_id", listOf(productId.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

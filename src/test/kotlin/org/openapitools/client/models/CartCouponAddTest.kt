@@ -55,22 +55,16 @@ class CartCouponAddTest : ShouldSpec() {
             //modelInstance.actionAmount shouldBe ("TODO")
         }
 
-        // to test the property `storeId` - Store Id
-        should("test storeId") {
+        // to test the property `codes` - Entity codes
+        should("test codes") {
             // uncomment below to test the property
-            //modelInstance.storeId shouldBe ("TODO")
+            //modelInstance.codes shouldBe ("TODO")
         }
 
         // to test the property `name` - Coupon name
         should("test name") {
             // uncomment below to test the property
             //modelInstance.name shouldBe ("TODO")
-        }
-
-        // to test the property `codes` - Entity codes
-        should("test codes") {
-            // uncomment below to test the property
-            //modelInstance.codes shouldBe ("TODO")
         }
 
         // to test the property `dateStart` - Date start
@@ -125,6 +119,12 @@ class CartCouponAddTest : ShouldSpec() {
         should("test includeTax") {
             // uncomment below to test the property
             //modelInstance.includeTax shouldBe ("TODO")
+        }
+
+        // to test the property `storeId` - Store Id
+        should("test storeId") {
+            // uncomment below to test the property
+            //modelInstance.storeId shouldBe ("TODO")
         }
 
     }

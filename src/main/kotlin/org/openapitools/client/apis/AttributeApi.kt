@@ -198,10 +198,10 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("type", listOf(type.value))
+                put("name", listOf(name.toString()))
                 if (code != null) {
                     put("code", listOf(code.toString()))
                 }
-                put("name", listOf(name.toString()))
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
@@ -443,9 +443,9 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * Get attribute_set list
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ModelResponseAttributeAttributesetList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -455,8 +455,8 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun attributeAttributesetList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, params: kotlin.String? = "id,name", exclude: kotlin.String? = null, responseFields: kotlin.String? = null) : ModelResponseAttributeAttributesetList {
-        val localVarResponse = attributeAttributesetListWithHttpInfo(start = start, count = count, params = params, exclude = exclude, responseFields = responseFields)
+    fun attributeAttributesetList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, responseFields: kotlin.String? = null, params: kotlin.String? = "id,name", exclude: kotlin.String? = null) : ModelResponseAttributeAttributesetList {
+        val localVarResponse = attributeAttributesetListWithHttpInfo(start = start, count = count, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseAttributeAttributesetList
@@ -478,17 +478,17 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * Get attribute_set list
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ApiResponse<ModelResponseAttributeAttributesetList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun attributeAttributesetListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseAttributeAttributesetList?> {
-        val localVariableConfig = attributeAttributesetListRequestConfig(start = start, count = count, params = params, exclude = exclude, responseFields = responseFields)
+    fun attributeAttributesetListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseAttributeAttributesetList?> {
+        val localVariableConfig = attributeAttributesetListRequestConfig(start = start, count = count, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseAttributeAttributesetList>(
             localVariableConfig
@@ -500,12 +500,12 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      *
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return RequestConfig
      */
-    fun attributeAttributesetListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun attributeAttributesetListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -515,14 +515,14 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
                 if (params != null) {
                     put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -712,10 +712,10 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                put("id", listOf(id.toString()))
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
-                put("id", listOf(id.toString()))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -735,11 +735,11 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * Get attribute group list
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param attributeSetId Attribute set id (optional)
      * @param langId Language id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param attributeSetId Attribute set id (optional)
      * @return ModelResponseAttributeGroupList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -749,8 +749,8 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun attributeGroupList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, langId: kotlin.String? = null, params: kotlin.String? = "id,name", exclude: kotlin.String? = null, responseFields: kotlin.String? = null, attributeSetId: kotlin.String? = null) : ModelResponseAttributeGroupList {
-        val localVarResponse = attributeGroupListWithHttpInfo(start = start, count = count, langId = langId, params = params, exclude = exclude, responseFields = responseFields, attributeSetId = attributeSetId)
+    fun attributeGroupList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, attributeSetId: kotlin.String? = null, langId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,name", exclude: kotlin.String? = null) : ModelResponseAttributeGroupList {
+        val localVarResponse = attributeGroupListWithHttpInfo(start = start, count = count, attributeSetId = attributeSetId, langId = langId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseAttributeGroupList
@@ -772,19 +772,19 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * Get attribute group list
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param attributeSetId Attribute set id (optional)
      * @param langId Language id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param attributeSetId Attribute set id (optional)
      * @return ApiResponse<ModelResponseAttributeGroupList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun attributeGroupListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, langId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?, attributeSetId: kotlin.String?) : ApiResponse<ModelResponseAttributeGroupList?> {
-        val localVariableConfig = attributeGroupListRequestConfig(start = start, count = count, langId = langId, params = params, exclude = exclude, responseFields = responseFields, attributeSetId = attributeSetId)
+    fun attributeGroupListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, attributeSetId: kotlin.String?, langId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseAttributeGroupList?> {
+        val localVariableConfig = attributeGroupListRequestConfig(start = start, count = count, attributeSetId = attributeSetId, langId = langId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseAttributeGroupList>(
             localVariableConfig
@@ -796,14 +796,14 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      *
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param attributeSetId Attribute set id (optional)
      * @param langId Language id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param attributeSetId Attribute set id (optional)
      * @return RequestConfig
      */
-    fun attributeGroupListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, langId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?, attributeSetId: kotlin.String?) : RequestConfig<Unit> {
+    fun attributeGroupListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, attributeSetId: kotlin.String?, langId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -813,20 +813,20 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
+                if (attributeSetId != null) {
+                    put("attribute_set_id", listOf(attributeSetId.toString()))
+                }
                 if (langId != null) {
                     put("lang_id", listOf(langId.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (params != null) {
                     put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
-                }
-                if (attributeSetId != null) {
-                    put("attribute_set_id", listOf(attributeSetId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -849,9 +849,9 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param attributeSetId Attribute set id (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return AttributeInfo200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -861,8 +861,8 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun attributeInfo(id: kotlin.String, attributeSetId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null, responseFields: kotlin.String? = null) : AttributeInfo200Response {
-        val localVarResponse = attributeInfoWithHttpInfo(id = id, attributeSetId = attributeSetId, storeId = storeId, langId = langId, params = params, exclude = exclude, responseFields = responseFields)
+    fun attributeInfo(id: kotlin.String, attributeSetId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null) : AttributeInfo200Response {
+        val localVarResponse = attributeInfoWithHttpInfo(id = id, attributeSetId = attributeSetId, storeId = storeId, langId = langId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as AttributeInfo200Response
@@ -886,17 +886,17 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param attributeSetId Attribute set id (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ApiResponse<AttributeInfo200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun attributeInfoWithHttpInfo(id: kotlin.String, attributeSetId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<AttributeInfo200Response?> {
-        val localVariableConfig = attributeInfoRequestConfig(id = id, attributeSetId = attributeSetId, storeId = storeId, langId = langId, params = params, exclude = exclude, responseFields = responseFields)
+    fun attributeInfoWithHttpInfo(id: kotlin.String, attributeSetId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<AttributeInfo200Response?> {
+        val localVariableConfig = attributeInfoRequestConfig(id = id, attributeSetId = attributeSetId, storeId = storeId, langId = langId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, AttributeInfo200Response>(
             localVariableConfig
@@ -910,12 +910,12 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * @param attributeSetId Attribute set id (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return RequestConfig
      */
-    fun attributeInfoRequestConfig(id: kotlin.String, attributeSetId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun attributeInfoRequestConfig(id: kotlin.String, attributeSetId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -929,14 +929,14 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
                 if (langId != null) {
                     put("lang_id", listOf(langId.toString()))
                 }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
                 if (params != null) {
                     put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -957,17 +957,17 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * Get a list of global attributes.
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param type Defines attribute&#39;s type (optional)
      * @param attributeIds Filter attributes by ids (optional)
      * @param attributeSetId Filter items by attribute set id (optional)
      * @param storeId Store Id (optional)
      * @param langId Retrieves attributes on specified language id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,code,type")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param type Defines attribute&#39;s type (optional)
      * @param visible Filter items by visibility status (optional)
      * @param required Defines if the option is required (optional)
      * @param system True if attribute is system (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,code,type")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseAttributeList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -977,8 +977,8 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun attributeList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, type: kotlin.String? = null, attributeIds: kotlin.String? = null, attributeSetId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, params: kotlin.String? = "id,name,code,type", exclude: kotlin.String? = null, responseFields: kotlin.String? = null, visible: kotlin.Boolean? = null, required: kotlin.Boolean? = null, system: kotlin.Boolean? = null) : ModelResponseAttributeList {
-        val localVarResponse = attributeListWithHttpInfo(start = start, count = count, type = type, attributeIds = attributeIds, attributeSetId = attributeSetId, storeId = storeId, langId = langId, params = params, exclude = exclude, responseFields = responseFields, visible = visible, required = required, system = system)
+    fun attributeList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, attributeIds: kotlin.String? = null, attributeSetId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, type: kotlin.String? = null, visible: kotlin.Boolean? = null, required: kotlin.Boolean? = null, system: kotlin.Boolean? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,name,code,type", exclude: kotlin.String? = null) : ModelResponseAttributeList {
+        val localVarResponse = attributeListWithHttpInfo(start = start, count = count, attributeIds = attributeIds, attributeSetId = attributeSetId, storeId = storeId, langId = langId, type = type, visible = visible, required = required, system = system, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseAttributeList
@@ -1000,25 +1000,25 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      * Get a list of global attributes.
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param type Defines attribute&#39;s type (optional)
      * @param attributeIds Filter attributes by ids (optional)
      * @param attributeSetId Filter items by attribute set id (optional)
      * @param storeId Store Id (optional)
      * @param langId Retrieves attributes on specified language id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,code,type")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param type Defines attribute&#39;s type (optional)
      * @param visible Filter items by visibility status (optional)
      * @param required Defines if the option is required (optional)
      * @param system True if attribute is system (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,code,type")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseAttributeList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun attributeListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, type: kotlin.String?, attributeIds: kotlin.String?, attributeSetId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?, visible: kotlin.Boolean?, required: kotlin.Boolean?, system: kotlin.Boolean?) : ApiResponse<ModelResponseAttributeList?> {
-        val localVariableConfig = attributeListRequestConfig(start = start, count = count, type = type, attributeIds = attributeIds, attributeSetId = attributeSetId, storeId = storeId, langId = langId, params = params, exclude = exclude, responseFields = responseFields, visible = visible, required = required, system = system)
+    fun attributeListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, attributeIds: kotlin.String?, attributeSetId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, type: kotlin.String?, visible: kotlin.Boolean?, required: kotlin.Boolean?, system: kotlin.Boolean?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseAttributeList?> {
+        val localVariableConfig = attributeListRequestConfig(start = start, count = count, attributeIds = attributeIds, attributeSetId = attributeSetId, storeId = storeId, langId = langId, type = type, visible = visible, required = required, system = system, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseAttributeList>(
             localVariableConfig
@@ -1030,20 +1030,20 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
      *
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param type Defines attribute&#39;s type (optional)
      * @param attributeIds Filter attributes by ids (optional)
      * @param attributeSetId Filter items by attribute set id (optional)
      * @param storeId Store Id (optional)
      * @param langId Retrieves attributes on specified language id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,code,type")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param type Defines attribute&#39;s type (optional)
      * @param visible Filter items by visibility status (optional)
      * @param required Defines if the option is required (optional)
      * @param system True if attribute is system (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,code,type")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun attributeListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, type: kotlin.String?, attributeIds: kotlin.String?, attributeSetId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?, visible: kotlin.Boolean?, required: kotlin.Boolean?, system: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun attributeListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, attributeIds: kotlin.String?, attributeSetId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, type: kotlin.String?, visible: kotlin.Boolean?, required: kotlin.Boolean?, system: kotlin.Boolean?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -1052,9 +1052,6 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
-                }
-                if (type != null) {
-                    put("type", listOf(type.toString()))
                 }
                 if (attributeIds != null) {
                     put("attribute_ids", listOf(attributeIds.toString()))
@@ -1068,14 +1065,8 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
                 if (langId != null) {
                     put("lang_id", listOf(langId.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
+                if (type != null) {
+                    put("type", listOf(type.toString()))
                 }
                 if (visible != null) {
                     put("visible", listOf(visible.toString()))
@@ -1085,6 +1076,15 @@ class AttributeApi(basePath: kotlin.String = defaultBasePath, client: Call.Facto
                 }
                 if (system != null) {
                     put("system", listOf(system.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

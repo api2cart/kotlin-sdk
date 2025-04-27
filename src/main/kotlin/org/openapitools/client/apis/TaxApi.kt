@@ -52,8 +52,8 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
      * @param taxClassId Retrieves taxes specified by class id
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "tax_class_id,name,avail")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "tax_class_id,name,avail")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseTaxClassInfo
      * @throws IllegalStateException If the request is not correctly configured
@@ -64,8 +64,8 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun taxClassInfo(taxClassId: kotlin.String, storeId: kotlin.String? = null, langId: kotlin.String? = null, params: kotlin.String? = "tax_class_id,name,avail", responseFields: kotlin.String? = null, exclude: kotlin.String? = null) : ModelResponseTaxClassInfo {
-        val localVarResponse = taxClassInfoWithHttpInfo(taxClassId = taxClassId, storeId = storeId, langId = langId, params = params, responseFields = responseFields, exclude = exclude)
+    fun taxClassInfo(taxClassId: kotlin.String, storeId: kotlin.String? = null, langId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "tax_class_id,name,avail", exclude: kotlin.String? = null) : ModelResponseTaxClassInfo {
+        val localVarResponse = taxClassInfoWithHttpInfo(taxClassId = taxClassId, storeId = storeId, langId = langId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseTaxClassInfo
@@ -88,8 +88,8 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
      * @param taxClassId Retrieves taxes specified by class id
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "tax_class_id,name,avail")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "tax_class_id,name,avail")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseTaxClassInfo?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -97,8 +97,8 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun taxClassInfoWithHttpInfo(taxClassId: kotlin.String, storeId: kotlin.String?, langId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseTaxClassInfo?> {
-        val localVariableConfig = taxClassInfoRequestConfig(taxClassId = taxClassId, storeId = storeId, langId = langId, params = params, responseFields = responseFields, exclude = exclude)
+    fun taxClassInfoWithHttpInfo(taxClassId: kotlin.String, storeId: kotlin.String?, langId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseTaxClassInfo?> {
+        val localVariableConfig = taxClassInfoRequestConfig(taxClassId = taxClassId, storeId = storeId, langId = langId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseTaxClassInfo>(
             localVariableConfig
@@ -111,12 +111,12 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
      * @param taxClassId Retrieves taxes specified by class id
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "tax_class_id,name,avail")
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "tax_class_id,name,avail")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun taxClassInfoRequestConfig(taxClassId: kotlin.String, storeId: kotlin.String?, langId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun taxClassInfoRequestConfig(taxClassId: kotlin.String, storeId: kotlin.String?, langId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -127,11 +127,11 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
                 if (langId != null) {
                     put("lang_id", listOf(langId.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
@@ -153,15 +153,15 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
     /**
      * tax.class.list
      * Get list of tax classes from your store.
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param storeId Store Id (optional)
+     * @param findValue Entity search that is specified by some value (optional)
+     * @param findWhere Tax class search that is specified by field (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param findValue Entity search that is specified by some value (optional)
-     * @param findWhere Tax class search that is specified by field (optional)
-     * @param storeId Store Id (optional)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "{return_code,return_message,pagination,result}")
      * @return ModelResponseTaxClassList
      * @throws IllegalStateException If the request is not correctly configured
@@ -172,8 +172,8 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun taxClassList(createdTo: kotlin.String? = null, createdFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, storeId: kotlin.String? = null, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, responseFields: kotlin.String? = "{return_code,return_message,pagination,result}") : ModelResponseTaxClassList {
-        val localVarResponse = taxClassListWithHttpInfo(createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, findValue = findValue, findWhere = findWhere, storeId = storeId, count = count, pageCursor = pageCursor, responseFields = responseFields)
+    fun taxClassList(count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, storeId: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, createdTo: kotlin.String? = null, createdFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, responseFields: kotlin.String? = "{return_code,return_message,pagination,result}") : ModelResponseTaxClassList {
+        val localVarResponse = taxClassListWithHttpInfo(count = count, pageCursor = pageCursor, storeId = storeId, findValue = findValue, findWhere = findWhere, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, responseFields = responseFields)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseTaxClassList
@@ -193,15 +193,15 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
     /**
      * tax.class.list
      * Get list of tax classes from your store.
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param storeId Store Id (optional)
+     * @param findValue Entity search that is specified by some value (optional)
+     * @param findWhere Tax class search that is specified by field (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param findValue Entity search that is specified by some value (optional)
-     * @param findWhere Tax class search that is specified by field (optional)
-     * @param storeId Store Id (optional)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "{return_code,return_message,pagination,result}")
      * @return ApiResponse<ModelResponseTaxClassList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -209,8 +209,8 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun taxClassListWithHttpInfo(createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, storeId: kotlin.String?, count: kotlin.Int?, pageCursor: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseTaxClassList?> {
-        val localVariableConfig = taxClassListRequestConfig(createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, findValue = findValue, findWhere = findWhere, storeId = storeId, count = count, pageCursor = pageCursor, responseFields = responseFields)
+    fun taxClassListWithHttpInfo(count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseTaxClassList?> {
+        val localVariableConfig = taxClassListRequestConfig(count = count, pageCursor = pageCursor, storeId = storeId, findValue = findValue, findWhere = findWhere, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, responseFields = responseFields)
 
         return request<Unit, ModelResponseTaxClassList>(
             localVariableConfig
@@ -220,22 +220,37 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
     /**
      * To obtain the request config of the operation taxClassList
      *
+     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param storeId Store Id (optional)
+     * @param findValue Entity search that is specified by some value (optional)
+     * @param findWhere Tax class search that is specified by field (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param findValue Entity search that is specified by some value (optional)
-     * @param findWhere Tax class search that is specified by field (optional)
-     * @param storeId Store Id (optional)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "{return_code,return_message,pagination,result}")
      * @return RequestConfig
      */
-    fun taxClassListRequestConfig(createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, storeId: kotlin.String?, count: kotlin.Int?, pageCursor: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun taxClassListRequestConfig(count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                if (count != null) {
+                    put("count", listOf(count.toString()))
+                }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
+                }
+                if (findValue != null) {
+                    put("find_value", listOf(findValue.toString()))
+                }
+                if (findWhere != null) {
+                    put("find_where", listOf(findWhere.toString()))
+                }
                 if (createdTo != null) {
                     put("created_to", listOf(createdTo.toString()))
                 }
@@ -247,21 +262,6 @@ class TaxApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = A
                 }
                 if (modifiedFrom != null) {
                     put("modified_from", listOf(modifiedFrom.toString()))
-                }
-                if (findValue != null) {
-                    put("find_value", listOf(findValue.toString()))
-                }
-                if (findWhere != null) {
-                    put("find_where", listOf(findWhere.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
-                if (count != null) {
-                    put("count", listOf(count.toString()))
-                }
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
                 }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))

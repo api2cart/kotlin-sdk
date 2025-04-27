@@ -48,20 +48,20 @@ class MarketplaceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * marketplace.product.find
      * Search product in global catalog.
-     * @param storeId Store Id (optional)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
      * @param keyword Defines search keyword (optional)
+     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
+     * @param storeId Store Id (optional)
      * @param asin Amazon Standard Identification Number. (optional)
      * @param ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products. (optional)
      * @param gtin Global Trade Item Number. An GTIN is an identifier for trade items. (optional)
      * @param upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ModelResponseMarketplaceProductFind
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -71,8 +71,8 @@ class MarketplaceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun marketplaceProductFind(storeId: kotlin.String? = null, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, categoriesIds: kotlin.String? = null, keyword: kotlin.String? = null, asin: kotlin.String? = null, ean: kotlin.String? = null, gtin: kotlin.String? = null, upc: kotlin.String? = null, mpn: kotlin.String? = null, isbn: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null, responseFields: kotlin.String? = null) : ModelResponseMarketplaceProductFind {
-        val localVarResponse = marketplaceProductFindWithHttpInfo(storeId = storeId, count = count, pageCursor = pageCursor, categoriesIds = categoriesIds, keyword = keyword, asin = asin, ean = ean, gtin = gtin, upc = upc, mpn = mpn, isbn = isbn, params = params, exclude = exclude, responseFields = responseFields)
+    fun marketplaceProductFind(count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, keyword: kotlin.String? = null, categoriesIds: kotlin.String? = null, storeId: kotlin.String? = null, asin: kotlin.String? = null, ean: kotlin.String? = null, gtin: kotlin.String? = null, upc: kotlin.String? = null, mpn: kotlin.String? = null, isbn: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null) : ModelResponseMarketplaceProductFind {
+        val localVarResponse = marketplaceProductFindWithHttpInfo(count = count, pageCursor = pageCursor, keyword = keyword, categoriesIds = categoriesIds, storeId = storeId, asin = asin, ean = ean, gtin = gtin, upc = upc, mpn = mpn, isbn = isbn, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseMarketplaceProductFind
@@ -92,28 +92,28 @@ class MarketplaceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * marketplace.product.find
      * Search product in global catalog.
-     * @param storeId Store Id (optional)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
      * @param keyword Defines search keyword (optional)
+     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
+     * @param storeId Store Id (optional)
      * @param asin Amazon Standard Identification Number. (optional)
      * @param ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products. (optional)
      * @param gtin Global Trade Item Number. An GTIN is an identifier for trade items. (optional)
      * @param upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ApiResponse<ModelResponseMarketplaceProductFind?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun marketplaceProductFindWithHttpInfo(storeId: kotlin.String?, count: kotlin.Int?, pageCursor: kotlin.String?, categoriesIds: kotlin.String?, keyword: kotlin.String?, asin: kotlin.String?, ean: kotlin.String?, gtin: kotlin.String?, upc: kotlin.String?, mpn: kotlin.String?, isbn: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseMarketplaceProductFind?> {
-        val localVariableConfig = marketplaceProductFindRequestConfig(storeId = storeId, count = count, pageCursor = pageCursor, categoriesIds = categoriesIds, keyword = keyword, asin = asin, ean = ean, gtin = gtin, upc = upc, mpn = mpn, isbn = isbn, params = params, exclude = exclude, responseFields = responseFields)
+    fun marketplaceProductFindWithHttpInfo(count: kotlin.Int?, pageCursor: kotlin.String?, keyword: kotlin.String?, categoriesIds: kotlin.String?, storeId: kotlin.String?, asin: kotlin.String?, ean: kotlin.String?, gtin: kotlin.String?, upc: kotlin.String?, mpn: kotlin.String?, isbn: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseMarketplaceProductFind?> {
+        val localVariableConfig = marketplaceProductFindRequestConfig(count = count, pageCursor = pageCursor, keyword = keyword, categoriesIds = categoriesIds, storeId = storeId, asin = asin, ean = ean, gtin = gtin, upc = upc, mpn = mpn, isbn = isbn, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseMarketplaceProductFind>(
             localVariableConfig
@@ -123,40 +123,40 @@ class MarketplaceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     /**
      * To obtain the request config of the operation marketplaceProductFind
      *
-     * @param storeId Store Id (optional)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
      * @param keyword Defines search keyword (optional)
+     * @param categoriesIds Defines product add that is specified by comma-separated categories id (optional)
+     * @param storeId Store Id (optional)
      * @param asin Amazon Standard Identification Number. (optional)
      * @param ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products. (optional)
      * @param gtin Global Trade Item Number. An GTIN is an identifier for trade items. (optional)
      * @param upc Universal Product Code. A UPC (UPC-A) is a commonly used identifer for many different products. (optional)
      * @param mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. (optional)
      * @param isbn International Standard Book Number. An ISBN is a unique identifier for books. (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return RequestConfig
      */
-    fun marketplaceProductFindRequestConfig(storeId: kotlin.String?, count: kotlin.Int?, pageCursor: kotlin.String?, categoriesIds: kotlin.String?, keyword: kotlin.String?, asin: kotlin.String?, ean: kotlin.String?, gtin: kotlin.String?, upc: kotlin.String?, mpn: kotlin.String?, isbn: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun marketplaceProductFindRequestConfig(count: kotlin.Int?, pageCursor: kotlin.String?, keyword: kotlin.String?, categoriesIds: kotlin.String?, storeId: kotlin.String?, asin: kotlin.String?, ean: kotlin.String?, gtin: kotlin.String?, upc: kotlin.String?, mpn: kotlin.String?, isbn: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
                 if (pageCursor != null) {
                     put("page_cursor", listOf(pageCursor.toString()))
                 }
+                if (keyword != null) {
+                    put("keyword", listOf(keyword.toString()))
+                }
                 if (categoriesIds != null) {
                     put("categories_ids", listOf(categoriesIds.toString()))
                 }
-                if (keyword != null) {
-                    put("keyword", listOf(keyword.toString()))
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (asin != null) {
                     put("asin", listOf(asin.toString()))
@@ -176,14 +176,14 @@ class MarketplaceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
                 if (isbn != null) {
                     put("isbn", listOf(isbn.toString()))
                 }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
                 if (params != null) {
                     put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

@@ -54,9 +54,9 @@ class BasketApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      * Retrieve basket information.
      * @param id Entity id
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return BasketInfo200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -66,8 +66,8 @@ class BasketApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun basketInfo(id: kotlin.String, storeId: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null, responseFields: kotlin.String? = null) : BasketInfo200Response {
-        val localVarResponse = basketInfoWithHttpInfo(id = id, storeId = storeId, params = params, exclude = exclude, responseFields = responseFields)
+    fun basketInfo(id: kotlin.String, storeId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null) : BasketInfo200Response {
+        val localVarResponse = basketInfoWithHttpInfo(id = id, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as BasketInfo200Response
@@ -89,17 +89,17 @@ class BasketApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      * Retrieve basket information.
      * @param id Entity id
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ApiResponse<BasketInfo200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun basketInfoWithHttpInfo(id: kotlin.String, storeId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<BasketInfo200Response?> {
-        val localVariableConfig = basketInfoRequestConfig(id = id, storeId = storeId, params = params, exclude = exclude, responseFields = responseFields)
+    fun basketInfoWithHttpInfo(id: kotlin.String, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<BasketInfo200Response?> {
+        val localVariableConfig = basketInfoRequestConfig(id = id, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, BasketInfo200Response>(
             localVariableConfig
@@ -111,12 +111,12 @@ class BasketApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      *
      * @param id Entity id
      * @param storeId Store Id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return RequestConfig
      */
-    fun basketInfoRequestConfig(id: kotlin.String, storeId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun basketInfoRequestConfig(id: kotlin.String, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -124,14 +124,14 @@ class BasketApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
                 if (params != null) {
                     put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -308,11 +308,11 @@ class BasketApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                put("name", listOf(name.toString()))
+                put("callback", listOf(paramCallback.toString()))
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
-                put("name", listOf(name.toString()))
-                put("callback", listOf(paramCallback.toString()))
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
         localVariableHeaders["Accept"] = "application/json"
@@ -404,9 +404,9 @@ class BasketApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
     /**
      * basket.live_shipping_service.list
      * Retrieve a list of live shipping rate services.
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param storeId Store Id (optional)
      * @return BasketLiveShippingServiceList200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -416,8 +416,8 @@ class BasketApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun basketLiveShippingServiceList(storeId: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10) : BasketLiveShippingServiceList200Response {
-        val localVarResponse = basketLiveShippingServiceListWithHttpInfo(storeId = storeId, start = start, count = count)
+    fun basketLiveShippingServiceList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, storeId: kotlin.String? = null) : BasketLiveShippingServiceList200Response {
+        val localVarResponse = basketLiveShippingServiceListWithHttpInfo(start = start, count = count, storeId = storeId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as BasketLiveShippingServiceList200Response
@@ -437,17 +437,17 @@ class BasketApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
     /**
      * basket.live_shipping_service.list
      * Retrieve a list of live shipping rate services.
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param storeId Store Id (optional)
      * @return ApiResponse<BasketLiveShippingServiceList200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun basketLiveShippingServiceListWithHttpInfo(storeId: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?) : ApiResponse<BasketLiveShippingServiceList200Response?> {
-        val localVariableConfig = basketLiveShippingServiceListRequestConfig(storeId = storeId, start = start, count = count)
+    fun basketLiveShippingServiceListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, storeId: kotlin.String?) : ApiResponse<BasketLiveShippingServiceList200Response?> {
+        val localVariableConfig = basketLiveShippingServiceListRequestConfig(start = start, count = count, storeId = storeId)
 
         return request<Unit, BasketLiveShippingServiceList200Response>(
             localVariableConfig
@@ -457,23 +457,23 @@ class BasketApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory 
     /**
      * To obtain the request config of the operation basketLiveShippingServiceList
      *
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param storeId Store Id (optional)
      * @return RequestConfig
      */
-    fun basketLiveShippingServiceListRequestConfig(storeId: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?) : RequestConfig<Unit> {
+    fun basketLiveShippingServiceListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, storeId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

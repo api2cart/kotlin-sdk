@@ -32,11 +32,11 @@ import com.squareup.moshi.JsonClass
  * @param orderItemWeight Defines orders specified by order item weight
  * @param orderItemVariantId Ordered product variant. Where x is order item ID
  * @param orderItemTax Percentage of tax for product order
+ * @param orderItemPriceIncludesTax Defines if item price includes tax
  * @param orderItemParent Index of the parent grouped/bundle product
  * @param orderItemParentOptionName Option name of the parent grouped/bundle product
  * @param orderItemAllowRefundItemsSeparately Indicates whether subitems of the grouped/bundle product can be refunded separately
  * @param orderItemAllowShipItemsSeparately Indicates whether subitems of the grouped/bundle product can be shipped separately
- * @param orderItemPriceIncludesTax Defines if item price includes tax
  * @param orderItemOption 
  * @param orderItemProperty 
  */
@@ -76,6 +76,10 @@ data class OrderAddOrderItemInner (
     @Json(name = "order_item_tax")
     val orderItemTax: java.math.BigDecimal? = java.math.BigDecimal("0"),
 
+    /* Defines if item price includes tax */
+    @Json(name = "order_item_price_includes_tax")
+    val orderItemPriceIncludesTax: kotlin.Boolean? = false,
+
     /* Index of the parent grouped/bundle product */
     @Json(name = "order_item_parent")
     val orderItemParent: kotlin.Int? = null,
@@ -91,10 +95,6 @@ data class OrderAddOrderItemInner (
     /* Indicates whether subitems of the grouped/bundle product can be shipped separately */
     @Json(name = "order_item_allow_ship_items_separately")
     val orderItemAllowShipItemsSeparately: kotlin.Boolean? = null,
-
-    /* Defines if item price includes tax */
-    @Json(name = "order_item_price_includes_tax")
-    val orderItemPriceIncludesTax: kotlin.Boolean? = false,
 
     @Json(name = "order_item_option")
     val orderItemOption: kotlin.collections.List<OrderAddOrderItemInnerOrderItemOptionInner>? = null,

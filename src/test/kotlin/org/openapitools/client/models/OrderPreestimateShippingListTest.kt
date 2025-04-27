@@ -38,16 +38,16 @@ class OrderPreestimateShippingListTest : ShouldSpec() {
             //modelInstance.orderItem shouldBe ("TODO")
         }
 
-        // to test the property `storeId` - Store Id
-        should("test storeId") {
-            // uncomment below to test the property
-            //modelInstance.storeId shouldBe ("TODO")
-        }
-
         // to test the property `warehouseId` - This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
         should("test warehouseId") {
             // uncomment below to test the property
             //modelInstance.warehouseId shouldBe ("TODO")
+        }
+
+        // to test the property `customerId` - Retrieves orders specified by customer id
+        should("test customerId") {
+            // uncomment below to test the property
+            //modelInstance.customerId shouldBe ("TODO")
         }
 
         // to test the property `customerEmail` - Retrieves orders specified by customer email
@@ -56,10 +56,10 @@ class OrderPreestimateShippingListTest : ShouldSpec() {
             //modelInstance.customerEmail shouldBe ("TODO")
         }
 
-        // to test the property `customerId` - Retrieves orders specified by customer id
-        should("test customerId") {
+        // to test the property `storeId` - Store Id
+        should("test storeId") {
             // uncomment below to test the property
-            //modelInstance.customerId shouldBe ("TODO")
+            //modelInstance.storeId shouldBe ("TODO")
         }
 
         // to test the property `shippAddress1` - Specifies first shipping address

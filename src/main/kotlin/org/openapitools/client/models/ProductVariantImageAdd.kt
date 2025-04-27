@@ -26,12 +26,12 @@ import com.squareup.moshi.JsonClass
  * @param imageName Defines image's name
  * @param type Defines image's types that are specified by comma-separated list
  * @param productId Defines product id where the variant image has to be added
+ * @param storeId Store Id
  * @param url Defines URL of the image that has to be added
  * @param content Content(body) encoded in base64 of image file
  * @param label Defines alternative text that has to be attached to the picture
  * @param mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
  * @param position Defines image’s position in the list
- * @param storeId Store Id
  * @param optionId Defines option id of the product variant for which the image will be added
  */
 
@@ -54,6 +54,10 @@ data class ProductVariantImageAdd (
     @Json(name = "product_id")
     val productId: kotlin.String? = null,
 
+    /* Store Id */
+    @Json(name = "store_id")
+    val storeId: kotlin.String? = null,
+
     /* Defines URL of the image that has to be added */
     @Json(name = "url")
     val url: kotlin.String? = null,
@@ -73,10 +77,6 @@ data class ProductVariantImageAdd (
     /* Defines image’s position in the list */
     @Json(name = "position")
     val position: kotlin.Int? = 0,
-
-    /* Store Id */
-    @Json(name = "store_id")
-    val storeId: kotlin.String? = null,
 
     /* Defines option id of the product variant for which the image will be added */
     @Json(name = "option_id")

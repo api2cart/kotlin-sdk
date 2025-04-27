@@ -133,7 +133,7 @@ Configure ApiKeyAuth:
 
 <a id="cartCatalogPriceRulesList"></a>
 # **cartCatalogPriceRulesList**
-> ModelResponseCartCatalogPriceRulesList cartCatalogPriceRulesList(pageCursor, start, count, ids, params, responseFields, exclude)
+> ModelResponseCartCatalogPriceRulesList cartCatalogPriceRulesList(start, count, pageCursor, ids, responseFields, params, exclude)
 
 cart.catalog_price_rules.list
 
@@ -146,15 +146,15 @@ Get cart catalog price rules discounts.
 //import org.openapitools.client.models.*
 
 val apiInstance = CartApi()
-val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
 val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 val ids : kotlin.String = 24,25 // kotlin.String | Retrieves  catalog_price_rules by ids
-val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val responseFields : kotlin.String = {result{catalog_price_rules_count,catalog_price_rules{id,type,name,avail,usage_count,actions,conditions}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : ModelResponseCartCatalogPriceRulesList = apiInstance.cartCatalogPriceRulesList(pageCursor, start, count, ids, params, responseFields, exclude)
+    val result : ModelResponseCartCatalogPriceRulesList = apiInstance.cartCatalogPriceRulesList(start, count, pageCursor, ids, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CartApi#cartCatalogPriceRulesList")
@@ -166,12 +166,12 @@ try {
 ```
 
 ### Parameters
-| **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **ids** | **kotlin.String**| Retrieves  catalog_price_rules by ids | [optional] |
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name,description&quot;] |
 | **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name,description&quot;] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
@@ -407,7 +407,7 @@ Configure ApiKeyAuth:
 
 <a id="cartCouponConditionAdd"></a>
 # **cartCouponConditionAdd**
-> BasketLiveShippingServiceDelete200Response cartCouponConditionAdd(couponId, entity, key, `operator`, `value`, storeId, target, includeTax, includeShipping)
+> BasketLiveShippingServiceDelete200Response cartCouponConditionAdd(couponId, entity, key, `operator`, `value`, target, includeTax, includeShipping, storeId)
 
 cart.coupon.condition.add
 
@@ -425,12 +425,12 @@ val entity : kotlin.String = order // kotlin.String | Defines condition entity t
 val key : kotlin.String = subtotal // kotlin.String | Defines condition entity attribute key
 val `operator` : kotlin.String = == // kotlin.String | Defines condition operator
 val `value` : kotlin.String = 2 // kotlin.String | Defines condition value, can be comma separated according to the operator.
-val storeId : kotlin.String = 1 // kotlin.String | Store Id
 val target : kotlin.String = coupon_action // kotlin.String | Defines condition operator
 val includeTax : kotlin.Boolean = true // kotlin.Boolean | Indicates whether to apply a discount for taxes.
 val includeShipping : kotlin.Boolean = true // kotlin.Boolean | Indicates whether to apply a discount for shipping.
+val storeId : kotlin.String = 1 // kotlin.String | Store Id
 try {
-    val result : BasketLiveShippingServiceDelete200Response = apiInstance.cartCouponConditionAdd(couponId, entity, key, `operator`, `value`, storeId, target, includeTax, includeShipping)
+    val result : BasketLiveShippingServiceDelete200Response = apiInstance.cartCouponConditionAdd(couponId, entity, key, `operator`, `value`, target, includeTax, includeShipping, storeId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CartApi#cartCouponConditionAdd")
@@ -447,12 +447,12 @@ try {
 | **key** | **kotlin.String**| Defines condition entity attribute key | [enum: total, subtotal, shipping_total, total_quantity, total_weight, country, product_id, variant_id, category_id, customer_id, item_price, item_total_price, item_quantity, carrier_id] |
 | **&#x60;operator&#x60;** | **kotlin.String**| Defines condition operator | |
 | **&#x60;value&#x60;** | **kotlin.String**| Defines condition value, can be comma separated according to the operator. | |
-| **storeId** | **kotlin.String**| Store Id | [optional] |
 | **target** | **kotlin.String**| Defines condition operator | [optional] [default to &quot;coupon_prerequisite&quot;] |
 | **includeTax** | **kotlin.Boolean**| Indicates whether to apply a discount for taxes. | [optional] [default to false] |
+| **includeShipping** | **kotlin.Boolean**| Indicates whether to apply a discount for shipping. | [optional] [default to false] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **includeShipping** | **kotlin.Boolean**| Indicates whether to apply a discount for shipping. | [optional] [default to false] |
+| **storeId** | **kotlin.String**| Store Id | [optional] |
 
 ### Return type
 
@@ -475,7 +475,7 @@ Configure ApiKeyAuth:
 
 <a id="cartCouponCount"></a>
 # **cartCouponCount**
-> CartCouponCount200Response cartCouponCount(storeId, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, avail)
+> CartCouponCount200Response cartCouponCount(storeId, avail, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo)
 
 cart.coupon.count
 
@@ -489,13 +489,13 @@ This method allows you to get the number of coupons. On some platforms, you can 
 
 val apiInstance = CartApi()
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
+val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
 val dateStartFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (greater or equal)
 val dateStartTo : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (less or equal)
 val dateEndFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_end (greater or equal)
 val dateEndTo : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_end (less or equal)
-val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
 try {
-    val result : CartCouponCount200Response = apiInstance.cartCouponCount(storeId, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, avail)
+    val result : CartCouponCount200Response = apiInstance.cartCouponCount(storeId, avail, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CartApi#cartCouponCount")
@@ -508,13 +508,13 @@ try {
 
 ### Parameters
 | **storeId** | **kotlin.String**| Store Id | [optional] |
+| **avail** | **kotlin.Boolean**| Defines category&#39;s visibility status | [optional] [default to true] |
 | **dateStartFrom** | **kotlin.String**| Filter entity by date_start (greater or equal) | [optional] |
 | **dateStartTo** | **kotlin.String**| Filter entity by date_start (less or equal) | [optional] |
 | **dateEndFrom** | **kotlin.String**| Filter entity by date_end (greater or equal) | [optional] |
-| **dateEndTo** | **kotlin.String**| Filter entity by date_end (less or equal) | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **avail** | **kotlin.Boolean**| Defines category&#39;s visibility status | [optional] [default to true] |
+| **dateEndTo** | **kotlin.String**| Filter entity by date_end (less or equal) | [optional] |
 
 ### Return type
 
@@ -591,7 +591,7 @@ Configure ApiKeyAuth:
 
 <a id="cartCouponList"></a>
 # **cartCouponList**
-> ModelResponseCartCouponList cartCouponList(pageCursor, start, count, couponsIds, storeId, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, avail, langId, params, responseFields, exclude)
+> ModelResponseCartCouponList cartCouponList(start, count, pageCursor, couponsIds, storeId, langId, avail, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, responseFields, params, exclude)
 
 cart.coupon.list
 
@@ -604,22 +604,22 @@ Get cart coupon discounts.
 //import org.openapitools.client.models.*
 
 val apiInstance = CartApi()
-val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
 val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 val couponsIds : kotlin.String = 1,2,3 // kotlin.String | Filter coupons by ids
 val storeId : kotlin.String = 1 // kotlin.String | Filter coupons by store id
+val langId : kotlin.String = 3 // kotlin.String | Language id
+val avail : kotlin.Boolean = false // kotlin.Boolean | Filter coupons by avail status
 val dateStartFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (greater or equal)
 val dateStartTo : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (less or equal)
 val dateEndFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_end (greater or equal)
 val dateEndTo : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_end (less or equal)
-val avail : kotlin.Boolean = false // kotlin.Boolean | Filter coupons by avail status
-val langId : kotlin.String = 3 // kotlin.String | Language id
-val params : kotlin.String = id,code,type,amount // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val responseFields : kotlin.String = {pagination,result{coupon_count,coupon{id,code,name,conditions,actions{scope,amount,conditions{id,value,sub-conditions}},date_start,avail}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val params : kotlin.String = id,code,type,amount // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = usage_history,type // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : ModelResponseCartCouponList = apiInstance.cartCouponList(pageCursor, start, count, couponsIds, storeId, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, avail, langId, params, responseFields, exclude)
+    val result : ModelResponseCartCouponList = apiInstance.cartCouponList(start, count, pageCursor, couponsIds, storeId, langId, avail, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CartApi#cartCouponList")
@@ -631,19 +631,19 @@ try {
 ```
 
 ### Parameters
-| **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **couponsIds** | **kotlin.String**| Filter coupons by ids | [optional] |
 | **storeId** | **kotlin.String**| Filter coupons by store id | [optional] |
+| **langId** | **kotlin.String**| Language id | [optional] |
+| **avail** | **kotlin.Boolean**| Filter coupons by avail status | [optional] |
 | **dateStartFrom** | **kotlin.String**| Filter entity by date_start (greater or equal) | [optional] |
 | **dateStartTo** | **kotlin.String**| Filter entity by date_start (less or equal) | [optional] |
 | **dateEndFrom** | **kotlin.String**| Filter entity by date_end (greater or equal) | [optional] |
 | **dateEndTo** | **kotlin.String**| Filter entity by date_end (less or equal) | [optional] |
-| **avail** | **kotlin.Boolean**| Filter coupons by avail status | [optional] |
-| **langId** | **kotlin.String**| Language id | [optional] |
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,code,name,description&quot;] |
 | **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,code,name,description&quot;] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
@@ -988,7 +988,7 @@ Configure ApiKeyAuth:
 
 <a id="cartGiftcardList"></a>
 # **cartGiftcardList**
-> ModelResponseCartGiftCardList cartGiftcardList(pageCursor, start, count, storeId, params, responseFields, exclude)
+> ModelResponseCartGiftCardList cartGiftcardList(start, count, pageCursor, storeId, responseFields, params, exclude)
 
 cart.giftcard.list
 
@@ -1001,15 +1001,15 @@ Get gift cards list.
 //import org.openapitools.client.models.*
 
 val apiInstance = CartApi()
-val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
 val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
-val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val responseFields : kotlin.String = {pagination,result{gift_card{id,code,amount,status}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : ModelResponseCartGiftCardList = apiInstance.cartGiftcardList(pageCursor, start, count, storeId, params, responseFields, exclude)
+    val result : ModelResponseCartGiftCardList = apiInstance.cartGiftcardList(start, count, pageCursor, storeId, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CartApi#cartGiftcardList")
@@ -1021,12 +1021,12 @@ try {
 ```
 
 ### Parameters
-| **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **storeId** | **kotlin.String**| Store Id | [optional] |
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,code,name&quot;] |
 | **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,code,name&quot;] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
@@ -1052,7 +1052,7 @@ Configure ApiKeyAuth:
 
 <a id="cartInfo"></a>
 # **cartInfo**
-> CartInfo200Response cartInfo(params, responseFields, exclude, storeId)
+> CartInfo200Response cartInfo(storeId, responseFields, params, exclude)
 
 cart.info
 
@@ -1065,12 +1065,12 @@ This method allows you to get various information about the store, including a l
 //import org.openapitools.client.models.*
 
 val apiInstance = CartApi()
-val params : kotlin.String = name,url // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-val responseFields : kotlin.String = {result{name,url,stores_info{store_id,name,currency{id,iso3},store_owner_info}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-val exclude : kotlin.String = name,url // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
+val responseFields : kotlin.String = {result{name,url,stores_info{store_id,name,currency{id,iso3},store_owner_info}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val params : kotlin.String = name,url // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val exclude : kotlin.String = name,url // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : CartInfo200Response = apiInstance.cartInfo(params, responseFields, exclude, storeId)
+    val result : CartInfo200Response = apiInstance.cartInfo(storeId, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CartApi#cartInfo")
@@ -1082,12 +1082,12 @@ try {
 ```
 
 ### Parameters
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;store_name,store_url,db_prefix&quot;] |
+| **storeId** | **kotlin.String**| Store Id | [optional] |
 | **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
-| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
+| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;store_name,store_url,db_prefix&quot;] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **storeId** | **kotlin.String**| Store Id | [optional] |
+| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
 
 ### Return type
 
@@ -1156,7 +1156,7 @@ Configure ApiKeyAuth:
 
 <a id="cartMetaDataList"></a>
 # **cartMetaDataList**
-> ModelResponseCartMetaDataList cartMetaDataList(entityId, entity, storeId, langId, key, count, pageCursor, params, responseFields, exclude)
+> ModelResponseCartMetaDataList cartMetaDataList(entityId, count, pageCursor, entity, storeId, langId, key, responseFields, params, exclude)
 
 cart.meta_data.list
 
@@ -1170,17 +1170,17 @@ Using this method, you can get a list of metadata for various entities (products
 
 val apiInstance = CartApi()
 val entityId : kotlin.String = 1 // kotlin.String | Entity Id
+val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 val entity : kotlin.String = order // kotlin.String | Entity
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
 val langId : kotlin.String = 3 // kotlin.String | Language id
 val key : kotlin.String = subtotal // kotlin.String | Key
-val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val responseFields : kotlin.String = {result{items{key,value}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : ModelResponseCartMetaDataList = apiInstance.cartMetaDataList(entityId, entity, storeId, langId, key, count, pageCursor, params, responseFields, exclude)
+    val result : ModelResponseCartMetaDataList = apiInstance.cartMetaDataList(entityId, count, pageCursor, entity, storeId, langId, key, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CartApi#cartMetaDataList")
@@ -1193,14 +1193,14 @@ try {
 
 ### Parameters
 | **entityId** | **kotlin.String**| Entity Id | |
+| **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **entity** | **kotlin.String**| Entity | [optional] [default to &quot;product&quot;] |
 | **storeId** | **kotlin.String**| Store Id | [optional] |
 | **langId** | **kotlin.String**| Language id | [optional] |
 | **key** | **kotlin.String**| Key | [optional] |
-| **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;key,value&quot;] |
 | **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;key,value&quot;] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
@@ -1399,7 +1399,7 @@ Configure ApiKeyAuth:
 
 <a id="cartPluginList"></a>
 # **cartPluginList**
-> CartPluginList200Response cartPluginList(storeId, start, count)
+> CartPluginList200Response cartPluginList(start, count, storeId)
 
 cart.plugin.list
 
@@ -1412,11 +1412,11 @@ Get a list of third-party plugins installed on the store.
 //import org.openapitools.client.models.*
 
 val apiInstance = CartApi()
-val storeId : kotlin.String = 1 // kotlin.String | Store Id
 val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
 val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+val storeId : kotlin.String = 1 // kotlin.String | Store Id
 try {
-    val result : CartPluginList200Response = apiInstance.cartPluginList(storeId, start, count)
+    val result : CartPluginList200Response = apiInstance.cartPluginList(start, count, storeId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CartApi#cartPluginList")
@@ -1428,11 +1428,11 @@ try {
 ```
 
 ### Parameters
-| **storeId** | **kotlin.String**| Store Id | [optional] |
 | **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
+| **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **storeId** | **kotlin.String**| Store Id | [optional] |
 
 ### Return type
 
@@ -1575,7 +1575,7 @@ Configure ApiKeyAuth:
 
 <a id="cartScriptList"></a>
 # **cartScriptList**
-> ModelResponseCartScriptList cartScriptList(pageCursor, start, count, createdFrom, createdTo, modifiedFrom, modifiedTo, scriptIds, storeId, params, responseFields, exclude)
+> ModelResponseCartScriptList cartScriptList(start, count, pageCursor, scriptIds, storeId, createdFrom, createdTo, modifiedFrom, modifiedTo, responseFields, params, exclude)
 
 cart.script.list
 
@@ -1588,20 +1588,20 @@ Get scripts installed to the storefront
 //import org.openapitools.client.models.*
 
 val apiInstance = CartApi()
-val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
 val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+val scriptIds : kotlin.String = 34023324,34024032 // kotlin.String | Retrieves only scripts with specific ids
+val storeId : kotlin.String = 1 // kotlin.String | Store Id
 val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
 val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
 val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
 val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-val scriptIds : kotlin.String = 34023324,34024032 // kotlin.String | Retrieves only scripts with specific ids
-val storeId : kotlin.String = 1 // kotlin.String | Store Id
-val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val responseFields : kotlin.String = {pagination,result{total_count,scripts{id,name,src,created_time{value}}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : ModelResponseCartScriptList = apiInstance.cartScriptList(pageCursor, start, count, createdFrom, createdTo, modifiedFrom, modifiedTo, scriptIds, storeId, params, responseFields, exclude)
+    val result : ModelResponseCartScriptList = apiInstance.cartScriptList(start, count, pageCursor, scriptIds, storeId, createdFrom, createdTo, modifiedFrom, modifiedTo, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CartApi#cartScriptList")
@@ -1613,17 +1613,17 @@ try {
 ```
 
 ### Parameters
-| **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
+| **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
+| **scriptIds** | **kotlin.String**| Retrieves only scripts with specific ids | [optional] |
+| **storeId** | **kotlin.String**| Store Id | [optional] |
 | **createdFrom** | **kotlin.String**| Retrieve entities from their creation date | [optional] |
 | **createdTo** | **kotlin.String**| Retrieve entities to their creation date | [optional] |
 | **modifiedFrom** | **kotlin.String**| Retrieve entities from their modification date | [optional] |
 | **modifiedTo** | **kotlin.String**| Retrieve entities to their modification date | [optional] |
-| **scriptIds** | **kotlin.String**| Retrieves only scripts with specific ids | [optional] |
-| **storeId** | **kotlin.String**| Store Id | [optional] |
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name,description&quot;] |
 | **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name,description&quot;] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
@@ -1649,7 +1649,7 @@ Configure ApiKeyAuth:
 
 <a id="cartShippingZonesList"></a>
 # **cartShippingZonesList**
-> ModelResponseCartShippingZonesList cartShippingZonesList(storeId, start, count, params, responseFields, exclude)
+> ModelResponseCartShippingZonesList cartShippingZonesList(start, count, storeId, responseFields, params, exclude)
 
 cart.shipping_zones.list
 
@@ -1662,14 +1662,14 @@ Get list of shipping zones
 //import org.openapitools.client.models.*
 
 val apiInstance = CartApi()
-val storeId : kotlin.String = 1 // kotlin.String | Store Id
 val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
 val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val storeId : kotlin.String = 1 // kotlin.String | Store Id
 val responseFields : kotlin.String = {result{id,name,enabled,countries,shipping_methods{name,rates}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : ModelResponseCartShippingZonesList = apiInstance.cartShippingZonesList(storeId, start, count, params, responseFields, exclude)
+    val result : ModelResponseCartShippingZonesList = apiInstance.cartShippingZonesList(start, count, storeId, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CartApi#cartShippingZonesList")
@@ -1681,11 +1681,11 @@ try {
 ```
 
 ### Parameters
-| **storeId** | **kotlin.String**| Store Id | [optional] |
 | **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name,enabled&quot;] |
+| **storeId** | **kotlin.String**| Store Id | [optional] |
 | **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
+| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name,enabled&quot;] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |

@@ -62,10 +62,10 @@ class ReturnApiTest : ShouldSpec() {
             //val id : kotlin.String = 10 // kotlin.String | Entity id
             //val orderId : kotlin.String = 25 // kotlin.String | Defines the order id
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
+            //val responseFields : kotlin.String = {return_code,return_message,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val params : kotlin.String = id,order_products // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = id,order_id // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val responseFields : kotlin.String = {return_code,return_message,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val result : ReturnInfo200Response = apiInstance.returnInfo(id, orderId, storeId, params, exclude, responseFields)
+            //val result : ReturnInfo200Response = apiInstance.returnInfo(id, orderId, storeId, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -75,9 +75,6 @@ class ReturnApiTest : ShouldSpec() {
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
             //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-            //val params : kotlin.String = id,order_products // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = id,order_id // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val orderId : kotlin.String = 25 // kotlin.String | Defines the order id
             //val orderIds : kotlin.String = 24,25 // kotlin.String | Retrieves return requests specified by order ids
             //val customerId : kotlin.String = 5 // kotlin.String | Retrieves return requests specified by customer id
@@ -88,9 +85,12 @@ class ReturnApiTest : ShouldSpec() {
             //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
             //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
             //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
+            //val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,order_products // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val exclude : kotlin.String = id,order_id // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
             //val reportRequestId : kotlin.String = 105245017661 // kotlin.String | Report request id
             //val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable report cache for current request
-            //val result : ModelResponseReturnList = apiInstance.returnList(start, count, pageCursor, params, exclude, responseFields, orderId, orderIds, customerId, storeId, status, returnType, createdFrom, createdTo, modifiedFrom, modifiedTo, reportRequestId, disableReportCache)
+            //val result : ModelResponseReturnList = apiInstance.returnList(start, count, pageCursor, orderId, orderIds, customerId, storeId, status, returnType, createdFrom, createdTo, modifiedFrom, modifiedTo, responseFields, params, exclude, reportRequestId, disableReportCache)
             //result shouldBe ("TODO")
         }
 

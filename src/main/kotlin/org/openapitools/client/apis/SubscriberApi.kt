@@ -50,17 +50,17 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get subscribers list
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param subscribed Filter by subscription status (optional)
      * @param storeId Store Id (optional)
      * @param email Filter subscribers by email (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseSubscriberList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -70,8 +70,8 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun subscriberList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, subscribed: kotlin.Boolean? = null, storeId: kotlin.String? = null, email: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, pageCursor: kotlin.String? = null, responseFields: kotlin.String? = null) : ModelResponseSubscriberList {
-        val localVarResponse = subscriberListWithHttpInfo(start = start, count = count, subscribed = subscribed, storeId = storeId, email = email, params = params, exclude = exclude, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, pageCursor = pageCursor, responseFields = responseFields)
+    fun subscriberList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, subscribed: kotlin.Boolean? = null, storeId: kotlin.String? = null, email: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null) : ModelResponseSubscriberList {
+        val localVarResponse = subscriberListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, subscribed = subscribed, storeId = storeId, email = email, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseSubscriberList
@@ -93,25 +93,25 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * Get subscribers list
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param subscribed Filter by subscription status (optional)
      * @param storeId Store Id (optional)
      * @param email Filter subscribers by email (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseSubscriberList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun subscriberListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, subscribed: kotlin.Boolean?, storeId: kotlin.String?, email: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, pageCursor: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseSubscriberList?> {
-        val localVariableConfig = subscriberListRequestConfig(start = start, count = count, subscribed = subscribed, storeId = storeId, email = email, params = params, exclude = exclude, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, pageCursor = pageCursor, responseFields = responseFields)
+    fun subscriberListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, subscribed: kotlin.Boolean?, storeId: kotlin.String?, email: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseSubscriberList?> {
+        val localVariableConfig = subscriberListRequestConfig(start = start, count = count, pageCursor = pageCursor, subscribed = subscribed, storeId = storeId, email = email, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseSubscriberList>(
             localVariableConfig
@@ -123,20 +123,20 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      *
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param subscribed Filter by subscription status (optional)
      * @param storeId Store Id (optional)
      * @param email Filter subscribers by email (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun subscriberListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, subscribed: kotlin.Boolean?, storeId: kotlin.String?, email: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, pageCursor: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun subscriberListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, subscribed: kotlin.Boolean?, storeId: kotlin.String?, email: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -146,6 +146,9 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
                 if (count != null) {
                     put("count", listOf(count.toString()))
                 }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
                 if (subscribed != null) {
                     put("subscribed", listOf(subscribed.toString()))
                 }
@@ -154,12 +157,6 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
                 }
                 if (email != null) {
                     put("email", listOf(email.toString()))
-                }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
@@ -173,11 +170,14 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
                 }
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

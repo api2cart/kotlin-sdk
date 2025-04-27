@@ -60,20 +60,20 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * category.add
      * Add new category in store
      * @param name Defines category&#39;s name that has to be added
-     * @param parentId Adds categories specified by parent id (optional)
-     * @param storesIds Create category in the stores that is specified by comma-separated stores&#39; id (optional)
-     * @param storeId Store Id (optional)
-     * @param langId Language id (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param sortOrder Sort number in the list (optional, default to 0)
-     * @param createdTime Entity&#39;s date creation (optional)
-     * @param modifiedTime Entity&#39;s date modification (optional)
      * @param description Defines category&#39;s description (optional)
      * @param shortDescription Defines short description (optional)
+     * @param parentId Adds categories specified by parent id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param createdTime Entity&#39;s date creation (optional)
+     * @param modifiedTime Entity&#39;s date modification (optional)
+     * @param sortOrder Sort number in the list (optional, default to 0)
      * @param metaTitle Defines unique meta title for each entity (optional)
      * @param metaDescription Defines unique meta description of a entity (optional)
      * @param metaKeywords Defines unique meta keywords for each entity (optional)
      * @param seoUrl Defines unique category&#39;s URL for SEO (optional)
+     * @param storeId Store Id (optional)
+     * @param storesIds Create category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param langId Language id (optional)
      * @return CategoryAdd200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -83,8 +83,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun categoryAdd(name: kotlin.String, parentId: kotlin.String? = null, storesIds: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, avail: kotlin.Boolean? = true, sortOrder: kotlin.Int? = 0, createdTime: kotlin.String? = null, modifiedTime: kotlin.String? = null, description: kotlin.String? = null, shortDescription: kotlin.String? = null, metaTitle: kotlin.String? = null, metaDescription: kotlin.String? = null, metaKeywords: kotlin.String? = null, seoUrl: kotlin.String? = null) : CategoryAdd200Response {
-        val localVarResponse = categoryAddWithHttpInfo(name = name, parentId = parentId, storesIds = storesIds, storeId = storeId, langId = langId, avail = avail, sortOrder = sortOrder, createdTime = createdTime, modifiedTime = modifiedTime, description = description, shortDescription = shortDescription, metaTitle = metaTitle, metaDescription = metaDescription, metaKeywords = metaKeywords, seoUrl = seoUrl)
+    fun categoryAdd(name: kotlin.String, description: kotlin.String? = null, shortDescription: kotlin.String? = null, parentId: kotlin.String? = null, avail: kotlin.Boolean? = true, createdTime: kotlin.String? = null, modifiedTime: kotlin.String? = null, sortOrder: kotlin.Int? = 0, metaTitle: kotlin.String? = null, metaDescription: kotlin.String? = null, metaKeywords: kotlin.String? = null, seoUrl: kotlin.String? = null, storeId: kotlin.String? = null, storesIds: kotlin.String? = null, langId: kotlin.String? = null) : CategoryAdd200Response {
+        val localVarResponse = categoryAddWithHttpInfo(name = name, description = description, shortDescription = shortDescription, parentId = parentId, avail = avail, createdTime = createdTime, modifiedTime = modifiedTime, sortOrder = sortOrder, metaTitle = metaTitle, metaDescription = metaDescription, metaKeywords = metaKeywords, seoUrl = seoUrl, storeId = storeId, storesIds = storesIds, langId = langId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CategoryAdd200Response
@@ -105,28 +105,28 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * category.add
      * Add new category in store
      * @param name Defines category&#39;s name that has to be added
-     * @param parentId Adds categories specified by parent id (optional)
-     * @param storesIds Create category in the stores that is specified by comma-separated stores&#39; id (optional)
-     * @param storeId Store Id (optional)
-     * @param langId Language id (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param sortOrder Sort number in the list (optional, default to 0)
-     * @param createdTime Entity&#39;s date creation (optional)
-     * @param modifiedTime Entity&#39;s date modification (optional)
      * @param description Defines category&#39;s description (optional)
      * @param shortDescription Defines short description (optional)
+     * @param parentId Adds categories specified by parent id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param createdTime Entity&#39;s date creation (optional)
+     * @param modifiedTime Entity&#39;s date modification (optional)
+     * @param sortOrder Sort number in the list (optional, default to 0)
      * @param metaTitle Defines unique meta title for each entity (optional)
      * @param metaDescription Defines unique meta description of a entity (optional)
      * @param metaKeywords Defines unique meta keywords for each entity (optional)
      * @param seoUrl Defines unique category&#39;s URL for SEO (optional)
+     * @param storeId Store Id (optional)
+     * @param storesIds Create category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param langId Language id (optional)
      * @return ApiResponse<CategoryAdd200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun categoryAddWithHttpInfo(name: kotlin.String, parentId: kotlin.String?, storesIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, avail: kotlin.Boolean?, sortOrder: kotlin.Int?, createdTime: kotlin.String?, modifiedTime: kotlin.String?, description: kotlin.String?, shortDescription: kotlin.String?, metaTitle: kotlin.String?, metaDescription: kotlin.String?, metaKeywords: kotlin.String?, seoUrl: kotlin.String?) : ApiResponse<CategoryAdd200Response?> {
-        val localVariableConfig = categoryAddRequestConfig(name = name, parentId = parentId, storesIds = storesIds, storeId = storeId, langId = langId, avail = avail, sortOrder = sortOrder, createdTime = createdTime, modifiedTime = modifiedTime, description = description, shortDescription = shortDescription, metaTitle = metaTitle, metaDescription = metaDescription, metaKeywords = metaKeywords, seoUrl = seoUrl)
+    fun categoryAddWithHttpInfo(name: kotlin.String, description: kotlin.String?, shortDescription: kotlin.String?, parentId: kotlin.String?, avail: kotlin.Boolean?, createdTime: kotlin.String?, modifiedTime: kotlin.String?, sortOrder: kotlin.Int?, metaTitle: kotlin.String?, metaDescription: kotlin.String?, metaKeywords: kotlin.String?, seoUrl: kotlin.String?, storeId: kotlin.String?, storesIds: kotlin.String?, langId: kotlin.String?) : ApiResponse<CategoryAdd200Response?> {
+        val localVariableConfig = categoryAddRequestConfig(name = name, description = description, shortDescription = shortDescription, parentId = parentId, avail = avail, createdTime = createdTime, modifiedTime = modifiedTime, sortOrder = sortOrder, metaTitle = metaTitle, metaDescription = metaDescription, metaKeywords = metaKeywords, seoUrl = seoUrl, storeId = storeId, storesIds = storesIds, langId = langId)
 
         return request<Unit, CategoryAdd200Response>(
             localVariableConfig
@@ -137,44 +137,38 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * To obtain the request config of the operation categoryAdd
      *
      * @param name Defines category&#39;s name that has to be added
-     * @param parentId Adds categories specified by parent id (optional)
-     * @param storesIds Create category in the stores that is specified by comma-separated stores&#39; id (optional)
-     * @param storeId Store Id (optional)
-     * @param langId Language id (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param sortOrder Sort number in the list (optional, default to 0)
-     * @param createdTime Entity&#39;s date creation (optional)
-     * @param modifiedTime Entity&#39;s date modification (optional)
      * @param description Defines category&#39;s description (optional)
      * @param shortDescription Defines short description (optional)
+     * @param parentId Adds categories specified by parent id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param createdTime Entity&#39;s date creation (optional)
+     * @param modifiedTime Entity&#39;s date modification (optional)
+     * @param sortOrder Sort number in the list (optional, default to 0)
      * @param metaTitle Defines unique meta title for each entity (optional)
      * @param metaDescription Defines unique meta description of a entity (optional)
      * @param metaKeywords Defines unique meta keywords for each entity (optional)
      * @param seoUrl Defines unique category&#39;s URL for SEO (optional)
+     * @param storeId Store Id (optional)
+     * @param storesIds Create category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param langId Language id (optional)
      * @return RequestConfig
      */
-    fun categoryAddRequestConfig(name: kotlin.String, parentId: kotlin.String?, storesIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, avail: kotlin.Boolean?, sortOrder: kotlin.Int?, createdTime: kotlin.String?, modifiedTime: kotlin.String?, description: kotlin.String?, shortDescription: kotlin.String?, metaTitle: kotlin.String?, metaDescription: kotlin.String?, metaKeywords: kotlin.String?, seoUrl: kotlin.String?) : RequestConfig<Unit> {
+    fun categoryAddRequestConfig(name: kotlin.String, description: kotlin.String?, shortDescription: kotlin.String?, parentId: kotlin.String?, avail: kotlin.Boolean?, createdTime: kotlin.String?, modifiedTime: kotlin.String?, sortOrder: kotlin.Int?, metaTitle: kotlin.String?, metaDescription: kotlin.String?, metaKeywords: kotlin.String?, seoUrl: kotlin.String?, storeId: kotlin.String?, storesIds: kotlin.String?, langId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("name", listOf(name.toString()))
+                if (description != null) {
+                    put("description", listOf(description.toString()))
+                }
+                if (shortDescription != null) {
+                    put("short_description", listOf(shortDescription.toString()))
+                }
                 if (parentId != null) {
                     put("parent_id", listOf(parentId.toString()))
                 }
-                if (storesIds != null) {
-                    put("stores_ids", listOf(storesIds.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
-                if (langId != null) {
-                    put("lang_id", listOf(langId.toString()))
-                }
                 if (avail != null) {
                     put("avail", listOf(avail.toString()))
-                }
-                if (sortOrder != null) {
-                    put("sort_order", listOf(sortOrder.toString()))
                 }
                 if (createdTime != null) {
                     put("created_time", listOf(createdTime.toString()))
@@ -182,11 +176,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 if (modifiedTime != null) {
                     put("modified_time", listOf(modifiedTime.toString()))
                 }
-                if (description != null) {
-                    put("description", listOf(description.toString()))
-                }
-                if (shortDescription != null) {
-                    put("short_description", listOf(shortDescription.toString()))
+                if (sortOrder != null) {
+                    put("sort_order", listOf(sortOrder.toString()))
                 }
                 if (metaTitle != null) {
                     put("meta_title", listOf(metaTitle.toString()))
@@ -199,6 +190,15 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 }
                 if (seoUrl != null) {
                     put("seo_url", listOf(seoUrl.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
+                }
+                if (storesIds != null) {
+                    put("stores_ids", listOf(storesIds.toString()))
+                }
+                if (langId != null) {
+                    put("lang_id", listOf(langId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -289,8 +289,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * category.assign
      * Assign category to product
-     * @param productId Defines category assign to the product, specified by product id
      * @param categoryId Defines category assign, specified by category id
+     * @param productId Defines category assign to the product, specified by product id
      * @param storeId Store Id (optional)
      * @return CartConfigUpdate200Response
      * @throws IllegalStateException If the request is not correctly configured
@@ -301,8 +301,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun categoryAssign(productId: kotlin.String, categoryId: kotlin.String, storeId: kotlin.String? = null) : CartConfigUpdate200Response {
-        val localVarResponse = categoryAssignWithHttpInfo(productId = productId, categoryId = categoryId, storeId = storeId)
+    fun categoryAssign(categoryId: kotlin.String, productId: kotlin.String, storeId: kotlin.String? = null) : CartConfigUpdate200Response {
+        val localVarResponse = categoryAssignWithHttpInfo(categoryId = categoryId, productId = productId, storeId = storeId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CartConfigUpdate200Response
@@ -322,8 +322,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * category.assign
      * Assign category to product
-     * @param productId Defines category assign to the product, specified by product id
      * @param categoryId Defines category assign, specified by category id
+     * @param productId Defines category assign to the product, specified by product id
      * @param storeId Store Id (optional)
      * @return ApiResponse<CartConfigUpdate200Response?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -331,8 +331,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun categoryAssignWithHttpInfo(productId: kotlin.String, categoryId: kotlin.String, storeId: kotlin.String?) : ApiResponse<CartConfigUpdate200Response?> {
-        val localVariableConfig = categoryAssignRequestConfig(productId = productId, categoryId = categoryId, storeId = storeId)
+    fun categoryAssignWithHttpInfo(categoryId: kotlin.String, productId: kotlin.String, storeId: kotlin.String?) : ApiResponse<CartConfigUpdate200Response?> {
+        val localVariableConfig = categoryAssignRequestConfig(categoryId = categoryId, productId = productId, storeId = storeId)
 
         return request<Unit, CartConfigUpdate200Response>(
             localVariableConfig
@@ -342,17 +342,17 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation categoryAssign
      *
-     * @param productId Defines category assign to the product, specified by product id
      * @param categoryId Defines category assign, specified by category id
+     * @param productId Defines category assign to the product, specified by product id
      * @param storeId Store Id (optional)
      * @return RequestConfig
      */
-    fun categoryAssignRequestConfig(productId: kotlin.String, categoryId: kotlin.String, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun categoryAssignRequestConfig(categoryId: kotlin.String, productId: kotlin.String, storeId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                put("product_id", listOf(productId.toString()))
                 put("category_id", listOf(categoryId.toString()))
+                put("product_id", listOf(productId.toString()))
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
@@ -376,11 +376,11 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param parentId Counts categories specified by parent id (optional)
      * @param storeId Counts category specified by store id (optional)
      * @param langId Counts category specified by language id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @param productType A categorization for the product (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts categories that are searched specified by field (optional)
@@ -395,8 +395,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun categoryCount(parentId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, avail: kotlin.Boolean? = true, productType: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false) : CategoryCount200Response {
-        val localVarResponse = categoryCountWithHttpInfo(parentId = parentId, storeId = storeId, langId = langId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, avail = avail, productType = productType, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
+    fun categoryCount(parentId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, avail: kotlin.Boolean? = true, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, productType: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false) : CategoryCount200Response {
+        val localVarResponse = categoryCountWithHttpInfo(parentId = parentId, storeId = storeId, langId = langId, avail = avail, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, productType = productType, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CategoryCount200Response
@@ -419,11 +419,11 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param parentId Counts categories specified by parent id (optional)
      * @param storeId Counts category specified by store id (optional)
      * @param langId Counts category specified by language id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @param productType A categorization for the product (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts categories that are searched specified by field (optional)
@@ -435,8 +435,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun categoryCountWithHttpInfo(parentId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, avail: kotlin.Boolean?, productType: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : ApiResponse<CategoryCount200Response?> {
-        val localVariableConfig = categoryCountRequestConfig(parentId = parentId, storeId = storeId, langId = langId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, avail = avail, productType = productType, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
+    fun categoryCountWithHttpInfo(parentId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, avail: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, productType: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : ApiResponse<CategoryCount200Response?> {
+        val localVariableConfig = categoryCountRequestConfig(parentId = parentId, storeId = storeId, langId = langId, avail = avail, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, productType = productType, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
 
         return request<Unit, CategoryCount200Response>(
             localVariableConfig
@@ -449,11 +449,11 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param parentId Counts categories specified by parent id (optional)
      * @param storeId Counts category specified by store id (optional)
      * @param langId Counts category specified by language id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
      * @param productType A categorization for the product (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts categories that are searched specified by field (optional)
@@ -461,7 +461,7 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @return RequestConfig
      */
-    fun categoryCountRequestConfig(parentId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, avail: kotlin.Boolean?, productType: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun categoryCountRequestConfig(parentId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, avail: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, productType: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -474,6 +474,9 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 if (langId != null) {
                     put("lang_id", listOf(langId.toString()))
                 }
+                if (avail != null) {
+                    put("avail", listOf(avail.toString()))
+                }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
                 }
@@ -485,9 +488,6 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 }
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
-                }
-                if (avail != null) {
-                    put("avail", listOf(avail.toString()))
                 }
                 if (productType != null) {
                     put("product_type", listOf(productType.toString()))
@@ -720,10 +720,10 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param imageName Defines image&#39;s name
      * @param url Defines URL of the image that has to be added
      * @param type Defines image&#39;s types that are specified by comma-separated list
+     * @param storeId Store Id (optional)
      * @param label Defines alternative text that has to be attached to the picture (optional)
      * @param mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param position Defines image’s position in the list (optional, default to 0)
-     * @param storeId Store Id (optional)
      * @return CategoryImageAdd200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -733,8 +733,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun categoryImageAdd(categoryId: kotlin.String, imageName: kotlin.String, url: kotlin.String, type: TypeCategoryImageAdd, label: kotlin.String? = null, mime: kotlin.String? = null, position: kotlin.Int? = 0, storeId: kotlin.String? = null) : CategoryImageAdd200Response {
-        val localVarResponse = categoryImageAddWithHttpInfo(categoryId = categoryId, imageName = imageName, url = url, type = type, label = label, mime = mime, position = position, storeId = storeId)
+    fun categoryImageAdd(categoryId: kotlin.String, imageName: kotlin.String, url: kotlin.String, type: TypeCategoryImageAdd, storeId: kotlin.String? = null, label: kotlin.String? = null, mime: kotlin.String? = null, position: kotlin.Int? = 0) : CategoryImageAdd200Response {
+        val localVarResponse = categoryImageAddWithHttpInfo(categoryId = categoryId, imageName = imageName, url = url, type = type, storeId = storeId, label = label, mime = mime, position = position)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CategoryImageAdd200Response
@@ -758,18 +758,18 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param imageName Defines image&#39;s name
      * @param url Defines URL of the image that has to be added
      * @param type Defines image&#39;s types that are specified by comma-separated list
+     * @param storeId Store Id (optional)
      * @param label Defines alternative text that has to be attached to the picture (optional)
      * @param mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param position Defines image’s position in the list (optional, default to 0)
-     * @param storeId Store Id (optional)
      * @return ApiResponse<CategoryImageAdd200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun categoryImageAddWithHttpInfo(categoryId: kotlin.String, imageName: kotlin.String, url: kotlin.String, type: TypeCategoryImageAdd, label: kotlin.String?, mime: kotlin.String?, position: kotlin.Int?, storeId: kotlin.String?) : ApiResponse<CategoryImageAdd200Response?> {
-        val localVariableConfig = categoryImageAddRequestConfig(categoryId = categoryId, imageName = imageName, url = url, type = type, label = label, mime = mime, position = position, storeId = storeId)
+    fun categoryImageAddWithHttpInfo(categoryId: kotlin.String, imageName: kotlin.String, url: kotlin.String, type: TypeCategoryImageAdd, storeId: kotlin.String?, label: kotlin.String?, mime: kotlin.String?, position: kotlin.Int?) : ApiResponse<CategoryImageAdd200Response?> {
+        val localVariableConfig = categoryImageAddRequestConfig(categoryId = categoryId, imageName = imageName, url = url, type = type, storeId = storeId, label = label, mime = mime, position = position)
 
         return request<Unit, CategoryImageAdd200Response>(
             localVariableConfig
@@ -783,31 +783,31 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param imageName Defines image&#39;s name
      * @param url Defines URL of the image that has to be added
      * @param type Defines image&#39;s types that are specified by comma-separated list
+     * @param storeId Store Id (optional)
      * @param label Defines alternative text that has to be attached to the picture (optional)
      * @param mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. (optional)
      * @param position Defines image’s position in the list (optional, default to 0)
-     * @param storeId Store Id (optional)
      * @return RequestConfig
      */
-    fun categoryImageAddRequestConfig(categoryId: kotlin.String, imageName: kotlin.String, url: kotlin.String, type: TypeCategoryImageAdd, label: kotlin.String?, mime: kotlin.String?, position: kotlin.Int?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun categoryImageAddRequestConfig(categoryId: kotlin.String, imageName: kotlin.String, url: kotlin.String, type: TypeCategoryImageAdd, storeId: kotlin.String?, label: kotlin.String?, mime: kotlin.String?, position: kotlin.Int?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("category_id", listOf(categoryId.toString()))
                 put("image_name", listOf(imageName.toString()))
                 put("url", listOf(url.toString()))
+                put("type", listOf(type.value))
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
+                }
                 if (label != null) {
                     put("label", listOf(label.toString()))
                 }
                 if (mime != null) {
                     put("mime", listOf(mime.toString()))
                 }
-                put("type", listOf(type.value))
                 if (position != null) {
                     put("position", listOf(position.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -911,12 +911,12 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * category.info
      * Get category info about category ID*** or specify other category ID.
      * @param id Retrieves category&#39;s info specified by category id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves category info  specified by store id (optional)
      * @param langId Retrieves category info  specified by language id (optional)
      * @param schemaType The name of the requirements set for the provided schema. (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @return CategoryInfo200Response
@@ -928,8 +928,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun categoryInfo(id: kotlin.String, params: kotlin.String? = "id,parent_id,name,description", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, schemaType: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false) : CategoryInfo200Response {
-        val localVarResponse = categoryInfoWithHttpInfo(id = id, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId, langId = langId, schemaType = schemaType, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
+    fun categoryInfo(id: kotlin.String, storeId: kotlin.String? = null, langId: kotlin.String? = null, schemaType: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,parent_id,name,description", exclude: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false) : CategoryInfo200Response {
+        val localVarResponse = categoryInfoWithHttpInfo(id = id, storeId = storeId, langId = langId, schemaType = schemaType, responseFields = responseFields, params = params, exclude = exclude, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CategoryInfo200Response
@@ -950,12 +950,12 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * category.info
      * Get category info about category ID*** or specify other category ID.
      * @param id Retrieves category&#39;s info specified by category id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves category info  specified by store id (optional)
      * @param langId Retrieves category info  specified by language id (optional)
      * @param schemaType The name of the requirements set for the provided schema. (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @return ApiResponse<CategoryInfo200Response?>
@@ -964,8 +964,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun categoryInfoWithHttpInfo(id: kotlin.String, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, schemaType: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : ApiResponse<CategoryInfo200Response?> {
-        val localVariableConfig = categoryInfoRequestConfig(id = id, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId, langId = langId, schemaType = schemaType, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
+    fun categoryInfoWithHttpInfo(id: kotlin.String, storeId: kotlin.String?, langId: kotlin.String?, schemaType: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : ApiResponse<CategoryInfo200Response?> {
+        val localVariableConfig = categoryInfoRequestConfig(id = id, storeId = storeId, langId = langId, schemaType = schemaType, responseFields = responseFields, params = params, exclude = exclude, reportRequestId = reportRequestId, disableReportCache = disableReportCache)
 
         return request<Unit, CategoryInfo200Response>(
             localVariableConfig
@@ -976,30 +976,21 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * To obtain the request config of the operation categoryInfo
      *
      * @param id Retrieves category&#39;s info specified by category id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves category info  specified by store id (optional)
      * @param langId Retrieves category info  specified by language id (optional)
      * @param schemaType The name of the requirements set for the provided schema. (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @return RequestConfig
      */
-    fun categoryInfoRequestConfig(id: kotlin.String, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, schemaType: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun categoryInfoRequestConfig(id: kotlin.String, storeId: kotlin.String?, langId: kotlin.String?, schemaType: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("id", listOf(id.toString()))
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
@@ -1008,6 +999,15 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 }
                 if (schemaType != null) {
                     put("schema_type", listOf(schemaType.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
                 if (reportRequestId != null) {
                     put("report_request_id", listOf(reportRequestId.toString()))
@@ -1035,20 +1035,20 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param parentId Retrieves categories specified by parent id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves categories specified by store id (optional)
      * @param langId Retrieves categorys specified by language id (optional)
+     * @param parentId Retrieves categories specified by parent id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param productType A categorization for the product (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param productType A categorization for the product (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Category search that is specified by field (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param disableCache Disable cache for current request (optional, default to false)
@@ -1061,8 +1061,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun categoryList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, parentId: kotlin.String? = null, params: kotlin.String? = "id,parent_id,name,description", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, avail: kotlin.Boolean? = true, productType: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false, disableCache: kotlin.Boolean? = false) : ModelResponseCategoryList {
-        val localVarResponse = categoryListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, parentId = parentId, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId, langId = langId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, avail = avail, productType = productType, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, disableReportCache = disableReportCache, disableCache = disableCache)
+    fun categoryList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, parentId: kotlin.String? = null, avail: kotlin.Boolean? = true, productType: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,parent_id,name,description", exclude: kotlin.String? = null, reportRequestId: kotlin.String? = null, disableReportCache: kotlin.Boolean? = false, disableCache: kotlin.Boolean? = false) : ModelResponseCategoryList {
+        val localVarResponse = categoryListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, storeId = storeId, langId = langId, parentId = parentId, avail = avail, productType = productType, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, findValue = findValue, findWhere = findWhere, responseFields = responseFields, params = params, exclude = exclude, reportRequestId = reportRequestId, disableReportCache = disableReportCache, disableCache = disableCache)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCategoryList
@@ -1085,20 +1085,20 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param parentId Retrieves categories specified by parent id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves categories specified by store id (optional)
      * @param langId Retrieves categorys specified by language id (optional)
+     * @param parentId Retrieves categories specified by parent id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param productType A categorization for the product (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param productType A categorization for the product (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Category search that is specified by field (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param disableCache Disable cache for current request (optional, default to false)
@@ -1108,8 +1108,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun categoryListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, parentId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, avail: kotlin.Boolean?, productType: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, disableCache: kotlin.Boolean?) : ApiResponse<ModelResponseCategoryList?> {
-        val localVariableConfig = categoryListRequestConfig(start = start, count = count, pageCursor = pageCursor, parentId = parentId, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId, langId = langId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, avail = avail, productType = productType, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, disableReportCache = disableReportCache, disableCache = disableCache)
+    fun categoryListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, parentId: kotlin.String?, avail: kotlin.Boolean?, productType: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, disableCache: kotlin.Boolean?) : ApiResponse<ModelResponseCategoryList?> {
+        val localVariableConfig = categoryListRequestConfig(start = start, count = count, pageCursor = pageCursor, storeId = storeId, langId = langId, parentId = parentId, avail = avail, productType = productType, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, findValue = findValue, findWhere = findWhere, responseFields = responseFields, params = params, exclude = exclude, reportRequestId = reportRequestId, disableReportCache = disableReportCache, disableCache = disableCache)
 
         return request<Unit, ModelResponseCategoryList>(
             localVariableConfig
@@ -1122,26 +1122,26 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
-     * @param parentId Retrieves categories specified by parent id (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves categories specified by store id (optional)
      * @param langId Retrieves categorys specified by language id (optional)
+     * @param parentId Retrieves categories specified by parent id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param productType A categorization for the product (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param productType A categorization for the product (optional)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Category search that is specified by field (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,parent_id,name,description")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param reportRequestId Report request id (optional)
      * @param disableReportCache Disable report cache for current request (optional, default to false)
      * @param disableCache Disable cache for current request (optional, default to false)
      * @return RequestConfig
      */
-    fun categoryListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, parentId: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, avail: kotlin.Boolean?, productType: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, disableCache: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun categoryListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, parentId: kotlin.String?, avail: kotlin.Boolean?, productType: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, reportRequestId: kotlin.String?, disableReportCache: kotlin.Boolean?, disableCache: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -1154,23 +1154,20 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 if (pageCursor != null) {
                     put("page_cursor", listOf(pageCursor.toString()))
                 }
-                if (parentId != null) {
-                    put("parent_id", listOf(parentId.toString()))
-                }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
                 }
                 if (langId != null) {
                     put("lang_id", listOf(langId.toString()))
+                }
+                if (parentId != null) {
+                    put("parent_id", listOf(parentId.toString()))
+                }
+                if (avail != null) {
+                    put("avail", listOf(avail.toString()))
+                }
+                if (productType != null) {
+                    put("product_type", listOf(productType.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
@@ -1184,17 +1181,20 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
                 }
-                if (avail != null) {
-                    put("avail", listOf(avail.toString()))
-                }
-                if (productType != null) {
-                    put("product_type", listOf(productType.toString()))
-                }
                 if (findValue != null) {
                     put("find_value", listOf(findValue.toString()))
                 }
                 if (findWhere != null) {
                     put("find_where", listOf(findWhere.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
                 if (reportRequestId != null) {
                     put("report_request_id", listOf(reportRequestId.toString()))
@@ -1308,19 +1308,19 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Update category in store
      * @param id Defines category update specified by category id
      * @param name Defines new category’s name (optional)
+     * @param description Defines new category&#39;s description (optional)
+     * @param shortDescription Defines short description (optional)
      * @param parentId Defines new parent category id (optional)
-     * @param storesIds Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param avail Defines category&#39;s visibility status (optional)
      * @param sortOrder Sort number in the list (optional)
      * @param modifiedTime Entity&#39;s date modification (optional)
-     * @param description Defines new category&#39;s description (optional)
-     * @param shortDescription Defines short description (optional)
      * @param metaTitle Defines unique meta title for each entity (optional)
      * @param metaDescription Defines unique meta description of a entity (optional)
      * @param metaKeywords Defines unique meta keywords for each entity (optional)
      * @param seoUrl Defines unique category&#39;s URL for SEO (optional)
-     * @param langId Language id (optional)
      * @param storeId Store Id (optional)
+     * @param storesIds Update category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param langId Language id (optional)
      * @return AccountConfigUpdate200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -1330,8 +1330,8 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun categoryUpdate(id: kotlin.String, name: kotlin.String? = null, parentId: kotlin.String? = null, storesIds: kotlin.String? = null, avail: kotlin.Boolean? = null, sortOrder: kotlin.Int? = null, modifiedTime: kotlin.String? = null, description: kotlin.String? = null, shortDescription: kotlin.String? = null, metaTitle: kotlin.String? = null, metaDescription: kotlin.String? = null, metaKeywords: kotlin.String? = null, seoUrl: kotlin.String? = null, langId: kotlin.String? = null, storeId: kotlin.String? = null) : AccountConfigUpdate200Response {
-        val localVarResponse = categoryUpdateWithHttpInfo(id = id, name = name, parentId = parentId, storesIds = storesIds, avail = avail, sortOrder = sortOrder, modifiedTime = modifiedTime, description = description, shortDescription = shortDescription, metaTitle = metaTitle, metaDescription = metaDescription, metaKeywords = metaKeywords, seoUrl = seoUrl, langId = langId, storeId = storeId)
+    fun categoryUpdate(id: kotlin.String, name: kotlin.String? = null, description: kotlin.String? = null, shortDescription: kotlin.String? = null, parentId: kotlin.String? = null, avail: kotlin.Boolean? = null, sortOrder: kotlin.Int? = null, modifiedTime: kotlin.String? = null, metaTitle: kotlin.String? = null, metaDescription: kotlin.String? = null, metaKeywords: kotlin.String? = null, seoUrl: kotlin.String? = null, storeId: kotlin.String? = null, storesIds: kotlin.String? = null, langId: kotlin.String? = null) : AccountConfigUpdate200Response {
+        val localVarResponse = categoryUpdateWithHttpInfo(id = id, name = name, description = description, shortDescription = shortDescription, parentId = parentId, avail = avail, sortOrder = sortOrder, modifiedTime = modifiedTime, metaTitle = metaTitle, metaDescription = metaDescription, metaKeywords = metaKeywords, seoUrl = seoUrl, storeId = storeId, storesIds = storesIds, langId = langId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as AccountConfigUpdate200Response
@@ -1353,27 +1353,27 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * Update category in store
      * @param id Defines category update specified by category id
      * @param name Defines new category’s name (optional)
+     * @param description Defines new category&#39;s description (optional)
+     * @param shortDescription Defines short description (optional)
      * @param parentId Defines new parent category id (optional)
-     * @param storesIds Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param avail Defines category&#39;s visibility status (optional)
      * @param sortOrder Sort number in the list (optional)
      * @param modifiedTime Entity&#39;s date modification (optional)
-     * @param description Defines new category&#39;s description (optional)
-     * @param shortDescription Defines short description (optional)
      * @param metaTitle Defines unique meta title for each entity (optional)
      * @param metaDescription Defines unique meta description of a entity (optional)
      * @param metaKeywords Defines unique meta keywords for each entity (optional)
      * @param seoUrl Defines unique category&#39;s URL for SEO (optional)
-     * @param langId Language id (optional)
      * @param storeId Store Id (optional)
+     * @param storesIds Update category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param langId Language id (optional)
      * @return ApiResponse<AccountConfigUpdate200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun categoryUpdateWithHttpInfo(id: kotlin.String, name: kotlin.String?, parentId: kotlin.String?, storesIds: kotlin.String?, avail: kotlin.Boolean?, sortOrder: kotlin.Int?, modifiedTime: kotlin.String?, description: kotlin.String?, shortDescription: kotlin.String?, metaTitle: kotlin.String?, metaDescription: kotlin.String?, metaKeywords: kotlin.String?, seoUrl: kotlin.String?, langId: kotlin.String?, storeId: kotlin.String?) : ApiResponse<AccountConfigUpdate200Response?> {
-        val localVariableConfig = categoryUpdateRequestConfig(id = id, name = name, parentId = parentId, storesIds = storesIds, avail = avail, sortOrder = sortOrder, modifiedTime = modifiedTime, description = description, shortDescription = shortDescription, metaTitle = metaTitle, metaDescription = metaDescription, metaKeywords = metaKeywords, seoUrl = seoUrl, langId = langId, storeId = storeId)
+    fun categoryUpdateWithHttpInfo(id: kotlin.String, name: kotlin.String?, description: kotlin.String?, shortDescription: kotlin.String?, parentId: kotlin.String?, avail: kotlin.Boolean?, sortOrder: kotlin.Int?, modifiedTime: kotlin.String?, metaTitle: kotlin.String?, metaDescription: kotlin.String?, metaKeywords: kotlin.String?, seoUrl: kotlin.String?, storeId: kotlin.String?, storesIds: kotlin.String?, langId: kotlin.String?) : ApiResponse<AccountConfigUpdate200Response?> {
+        val localVariableConfig = categoryUpdateRequestConfig(id = id, name = name, description = description, shortDescription = shortDescription, parentId = parentId, avail = avail, sortOrder = sortOrder, modifiedTime = modifiedTime, metaTitle = metaTitle, metaDescription = metaDescription, metaKeywords = metaKeywords, seoUrl = seoUrl, storeId = storeId, storesIds = storesIds, langId = langId)
 
         return request<Unit, AccountConfigUpdate200Response>(
             localVariableConfig
@@ -1385,22 +1385,22 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      *
      * @param id Defines category update specified by category id
      * @param name Defines new category’s name (optional)
+     * @param description Defines new category&#39;s description (optional)
+     * @param shortDescription Defines short description (optional)
      * @param parentId Defines new parent category id (optional)
-     * @param storesIds Update category in the stores that is specified by comma-separated stores&#39; id (optional)
      * @param avail Defines category&#39;s visibility status (optional)
      * @param sortOrder Sort number in the list (optional)
      * @param modifiedTime Entity&#39;s date modification (optional)
-     * @param description Defines new category&#39;s description (optional)
-     * @param shortDescription Defines short description (optional)
      * @param metaTitle Defines unique meta title for each entity (optional)
      * @param metaDescription Defines unique meta description of a entity (optional)
      * @param metaKeywords Defines unique meta keywords for each entity (optional)
      * @param seoUrl Defines unique category&#39;s URL for SEO (optional)
-     * @param langId Language id (optional)
      * @param storeId Store Id (optional)
+     * @param storesIds Update category in the stores that is specified by comma-separated stores&#39; id (optional)
+     * @param langId Language id (optional)
      * @return RequestConfig
      */
-    fun categoryUpdateRequestConfig(id: kotlin.String, name: kotlin.String?, parentId: kotlin.String?, storesIds: kotlin.String?, avail: kotlin.Boolean?, sortOrder: kotlin.Int?, modifiedTime: kotlin.String?, description: kotlin.String?, shortDescription: kotlin.String?, metaTitle: kotlin.String?, metaDescription: kotlin.String?, metaKeywords: kotlin.String?, seoUrl: kotlin.String?, langId: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun categoryUpdateRequestConfig(id: kotlin.String, name: kotlin.String?, description: kotlin.String?, shortDescription: kotlin.String?, parentId: kotlin.String?, avail: kotlin.Boolean?, sortOrder: kotlin.Int?, modifiedTime: kotlin.String?, metaTitle: kotlin.String?, metaDescription: kotlin.String?, metaKeywords: kotlin.String?, seoUrl: kotlin.String?, storeId: kotlin.String?, storesIds: kotlin.String?, langId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -1408,11 +1408,14 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 if (name != null) {
                     put("name", listOf(name.toString()))
                 }
+                if (description != null) {
+                    put("description", listOf(description.toString()))
+                }
+                if (shortDescription != null) {
+                    put("short_description", listOf(shortDescription.toString()))
+                }
                 if (parentId != null) {
                     put("parent_id", listOf(parentId.toString()))
-                }
-                if (storesIds != null) {
-                    put("stores_ids", listOf(storesIds.toString()))
                 }
                 if (avail != null) {
                     put("avail", listOf(avail.toString()))
@@ -1422,12 +1425,6 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 }
                 if (modifiedTime != null) {
                     put("modified_time", listOf(modifiedTime.toString()))
-                }
-                if (description != null) {
-                    put("description", listOf(description.toString()))
-                }
-                if (shortDescription != null) {
-                    put("short_description", listOf(shortDescription.toString()))
                 }
                 if (metaTitle != null) {
                     put("meta_title", listOf(metaTitle.toString()))
@@ -1441,11 +1438,14 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 if (seoUrl != null) {
                     put("seo_url", listOf(seoUrl.toString()))
                 }
-                if (langId != null) {
-                    put("lang_id", listOf(langId.toString()))
-                }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
+                }
+                if (storesIds != null) {
+                    put("stores_ids", listOf(storesIds.toString()))
+                }
+                if (langId != null) {
+                    put("lang_id", listOf(langId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

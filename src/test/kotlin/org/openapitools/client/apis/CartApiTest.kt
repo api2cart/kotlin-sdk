@@ -72,14 +72,14 @@ class CartApiTest : ShouldSpec() {
         // to test cartCatalogPriceRulesList
         should("test cartCatalogPriceRulesList") {
             // uncomment below to test cartCatalogPriceRulesList
-            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val ids : kotlin.String = 24,25 // kotlin.String | Retrieves  catalog_price_rules by ids
-            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val responseFields : kotlin.String = {result{catalog_price_rules_count,catalog_price_rules{id,type,name,avail,usage_count,actions,conditions}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : ModelResponseCartCatalogPriceRulesList = apiInstance.cartCatalogPriceRulesList(pageCursor, start, count, ids, params, responseFields, exclude)
+            //val result : ModelResponseCartCatalogPriceRulesList = apiInstance.cartCatalogPriceRulesList(start, count, pageCursor, ids, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -124,11 +124,11 @@ class CartApiTest : ShouldSpec() {
             //val key : kotlin.String = subtotal // kotlin.String | Defines condition entity attribute key
             //val `operator` : kotlin.String = == // kotlin.String | Defines condition operator
             //val `value` : kotlin.String = 2 // kotlin.String | Defines condition value, can be comma separated according to the operator.
-            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val target : kotlin.String = coupon_action // kotlin.String | Defines condition operator
             //val includeTax : kotlin.Boolean = true // kotlin.Boolean | Indicates whether to apply a discount for taxes.
             //val includeShipping : kotlin.Boolean = true // kotlin.Boolean | Indicates whether to apply a discount for shipping.
-            //val result : BasketLiveShippingServiceDelete200Response = apiInstance.cartCouponConditionAdd(couponId, entity, key, `operator`, `value`, storeId, target, includeTax, includeShipping)
+            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
+            //val result : BasketLiveShippingServiceDelete200Response = apiInstance.cartCouponConditionAdd(couponId, entity, key, `operator`, `value`, target, includeTax, includeShipping, storeId)
             //result shouldBe ("TODO")
         }
 
@@ -136,12 +136,12 @@ class CartApiTest : ShouldSpec() {
         should("test cartCouponCount") {
             // uncomment below to test cartCouponCount
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
+            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
             //val dateStartFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (greater or equal)
             //val dateStartTo : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (less or equal)
             //val dateEndFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_end (greater or equal)
             //val dateEndTo : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_end (less or equal)
-            //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
-            //val result : CartCouponCount200Response = apiInstance.cartCouponCount(storeId, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, avail)
+            //val result : CartCouponCount200Response = apiInstance.cartCouponCount(storeId, avail, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo)
             //result shouldBe ("TODO")
         }
 
@@ -157,21 +157,21 @@ class CartApiTest : ShouldSpec() {
         // to test cartCouponList
         should("test cartCouponList") {
             // uncomment below to test cartCouponList
-            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val couponsIds : kotlin.String = 1,2,3 // kotlin.String | Filter coupons by ids
             //val storeId : kotlin.String = 1 // kotlin.String | Filter coupons by store id
+            //val langId : kotlin.String = 3 // kotlin.String | Language id
+            //val avail : kotlin.Boolean = false // kotlin.Boolean | Filter coupons by avail status
             //val dateStartFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (greater or equal)
             //val dateStartTo : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (less or equal)
             //val dateEndFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_end (greater or equal)
             //val dateEndTo : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_end (less or equal)
-            //val avail : kotlin.Boolean = false // kotlin.Boolean | Filter coupons by avail status
-            //val langId : kotlin.String = 3 // kotlin.String | Language id
-            //val params : kotlin.String = id,code,type,amount // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val responseFields : kotlin.String = {pagination,result{coupon_count,coupon{id,code,name,conditions,actions{scope,amount,conditions{id,value,sub-conditions}},date_start,avail}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,code,type,amount // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = usage_history,type // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : ModelResponseCartCouponList = apiInstance.cartCouponList(pageCursor, start, count, couponsIds, storeId, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, avail, langId, params, responseFields, exclude)
+            //val result : ModelResponseCartCouponList = apiInstance.cartCouponList(start, count, pageCursor, couponsIds, storeId, langId, avail, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -231,25 +231,25 @@ class CartApiTest : ShouldSpec() {
         // to test cartGiftcardList
         should("test cartGiftcardList") {
             // uncomment below to test cartGiftcardList
-            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val responseFields : kotlin.String = {pagination,result{gift_card{id,code,amount,status}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : ModelResponseCartGiftCardList = apiInstance.cartGiftcardList(pageCursor, start, count, storeId, params, responseFields, exclude)
+            //val result : ModelResponseCartGiftCardList = apiInstance.cartGiftcardList(start, count, pageCursor, storeId, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
         // to test cartInfo
         should("test cartInfo") {
             // uncomment below to test cartInfo
-            //val params : kotlin.String = name,url // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val responseFields : kotlin.String = {result{name,url,stores_info{store_id,name,currency{id,iso3},store_owner_info}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = name,url // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val result : CartInfo200Response = apiInstance.cartInfo(params, responseFields, exclude, storeId)
+            //val responseFields : kotlin.String = {result{name,url,stores_info{store_id,name,currency{id,iso3},store_owner_info}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = name,url // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val exclude : kotlin.String = name,url // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+            //val result : CartInfo200Response = apiInstance.cartInfo(storeId, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -264,16 +264,16 @@ class CartApiTest : ShouldSpec() {
         should("test cartMetaDataList") {
             // uncomment below to test cartMetaDataList
             //val entityId : kotlin.String = 1 // kotlin.String | Entity Id
+            //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val entity : kotlin.String = order // kotlin.String | Entity
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val langId : kotlin.String = 3 // kotlin.String | Language id
             //val key : kotlin.String = subtotal // kotlin.String | Key
-            //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
-            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val responseFields : kotlin.String = {result{items{key,value}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : ModelResponseCartMetaDataList = apiInstance.cartMetaDataList(entityId, entity, storeId, langId, key, count, pageCursor, params, responseFields, exclude)
+            //val result : ModelResponseCartMetaDataList = apiInstance.cartMetaDataList(entityId, count, pageCursor, entity, storeId, langId, key, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -313,10 +313,10 @@ class CartApiTest : ShouldSpec() {
         // to test cartPluginList
         should("test cartPluginList") {
             // uncomment below to test cartPluginList
-            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-            //val result : CartPluginList200Response = apiInstance.cartPluginList(storeId, start, count)
+            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
+            //val result : CartPluginList200Response = apiInstance.cartPluginList(start, count, storeId)
             //result shouldBe ("TODO")
         }
 
@@ -347,32 +347,32 @@ class CartApiTest : ShouldSpec() {
         // to test cartScriptList
         should("test cartScriptList") {
             // uncomment below to test cartScriptList
-            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
+            //val scriptIds : kotlin.String = 34023324,34024032 // kotlin.String | Retrieves only scripts with specific ids
+            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
             //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
             //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
             //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-            //val scriptIds : kotlin.String = 34023324,34024032 // kotlin.String | Retrieves only scripts with specific ids
-            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val responseFields : kotlin.String = {pagination,result{total_count,scripts{id,name,src,created_time{value}}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : ModelResponseCartScriptList = apiInstance.cartScriptList(pageCursor, start, count, createdFrom, createdTo, modifiedFrom, modifiedTo, scriptIds, storeId, params, responseFields, exclude)
+            //val result : ModelResponseCartScriptList = apiInstance.cartScriptList(start, count, pageCursor, scriptIds, storeId, createdFrom, createdTo, modifiedFrom, modifiedTo, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
         // to test cartShippingZonesList
         should("test cartShippingZonesList") {
             // uncomment below to test cartShippingZonesList
-            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val responseFields : kotlin.String = {result{id,name,enabled,countries,shipping_methods{name,rates}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : ModelResponseCartShippingZonesList = apiInstance.cartShippingZonesList(storeId, start, count, params, responseFields, exclude)
+            //val result : ModelResponseCartShippingZonesList = apiInstance.cartShippingZonesList(start, count, storeId, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 

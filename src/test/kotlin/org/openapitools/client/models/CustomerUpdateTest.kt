@@ -105,12 +105,6 @@ class CustomerUpdateTest : ShouldSpec() {
             //modelInstance.gender shouldBe ("TODO")
         }
 
-        // to test the property `storeId` - Store Id
-        should("test storeId") {
-            // uncomment below to test the property
-            //modelInstance.storeId shouldBe ("TODO")
-        }
-
         // to test the property `note` - The customer note.
         should("test note") {
             // uncomment below to test the property
@@ -121,6 +115,12 @@ class CustomerUpdateTest : ShouldSpec() {
         should("test status") {
             // uncomment below to test the property
             //modelInstance.status shouldBe ("TODO")
+        }
+
+        // to test the property `storeId` - Store Id
+        should("test storeId") {
+            // uncomment below to test the property
+            //modelInstance.storeId shouldBe ("TODO")
         }
 
         // to test the property `address`

@@ -30,22 +30,22 @@ import com.squareup.moshi.JsonClass
  * @param password Defines customer's unique password
  * @param group Defines the group where the customer
  * @param groupIds Groups that will be assigned to a customer
+ * @param status Defines customer's status
  * @param createdTime Entity's date creation
  * @param modifiedTime Entity's date modification
  * @param login Specifies customer's login name
  * @param lastLogin Defines customer's last login time
  * @param birthDay Defines customer's birthday
- * @param status Defines customer's status
  * @param newsLetterSubscription Defines whether the newsletter subscription is available for the user
  * @param consents Defines consents to notifications
  * @param gender Defines customer's gender
  * @param website Link to customer website
- * @param storeId Store Id
  * @param fax Defines customer's fax
  * @param company Defines customer's company
  * @param phone Defines customer's phone number
  * @param note The customer note.
  * @param country Specifies ISO code or name of country
+ * @param storeId Store Id
  * @param address 
  */
 
@@ -58,11 +58,11 @@ data class CustomerAdd (
 
     /* Defines customer's first name */
     @Json(name = "first_name")
-    val firstName: kotlin.String,
+    val firstName: kotlin.String? = null,
 
     /* Defines customer's last name */
     @Json(name = "last_name")
-    val lastName: kotlin.String,
+    val lastName: kotlin.String? = null,
 
     /* Defines customer's unique password */
     @Json(name = "password")
@@ -75,6 +75,10 @@ data class CustomerAdd (
     /* Groups that will be assigned to a customer */
     @Json(name = "group_ids")
     val groupIds: kotlin.String? = null,
+
+    /* Defines customer's status */
+    @Json(name = "status")
+    val status: kotlin.String? = "enabled",
 
     /* Entity's date creation */
     @Json(name = "created_time")
@@ -96,13 +100,9 @@ data class CustomerAdd (
     @Json(name = "birth_day")
     val birthDay: kotlin.String? = null,
 
-    /* Defines customer's status */
-    @Json(name = "status")
-    val status: kotlin.String? = "enabled",
-
     /* Defines whether the newsletter subscription is available for the user */
     @Json(name = "news_letter_subscription")
-    val newsLetterSubscription: kotlin.Boolean? = false,
+    val newsLetterSubscription: kotlin.Boolean? = null,
 
     /* Defines consents to notifications */
     @Json(name = "consents")
@@ -115,10 +115,6 @@ data class CustomerAdd (
     /* Link to customer website */
     @Json(name = "website")
     val website: kotlin.String? = null,
-
-    /* Store Id */
-    @Json(name = "store_id")
-    val storeId: kotlin.String? = null,
 
     /* Defines customer's fax */
     @Json(name = "fax")
@@ -139,6 +135,10 @@ data class CustomerAdd (
     /* Specifies ISO code or name of country */
     @Json(name = "country")
     val country: kotlin.String? = null,
+
+    /* Store Id */
+    @Json(name = "store_id")
+    val storeId: kotlin.String? = null,
 
     @Json(name = "address")
     val address: kotlin.collections.List<CustomerAddAddressInner>? = null

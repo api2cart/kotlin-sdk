@@ -33,16 +33,16 @@ class OrderShipmentAddTest : ShouldSpec() {
             //modelInstance.orderId shouldBe ("TODO")
         }
 
-        // to test the property `storeId` - Store Id
-        should("test storeId") {
-            // uncomment below to test the property
-            //modelInstance.storeId shouldBe ("TODO")
-        }
-
         // to test the property `warehouseId` - This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
         should("test warehouseId") {
             // uncomment below to test the property
             //modelInstance.warehouseId shouldBe ("TODO")
+        }
+
+        // to test the property `storeId` - Store Id
+        should("test storeId") {
+            // uncomment below to test the property
+            //modelInstance.storeId shouldBe ("TODO")
         }
 
         // to test the property `shipmentProvider` - Defines company name that provide tracking of shipment
@@ -63,28 +63,10 @@ class OrderShipmentAddTest : ShouldSpec() {
             //modelInstance.items shouldBe ("TODO")
         }
 
-        // to test the property `sendNotifications` - Send notifications to customer after shipment was created
-        should("test sendNotifications") {
-            // uncomment below to test the property
-            //modelInstance.sendNotifications shouldBe ("TODO")
-        }
-
         // to test the property `trackingNumbers` - Defines shipment's tracking numbers that have to be added</br> How set tracking numbers to appropriate carrier:<ul><li>tracking_numbers[]=a2c.demo1,a2c.demo2 - set default carrier</li><li>tracking_numbers[<b>carrier_id</b>]=a2c.demo - set appropriate carrier</li></ul>To get the list of carriers IDs that are available in your store, use the <a href = \"https://api2cart.com/docs/#/cart/CartInfo\">cart.info</a > method
         should("test trackingNumbers") {
             // uncomment below to test the property
             //modelInstance.trackingNumbers shouldBe ("TODO")
-        }
-
-        // to test the property `adjustStock` - This parameter is used for adjust stock.
-        should("test adjustStock") {
-            // uncomment below to test the property
-            //modelInstance.adjustStock shouldBe ("TODO")
-        }
-
-        // to test the property `enableCache` - If the value is 'true' and order exist in our cache, we will use order.info from cache to prepare shipment items.
-        should("test enableCache") {
-            // uncomment below to test the property
-            //modelInstance.enableCache shouldBe ("TODO")
         }
 
         // to test the property `trackingLink` - Defines custom tracking link
@@ -97,6 +79,24 @@ class OrderShipmentAddTest : ShouldSpec() {
         should("test isShipped") {
             // uncomment below to test the property
             //modelInstance.isShipped shouldBe ("TODO")
+        }
+
+        // to test the property `sendNotifications` - Send notifications to customer after shipment was created
+        should("test sendNotifications") {
+            // uncomment below to test the property
+            //modelInstance.sendNotifications shouldBe ("TODO")
+        }
+
+        // to test the property `adjustStock` - This parameter is used for adjust stock.
+        should("test adjustStock") {
+            // uncomment below to test the property
+            //modelInstance.adjustStock shouldBe ("TODO")
+        }
+
+        // to test the property `enableCache` - If the value is 'true' and order exist in our cache, we will use order.info from cache to prepare shipment items.
+        should("test enableCache") {
+            // uncomment below to test the property
+            //modelInstance.enableCache shouldBe ("TODO")
         }
 
         // to test the property `checkProcessStatus` - Disable or enable check process status. Please note that the response will be slower due to additional requests to the store.

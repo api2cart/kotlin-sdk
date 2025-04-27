@@ -111,136 +111,16 @@ class OrderAddTest : ShouldSpec() {
             //modelInstance.channelId shouldBe ("TODO")
         }
 
-        // to test the property `sendNotifications` - Send notifications to customer after order was created
-        should("test sendNotifications") {
+        // to test the property `fulfillmentStatus` - Create order with fulfillment status
+        should("test fulfillmentStatus") {
             // uncomment below to test the property
-            //modelInstance.sendNotifications shouldBe ("TODO")
+            //modelInstance.fulfillmentStatus shouldBe ("TODO")
         }
 
-        // to test the property `sendAdminNotifications` - Notify admin when new order was created.
-        should("test sendAdminNotifications") {
+        // to test the property `financialStatus` - Create order with financial status
+        should("test financialStatus") {
             // uncomment below to test the property
-            //modelInstance.sendAdminNotifications shouldBe ("TODO")
-        }
-
-        // to test the property `shippFirstName` - Specifies shipping first name
-        should("test shippFirstName") {
-            // uncomment below to test the property
-            //modelInstance.shippFirstName shouldBe ("TODO")
-        }
-
-        // to test the property `shippLastName` - Specifies shipping last name
-        should("test shippLastName") {
-            // uncomment below to test the property
-            //modelInstance.shippLastName shouldBe ("TODO")
-        }
-
-        // to test the property `shippAddress1` - Specifies first shipping address
-        should("test shippAddress1") {
-            // uncomment below to test the property
-            //modelInstance.shippAddress1 shouldBe ("TODO")
-        }
-
-        // to test the property `shippCity` - Specifies shipping city
-        should("test shippCity") {
-            // uncomment below to test the property
-            //modelInstance.shippCity shouldBe ("TODO")
-        }
-
-        // to test the property `shippPostcode` - Specifies shipping postcode
-        should("test shippPostcode") {
-            // uncomment below to test the property
-            //modelInstance.shippPostcode shouldBe ("TODO")
-        }
-
-        // to test the property `shippState` - Specifies shipping state code
-        should("test shippState") {
-            // uncomment below to test the property
-            //modelInstance.shippState shouldBe ("TODO")
-        }
-
-        // to test the property `shippCountry` - Specifies shipping country code
-        should("test shippCountry") {
-            // uncomment below to test the property
-            //modelInstance.shippCountry shouldBe ("TODO")
-        }
-
-        // to test the property `totalPrice` - Defines order's total price
-        should("test totalPrice") {
-            // uncomment below to test the property
-            //modelInstance.totalPrice shouldBe ("TODO")
-        }
-
-        // to test the property `date` - Specifies an order creation date in format Y-m-d H:i:s
-        should("test date") {
-            // uncomment below to test the property
-            //modelInstance.date shouldBe ("TODO")
-        }
-
-        // to test the property `orderPaymentMethod` - Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
-        should("test orderPaymentMethod") {
-            // uncomment below to test the property
-            //modelInstance.orderPaymentMethod shouldBe ("TODO")
-        }
-
-        // to test the property `transactionId` - Payment transaction id
-        should("test transactionId") {
-            // uncomment below to test the property
-            //modelInstance.transactionId shouldBe ("TODO")
-        }
-
-        // to test the property `orderShippingMethod` - Defines order shipping method
-        should("test orderShippingMethod") {
-            // uncomment below to test the property
-            //modelInstance.orderShippingMethod shouldBe ("TODO")
-        }
-
-        // to test the property `currency` - Currency code of order
-        should("test currency") {
-            // uncomment below to test the property
-            //modelInstance.currency shouldBe ("TODO")
-        }
-
-        // to test the property `billAddress2` - Specifies second billing address
-        should("test billAddress2") {
-            // uncomment below to test the property
-            //modelInstance.billAddress2 shouldBe ("TODO")
-        }
-
-        // to test the property `billCompany` - Specifies billing company
-        should("test billCompany") {
-            // uncomment below to test the property
-            //modelInstance.billCompany shouldBe ("TODO")
-        }
-
-        // to test the property `billPhone` - Specifies billing phone
-        should("test billPhone") {
-            // uncomment below to test the property
-            //modelInstance.billPhone shouldBe ("TODO")
-        }
-
-        // to test the property `billFax` - Specifies billing fax
-        should("test billFax") {
-            // uncomment below to test the property
-            //modelInstance.billFax shouldBe ("TODO")
-        }
-
-        // to test the property `comment` - Specifies order comment
-        should("test comment") {
-            // uncomment below to test the property
-            //modelInstance.comment shouldBe ("TODO")
-        }
-
-        // to test the property `adminComment` - Specifies admin's order comment
-        should("test adminComment") {
-            // uncomment below to test the property
-            //modelInstance.adminComment shouldBe ("TODO")
-        }
-
-        // to test the property `adminPrivateComment` - Specifies private admin's order comment
-        should("test adminPrivateComment") {
-            // uncomment below to test the property
-            //modelInstance.adminPrivateComment shouldBe ("TODO")
+            //modelInstance.financialStatus shouldBe ("TODO")
         }
 
         // to test the property `customerFirstName` - Specifies customer's first name
@@ -279,10 +159,112 @@ class OrderAddTest : ShouldSpec() {
             //modelInstance.customerFax shouldBe ("TODO")
         }
 
+        // to test the property `orderPaymentMethod` - Defines order payment method.<br/>Setting order_payment_method on Shopify will also change financial_status field value to 'paid'
+        should("test orderPaymentMethod") {
+            // uncomment below to test the property
+            //modelInstance.orderPaymentMethod shouldBe ("TODO")
+        }
+
+        // to test the property `transactionId` - Payment transaction id
+        should("test transactionId") {
+            // uncomment below to test the property
+            //modelInstance.transactionId shouldBe ("TODO")
+        }
+
+        // to test the property `currency` - Currency code of order
+        should("test currency") {
+            // uncomment below to test the property
+            //modelInstance.currency shouldBe ("TODO")
+        }
+
+        // to test the property `date` - Specifies an order creation date in format Y-m-d H:i:s
+        should("test date") {
+            // uncomment below to test the property
+            //modelInstance.date shouldBe ("TODO")
+        }
+
+        // to test the property `dateModified` - Specifies order's  modification date
+        should("test dateModified") {
+            // uncomment below to test the property
+            //modelInstance.dateModified shouldBe ("TODO")
+        }
+
+        // to test the property `dateFinished` - Specifies order's  finished date
+        should("test dateFinished") {
+            // uncomment below to test the property
+            //modelInstance.dateFinished shouldBe ("TODO")
+        }
+
+        // to test the property `billAddress2` - Specifies second billing address
+        should("test billAddress2") {
+            // uncomment below to test the property
+            //modelInstance.billAddress2 shouldBe ("TODO")
+        }
+
+        // to test the property `billCompany` - Specifies billing company
+        should("test billCompany") {
+            // uncomment below to test the property
+            //modelInstance.billCompany shouldBe ("TODO")
+        }
+
+        // to test the property `billPhone` - Specifies billing phone
+        should("test billPhone") {
+            // uncomment below to test the property
+            //modelInstance.billPhone shouldBe ("TODO")
+        }
+
+        // to test the property `billFax` - Specifies billing fax
+        should("test billFax") {
+            // uncomment below to test the property
+            //modelInstance.billFax shouldBe ("TODO")
+        }
+
+        // to test the property `shippFirstName` - Specifies shipping first name
+        should("test shippFirstName") {
+            // uncomment below to test the property
+            //modelInstance.shippFirstName shouldBe ("TODO")
+        }
+
+        // to test the property `shippLastName` - Specifies shipping last name
+        should("test shippLastName") {
+            // uncomment below to test the property
+            //modelInstance.shippLastName shouldBe ("TODO")
+        }
+
+        // to test the property `shippAddress1` - Specifies first shipping address
+        should("test shippAddress1") {
+            // uncomment below to test the property
+            //modelInstance.shippAddress1 shouldBe ("TODO")
+        }
+
         // to test the property `shippAddress2` - Specifies second address line of a shipping street address
         should("test shippAddress2") {
             // uncomment below to test the property
             //modelInstance.shippAddress2 shouldBe ("TODO")
+        }
+
+        // to test the property `shippCity` - Specifies shipping city
+        should("test shippCity") {
+            // uncomment below to test the property
+            //modelInstance.shippCity shouldBe ("TODO")
+        }
+
+        // to test the property `shippPostcode` - Specifies shipping postcode
+        should("test shippPostcode") {
+            // uncomment below to test the property
+            //modelInstance.shippPostcode shouldBe ("TODO")
+        }
+
+        // to test the property `shippState` - Specifies shipping state code
+        should("test shippState") {
+            // uncomment below to test the property
+            //modelInstance.shippState shouldBe ("TODO")
+        }
+
+        // to test the property `shippCountry` - Specifies shipping country code
+        should("test shippCountry") {
+            // uncomment below to test the property
+            //modelInstance.shippCountry shouldBe ("TODO")
         }
 
         // to test the property `shippCompany` - Specifies shipping company
@@ -303,18 +285,6 @@ class OrderAddTest : ShouldSpec() {
             //modelInstance.shippFax shouldBe ("TODO")
         }
 
-        // to test the property `dateModified` - Specifies order's  modification date
-        should("test dateModified") {
-            // uncomment below to test the property
-            //modelInstance.dateModified shouldBe ("TODO")
-        }
-
-        // to test the property `dateFinished` - Specifies order's  finished date
-        should("test dateFinished") {
-            // uncomment below to test the property
-            //modelInstance.dateFinished shouldBe ("TODO")
-        }
-
         // to test the property `subtotalPrice` - Total price of all ordered products multiplied by their number, excluding tax, shipping price and discounts
         should("test subtotalPrice") {
             // uncomment below to test the property
@@ -325,6 +295,24 @@ class OrderAddTest : ShouldSpec() {
         should("test taxPrice") {
             // uncomment below to test the property
             //modelInstance.taxPrice shouldBe ("TODO")
+        }
+
+        // to test the property `totalPrice` - Defines order's total price
+        should("test totalPrice") {
+            // uncomment below to test the property
+            //modelInstance.totalPrice shouldBe ("TODO")
+        }
+
+        // to test the property `totalPaid` - Defines total paid amount for the order
+        should("test totalPaid") {
+            // uncomment below to test the property
+            //modelInstance.totalPaid shouldBe ("TODO")
+        }
+
+        // to test the property `totalWeight` - Defines the sum of all line item weights in grams for the order
+        should("test totalWeight") {
+            // uncomment below to test the property
+            //modelInstance.totalWeight shouldBe ("TODO")
         }
 
         // to test the property `pricesIncTax` - Indicates whether prices and subtotal includes tax.
@@ -345,18 +333,6 @@ class OrderAddTest : ShouldSpec() {
             //modelInstance.shippingTax shouldBe ("TODO")
         }
 
-        // to test the property `carrierId` - Defines tracking carrier id
-        should("test carrierId") {
-            // uncomment below to test the property
-            //modelInstance.carrierId shouldBe ("TODO")
-        }
-
-        // to test the property `warehouseId` - This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
-        should("test warehouseId") {
-            // uncomment below to test the property
-            //modelInstance.warehouseId shouldBe ("TODO")
-        }
-
         // to test the property `discount` - Specifies order's discount
         should("test discount") {
             // uncomment below to test the property
@@ -369,46 +345,76 @@ class OrderAddTest : ShouldSpec() {
             //modelInstance.couponDiscount shouldBe ("TODO")
         }
 
-        // to test the property `coupons` - Coupons that will be applied to order
-        should("test coupons") {
-            // uncomment below to test the property
-            //modelInstance.coupons shouldBe ("TODO")
-        }
-
         // to test the property `giftCertificateDiscount` - Discounts for order with gift certificates
         should("test giftCertificateDiscount") {
             // uncomment below to test the property
             //modelInstance.giftCertificateDiscount shouldBe ("TODO")
         }
 
-        // to test the property `fulfillmentStatus` - Create order with fulfillment status
-        should("test fulfillmentStatus") {
+        // to test the property `orderShippingMethod` - Defines order shipping method
+        should("test orderShippingMethod") {
             // uncomment below to test the property
-            //modelInstance.fulfillmentStatus shouldBe ("TODO")
+            //modelInstance.orderShippingMethod shouldBe ("TODO")
         }
 
-        // to test the property `financialStatus` - Create order with financial status
-        should("test financialStatus") {
+        // to test the property `carrierId` - Defines tracking carrier id
+        should("test carrierId") {
             // uncomment below to test the property
-            //modelInstance.financialStatus shouldBe ("TODO")
+            //modelInstance.carrierId shouldBe ("TODO")
         }
 
-        // to test the property `totalPaid` - Defines total paid amount for the order
-        should("test totalPaid") {
+        // to test the property `warehouseId` - This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
+        should("test warehouseId") {
             // uncomment below to test the property
-            //modelInstance.totalPaid shouldBe ("TODO")
+            //modelInstance.warehouseId shouldBe ("TODO")
         }
 
-        // to test the property `externalSource` - Identifying the system used to generate the order
-        should("test externalSource") {
+        // to test the property `coupons` - Coupons that will be applied to order
+        should("test coupons") {
             // uncomment below to test the property
-            //modelInstance.externalSource shouldBe ("TODO")
+            //modelInstance.coupons shouldBe ("TODO")
         }
 
         // to test the property `tags` - Order tags
         should("test tags") {
             // uncomment below to test the property
             //modelInstance.tags shouldBe ("TODO")
+        }
+
+        // to test the property `comment` - Specifies order comment
+        should("test comment") {
+            // uncomment below to test the property
+            //modelInstance.comment shouldBe ("TODO")
+        }
+
+        // to test the property `adminComment` - Specifies admin's order comment
+        should("test adminComment") {
+            // uncomment below to test the property
+            //modelInstance.adminComment shouldBe ("TODO")
+        }
+
+        // to test the property `adminPrivateComment` - Specifies private admin's order comment
+        should("test adminPrivateComment") {
+            // uncomment below to test the property
+            //modelInstance.adminPrivateComment shouldBe ("TODO")
+        }
+
+        // to test the property `sendNotifications` - Send notifications to customer after order was created
+        should("test sendNotifications") {
+            // uncomment below to test the property
+            //modelInstance.sendNotifications shouldBe ("TODO")
+        }
+
+        // to test the property `sendAdminNotifications` - Notify admin when new order was created.
+        should("test sendAdminNotifications") {
+            // uncomment below to test the property
+            //modelInstance.sendAdminNotifications shouldBe ("TODO")
+        }
+
+        // to test the property `externalSource` - Identifying the system used to generate the order
+        should("test externalSource") {
+            // uncomment below to test the property
+            //modelInstance.externalSource shouldBe ("TODO")
         }
 
         // to test the property `inventoryBehaviour` - The behaviour to use when updating inventory.<hr><div style=\"font-style:normal\">Values description:<div style=\"margin-left: 2%; padding-top: 2%\"><div style=\"font-size:85%\"><b>bypass</b> = Do not claim inventory </br></br><b>decrement_ignoring_policy</b> = Ignore the product's </br> inventory policy and claim amounts</br></br><b>decrement_obeying_policy</b> =  Obey the product's </br> inventory policy.</br></br></div></div></div>
@@ -427,12 +433,6 @@ class OrderAddTest : ShouldSpec() {
         should("test noteAttributes") {
             // uncomment below to test the property
             //modelInstance.noteAttributes shouldBe ("TODO")
-        }
-
-        // to test the property `totalWeight` - Defines the sum of all line item weights in grams for the order
-        should("test totalWeight") {
-            // uncomment below to test the property
-            //modelInstance.totalWeight shouldBe ("TODO")
         }
 
         // to test the property `clearCache` - Is cache clear required

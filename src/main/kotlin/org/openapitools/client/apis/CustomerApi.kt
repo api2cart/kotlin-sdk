@@ -211,9 +211,9 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ModelResponseCustomerAttributeList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -223,8 +223,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun customerAttributeList(customerId: kotlin.String, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null, responseFields: kotlin.String? = null) : ModelResponseCustomerAttributeList {
-        val localVarResponse = customerAttributeListWithHttpInfo(customerId = customerId, count = count, pageCursor = pageCursor, storeId = storeId, langId = langId, params = params, exclude = exclude, responseFields = responseFields)
+    fun customerAttributeList(customerId: kotlin.String, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null) : ModelResponseCustomerAttributeList {
+        val localVarResponse = customerAttributeListWithHttpInfo(customerId = customerId, count = count, pageCursor = pageCursor, storeId = storeId, langId = langId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCustomerAttributeList
@@ -249,17 +249,17 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return ApiResponse<ModelResponseCustomerAttributeList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun customerAttributeListWithHttpInfo(customerId: kotlin.String, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseCustomerAttributeList?> {
-        val localVariableConfig = customerAttributeListRequestConfig(customerId = customerId, count = count, pageCursor = pageCursor, storeId = storeId, langId = langId, params = params, exclude = exclude, responseFields = responseFields)
+    fun customerAttributeListWithHttpInfo(customerId: kotlin.String, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCustomerAttributeList?> {
+        val localVariableConfig = customerAttributeListRequestConfig(customerId = customerId, count = count, pageCursor = pageCursor, storeId = storeId, langId = langId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseCustomerAttributeList>(
             localVariableConfig
@@ -274,12 +274,12 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "force_all")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @return RequestConfig
      */
-    fun customerAttributeListRequestConfig(customerId: kotlin.String, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun customerAttributeListRequestConfig(customerId: kotlin.String, count: kotlin.Int?, pageCursor: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -296,14 +296,14 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 if (langId != null) {
                     put("lang_id", listOf(langId.toString()))
                 }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
+                }
                 if (params != null) {
                     put("params", listOf(params.toString()))
                 }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -322,18 +322,18 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * customer.count
      * Get number of customers from store.
+     * @param ids Counts customers specified by ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
      * @param groupId Customer group_id (optional)
+     * @param storeId Counts customer specified by store id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param findValue Entity search that is specified by some value (optional)
+     * @param findWhere Counts customers that are searched specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param storeId Counts customer specified by store id (optional)
-     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param findValue Entity search that is specified by some value (optional)
-     * @param findWhere Counts customers that are searched specified by field (optional)
-     * @param ids Counts customers specified by ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
      * @return CustomerCount200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -343,8 +343,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun customerCount(groupId: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, storeId: kotlin.String? = null, customerListId: kotlin.String? = null, avail: kotlin.Boolean? = true, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, ids: kotlin.String? = null, sinceId: kotlin.String? = null) : CustomerCount200Response {
-        val localVarResponse = customerCountWithHttpInfo(groupId = groupId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, storeId = storeId, customerListId = customerListId, avail = avail, findValue = findValue, findWhere = findWhere, ids = ids, sinceId = sinceId)
+    fun customerCount(ids: kotlin.String? = null, sinceId: kotlin.String? = null, customerListId: kotlin.String? = null, groupId: kotlin.String? = null, storeId: kotlin.String? = null, avail: kotlin.Boolean? = true, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null) : CustomerCount200Response {
+        val localVarResponse = customerCountWithHttpInfo(ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CustomerCount200Response
@@ -364,26 +364,26 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * customer.count
      * Get number of customers from store.
+     * @param ids Counts customers specified by ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
      * @param groupId Customer group_id (optional)
+     * @param storeId Counts customer specified by store id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param findValue Entity search that is specified by some value (optional)
+     * @param findWhere Counts customers that are searched specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param storeId Counts customer specified by store id (optional)
-     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param findValue Entity search that is specified by some value (optional)
-     * @param findWhere Counts customers that are searched specified by field (optional)
-     * @param ids Counts customers specified by ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
      * @return ApiResponse<CustomerCount200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun customerCountWithHttpInfo(groupId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, storeId: kotlin.String?, customerListId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, ids: kotlin.String?, sinceId: kotlin.String?) : ApiResponse<CustomerCount200Response?> {
-        val localVariableConfig = customerCountRequestConfig(groupId = groupId, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, storeId = storeId, customerListId = customerListId, avail = avail, findValue = findValue, findWhere = findWhere, ids = ids, sinceId = sinceId)
+    fun customerCountWithHttpInfo(ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?) : ApiResponse<CustomerCount200Response?> {
+        val localVariableConfig = customerCountRequestConfig(ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo)
 
         return request<Unit, CustomerCount200Response>(
             localVariableConfig
@@ -393,26 +393,47 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation customerCount
      *
+     * @param ids Counts customers specified by ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
      * @param groupId Customer group_id (optional)
+     * @param storeId Counts customer specified by store id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param findValue Entity search that is specified by some value (optional)
+     * @param findWhere Counts customers that are searched specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param storeId Counts customer specified by store id (optional)
-     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param findValue Entity search that is specified by some value (optional)
-     * @param findWhere Counts customers that are searched specified by field (optional)
-     * @param ids Counts customers specified by ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
      * @return RequestConfig
      */
-    fun customerCountRequestConfig(groupId: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, storeId: kotlin.String?, customerListId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, ids: kotlin.String?, sinceId: kotlin.String?) : RequestConfig<Unit> {
+    fun customerCountRequestConfig(ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                if (ids != null) {
+                    put("ids", listOf(ids.toString()))
+                }
+                if (sinceId != null) {
+                    put("since_id", listOf(sinceId.toString()))
+                }
+                if (customerListId != null) {
+                    put("customer_list_id", listOf(customerListId.toString()))
+                }
                 if (groupId != null) {
                     put("group_id", listOf(groupId.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
+                }
+                if (avail != null) {
+                    put("avail", listOf(avail.toString()))
+                }
+                if (findValue != null) {
+                    put("find_value", listOf(findValue.toString()))
+                }
+                if (findWhere != null) {
+                    put("find_where", listOf(findWhere.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
@@ -425,27 +446,6 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 }
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
-                if (customerListId != null) {
-                    put("customer_list_id", listOf(customerListId.toString()))
-                }
-                if (avail != null) {
-                    put("avail", listOf(avail.toString()))
-                }
-                if (findValue != null) {
-                    put("find_value", listOf(findValue.toString()))
-                }
-                if (findWhere != null) {
-                    put("find_where", listOf(findWhere.toString()))
-                }
-                if (ids != null) {
-                    put("ids", listOf(ids.toString()))
-                }
-                if (sinceId != null) {
-                    put("since_id", listOf(sinceId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -716,16 +716,16 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * customer.group.list
      * Get list of customers groups.
-     * @param disableCache Disable cache for current request (optional, default to false)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param groupIds Groups that will be assigned to a customer (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
-     * @param groupIds Groups that will be assigned to a customer (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,additional_fields")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param disableCache Disable cache for current request (optional, default to false)
      * @return ModelResponseCustomerGroupList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -735,8 +735,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun customerGroupList(disableCache: kotlin.Boolean? = false, pageCursor: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, storeId: kotlin.String? = null, langId: kotlin.String? = null, groupIds: kotlin.String? = null, params: kotlin.String? = "id,name,additional_fields", exclude: kotlin.String? = null, responseFields: kotlin.String? = null) : ModelResponseCustomerGroupList {
-        val localVarResponse = customerGroupListWithHttpInfo(disableCache = disableCache, pageCursor = pageCursor, start = start, count = count, storeId = storeId, langId = langId, groupIds = groupIds, params = params, exclude = exclude, responseFields = responseFields)
+    fun customerGroupList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, groupIds: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,name,additional_fields", exclude: kotlin.String? = null, disableCache: kotlin.Boolean? = false) : ModelResponseCustomerGroupList {
+        val localVarResponse = customerGroupListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, groupIds = groupIds, storeId = storeId, langId = langId, responseFields = responseFields, params = params, exclude = exclude, disableCache = disableCache)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCustomerGroupList
@@ -756,24 +756,24 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * customer.group.list
      * Get list of customers groups.
-     * @param disableCache Disable cache for current request (optional, default to false)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param groupIds Groups that will be assigned to a customer (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
-     * @param groupIds Groups that will be assigned to a customer (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,additional_fields")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param disableCache Disable cache for current request (optional, default to false)
      * @return ApiResponse<ModelResponseCustomerGroupList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun customerGroupListWithHttpInfo(disableCache: kotlin.Boolean?, pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, storeId: kotlin.String?, langId: kotlin.String?, groupIds: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseCustomerGroupList?> {
-        val localVariableConfig = customerGroupListRequestConfig(disableCache = disableCache, pageCursor = pageCursor, start = start, count = count, storeId = storeId, langId = langId, groupIds = groupIds, params = params, exclude = exclude, responseFields = responseFields)
+    fun customerGroupListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, groupIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, disableCache: kotlin.Boolean?) : ApiResponse<ModelResponseCustomerGroupList?> {
+        val localVariableConfig = customerGroupListRequestConfig(start = start, count = count, pageCursor = pageCursor, groupIds = groupIds, storeId = storeId, langId = langId, responseFields = responseFields, params = params, exclude = exclude, disableCache = disableCache)
 
         return request<Unit, ModelResponseCustomerGroupList>(
             localVariableConfig
@@ -783,33 +783,33 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation customerGroupList
      *
-     * @param disableCache Disable cache for current request (optional, default to false)
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param groupIds Groups that will be assigned to a customer (optional)
      * @param storeId Store Id (optional)
      * @param langId Language id (optional)
-     * @param groupIds Groups that will be assigned to a customer (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,name,additional_fields")
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param disableCache Disable cache for current request (optional, default to false)
      * @return RequestConfig
      */
-    fun customerGroupListRequestConfig(disableCache: kotlin.Boolean?, pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, storeId: kotlin.String?, langId: kotlin.String?, groupIds: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun customerGroupListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, groupIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?, disableCache: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (disableCache != null) {
-                    put("disable_cache", listOf(disableCache.toString()))
-                }
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
+                }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
+                if (groupIds != null) {
+                    put("group_ids", listOf(groupIds.toString()))
                 }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
@@ -817,8 +817,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 if (langId != null) {
                     put("lang_id", listOf(langId.toString()))
                 }
-                if (groupIds != null) {
-                    put("group_ids", listOf(groupIds.toString()))
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (params != null) {
                     put("params", listOf(params.toString()))
@@ -826,8 +826,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
                 }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
+                if (disableCache != null) {
+                    put("disable_cache", listOf(disableCache.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -847,10 +847,10 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * customer.info
      * Get customers&#39; details from store.
      * @param id Retrieves customer&#39;s info specified by customer id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves customer info specified by store id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return CustomerInfo200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -860,8 +860,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun customerInfo(id: kotlin.String, params: kotlin.String? = "id,email,first_name,last_name", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, storeId: kotlin.String? = null) : CustomerInfo200Response {
-        val localVarResponse = customerInfoWithHttpInfo(id = id, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId)
+    fun customerInfo(id: kotlin.String, storeId: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,email,first_name,last_name", exclude: kotlin.String? = null) : CustomerInfo200Response {
+        val localVarResponse = customerInfoWithHttpInfo(id = id, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CustomerInfo200Response
@@ -882,18 +882,18 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * customer.info
      * Get customers&#39; details from store.
      * @param id Retrieves customer&#39;s info specified by customer id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves customer info specified by store id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<CustomerInfo200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun customerInfoWithHttpInfo(id: kotlin.String, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?) : ApiResponse<CustomerInfo200Response?> {
-        val localVariableConfig = customerInfoRequestConfig(id = id, params = params, responseFields = responseFields, exclude = exclude, storeId = storeId)
+    fun customerInfoWithHttpInfo(id: kotlin.String, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<CustomerInfo200Response?> {
+        val localVariableConfig = customerInfoRequestConfig(id = id, storeId = storeId, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, CustomerInfo200Response>(
             localVariableConfig
@@ -904,28 +904,28 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * To obtain the request config of the operation customerInfo
      *
      * @param id Retrieves customer&#39;s info specified by customer id
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @param storeId Retrieves customer info specified by store id (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun customerInfoRequestConfig(id: kotlin.String, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun customerInfoRequestConfig(id: kotlin.String, storeId: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
                 put("id", listOf(id.toString()))
-                if (params != null) {
-                    put("params", listOf(params.toString()))
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))
                 }
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
                 if (exclude != null) {
                     put("exclude", listOf(exclude.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -944,26 +944,26 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * customer.list
      * Get list of customers from store.
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param ids Retrieves customers specified by ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
+     * @param groupId Customer group_id (optional)
+     * @param storeId Retrieves customers specified by store id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param findValue Entity search that is specified by some value (optional)
+     * @param findWhere Customer search that is specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param groupId Customer group_id (optional)
-     * @param storeId Retrieves customers specified by store id (optional)
-     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param findValue Entity search that is specified by some value (optional)
-     * @param findWhere Customer search that is specified by field (optional)
      * @param sortBy Set field to sort by (optional, default to "created_time")
      * @param sortDirection Set sorting direction (optional, default to "asc")
-     * @param ids Retrieves customers specified by ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ModelResponseCustomerList
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -973,8 +973,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun customerList(pageCursor: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, params: kotlin.String? = "id,email,first_name,last_name", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, groupId: kotlin.String? = null, storeId: kotlin.String? = null, customerListId: kotlin.String? = null, avail: kotlin.Boolean? = true, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, sortBy: kotlin.String? = "created_time", sortDirection: kotlin.String? = "asc", ids: kotlin.String? = null, sinceId: kotlin.String? = null) : ModelResponseCustomerList {
-        val localVarResponse = customerListWithHttpInfo(pageCursor = pageCursor, start = start, count = count, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, params = params, responseFields = responseFields, exclude = exclude, groupId = groupId, storeId = storeId, customerListId = customerListId, avail = avail, findValue = findValue, findWhere = findWhere, sortBy = sortBy, sortDirection = sortDirection, ids = ids, sinceId = sinceId)
+    fun customerList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, ids: kotlin.String? = null, sinceId: kotlin.String? = null, customerListId: kotlin.String? = null, groupId: kotlin.String? = null, storeId: kotlin.String? = null, avail: kotlin.Boolean? = true, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, sortBy: kotlin.String? = "created_time", sortDirection: kotlin.String? = "asc", responseFields: kotlin.String? = null, params: kotlin.String? = "id,email,first_name,last_name", exclude: kotlin.String? = null) : ModelResponseCustomerList {
+        val localVarResponse = customerListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sortBy = sortBy, sortDirection = sortDirection, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCustomerList
@@ -994,34 +994,34 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * customer.list
      * Get list of customers from store.
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param ids Retrieves customers specified by ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
+     * @param groupId Customer group_id (optional)
+     * @param storeId Retrieves customers specified by store id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param findValue Entity search that is specified by some value (optional)
+     * @param findWhere Customer search that is specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param groupId Customer group_id (optional)
-     * @param storeId Retrieves customers specified by store id (optional)
-     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param findValue Entity search that is specified by some value (optional)
-     * @param findWhere Customer search that is specified by field (optional)
      * @param sortBy Set field to sort by (optional, default to "created_time")
      * @param sortDirection Set sorting direction (optional, default to "asc")
-     * @param ids Retrieves customers specified by ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return ApiResponse<ModelResponseCustomerList?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun customerListWithHttpInfo(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, customerListId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, ids: kotlin.String?, sinceId: kotlin.String?) : ApiResponse<ModelResponseCustomerList?> {
-        val localVariableConfig = customerListRequestConfig(pageCursor = pageCursor, start = start, count = count, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, params = params, responseFields = responseFields, exclude = exclude, groupId = groupId, storeId = storeId, customerListId = customerListId, avail = avail, findValue = findValue, findWhere = findWhere, sortBy = sortBy, sortDirection = sortDirection, ids = ids, sinceId = sinceId)
+    fun customerListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCustomerList?> {
+        val localVariableConfig = customerListRequestConfig(start = start, count = count, pageCursor = pageCursor, ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sortBy = sortBy, sortDirection = sortDirection, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseCustomerList>(
             localVariableConfig
@@ -1031,40 +1031,64 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     /**
      * To obtain the request config of the operation customerList
      *
-     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
+     * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param ids Retrieves customers specified by ids (optional)
+     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
+     * @param groupId Customer group_id (optional)
+     * @param storeId Retrieves customers specified by store id (optional)
+     * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param findValue Entity search that is specified by some value (optional)
+     * @param findWhere Customer search that is specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
      * @param createdTo Retrieve entities to their creation date (optional)
      * @param modifiedFrom Retrieve entities from their modification date (optional)
      * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
-     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @param groupId Customer group_id (optional)
-     * @param storeId Retrieves customers specified by store id (optional)
-     * @param customerListId The numeric ID of the customer list in Demandware. (optional)
-     * @param avail Defines category&#39;s visibility status (optional, default to true)
-     * @param findValue Entity search that is specified by some value (optional)
-     * @param findWhere Customer search that is specified by field (optional)
      * @param sortBy Set field to sort by (optional, default to "created_time")
      * @param sortDirection Set sorting direction (optional, default to "asc")
-     * @param ids Retrieves customers specified by ids (optional)
-     * @param sinceId Retrieve entities starting from the specified id. (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
+     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "id,email,first_name,last_name")
+     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun customerListRequestConfig(pageCursor: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, customerListId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, ids: kotlin.String?, sinceId: kotlin.String?) : RequestConfig<Unit> {
+    fun customerListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                if (pageCursor != null) {
-                    put("page_cursor", listOf(pageCursor.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
                 if (count != null) {
                     put("count", listOf(count.toString()))
+                }
+                if (pageCursor != null) {
+                    put("page_cursor", listOf(pageCursor.toString()))
+                }
+                if (ids != null) {
+                    put("ids", listOf(ids.toString()))
+                }
+                if (sinceId != null) {
+                    put("since_id", listOf(sinceId.toString()))
+                }
+                if (customerListId != null) {
+                    put("customer_list_id", listOf(customerListId.toString()))
+                }
+                if (groupId != null) {
+                    put("group_id", listOf(groupId.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
+                }
+                if (avail != null) {
+                    put("avail", listOf(avail.toString()))
+                }
+                if (findValue != null) {
+                    put("find_value", listOf(findValue.toString()))
+                }
+                if (findWhere != null) {
+                    put("find_where", listOf(findWhere.toString()))
                 }
                 if (createdFrom != null) {
                     put("created_from", listOf(createdFrom.toString()))
@@ -1078,44 +1102,20 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 if (modifiedTo != null) {
                     put("modified_to", listOf(modifiedTo.toString()))
                 }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (responseFields != null) {
-                    put("response_fields", listOf(responseFields.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
-                if (groupId != null) {
-                    put("group_id", listOf(groupId.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
-                if (customerListId != null) {
-                    put("customer_list_id", listOf(customerListId.toString()))
-                }
-                if (avail != null) {
-                    put("avail", listOf(avail.toString()))
-                }
-                if (findValue != null) {
-                    put("find_value", listOf(findValue.toString()))
-                }
-                if (findWhere != null) {
-                    put("find_where", listOf(findWhere.toString()))
-                }
                 if (sortBy != null) {
                     put("sort_by", listOf(sortBy.toString()))
                 }
                 if (sortDirection != null) {
                     put("sort_direction", listOf(sortDirection.toString()))
                 }
-                if (ids != null) {
-                    put("ids", listOf(ids.toString()))
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
                 }
-                if (sinceId != null) {
-                    put("since_id", listOf(sinceId.toString()))
+                if (params != null) {
+                    put("params", listOf(params.toString()))
+                }
+                if (exclude != null) {
+                    put("exclude", listOf(exclude.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -1207,11 +1207,11 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * customer.wishlist.list
      * Get a Wish List of customer from the store.
      * @param customerId Retrieves orders specified by customer id
-     * @param id Entity id (optional)
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param id Entity id (optional)
+     * @param storeId Store Id (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "{return_code,return_message,pagination,result}")
      * @return ModelResponseCustomerWishlistList
      * @throws IllegalStateException If the request is not correctly configured
@@ -1222,8 +1222,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun customerWishlistList(customerId: kotlin.String, id: kotlin.String? = null, storeId: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, responseFields: kotlin.String? = "{return_code,return_message,pagination,result}") : ModelResponseCustomerWishlistList {
-        val localVarResponse = customerWishlistListWithHttpInfo(customerId = customerId, id = id, storeId = storeId, start = start, count = count, pageCursor = pageCursor, responseFields = responseFields)
+    fun customerWishlistList(customerId: kotlin.String, start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, id: kotlin.String? = null, storeId: kotlin.String? = null, responseFields: kotlin.String? = "{return_code,return_message,pagination,result}") : ModelResponseCustomerWishlistList {
+        val localVarResponse = customerWishlistListWithHttpInfo(customerId = customerId, start = start, count = count, pageCursor = pageCursor, id = id, storeId = storeId, responseFields = responseFields)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCustomerWishlistList
@@ -1244,11 +1244,11 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * customer.wishlist.list
      * Get a Wish List of customer from the store.
      * @param customerId Retrieves orders specified by customer id
-     * @param id Entity id (optional)
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param id Entity id (optional)
+     * @param storeId Store Id (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "{return_code,return_message,pagination,result}")
      * @return ApiResponse<ModelResponseCustomerWishlistList?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -1256,8 +1256,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun customerWishlistListWithHttpInfo(customerId: kotlin.String, id: kotlin.String?, storeId: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseCustomerWishlistList?> {
-        val localVariableConfig = customerWishlistListRequestConfig(customerId = customerId, id = id, storeId = storeId, start = start, count = count, pageCursor = pageCursor, responseFields = responseFields)
+    fun customerWishlistListWithHttpInfo(customerId: kotlin.String, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, id: kotlin.String?, storeId: kotlin.String?, responseFields: kotlin.String?) : ApiResponse<ModelResponseCustomerWishlistList?> {
+        val localVariableConfig = customerWishlistListRequestConfig(customerId = customerId, start = start, count = count, pageCursor = pageCursor, id = id, storeId = storeId, responseFields = responseFields)
 
         return request<Unit, ModelResponseCustomerWishlistList>(
             localVariableConfig
@@ -1268,25 +1268,18 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * To obtain the request config of the operation customerWishlistList
      *
      * @param customerId Retrieves orders specified by customer id
-     * @param id Entity id (optional)
-     * @param storeId Store Id (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
+     * @param id Entity id (optional)
+     * @param storeId Store Id (optional)
      * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "{return_code,return_message,pagination,result}")
      * @return RequestConfig
      */
-    fun customerWishlistListRequestConfig(customerId: kotlin.String, id: kotlin.String?, storeId: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
+    fun customerWishlistListRequestConfig(customerId: kotlin.String, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, id: kotlin.String?, storeId: kotlin.String?, responseFields: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
-                put("customer_id", listOf(customerId.toString()))
-                if (id != null) {
-                    put("id", listOf(id.toString()))
-                }
-                if (storeId != null) {
-                    put("store_id", listOf(storeId.toString()))
-                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }
@@ -1295,6 +1288,13 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 }
                 if (pageCursor != null) {
                     put("page_cursor", listOf(pageCursor.toString()))
+                }
+                put("customer_id", listOf(customerId.toString()))
+                if (id != null) {
+                    put("id", listOf(id.toString()))
+                }
+                if (storeId != null) {
+                    put("store_id", listOf(storeId.toString()))
                 }
                 if (responseFields != null) {
                     put("response_fields", listOf(responseFields.toString()))

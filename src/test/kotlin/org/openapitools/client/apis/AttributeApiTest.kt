@@ -90,10 +90,10 @@ class AttributeApiTest : ShouldSpec() {
             // uncomment below to test attributeAttributesetList
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val params : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val result : ModelResponseAttributeAttributesetList = apiInstance.attributeAttributesetList(start, count, params, exclude, responseFields)
+            //val result : ModelResponseAttributeAttributesetList = apiInstance.attributeAttributesetList(start, count, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -125,12 +125,12 @@ class AttributeApiTest : ShouldSpec() {
             // uncomment below to test attributeGroupList
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
+            //val attributeSetId : kotlin.String = 4 // kotlin.String | Attribute set id
             //val langId : kotlin.String = 3 // kotlin.String | Language id
+            //val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val params : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val attributeSetId : kotlin.String = 4 // kotlin.String | Attribute set id
-            //val result : ModelResponseAttributeGroupList = apiInstance.attributeGroupList(start, count, langId, params, exclude, responseFields, attributeSetId)
+            //val result : ModelResponseAttributeGroupList = apiInstance.attributeGroupList(start, count, attributeSetId, langId, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -141,10 +141,10 @@ class AttributeApiTest : ShouldSpec() {
             //val attributeSetId : kotlin.String = 4 // kotlin.String | Attribute set id
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val langId : kotlin.String = 3 // kotlin.String | Language id
+            //val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val params : kotlin.String = force_all // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val result : AttributeInfo200Response = apiInstance.attributeInfo(id, attributeSetId, storeId, langId, params, exclude, responseFields)
+            //val result : AttributeInfo200Response = apiInstance.attributeInfo(id, attributeSetId, storeId, langId, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -153,18 +153,18 @@ class AttributeApiTest : ShouldSpec() {
             // uncomment below to test attributeList
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-            //val type : kotlin.String = text // kotlin.String | Defines attribute's type
             //val attributeIds : kotlin.String = 1,2,3 // kotlin.String | Filter attributes by ids
             //val attributeSetId : kotlin.String = 4 // kotlin.String | Filter items by attribute set id
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val langId : kotlin.String = 3 // kotlin.String | Retrieves attributes on specified language id
-            //val params : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val type : kotlin.String = text // kotlin.String | Defines attribute's type
             //val visible : kotlin.Boolean = true // kotlin.Boolean | Filter items by visibility status
             //val required : kotlin.Boolean = true // kotlin.Boolean | Defines if the option is required
             //val system : kotlin.Boolean = false // kotlin.Boolean | True if attribute is system
-            //val result : ModelResponseAttributeList = apiInstance.attributeList(start, count, type, attributeIds, attributeSetId, storeId, langId, params, exclude, responseFields, visible, required, system)
+            //val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val params : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
+            //val exclude : kotlin.String = id,name // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
+            //val result : ModelResponseAttributeList = apiInstance.attributeList(start, count, attributeIds, attributeSetId, storeId, langId, type, visible, required, system, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 

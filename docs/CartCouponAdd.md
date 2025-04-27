@@ -9,9 +9,8 @@
 | **actionApplyTo** | [**inline**](#ActionApplyTo) | Defines where discount should be applied |  |
 | **actionScope** | [**inline**](#ActionScope) | Specify how discount should be applied. If scope&#x3D;matching_items, then discount will be applied to each of the items that match action conditions. Scope order means that discount will be applied once. |  |
 | **actionAmount** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Defines the discount amount value. |  |
-| **storeId** | **kotlin.String** | Store Id |  [optional] |
-| **name** | **kotlin.String** | Coupon name |  [optional] |
 | **codes** | **kotlin.collections.List&lt;kotlin.String&gt;** | Entity codes |  [optional] |
+| **name** | **kotlin.String** | Coupon name |  [optional] |
 | **dateStart** | **kotlin.String** | Date start |  [optional] |
 | **dateEnd** | **kotlin.String** | Defines when discount code will be expired. |  [optional] |
 | **usageLimit** | **kotlin.Int** | Usage limit for coupon. |  [optional] |
@@ -21,6 +20,7 @@
 | **actionConditionOperator** | **kotlin.String** | Defines condition operator. |  [optional] |
 | **actionConditionValue** | **kotlin.String** | Defines condition attribute value/s. Can be comma separated string. |  [optional] |
 | **includeTax** | **kotlin.Boolean** | Indicates whether to apply a discount for taxes. |  [optional] |
+| **storeId** | **kotlin.String** | Store Id |  [optional] |
 
 
 <a id="ActionType"></a>

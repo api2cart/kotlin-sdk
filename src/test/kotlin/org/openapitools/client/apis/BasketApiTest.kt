@@ -35,10 +35,10 @@ class BasketApiTest : ShouldSpec() {
             // uncomment below to test basketInfo
             //val id : kotlin.String = 10 // kotlin.String | Entity id
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
+            //val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val result : BasketInfo200Response = apiInstance.basketInfo(id, storeId, params, exclude, responseFields)
+            //val result : BasketInfo200Response = apiInstance.basketInfo(id, storeId, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 
@@ -75,10 +75,10 @@ class BasketApiTest : ShouldSpec() {
         // to test basketLiveShippingServiceList
         should("test basketLiveShippingServiceList") {
             // uncomment below to test basketLiveShippingServiceList
-            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
             //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
             //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-            //val result : BasketLiveShippingServiceList200Response = apiInstance.basketLiveShippingServiceList(storeId, start, count)
+            //val storeId : kotlin.String = 1 // kotlin.String | Store Id
+            //val result : BasketLiveShippingServiceList200Response = apiInstance.basketLiveShippingServiceList(start, count, storeId)
             //result shouldBe ("TODO")
         }
 

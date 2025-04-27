@@ -22,56 +22,36 @@ import com.squareup.moshi.JsonClass
 /**
  * 
  *
- * @param imageName Defines image's name
  * @param type Defines image's types that are specified by comma-separated list
+ * @param imageName Defines image's name
  * @param productId Defines product id where the image should be added
- * @param url Defines URL of the image that has to be added
- * @param label Defines alternative text that has to be attached to the picture
- * @param mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
- * @param position Defines image’s position in the list
- * @param content Content(body) encoded in base64 of image file
  * @param productVariantId Defines product's variants specified by variant id
  * @param variantIds Defines product's variants ids
  * @param optionValueIds Defines product's option values ids
  * @param storeId Store Id
  * @param langId Add product image on specified language id
+ * @param url Defines URL of the image that has to be added
+ * @param content Content(body) encoded in base64 of image file
+ * @param label Defines alternative text that has to be attached to the picture
+ * @param mime Mime type of image http://en.wikipedia.org/wiki/Internet_media_type.
+ * @param position Defines image’s position in the list
  * @param useLatestApiVersion Use the latest platform API version
  */
 
 
 data class ProductImageAdd (
 
-    /* Defines image's name */
-    @Json(name = "image_name")
-    val imageName: kotlin.String,
-
     /* Defines image's types that are specified by comma-separated list */
     @Json(name = "type")
     val type: ProductImageAdd.Type,
 
+    /* Defines image's name */
+    @Json(name = "image_name")
+    val imageName: kotlin.String,
+
     /* Defines product id where the image should be added */
     @Json(name = "product_id")
     val productId: kotlin.String? = null,
-
-    /* Defines URL of the image that has to be added */
-    @Json(name = "url")
-    val url: kotlin.String? = null,
-
-    /* Defines alternative text that has to be attached to the picture */
-    @Json(name = "label")
-    val label: kotlin.String? = null,
-
-    /* Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. */
-    @Json(name = "mime")
-    val mime: kotlin.String? = null,
-
-    /* Defines image’s position in the list */
-    @Json(name = "position")
-    val position: kotlin.Int? = 0,
-
-    /* Content(body) encoded in base64 of image file */
-    @Json(name = "content")
-    val content: kotlin.String? = null,
 
     /* Defines product's variants specified by variant id */
     @Json(name = "product_variant_id")
@@ -92,6 +72,26 @@ data class ProductImageAdd (
     /* Add product image on specified language id */
     @Json(name = "lang_id")
     val langId: kotlin.String? = null,
+
+    /* Defines URL of the image that has to be added */
+    @Json(name = "url")
+    val url: kotlin.String? = null,
+
+    /* Content(body) encoded in base64 of image file */
+    @Json(name = "content")
+    val content: kotlin.String? = null,
+
+    /* Defines alternative text that has to be attached to the picture */
+    @Json(name = "label")
+    val label: kotlin.String? = null,
+
+    /* Mime type of image http://en.wikipedia.org/wiki/Internet_media_type. */
+    @Json(name = "mime")
+    val mime: kotlin.String? = null,
+
+    /* Defines image’s position in the list */
+    @Json(name = "position")
+    val position: kotlin.Int? = 0,
 
     /* Use the latest platform API version */
     @Json(name = "use_latest_api_version")
