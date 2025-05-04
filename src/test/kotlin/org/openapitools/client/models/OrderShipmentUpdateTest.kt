@@ -19,6 +19,7 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import org.openapitools.client.models.OrderShipmentUpdate
+import org.openapitools.client.models.OrderShipmentAddItemsInner
 import org.openapitools.client.models.OrderShipmentAddTrackingNumbersInner
 
 class OrderShipmentUpdateTest : ShouldSpec() {
@@ -78,6 +79,24 @@ class OrderShipmentUpdateTest : ShouldSpec() {
         should("test replace") {
             // uncomment below to test the property
             //modelInstance.replace shouldBe ("TODO")
+        }
+
+        // to test the property `sendNotifications` - Send notifications to customer after order was created
+        should("test sendNotifications") {
+            // uncomment below to test the property
+            //modelInstance.sendNotifications shouldBe ("TODO")
+        }
+
+        // to test the property `trackingProvider` - Defines name of the company which provides shipment tracking
+        should("test trackingProvider") {
+            // uncomment below to test the property
+            //modelInstance.trackingProvider shouldBe ("TODO")
+        }
+
+        // to test the property `items` - Defines items in the order that will be shipped
+        should("test items") {
+            // uncomment below to test the property
+            //modelInstance.items shouldBe ("TODO")
         }
 
     }

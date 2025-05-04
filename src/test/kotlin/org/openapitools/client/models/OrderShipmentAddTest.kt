@@ -105,6 +105,12 @@ class OrderShipmentAddTest : ShouldSpec() {
             //modelInstance.checkProcessStatus shouldBe ("TODO")
         }
 
+        // to test the property `trackingProvider` - Defines name of the company which provides shipment tracking
+        should("test trackingProvider") {
+            // uncomment below to test the property
+            //modelInstance.trackingProvider shouldBe ("TODO")
+        }
+
         // to test the property `useLatestApiVersion` - Use the latest platform API version
         should("test useLatestApiVersion") {
             // uncomment below to test the property

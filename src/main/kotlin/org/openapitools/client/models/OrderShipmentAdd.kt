@@ -37,6 +37,7 @@ import com.squareup.moshi.JsonClass
  * @param adjustStock This parameter is used for adjust stock.
  * @param enableCache If the value is 'true' and order exist in our cache, we will use order.info from cache to prepare shipment items.
  * @param checkProcessStatus Disable or enable check process status. Please note that the response will be slower due to additional requests to the store.
+ * @param trackingProvider Defines name of the company which provides shipment tracking
  * @param useLatestApiVersion Use the latest platform API version
  */
 
@@ -94,6 +95,10 @@ data class OrderShipmentAdd (
     /* Disable or enable check process status. Please note that the response will be slower due to additional requests to the store. */
     @Json(name = "check_process_status")
     val checkProcessStatus: kotlin.Boolean? = false,
+
+    /* Defines name of the company which provides shipment tracking */
+    @Json(name = "tracking_provider")
+    val trackingProvider: kotlin.String? = null,
 
     /* Use the latest platform API version */
     @Json(name = "use_latest_api_version")

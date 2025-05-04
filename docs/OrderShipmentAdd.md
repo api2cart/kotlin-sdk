@@ -17,6 +17,7 @@
 | **adjustStock** | **kotlin.Boolean** | This parameter is used for adjust stock. |  [optional] |
 | **enableCache** | **kotlin.Boolean** | If the value is &#39;true&#39; and order exist in our cache, we will use order.info from cache to prepare shipment items. |  [optional] |
 | **checkProcessStatus** | **kotlin.Boolean** | Disable or enable check process status. Please note that the response will be slower due to additional requests to the store. |  [optional] |
+| **trackingProvider** | **kotlin.String** | Defines name of the company which provides shipment tracking |  [optional] |
 | **useLatestApiVersion** | **kotlin.Boolean** | Use the latest platform API version |  [optional] |
 
 

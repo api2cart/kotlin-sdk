@@ -32,6 +32,18 @@ class AccountCartAddTest : ShouldSpec() {
             //modelInstance.cartId shouldBe ("TODO")
         }
 
+        // to test the property `bigcartelUserName` - Subdomain of store
+        should("test bigcartelUserName") {
+            // uncomment below to test the property
+            //modelInstance.bigcartelUserName shouldBe ("TODO")
+        }
+
+        // to test the property `bigcartelPassword` - BigCartel account password
+        should("test bigcartelPassword") {
+            // uncomment below to test the property
+            //modelInstance.bigcartelPassword shouldBe ("TODO")
+        }
+
         // to test the property `wixAppId` - Wix App ID
         should("test wixAppId") {
             // uncomment below to test the property

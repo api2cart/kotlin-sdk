@@ -15,6 +15,7 @@
 
 package org.openapitools.client.models
 
+import org.openapitools.client.models.OrderShipmentAddItemsInner
 import org.openapitools.client.models.OrderShipmentAddTrackingNumbersInner
 
 import com.squareup.moshi.Json
@@ -32,6 +33,9 @@ import com.squareup.moshi.JsonClass
  * @param isShipped Defines shipment's status
  * @param deliveredAt Defines the date of delivery
  * @param replace Allows rewrite tracking numbers
+ * @param sendNotifications Send notifications to customer after order was created
+ * @param trackingProvider Defines name of the company which provides shipment tracking
+ * @param items Defines items in the order that will be shipped
  */
 
 
@@ -71,7 +75,19 @@ data class OrderShipmentUpdate (
 
     /* Allows rewrite tracking numbers */
     @Json(name = "replace")
-    val replace: kotlin.Boolean? = true
+    val replace: kotlin.Boolean? = true,
+
+    /* Send notifications to customer after order was created */
+    @Json(name = "send_notifications")
+    val sendNotifications: kotlin.Boolean? = false,
+
+    /* Defines name of the company which provides shipment tracking */
+    @Json(name = "tracking_provider")
+    val trackingProvider: kotlin.String? = null,
+
+    /* Defines items in the order that will be shipped */
+    @Json(name = "items")
+    val items: kotlin.collections.List<OrderShipmentAddItemsInner>? = null
 
 ) {
 
