@@ -26,6 +26,7 @@ import org.openapitools.client.models.ProductAddGroupPricesInner
 import org.openapitools.client.models.ProductAddLogisticInfoInner
 import org.openapitools.client.models.ProductAddManufacturerInfo
 import org.openapitools.client.models.ProductAddPackageDetails
+import org.openapitools.client.models.ProductAddPersonalizationDetails
 import org.openapitools.client.models.ProductAddSalesTax
 import org.openapitools.client.models.ProductAddSellerProfiles
 import org.openapitools.client.models.ProductAddShippingDetailsInner
@@ -708,6 +709,24 @@ class ProductAddTest : ShouldSpec() {
         should("test orderedCount") {
             // uncomment below to test the property
             //modelInstance.orderedCount shouldBe ("TODO")
+        }
+
+        // to test the property `shopSectionId` - Add Shop Section Id
+        should("test shopSectionId") {
+            // uncomment below to test the property
+            //modelInstance.shopSectionId shouldBe ("TODO")
+        }
+
+        // to test the property `returnPolicyId` - Add Return Policy Id
+        should("test returnPolicyId") {
+            // uncomment below to test the property
+            //modelInstance.returnPolicyId shouldBe ("TODO")
+        }
+
+        // to test the property `personalizationDetails`
+        should("test personalizationDetails") {
+            // uncomment below to test the property
+            //modelInstance.personalizationDetails shouldBe ("TODO")
         }
 
     }

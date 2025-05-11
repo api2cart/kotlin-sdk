@@ -17,6 +17,8 @@ package org.openapitools.client.models
 
 import org.openapitools.client.models.ProductAddManufacturerInfo
 import org.openapitools.client.models.ProductAddPackageDetails
+import org.openapitools.client.models.ProductAddPersonalizationDetails
+import org.openapitools.client.models.ProductAddSpecificsInner
 import org.openapitools.client.models.ProductAddTierPricesInner
 
 import com.squareup.moshi.Json
@@ -107,6 +109,9 @@ import com.squareup.moshi.JsonClass
  * @param reindex Is reindex required
  * @param clearCache Is cache clear required
  * @param checkProcessStatus Disable or enable check process status. Please note that the response will be slower due to additional requests to the store.
+ * @param specifics An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b>
+ * @param shopSectionId Add Shop Section Id
+ * @param personalizationDetails 
  */
 
 
@@ -436,7 +441,18 @@ data class ProductUpdate (
 
     /* Disable or enable check process status. Please note that the response will be slower due to additional requests to the store. */
     @Json(name = "check_process_status")
-    val checkProcessStatus: kotlin.Boolean? = false
+    val checkProcessStatus: kotlin.Boolean? = false,
+
+    /* An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b> */
+    @Json(name = "specifics")
+    val specifics: kotlin.collections.List<ProductAddSpecificsInner>? = null,
+
+    /* Add Shop Section Id */
+    @Json(name = "shop_section_id")
+    val shopSectionId: kotlin.Int? = null,
+
+    @Json(name = "personalization_details")
+    val personalizationDetails: ProductAddPersonalizationDetails? = null
 
 ) {
 

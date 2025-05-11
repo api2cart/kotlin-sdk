@@ -284,6 +284,7 @@ docs/ProductAddGroupPricesInner.md
 docs/ProductAddLogisticInfoInner.md
 docs/ProductAddManufacturerInfo.md
 docs/ProductAddPackageDetails.md
+docs/ProductAddPersonalizationDetails.md
 docs/ProductAddSalesTax.md
 docs/ProductAddSellerProfiles.md
 docs/ProductAddShippingDetailsInner.md
@@ -763,6 +764,7 @@ src/main/kotlin/org/openapitools/client/models/ProductAddGroupPricesInner.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddLogisticInfoInner.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddManufacturerInfo.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddPackageDetails.kt
+src/main/kotlin/org/openapitools/client/models/ProductAddPersonalizationDetails.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddSalesTax.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddSellerProfiles.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddShippingDetailsInner.kt
@@ -1213,6 +1215,7 @@ src/test/kotlin/org/openapitools/client/models/ProductAddGroupPricesInnerTest.kt
 src/test/kotlin/org/openapitools/client/models/ProductAddLogisticInfoInnerTest.kt
 src/test/kotlin/org/openapitools/client/models/ProductAddManufacturerInfoTest.kt
 src/test/kotlin/org/openapitools/client/models/ProductAddPackageDetailsTest.kt
+src/test/kotlin/org/openapitools/client/models/ProductAddPersonalizationDetailsTest.kt
 src/test/kotlin/org/openapitools/client/models/ProductAddSalesTaxTest.kt
 src/test/kotlin/org/openapitools/client/models/ProductAddSellerProfilesTest.kt
 src/test/kotlin/org/openapitools/client/models/ProductAddShippingDetailsInnerTest.kt

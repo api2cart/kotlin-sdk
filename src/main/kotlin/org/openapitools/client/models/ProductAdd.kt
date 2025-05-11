@@ -22,6 +22,7 @@ import org.openapitools.client.models.ProductAddGroupPricesInner
 import org.openapitools.client.models.ProductAddLogisticInfoInner
 import org.openapitools.client.models.ProductAddManufacturerInfo
 import org.openapitools.client.models.ProductAddPackageDetails
+import org.openapitools.client.models.ProductAddPersonalizationDetails
 import org.openapitools.client.models.ProductAddSalesTax
 import org.openapitools.client.models.ProductAddSellerProfiles
 import org.openapitools.client.models.ProductAddShippingDetailsInner
@@ -147,6 +148,9 @@ import com.squareup.moshi.JsonClass
  * @param clearCache Is cache clear required
  * @param viewedCount Specifies the number of product's reviews
  * @param orderedCount Defines how many times the product was ordered
+ * @param shopSectionId Add Shop Section Id
+ * @param returnPolicyId Add Return Policy Id
+ * @param personalizationDetails 
  */
 
 
@@ -592,7 +596,18 @@ data class ProductAdd (
 
     /* Defines how many times the product was ordered */
     @Json(name = "ordered_count")
-    val orderedCount: kotlin.Int? = 0
+    val orderedCount: kotlin.Int? = 0,
+
+    /* Add Shop Section Id */
+    @Json(name = "shop_section_id")
+    val shopSectionId: kotlin.Int? = null,
+
+    /* Add Return Policy Id */
+    @Json(name = "return_policy_id")
+    val returnPolicyId: kotlin.Int? = null,
+
+    @Json(name = "personalization_details")
+    val personalizationDetails: ProductAddPersonalizationDetails? = null
 
 ) {
 

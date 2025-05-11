@@ -48,6 +48,7 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * subscriber.list
      * Get subscribers list
+     * @param ids Retrieves subscribers specified by ids (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -70,8 +71,8 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun subscriberList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, subscribed: kotlin.Boolean? = null, storeId: kotlin.String? = null, email: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null) : ModelResponseSubscriberList {
-        val localVarResponse = subscriberListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, subscribed = subscribed, storeId = storeId, email = email, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
+    fun subscriberList(ids: kotlin.String? = null, start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, subscribed: kotlin.Boolean? = null, storeId: kotlin.String? = null, email: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "force_all", exclude: kotlin.String? = null) : ModelResponseSubscriberList {
+        val localVarResponse = subscriberListWithHttpInfo(ids = ids, start = start, count = count, pageCursor = pageCursor, subscribed = subscribed, storeId = storeId, email = email, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseSubscriberList
@@ -91,6 +92,7 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * subscriber.list
      * Get subscribers list
+     * @param ids Retrieves subscribers specified by ids (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -110,8 +112,8 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun subscriberListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, subscribed: kotlin.Boolean?, storeId: kotlin.String?, email: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseSubscriberList?> {
-        val localVariableConfig = subscriberListRequestConfig(start = start, count = count, pageCursor = pageCursor, subscribed = subscribed, storeId = storeId, email = email, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
+    fun subscriberListWithHttpInfo(ids: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, subscribed: kotlin.Boolean?, storeId: kotlin.String?, email: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseSubscriberList?> {
+        val localVariableConfig = subscriberListRequestConfig(ids = ids, start = start, count = count, pageCursor = pageCursor, subscribed = subscribed, storeId = storeId, email = email, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseSubscriberList>(
             localVariableConfig
@@ -121,6 +123,7 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
     /**
      * To obtain the request config of the operation subscriberList
      *
+     * @param ids Retrieves subscribers specified by ids (optional)
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
      * @param pageCursor Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) (optional)
@@ -136,10 +139,13 @@ class SubscriberApi(basePath: kotlin.String = defaultBasePath, client: Call.Fact
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun subscriberListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, subscribed: kotlin.Boolean?, storeId: kotlin.String?, email: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun subscriberListRequestConfig(ids: kotlin.String?, start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, subscribed: kotlin.Boolean?, storeId: kotlin.String?, email: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
+                if (ids != null) {
+                    put("ids", listOf(ids.toString()))
+                }
                 if (start != null) {
                     put("start", listOf(start.toString()))
                 }

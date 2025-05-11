@@ -116,6 +116,9 @@
 | **clearCache** | **kotlin.Boolean** | Is cache clear required |  [optional] |
 | **viewedCount** | **kotlin.Int** | Specifies the number of product&#39;s reviews |  [optional] |
 | **orderedCount** | **kotlin.Int** | Defines how many times the product was ordered |  [optional] |
+| **shopSectionId** | **kotlin.Int** | Add Shop Section Id |  [optional] |
+| **returnPolicyId** | **kotlin.Int** | Add Return Policy Id |  [optional] |
+| **personalizationDetails** | [**ProductAddPersonalizationDetails**](ProductAddPersonalizationDetails.md) |  |  [optional] |
 
 
 

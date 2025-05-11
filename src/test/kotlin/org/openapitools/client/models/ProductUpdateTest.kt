@@ -21,6 +21,8 @@ import io.kotlintest.specs.ShouldSpec
 import org.openapitools.client.models.ProductUpdate
 import org.openapitools.client.models.ProductAddManufacturerInfo
 import org.openapitools.client.models.ProductAddPackageDetails
+import org.openapitools.client.models.ProductAddPersonalizationDetails
+import org.openapitools.client.models.ProductAddSpecificsInner
 import org.openapitools.client.models.ProductAddTierPricesInner
 
 class ProductUpdateTest : ShouldSpec() {
@@ -518,6 +520,24 @@ class ProductUpdateTest : ShouldSpec() {
         should("test checkProcessStatus") {
             // uncomment below to test the property
             //modelInstance.checkProcessStatus shouldBe ("TODO")
+        }
+
+        // to test the property `specifics` - An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b>
+        should("test specifics") {
+            // uncomment below to test the property
+            //modelInstance.specifics shouldBe ("TODO")
+        }
+
+        // to test the property `shopSectionId` - Add Shop Section Id
+        should("test shopSectionId") {
+            // uncomment below to test the property
+            //modelInstance.shopSectionId shouldBe ("TODO")
+        }
+
+        // to test the property `personalizationDetails`
+        should("test personalizationDetails") {
+            // uncomment below to test the property
+            //modelInstance.personalizationDetails shouldBe ("TODO")
         }
 
     }

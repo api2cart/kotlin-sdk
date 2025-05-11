@@ -9,7 +9,7 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 
 <a id="subscriberList"></a>
 # **subscriberList**
-> ModelResponseSubscriberList subscriberList(start, count, pageCursor, subscribed, storeId, email, createdFrom, createdTo, modifiedFrom, modifiedTo, responseFields, params, exclude)
+> ModelResponseSubscriberList subscriberList(ids, start, count, pageCursor, subscribed, storeId, email, createdFrom, createdTo, modifiedFrom, modifiedTo, responseFields, params, exclude)
 
 subscriber.list
 
@@ -22,6 +22,7 @@ Get subscribers list
 //import org.openapitools.client.models.*
 
 val apiInstance = SubscriberApi()
+val ids : kotlin.String = 24,25 // kotlin.String | Retrieves subscribers specified by ids
 val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
 val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
 val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
@@ -36,7 +37,7 @@ val responseFields : kotlin.String = {return_code,return_message,pagination,resu
 val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : ModelResponseSubscriberList = apiInstance.subscriberList(start, count, pageCursor, subscribed, storeId, email, createdFrom, createdTo, modifiedFrom, modifiedTo, responseFields, params, exclude)
+    val result : ModelResponseSubscriberList = apiInstance.subscriberList(ids, start, count, pageCursor, subscribed, storeId, email, createdFrom, createdTo, modifiedFrom, modifiedTo, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling SubscriberApi#subscriberList")
@@ -48,6 +49,7 @@ try {
 ```
 
 ### Parameters
+| **ids** | **kotlin.String**| Retrieves subscribers specified by ids | [optional] |
 | **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
 | **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
 | **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
