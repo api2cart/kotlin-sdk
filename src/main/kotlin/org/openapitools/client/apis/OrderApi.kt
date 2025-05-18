@@ -2406,6 +2406,7 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param sendNotifications Send notifications to customer after order was created (optional, default to false)
      * @param createInvoice Determines whether an invoice should be created if it has not already been created (optional)
      * @param origin The source of the order (optional)
+     * @param tags Order tags (optional)
      * @return AccountConfigUpdate200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -2415,8 +2416,8 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun orderUpdate(orderId: kotlin.String, storeId: kotlin.String? = null, orderStatus: kotlin.String? = null, financialStatus: kotlin.String? = null, fulfillmentStatus: kotlin.String? = null, cancellationReason: kotlin.String? = null, orderPaymentMethod: kotlin.String? = null, comment: kotlin.String? = null, adminComment: kotlin.String? = null, adminPrivateComment: kotlin.String? = null, invoiceAdminComment: kotlin.String? = null, dateModified: kotlin.String? = null, dateFinished: kotlin.String? = null, sendNotifications: kotlin.Boolean? = false, createInvoice: kotlin.Boolean? = null, origin: kotlin.String? = null) : AccountConfigUpdate200Response {
-        val localVarResponse = orderUpdateWithHttpInfo(orderId = orderId, storeId = storeId, orderStatus = orderStatus, financialStatus = financialStatus, fulfillmentStatus = fulfillmentStatus, cancellationReason = cancellationReason, orderPaymentMethod = orderPaymentMethod, comment = comment, adminComment = adminComment, adminPrivateComment = adminPrivateComment, invoiceAdminComment = invoiceAdminComment, dateModified = dateModified, dateFinished = dateFinished, sendNotifications = sendNotifications, createInvoice = createInvoice, origin = origin)
+    fun orderUpdate(orderId: kotlin.String, storeId: kotlin.String? = null, orderStatus: kotlin.String? = null, financialStatus: kotlin.String? = null, fulfillmentStatus: kotlin.String? = null, cancellationReason: kotlin.String? = null, orderPaymentMethod: kotlin.String? = null, comment: kotlin.String? = null, adminComment: kotlin.String? = null, adminPrivateComment: kotlin.String? = null, invoiceAdminComment: kotlin.String? = null, dateModified: kotlin.String? = null, dateFinished: kotlin.String? = null, sendNotifications: kotlin.Boolean? = false, createInvoice: kotlin.Boolean? = null, origin: kotlin.String? = null, tags: kotlin.String? = null) : AccountConfigUpdate200Response {
+        val localVarResponse = orderUpdateWithHttpInfo(orderId = orderId, storeId = storeId, orderStatus = orderStatus, financialStatus = financialStatus, fulfillmentStatus = fulfillmentStatus, cancellationReason = cancellationReason, orderPaymentMethod = orderPaymentMethod, comment = comment, adminComment = adminComment, adminPrivateComment = adminPrivateComment, invoiceAdminComment = invoiceAdminComment, dateModified = dateModified, dateFinished = dateFinished, sendNotifications = sendNotifications, createInvoice = createInvoice, origin = origin, tags = tags)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as AccountConfigUpdate200Response
@@ -2452,14 +2453,15 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param sendNotifications Send notifications to customer after order was created (optional, default to false)
      * @param createInvoice Determines whether an invoice should be created if it has not already been created (optional)
      * @param origin The source of the order (optional)
+     * @param tags Order tags (optional)
      * @return ApiResponse<AccountConfigUpdate200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun orderUpdateWithHttpInfo(orderId: kotlin.String, storeId: kotlin.String?, orderStatus: kotlin.String?, financialStatus: kotlin.String?, fulfillmentStatus: kotlin.String?, cancellationReason: kotlin.String?, orderPaymentMethod: kotlin.String?, comment: kotlin.String?, adminComment: kotlin.String?, adminPrivateComment: kotlin.String?, invoiceAdminComment: kotlin.String?, dateModified: kotlin.String?, dateFinished: kotlin.String?, sendNotifications: kotlin.Boolean?, createInvoice: kotlin.Boolean?, origin: kotlin.String?) : ApiResponse<AccountConfigUpdate200Response?> {
-        val localVariableConfig = orderUpdateRequestConfig(orderId = orderId, storeId = storeId, orderStatus = orderStatus, financialStatus = financialStatus, fulfillmentStatus = fulfillmentStatus, cancellationReason = cancellationReason, orderPaymentMethod = orderPaymentMethod, comment = comment, adminComment = adminComment, adminPrivateComment = adminPrivateComment, invoiceAdminComment = invoiceAdminComment, dateModified = dateModified, dateFinished = dateFinished, sendNotifications = sendNotifications, createInvoice = createInvoice, origin = origin)
+    fun orderUpdateWithHttpInfo(orderId: kotlin.String, storeId: kotlin.String?, orderStatus: kotlin.String?, financialStatus: kotlin.String?, fulfillmentStatus: kotlin.String?, cancellationReason: kotlin.String?, orderPaymentMethod: kotlin.String?, comment: kotlin.String?, adminComment: kotlin.String?, adminPrivateComment: kotlin.String?, invoiceAdminComment: kotlin.String?, dateModified: kotlin.String?, dateFinished: kotlin.String?, sendNotifications: kotlin.Boolean?, createInvoice: kotlin.Boolean?, origin: kotlin.String?, tags: kotlin.String?) : ApiResponse<AccountConfigUpdate200Response?> {
+        val localVariableConfig = orderUpdateRequestConfig(orderId = orderId, storeId = storeId, orderStatus = orderStatus, financialStatus = financialStatus, fulfillmentStatus = fulfillmentStatus, cancellationReason = cancellationReason, orderPaymentMethod = orderPaymentMethod, comment = comment, adminComment = adminComment, adminPrivateComment = adminPrivateComment, invoiceAdminComment = invoiceAdminComment, dateModified = dateModified, dateFinished = dateFinished, sendNotifications = sendNotifications, createInvoice = createInvoice, origin = origin, tags = tags)
 
         return request<Unit, AccountConfigUpdate200Response>(
             localVariableConfig
@@ -2485,9 +2487,10 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
      * @param sendNotifications Send notifications to customer after order was created (optional, default to false)
      * @param createInvoice Determines whether an invoice should be created if it has not already been created (optional)
      * @param origin The source of the order (optional)
+     * @param tags Order tags (optional)
      * @return RequestConfig
      */
-    fun orderUpdateRequestConfig(orderId: kotlin.String, storeId: kotlin.String?, orderStatus: kotlin.String?, financialStatus: kotlin.String?, fulfillmentStatus: kotlin.String?, cancellationReason: kotlin.String?, orderPaymentMethod: kotlin.String?, comment: kotlin.String?, adminComment: kotlin.String?, adminPrivateComment: kotlin.String?, invoiceAdminComment: kotlin.String?, dateModified: kotlin.String?, dateFinished: kotlin.String?, sendNotifications: kotlin.Boolean?, createInvoice: kotlin.Boolean?, origin: kotlin.String?) : RequestConfig<Unit> {
+    fun orderUpdateRequestConfig(orderId: kotlin.String, storeId: kotlin.String?, orderStatus: kotlin.String?, financialStatus: kotlin.String?, fulfillmentStatus: kotlin.String?, cancellationReason: kotlin.String?, orderPaymentMethod: kotlin.String?, comment: kotlin.String?, adminComment: kotlin.String?, adminPrivateComment: kotlin.String?, invoiceAdminComment: kotlin.String?, dateModified: kotlin.String?, dateFinished: kotlin.String?, sendNotifications: kotlin.Boolean?, createInvoice: kotlin.Boolean?, origin: kotlin.String?, tags: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -2536,6 +2539,9 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
                 }
                 if (origin != null) {
                     put("origin", listOf(origin.toString()))
+                }
+                if (tags != null) {
+                    put("tags", listOf(tags.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()

@@ -365,7 +365,8 @@ class OrderApiTest : ShouldSpec() {
             //val sendNotifications : kotlin.Boolean = true // kotlin.Boolean | Send notifications to customer after order was created
             //val createInvoice : kotlin.Boolean = true // kotlin.Boolean | Determines whether an invoice should be created if it has not already been created
             //val origin : kotlin.String = newsletter // kotlin.String | The source of the order
-            //val result : AccountConfigUpdate200Response = apiInstance.orderUpdate(orderId, storeId, orderStatus, financialStatus, fulfillmentStatus, cancellationReason, orderPaymentMethod, comment, adminComment, adminPrivateComment, invoiceAdminComment, dateModified, dateFinished, sendNotifications, createInvoice, origin)
+            //val tags : kotlin.String = tag1,tag2 // kotlin.String | Order tags
+            //val result : AccountConfigUpdate200Response = apiInstance.orderUpdate(orderId, storeId, orderStatus, financialStatus, fulfillmentStatus, cancellationReason, orderPaymentMethod, comment, adminComment, adminPrivateComment, invoiceAdminComment, dateModified, dateFinished, sendNotifications, createInvoice, origin, tags)
             //result shouldBe ("TODO")
         }
 

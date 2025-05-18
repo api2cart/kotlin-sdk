@@ -1404,7 +1404,7 @@ Configure ApiKeyAuth:
 
 <a id="orderUpdate"></a>
 # **orderUpdate**
-> AccountConfigUpdate200Response orderUpdate(orderId, storeId, orderStatus, financialStatus, fulfillmentStatus, cancellationReason, orderPaymentMethod, comment, adminComment, adminPrivateComment, invoiceAdminComment, dateModified, dateFinished, sendNotifications, createInvoice, origin)
+> AccountConfigUpdate200Response orderUpdate(orderId, storeId, orderStatus, financialStatus, fulfillmentStatus, cancellationReason, orderPaymentMethod, comment, adminComment, adminPrivateComment, invoiceAdminComment, dateModified, dateFinished, sendNotifications, createInvoice, origin, tags)
 
 order.update
 
@@ -1433,8 +1433,9 @@ val dateFinished : kotlin.String = 2014-06-05 05:05:00 // kotlin.String | Specif
 val sendNotifications : kotlin.Boolean = true // kotlin.Boolean | Send notifications to customer after order was created
 val createInvoice : kotlin.Boolean = true // kotlin.Boolean | Determines whether an invoice should be created if it has not already been created
 val origin : kotlin.String = newsletter // kotlin.String | The source of the order
+val tags : kotlin.String = tag1,tag2 // kotlin.String | Order tags
 try {
-    val result : AccountConfigUpdate200Response = apiInstance.orderUpdate(orderId, storeId, orderStatus, financialStatus, fulfillmentStatus, cancellationReason, orderPaymentMethod, comment, adminComment, adminPrivateComment, invoiceAdminComment, dateModified, dateFinished, sendNotifications, createInvoice, origin)
+    val result : AccountConfigUpdate200Response = apiInstance.orderUpdate(orderId, storeId, orderStatus, financialStatus, fulfillmentStatus, cancellationReason, orderPaymentMethod, comment, adminComment, adminPrivateComment, invoiceAdminComment, dateModified, dateFinished, sendNotifications, createInvoice, origin, tags)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling OrderApi#orderUpdate")
@@ -1461,9 +1462,10 @@ try {
 | **dateFinished** | **kotlin.String**| Specifies order&#39;s  finished date | [optional] |
 | **sendNotifications** | **kotlin.Boolean**| Send notifications to customer after order was created | [optional] [default to false] |
 | **createInvoice** | **kotlin.Boolean**| Determines whether an invoice should be created if it has not already been created | [optional] |
+| **origin** | **kotlin.String**| The source of the order | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **origin** | **kotlin.String**| The source of the order | [optional] |
+| **tags** | **kotlin.String**| Order tags | [optional] |
 
 ### Return type
 
