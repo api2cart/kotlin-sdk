@@ -28,6 +28,7 @@ import com.squareup.moshi.JsonClass
  * @param bigcartelPassword BigCartel account password
  * @param wixAppId Wix App ID
  * @param wixAppSecretKey Wix App Secret Key
+ * @param temuAccessToken Temu Access Token
  * @param storeUrl A web address of a store that you would like to connect to API2Cart
  * @param bridgeUrl This parameter allows to set up store with custom bridge url (also you must use store_root parameter if a bridge folder is not in the root folder of the store)
  * @param storeRoot Absolute path to the store root directory (used with \"bridge_url\" parameter)
@@ -105,6 +106,12 @@ import com.squareup.moshi.JsonClass
  * @param shopifyApiKey Shopify API Key
  * @param shopifyApiPassword Shopify API Password
  * @param shopifySharedSecret Shared secret
+ * @param shopeePartnerId Shopee Partner ID
+ * @param shopeePartnerKey Shopee Partner Key
+ * @param shopeeShopId Shopee SHOP ID
+ * @param shopeeRefreshToken Shopee Refresh Token
+ * @param shopeeRegion Shopee API endpoint Region. Use for Chinese Mainland or Brazil.
+ * @param shopeeEnvironment Shopee Environment
  * @param shoplazzaAccessToken Access token authorizing the app to access resources on behalf of a user
  * @param shoplazzaSharedSecret Shared secret
  * @param shopwareAccessKey Shopware access key
@@ -174,6 +181,9 @@ import com.squareup.moshi.JsonClass
  * @param sallaClientSecret Salla Client Secret
  * @param sallaRefreshToken Salla Refresh Token
  * @param sallaAccessToken Salla Access Token
+ * @param temuAppKey Temu App Key
+ * @param temuAppSecret Temu App Secret
+ * @param temuRegion Temu API endpoint Region.
  */
 
 
@@ -198,6 +208,10 @@ data class AccountCartAdd (
     /* Wix App Secret Key */
     @Json(name = "wix_app_secret_key")
     val wixAppSecretKey: kotlin.String,
+
+    /* Temu Access Token */
+    @Json(name = "temu_access_token")
+    val temuAccessToken: kotlin.String,
 
     /* A web address of a store that you would like to connect to API2Cart */
     @Json(name = "store_url")
@@ -507,6 +521,30 @@ data class AccountCartAdd (
     @Json(name = "shopify_shared_secret")
     val shopifySharedSecret: kotlin.String? = null,
 
+    /* Shopee Partner ID */
+    @Json(name = "shopee_partner_id")
+    val shopeePartnerId: kotlin.String? = null,
+
+    /* Shopee Partner Key */
+    @Json(name = "shopee_partner_key")
+    val shopeePartnerKey: kotlin.String? = null,
+
+    /* Shopee SHOP ID */
+    @Json(name = "shopee_shop_id")
+    val shopeeShopId: kotlin.String? = null,
+
+    /* Shopee Refresh Token */
+    @Json(name = "shopee_refresh_token")
+    val shopeeRefreshToken: kotlin.String? = null,
+
+    /* Shopee API endpoint Region. Use for Chinese Mainland or Brazil. */
+    @Json(name = "shopee_region")
+    val shopeeRegion: kotlin.String? = null,
+
+    /* Shopee Environment */
+    @Json(name = "shopee_environment")
+    val shopeeEnvironment: kotlin.String? = "production",
+
     /* Access token authorizing the app to access resources on behalf of a user */
     @Json(name = "shoplazza_access_token")
     val shoplazzaAccessToken: kotlin.String? = null,
@@ -781,14 +819,26 @@ data class AccountCartAdd (
 
     /* Salla Access Token */
     @Json(name = "salla_access_token")
-    val sallaAccessToken: kotlin.String? = null
+    val sallaAccessToken: kotlin.String? = null,
+
+    /* Temu App Key */
+    @Json(name = "temu_app_key")
+    val temuAppKey: kotlin.String? = null,
+
+    /* Temu App Secret */
+    @Json(name = "temu_app_secret")
+    val temuAppSecret: kotlin.String? = null,
+
+    /* Temu API endpoint Region. */
+    @Json(name = "temu_region")
+    val temuRegion: kotlin.String? = "US"
 
 ) {
 
     /**
      * Store’s identifier which you can get from cart_list method
      *
-     * Values: _3DCart,_3DCartApi,AceShop,AmazonSP,AspDotNetStorefront,BigCartel,BigcommerceApi,Bol,CommerceHQ,Creloaded,Cscart,Cubecart,Demandware,EBay,Ecwid,EtsyAPIv3,Flipkart,Gambio,Hybris,JooCart,Lazada,LightSpeed,Magento1212,Magento2Api,MercadoLibre,MijoShop,Miva,Neto,Opencart14,Oscmax2,Oscommerce22ms2,Otto,Oxid,Pinnacle,Prestashop,PrestashopApi,SSPremium,Salla,Shopify,Shoplazza,Shopline,Shopware,ShopwareApi,Square,Squarespace,Tiendanube,TikTokShop,Tomatocart,Ubercart,Virtuemart,Volusion,WPecommerce,Walmart,WebAsyst,Wix,Woocommerce,WoocommerceApi,Xcart,Xtcommerce,XtcommerceVeyton,Zencart137,Zid,Zoey,Zoho
+     * Values: _3DCart,_3DCartApi,AceShop,AmazonSP,AspDotNetStorefront,BigCartel,BigcommerceApi,Bol,CommerceHQ,Creloaded,Cscart,Cubecart,Demandware,EBay,Ecwid,EtsyAPIv3,Flipkart,Gambio,Hybris,JooCart,Lazada,LightSpeed,Magento1212,Magento2Api,MercadoLibre,MijoShop,Miva,Neto,Opencart14,Oscmax2,Oscommerce22ms2,Otto,Oxid,Pinnacle,Prestashop,PrestashopApi,SSPremium,Salla,Shopify,Shopee,Shoplazza,Shopline,Shopware,ShopwareApi,Square,Squarespace,Tiendanube,TikTokShop,Tomatocart,Ubercart,Virtuemart,Volusion,WPecommerce,Walmart,WebAsyst,Wix,Woocommerce,WoocommerceApi,Xcart,Xtcommerce,XtcommerceVeyton,Zencart137,Zid,Zoey,Zoho
      */
     @JsonClass(generateAdapter = false)
     enum class CartId(val value: kotlin.String) {
@@ -831,6 +881,7 @@ data class AccountCartAdd (
         @Json(name = "SSPremium") SSPremium("SSPremium"),
         @Json(name = "Salla") Salla("Salla"),
         @Json(name = "Shopify") Shopify("Shopify"),
+        @Json(name = "Shopee") Shopee("Shopee"),
         @Json(name = "Shoplazza") Shoplazza("Shoplazza"),
         @Json(name = "Shopline") Shopline("Shopline"),
         @Json(name = "Shopware") Shopware("Shopware"),

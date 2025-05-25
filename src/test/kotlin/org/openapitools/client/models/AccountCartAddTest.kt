@@ -56,6 +56,12 @@ class AccountCartAddTest : ShouldSpec() {
             //modelInstance.wixAppSecretKey shouldBe ("TODO")
         }
 
+        // to test the property `temuAccessToken` - Temu Access Token
+        should("test temuAccessToken") {
+            // uncomment below to test the property
+            //modelInstance.temuAccessToken shouldBe ("TODO")
+        }
+
         // to test the property `storeUrl` - A web address of a store that you would like to connect to API2Cart
         should("test storeUrl") {
             // uncomment below to test the property
@@ -518,6 +524,42 @@ class AccountCartAddTest : ShouldSpec() {
             //modelInstance.shopifySharedSecret shouldBe ("TODO")
         }
 
+        // to test the property `shopeePartnerId` - Shopee Partner ID
+        should("test shopeePartnerId") {
+            // uncomment below to test the property
+            //modelInstance.shopeePartnerId shouldBe ("TODO")
+        }
+
+        // to test the property `shopeePartnerKey` - Shopee Partner Key
+        should("test shopeePartnerKey") {
+            // uncomment below to test the property
+            //modelInstance.shopeePartnerKey shouldBe ("TODO")
+        }
+
+        // to test the property `shopeeShopId` - Shopee SHOP ID
+        should("test shopeeShopId") {
+            // uncomment below to test the property
+            //modelInstance.shopeeShopId shouldBe ("TODO")
+        }
+
+        // to test the property `shopeeRefreshToken` - Shopee Refresh Token
+        should("test shopeeRefreshToken") {
+            // uncomment below to test the property
+            //modelInstance.shopeeRefreshToken shouldBe ("TODO")
+        }
+
+        // to test the property `shopeeRegion` - Shopee API endpoint Region. Use for Chinese Mainland or Brazil.
+        should("test shopeeRegion") {
+            // uncomment below to test the property
+            //modelInstance.shopeeRegion shouldBe ("TODO")
+        }
+
+        // to test the property `shopeeEnvironment` - Shopee Environment
+        should("test shopeeEnvironment") {
+            // uncomment below to test the property
+            //modelInstance.shopeeEnvironment shouldBe ("TODO")
+        }
+
         // to test the property `shoplazzaAccessToken` - Access token authorizing the app to access resources on behalf of a user
         should("test shoplazzaAccessToken") {
             // uncomment below to test the property
@@ -930,6 +972,24 @@ class AccountCartAddTest : ShouldSpec() {
         should("test sallaAccessToken") {
             // uncomment below to test the property
             //modelInstance.sallaAccessToken shouldBe ("TODO")
+        }
+
+        // to test the property `temuAppKey` - Temu App Key
+        should("test temuAppKey") {
+            // uncomment below to test the property
+            //modelInstance.temuAppKey shouldBe ("TODO")
+        }
+
+        // to test the property `temuAppSecret` - Temu App Secret
+        should("test temuAppSecret") {
+            // uncomment below to test the property
+            //modelInstance.temuAppSecret shouldBe ("TODO")
+        }
+
+        // to test the property `temuRegion` - Temu API endpoint Region.
+        should("test temuRegion") {
+            // uncomment below to test the property
+            //modelInstance.temuRegion shouldBe ("TODO")
         }
 
     }
