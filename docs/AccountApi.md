@@ -461,7 +461,7 @@ try {
 | **temuAccessToken** | **kotlin.String**| Temu Access Token | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **temuRegion** | **kotlin.String**| Temu API endpoint Region. | [optional] [default to &quot;US&quot;] |
+| **temuRegion** | **kotlin.String**| Temu API endpoint Region. | [optional] |
 
 ### Return type
 

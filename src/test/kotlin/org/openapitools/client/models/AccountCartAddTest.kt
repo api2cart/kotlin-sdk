@@ -62,6 +62,12 @@ class AccountCartAddTest : ShouldSpec() {
             //modelInstance.temuAccessToken shouldBe ("TODO")
         }
 
+        // to test the property `temuRegion` - Temu API endpoint Region.
+        should("test temuRegion") {
+            // uncomment below to test the property
+            //modelInstance.temuRegion shouldBe ("TODO")
+        }
+
         // to test the property `storeUrl` - A web address of a store that you would like to connect to API2Cart
         should("test storeUrl") {
             // uncomment below to test the property
@@ -984,12 +990,6 @@ class AccountCartAddTest : ShouldSpec() {
         should("test temuAppSecret") {
             // uncomment below to test the property
             //modelInstance.temuAppSecret shouldBe ("TODO")
-        }
-
-        // to test the property `temuRegion` - Temu API endpoint Region.
-        should("test temuRegion") {
-            // uncomment below to test the property
-            //modelInstance.temuRegion shouldBe ("TODO")
         }
 
     }

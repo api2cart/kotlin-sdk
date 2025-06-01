@@ -29,6 +29,7 @@ import com.squareup.moshi.JsonClass
  * @param wixAppId Wix App ID
  * @param wixAppSecretKey Wix App Secret Key
  * @param temuAccessToken Temu Access Token
+ * @param temuRegion Temu API endpoint Region.
  * @param storeUrl A web address of a store that you would like to connect to API2Cart
  * @param bridgeUrl This parameter allows to set up store with custom bridge url (also you must use store_root parameter if a bridge folder is not in the root folder of the store)
  * @param storeRoot Absolute path to the store root directory (used with \"bridge_url\" parameter)
@@ -183,7 +184,6 @@ import com.squareup.moshi.JsonClass
  * @param sallaAccessToken Salla Access Token
  * @param temuAppKey Temu App Key
  * @param temuAppSecret Temu App Secret
- * @param temuRegion Temu API endpoint Region.
  */
 
 
@@ -212,6 +212,10 @@ data class AccountCartAdd (
     /* Temu Access Token */
     @Json(name = "temu_access_token")
     val temuAccessToken: kotlin.String,
+
+    /* Temu API endpoint Region. */
+    @Json(name = "temu_region")
+    val temuRegion: AccountCartAdd.TemuRegion,
 
     /* A web address of a store that you would like to connect to API2Cart */
     @Json(name = "store_url")
@@ -827,11 +831,7 @@ data class AccountCartAdd (
 
     /* Temu App Secret */
     @Json(name = "temu_app_secret")
-    val temuAppSecret: kotlin.String? = null,
-
-    /* Temu API endpoint Region. */
-    @Json(name = "temu_region")
-    val temuRegion: kotlin.String? = "US"
+    val temuAppSecret: kotlin.String? = null
 
 ) {
 
@@ -907,6 +907,17 @@ data class AccountCartAdd (
         @Json(name = "Zid") Zid("Zid"),
         @Json(name = "Zoey") Zoey("Zoey"),
         @Json(name = "Zoho") Zoho("Zoho");
+    }
+    /**
+     * Temu API endpoint Region.
+     *
+     * Values: US,EU,GLOBAL
+     */
+    @JsonClass(generateAdapter = false)
+    enum class TemuRegion(val value: kotlin.String) {
+        @Json(name = "US") US("US"),
+        @Json(name = "EU") EU("EU"),
+        @Json(name = "GLOBAL") GLOBAL("GLOBAL");
     }
 
 }

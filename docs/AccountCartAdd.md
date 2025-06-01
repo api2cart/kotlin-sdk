@@ -10,6 +10,7 @@
 | **wixAppId** | **kotlin.String** | Wix App ID |  |
 | **wixAppSecretKey** | **kotlin.String** | Wix App Secret Key |  |
 | **temuAccessToken** | **kotlin.String** | Temu Access Token |  |
+| **temuRegion** | [**inline**](#TemuRegion) | Temu API endpoint Region. |  |
 | **storeUrl** | **kotlin.String** | A web address of a store that you would like to connect to API2Cart |  [optional] |
 | **bridgeUrl** | **kotlin.String** | This parameter allows to set up store with custom bridge url (also you must use store_root parameter if a bridge folder is not in the root folder of the store) |  [optional] |
 | **storeRoot** | **kotlin.String** | Absolute path to the store root directory (used with \&quot;bridge_url\&quot; parameter) |  [optional] |
@@ -164,7 +165,6 @@
 | **sallaAccessToken** | **kotlin.String** | Salla Access Token |  [optional] |
 | **temuAppKey** | **kotlin.String** | Temu App Key |  [optional] |
 | **temuAppSecret** | **kotlin.String** | Temu App Secret |  [optional] |
-| **temuRegion** | **kotlin.String** | Temu API endpoint Region. |  [optional] |
 
 
 <a id="CartId"></a>
@@ -172,6 +172,13 @@
 | Name | Value |
 | ---- | ----- |
 | cartId | 3DCart, 3DCartApi, AceShop, AmazonSP, AspDotNetStorefront, BigCartel, BigcommerceApi, Bol, CommerceHQ, Creloaded, Cscart, Cubecart, Demandware, EBay, Ecwid, EtsyAPIv3, Flipkart, Gambio, Hybris, JooCart, Lazada, LightSpeed, Magento1212, Magento2Api, MercadoLibre, MijoShop, Miva, Neto, Opencart14, Oscmax2, Oscommerce22ms2, Otto, Oxid, Pinnacle, Prestashop, PrestashopApi, SSPremium, Salla, Shopify, Shopee, Shoplazza, Shopline, Shopware, ShopwareApi, Square, Squarespace, Tiendanube, TikTokShop, Tomatocart, Ubercart, Virtuemart, Volusion, WPecommerce, Walmart, WebAsyst, Wix, Woocommerce, WoocommerceApi, Xcart, Xtcommerce, XtcommerceVeyton, Zencart137, Zid, Zoey, Zoho |
+
+
+<a id="TemuRegion"></a>
+## Enum: temu_region
+| Name | Value |
+| ---- | ----- |
+| temuRegion | US, EU, GLOBAL |
 
 
 
