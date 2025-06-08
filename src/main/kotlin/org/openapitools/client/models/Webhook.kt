@@ -25,6 +25,7 @@ import com.squareup.moshi.JsonClass
  * @param id 
  * @param label 
  * @param storeId 
+ * @param langId 
  * @param active 
  * @param callback 
  * @param fields 
@@ -47,6 +48,9 @@ data class Webhook (
 
     @Json(name = "store_id")
     val storeId: kotlin.String? = null,
+
+    @Json(name = "lang_id")
+    val langId: kotlin.String? = null,
 
     @Json(name = "active")
     val active: kotlin.Boolean? = null,

@@ -50,8 +50,9 @@ class WebhookApiTest : ShouldSpec() {
             //val label : kotlin.String = Super webhook // kotlin.String | The name you give to the webhook
             //val fields : kotlin.String = id, name, description // kotlin.String | Fields the webhook should send
             //val active : kotlin.Boolean = true // kotlin.Boolean | Webhook status
+            //val langId : kotlin.String = 3 // kotlin.String | Language id
             //val storeId : kotlin.String = 1 // kotlin.String | Defines store id where the webhook should be assigned
-            //val result : BasketLiveShippingServiceCreate200Response = apiInstance.webhookCreate(entity, action, paramCallback, label, fields, active, storeId)
+            //val result : BasketLiveShippingServiceCreate200Response = apiInstance.webhookCreate(entity, action, paramCallback, label, fields, active, langId, storeId)
             //result shouldBe ("TODO")
         }
 
@@ -92,7 +93,8 @@ class WebhookApiTest : ShouldSpec() {
             //val label : kotlin.String = Super webhook // kotlin.String | The name you give to the webhook
             //val fields : kotlin.String = id, name, description // kotlin.String | Fields the webhook should send
             //val active : kotlin.Boolean = true // kotlin.Boolean | Webhook status
-            //val result : ProductImageUpdate200Response = apiInstance.webhookUpdate(id, paramCallback, label, fields, active)
+            //val langId : kotlin.String = 3 // kotlin.String | Language id
+            //val result : ProductImageUpdate200Response = apiInstance.webhookUpdate(id, paramCallback, label, fields, active, langId)
             //result shouldBe ("TODO")
         }
 

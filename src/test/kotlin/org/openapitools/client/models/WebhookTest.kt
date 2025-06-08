@@ -43,6 +43,12 @@ class WebhookTest : ShouldSpec() {
             //modelInstance.storeId shouldBe ("TODO")
         }
 
+        // to test the property `langId`
+        should("test langId") {
+            // uncomment below to test the property
+            //modelInstance.langId shouldBe ("TODO")
+        }
+
         // to test the property `active`
         should("test active") {
             // uncomment below to test the property

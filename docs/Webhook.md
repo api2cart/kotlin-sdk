@@ -7,6 +7,7 @@
 | **id** | **kotlin.Int** |  |  [optional] |
 | **label** | **kotlin.String** |  |  [optional] |
 | **storeId** | **kotlin.String** |  |  [optional] |
+| **langId** | **kotlin.String** |  |  [optional] |
 | **active** | **kotlin.Boolean** |  |  [optional] |
 | **callback** | **kotlin.String** |  |  [optional] |
 | **fields** | **kotlin.String** |  |  [optional] |

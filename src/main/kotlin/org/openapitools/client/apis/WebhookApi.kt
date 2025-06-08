@@ -147,6 +147,7 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional, default to "force_all")
      * @param active Webhook status (optional, default to true)
+     * @param langId Language id (optional)
      * @param storeId Defines store id where the webhook should be assigned (optional)
      * @return BasketLiveShippingServiceCreate200Response
      * @throws IllegalStateException If the request is not correctly configured
@@ -157,8 +158,8 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun webhookCreate(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String? = null, label: kotlin.String? = null, fields: kotlin.String? = "force_all", active: kotlin.Boolean? = true, storeId: kotlin.String? = null) : BasketLiveShippingServiceCreate200Response {
-        val localVarResponse = webhookCreateWithHttpInfo(entity = entity, action = action, paramCallback = paramCallback, label = label, fields = fields, active = active, storeId = storeId)
+    fun webhookCreate(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String? = null, label: kotlin.String? = null, fields: kotlin.String? = "force_all", active: kotlin.Boolean? = true, langId: kotlin.String? = null, storeId: kotlin.String? = null) : BasketLiveShippingServiceCreate200Response {
+        val localVarResponse = webhookCreateWithHttpInfo(entity = entity, action = action, paramCallback = paramCallback, label = label, fields = fields, active = active, langId = langId, storeId = storeId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as BasketLiveShippingServiceCreate200Response
@@ -184,6 +185,7 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional, default to "force_all")
      * @param active Webhook status (optional, default to true)
+     * @param langId Language id (optional)
      * @param storeId Defines store id where the webhook should be assigned (optional)
      * @return ApiResponse<BasketLiveShippingServiceCreate200Response?>
      * @throws IllegalStateException If the request is not correctly configured
@@ -191,8 +193,8 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun webhookCreateWithHttpInfo(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?, storeId: kotlin.String?) : ApiResponse<BasketLiveShippingServiceCreate200Response?> {
-        val localVariableConfig = webhookCreateRequestConfig(entity = entity, action = action, paramCallback = paramCallback, label = label, fields = fields, active = active, storeId = storeId)
+    fun webhookCreateWithHttpInfo(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?, storeId: kotlin.String?) : ApiResponse<BasketLiveShippingServiceCreate200Response?> {
+        val localVariableConfig = webhookCreateRequestConfig(entity = entity, action = action, paramCallback = paramCallback, label = label, fields = fields, active = active, langId = langId, storeId = storeId)
 
         return request<Unit, BasketLiveShippingServiceCreate200Response>(
             localVariableConfig
@@ -208,10 +210,11 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional, default to "force_all")
      * @param active Webhook status (optional, default to true)
+     * @param langId Language id (optional)
      * @param storeId Defines store id where the webhook should be assigned (optional)
      * @return RequestConfig
      */
-    fun webhookCreateRequestConfig(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun webhookCreateRequestConfig(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -228,6 +231,9 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (active != null) {
                     put("active", listOf(active.toString()))
+                }
+                if (langId != null) {
+                    put("lang_id", listOf(langId.toString()))
                 }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
@@ -508,6 +514,7 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional)
      * @param active Webhook status (optional)
+     * @param langId Language id (optional)
      * @return ProductImageUpdate200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -517,8 +524,8 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun webhookUpdate(id: kotlin.String, paramCallback: kotlin.String? = null, label: kotlin.String? = null, fields: kotlin.String? = null, active: kotlin.Boolean? = null) : ProductImageUpdate200Response {
-        val localVarResponse = webhookUpdateWithHttpInfo(id = id, paramCallback = paramCallback, label = label, fields = fields, active = active)
+    fun webhookUpdate(id: kotlin.String, paramCallback: kotlin.String? = null, label: kotlin.String? = null, fields: kotlin.String? = null, active: kotlin.Boolean? = null, langId: kotlin.String? = null) : ProductImageUpdate200Response {
+        val localVarResponse = webhookUpdateWithHttpInfo(id = id, paramCallback = paramCallback, label = label, fields = fields, active = active, langId = langId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ProductImageUpdate200Response
@@ -543,14 +550,15 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional)
      * @param active Webhook status (optional)
+     * @param langId Language id (optional)
      * @return ApiResponse<ProductImageUpdate200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun webhookUpdateWithHttpInfo(id: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?) : ApiResponse<ProductImageUpdate200Response?> {
-        val localVariableConfig = webhookUpdateRequestConfig(id = id, paramCallback = paramCallback, label = label, fields = fields, active = active)
+    fun webhookUpdateWithHttpInfo(id: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?) : ApiResponse<ProductImageUpdate200Response?> {
+        val localVariableConfig = webhookUpdateRequestConfig(id = id, paramCallback = paramCallback, label = label, fields = fields, active = active, langId = langId)
 
         return request<Unit, ProductImageUpdate200Response>(
             localVariableConfig
@@ -565,9 +573,10 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional)
      * @param active Webhook status (optional)
+     * @param langId Language id (optional)
      * @return RequestConfig
      */
-    fun webhookUpdateRequestConfig(id: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun webhookUpdateRequestConfig(id: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -583,6 +592,9 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (active != null) {
                     put("active", listOf(active.toString()))
+                }
+                if (langId != null) {
+                    put("lang_id", listOf(langId.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
