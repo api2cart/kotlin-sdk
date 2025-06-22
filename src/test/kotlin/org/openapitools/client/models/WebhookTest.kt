@@ -67,6 +67,12 @@ class WebhookTest : ShouldSpec() {
             //modelInstance.fields shouldBe ("TODO")
         }
 
+        // to test the property `responseFields`
+        should("test responseFields") {
+            // uncomment below to test the property
+            //modelInstance.responseFields shouldBe ("TODO")
+        }
+
         // to test the property `createdAt`
         should("test createdAt") {
             // uncomment below to test the property

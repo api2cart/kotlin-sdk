@@ -55,6 +55,7 @@ import com.squareup.moshi.JsonClass
  * @param availForSale 
  * @param allowBackorders 
  * @param inStock 
+ * @param onSale 
  * @param manageStock 
  * @param inventoryLevel 
  * @param inventory 
@@ -159,6 +160,9 @@ data class Child (
 
     @Json(name = "in_stock")
     val inStock: kotlin.Boolean? = null,
+
+    @Json(name = "on_sale")
+    val onSale: kotlin.Boolean? = null,
 
     @Json(name = "manage_stock")
     val manageStock: kotlin.Boolean? = null,

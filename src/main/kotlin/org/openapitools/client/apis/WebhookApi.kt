@@ -146,6 +146,7 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param paramCallback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional, default to "force_all")
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param active Webhook status (optional, default to true)
      * @param langId Language id (optional)
      * @param storeId Defines store id where the webhook should be assigned (optional)
@@ -158,8 +159,8 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun webhookCreate(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String? = null, label: kotlin.String? = null, fields: kotlin.String? = "force_all", active: kotlin.Boolean? = true, langId: kotlin.String? = null, storeId: kotlin.String? = null) : BasketLiveShippingServiceCreate200Response {
-        val localVarResponse = webhookCreateWithHttpInfo(entity = entity, action = action, paramCallback = paramCallback, label = label, fields = fields, active = active, langId = langId, storeId = storeId)
+    fun webhookCreate(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String? = null, label: kotlin.String? = null, fields: kotlin.String? = "force_all", responseFields: kotlin.String? = null, active: kotlin.Boolean? = true, langId: kotlin.String? = null, storeId: kotlin.String? = null) : BasketLiveShippingServiceCreate200Response {
+        val localVarResponse = webhookCreateWithHttpInfo(entity = entity, action = action, paramCallback = paramCallback, label = label, fields = fields, responseFields = responseFields, active = active, langId = langId, storeId = storeId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as BasketLiveShippingServiceCreate200Response
@@ -184,6 +185,7 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param paramCallback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional, default to "force_all")
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param active Webhook status (optional, default to true)
      * @param langId Language id (optional)
      * @param storeId Defines store id where the webhook should be assigned (optional)
@@ -193,8 +195,8 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun webhookCreateWithHttpInfo(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?, storeId: kotlin.String?) : ApiResponse<BasketLiveShippingServiceCreate200Response?> {
-        val localVariableConfig = webhookCreateRequestConfig(entity = entity, action = action, paramCallback = paramCallback, label = label, fields = fields, active = active, langId = langId, storeId = storeId)
+    fun webhookCreateWithHttpInfo(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, responseFields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?, storeId: kotlin.String?) : ApiResponse<BasketLiveShippingServiceCreate200Response?> {
+        val localVariableConfig = webhookCreateRequestConfig(entity = entity, action = action, paramCallback = paramCallback, label = label, fields = fields, responseFields = responseFields, active = active, langId = langId, storeId = storeId)
 
         return request<Unit, BasketLiveShippingServiceCreate200Response>(
             localVariableConfig
@@ -209,12 +211,13 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param paramCallback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional, default to "force_all")
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param active Webhook status (optional, default to true)
      * @param langId Language id (optional)
      * @param storeId Defines store id where the webhook should be assigned (optional)
      * @return RequestConfig
      */
-    fun webhookCreateRequestConfig(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun webhookCreateRequestConfig(entity: kotlin.String, action: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, responseFields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -228,6 +231,9 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (fields != null) {
                     put("fields", listOf(fields.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (active != null) {
                     put("active", listOf(active.toString()))
@@ -513,6 +519,7 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param paramCallback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param active Webhook status (optional)
      * @param langId Language id (optional)
      * @return ProductImageUpdate200Response
@@ -524,8 +531,8 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun webhookUpdate(id: kotlin.String, paramCallback: kotlin.String? = null, label: kotlin.String? = null, fields: kotlin.String? = null, active: kotlin.Boolean? = null, langId: kotlin.String? = null) : ProductImageUpdate200Response {
-        val localVarResponse = webhookUpdateWithHttpInfo(id = id, paramCallback = paramCallback, label = label, fields = fields, active = active, langId = langId)
+    fun webhookUpdate(id: kotlin.String, paramCallback: kotlin.String? = null, label: kotlin.String? = null, fields: kotlin.String? = null, responseFields: kotlin.String? = null, active: kotlin.Boolean? = null, langId: kotlin.String? = null) : ProductImageUpdate200Response {
+        val localVarResponse = webhookUpdateWithHttpInfo(id = id, paramCallback = paramCallback, label = label, fields = fields, responseFields = responseFields, active = active, langId = langId)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ProductImageUpdate200Response
@@ -549,6 +556,7 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param paramCallback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param active Webhook status (optional)
      * @param langId Language id (optional)
      * @return ApiResponse<ProductImageUpdate200Response?>
@@ -557,8 +565,8 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun webhookUpdateWithHttpInfo(id: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?) : ApiResponse<ProductImageUpdate200Response?> {
-        val localVariableConfig = webhookUpdateRequestConfig(id = id, paramCallback = paramCallback, label = label, fields = fields, active = active, langId = langId)
+    fun webhookUpdateWithHttpInfo(id: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, responseFields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?) : ApiResponse<ProductImageUpdate200Response?> {
+        val localVariableConfig = webhookUpdateRequestConfig(id = id, paramCallback = paramCallback, label = label, fields = fields, responseFields = responseFields, active = active, langId = langId)
 
         return request<Unit, ProductImageUpdate200Response>(
             localVariableConfig
@@ -572,11 +580,12 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param paramCallback Callback url that returns shipping rates. It should be able to accept POST requests with json data. (optional)
      * @param label The name you give to the webhook (optional)
      * @param fields Fields the webhook should send (optional)
+     * @param responseFields Set this parameter in order to choose which entity fields you want to retrieve (optional)
      * @param active Webhook status (optional)
      * @param langId Language id (optional)
      * @return RequestConfig
      */
-    fun webhookUpdateRequestConfig(id: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?) : RequestConfig<Unit> {
+    fun webhookUpdateRequestConfig(id: kotlin.String, paramCallback: kotlin.String?, label: kotlin.String?, fields: kotlin.String?, responseFields: kotlin.String?, active: kotlin.Boolean?, langId: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -589,6 +598,9 @@ class WebhookApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (fields != null) {
                     put("fields", listOf(fields.toString()))
+                }
+                if (responseFields != null) {
+                    put("response_fields", listOf(responseFields.toString()))
                 }
                 if (active != null) {
                     put("active", listOf(active.toString()))

@@ -29,6 +29,7 @@ import com.squareup.moshi.JsonClass
  * @param active 
  * @param callback 
  * @param fields 
+ * @param responseFields 
  * @param createdAt 
  * @param updatedAt 
  * @param entity 
@@ -60,6 +61,9 @@ data class Webhook (
 
     @Json(name = "fields")
     val fields: kotlin.String? = null,
+
+    @Json(name = "response_fields")
+    val responseFields: kotlin.String? = null,
 
     @Json(name = "created_at")
     val createdAt: kotlin.String? = null,

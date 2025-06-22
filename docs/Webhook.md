@@ -11,6 +11,7 @@
 | **active** | **kotlin.Boolean** |  |  [optional] |
 | **callback** | **kotlin.String** |  |  [optional] |
 | **fields** | **kotlin.String** |  |  [optional] |
+| **responseFields** | **kotlin.String** |  |  [optional] |
 | **createdAt** | **kotlin.String** |  |  [optional] |
 | **updatedAt** | **kotlin.String** |  |  [optional] |
 | **entity** | **kotlin.String** |  |  [optional] |

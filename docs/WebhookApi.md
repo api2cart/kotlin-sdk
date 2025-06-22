@@ -70,7 +70,7 @@ Configure ApiKeyAuth:
 
 <a id="webhookCreate"></a>
 # **webhookCreate**
-> BasketLiveShippingServiceCreate200Response webhookCreate(entity, action, paramCallback, label, fields, active, langId, storeId)
+> BasketLiveShippingServiceCreate200Response webhookCreate(entity, action, paramCallback, label, fields, responseFields, active, langId, storeId)
 
 webhook.create
 
@@ -88,11 +88,12 @@ val action : kotlin.String = add // kotlin.String | Specify what action (event) 
 val paramCallback : kotlin.String = https://example.com/callback // kotlin.String | Callback url that returns shipping rates. It should be able to accept POST requests with json data.
 val label : kotlin.String = Super webhook // kotlin.String | The name you give to the webhook
 val fields : kotlin.String = id, name, description // kotlin.String | Fields the webhook should send
+val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val active : kotlin.Boolean = true // kotlin.Boolean | Webhook status
 val langId : kotlin.String = 3 // kotlin.String | Language id
 val storeId : kotlin.String = 1 // kotlin.String | Defines store id where the webhook should be assigned
 try {
-    val result : BasketLiveShippingServiceCreate200Response = apiInstance.webhookCreate(entity, action, paramCallback, label, fields, active, langId, storeId)
+    val result : BasketLiveShippingServiceCreate200Response = apiInstance.webhookCreate(entity, action, paramCallback, label, fields, responseFields, active, langId, storeId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WebhookApi#webhookCreate")
@@ -109,6 +110,7 @@ try {
 | **paramCallback** | **kotlin.String**| Callback url that returns shipping rates. It should be able to accept POST requests with json data. | [optional] |
 | **label** | **kotlin.String**| The name you give to the webhook | [optional] |
 | **fields** | **kotlin.String**| Fields the webhook should send | [optional] [default to &quot;force_all&quot;] |
+| **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **active** | **kotlin.Boolean**| Webhook status | [optional] [default to true] |
 | **langId** | **kotlin.String**| Language id | [optional] |
 | Name | Type | Description  | Notes |
@@ -301,7 +303,7 @@ Configure ApiKeyAuth:
 
 <a id="webhookUpdate"></a>
 # **webhookUpdate**
-> ProductImageUpdate200Response webhookUpdate(id, paramCallback, label, fields, active, langId)
+> ProductImageUpdate200Response webhookUpdate(id, paramCallback, label, fields, responseFields, active, langId)
 
 webhook.update
 
@@ -318,10 +320,11 @@ val id : kotlin.String = 25 // kotlin.String | Webhook id
 val paramCallback : kotlin.String = https://example.com/callback // kotlin.String | Callback url that returns shipping rates. It should be able to accept POST requests with json data.
 val label : kotlin.String = Super webhook // kotlin.String | The name you give to the webhook
 val fields : kotlin.String = id, name, description // kotlin.String | Fields the webhook should send
+val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val active : kotlin.Boolean = true // kotlin.Boolean | Webhook status
 val langId : kotlin.String = 3 // kotlin.String | Language id
 try {
-    val result : ProductImageUpdate200Response = apiInstance.webhookUpdate(id, paramCallback, label, fields, active, langId)
+    val result : ProductImageUpdate200Response = apiInstance.webhookUpdate(id, paramCallback, label, fields, responseFields, active, langId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling WebhookApi#webhookUpdate")
@@ -337,6 +340,7 @@ try {
 | **paramCallback** | **kotlin.String**| Callback url that returns shipping rates. It should be able to accept POST requests with json data. | [optional] |
 | **label** | **kotlin.String**| The name you give to the webhook | [optional] |
 | **fields** | **kotlin.String**| Fields the webhook should send | [optional] |
+| **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **active** | **kotlin.Boolean**| Webhook status | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |

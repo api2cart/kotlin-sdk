@@ -49,10 +49,11 @@ class WebhookApiTest : ShouldSpec() {
             //val paramCallback : kotlin.String = https://example.com/callback // kotlin.String | Callback url that returns shipping rates. It should be able to accept POST requests with json data.
             //val label : kotlin.String = Super webhook // kotlin.String | The name you give to the webhook
             //val fields : kotlin.String = id, name, description // kotlin.String | Fields the webhook should send
+            //val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val active : kotlin.Boolean = true // kotlin.Boolean | Webhook status
             //val langId : kotlin.String = 3 // kotlin.String | Language id
             //val storeId : kotlin.String = 1 // kotlin.String | Defines store id where the webhook should be assigned
-            //val result : BasketLiveShippingServiceCreate200Response = apiInstance.webhookCreate(entity, action, paramCallback, label, fields, active, langId, storeId)
+            //val result : BasketLiveShippingServiceCreate200Response = apiInstance.webhookCreate(entity, action, paramCallback, label, fields, responseFields, active, langId, storeId)
             //result shouldBe ("TODO")
         }
 
@@ -92,9 +93,10 @@ class WebhookApiTest : ShouldSpec() {
             //val paramCallback : kotlin.String = https://example.com/callback // kotlin.String | Callback url that returns shipping rates. It should be able to accept POST requests with json data.
             //val label : kotlin.String = Super webhook // kotlin.String | The name you give to the webhook
             //val fields : kotlin.String = id, name, description // kotlin.String | Fields the webhook should send
+            //val responseFields : kotlin.String = {result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val active : kotlin.Boolean = true // kotlin.Boolean | Webhook status
             //val langId : kotlin.String = 3 // kotlin.String | Language id
-            //val result : ProductImageUpdate200Response = apiInstance.webhookUpdate(id, paramCallback, label, fields, active, langId)
+            //val result : ProductImageUpdate200Response = apiInstance.webhookUpdate(id, paramCallback, label, fields, responseFields, active, langId)
             //result shouldBe ("TODO")
         }
 

@@ -31,6 +31,7 @@
 | **availForSale** | **kotlin.Boolean** |  |  [optional] |
 | **allowBackorders** | **kotlin.Boolean** |  |  [optional] |
 | **inStock** | **kotlin.Boolean** |  |  [optional] |
+| **onSale** | **kotlin.Boolean** |  |  [optional] |
 | **manageStock** | **kotlin.Boolean** |  |  [optional] |
 | **inventoryLevel** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
 | **inventory** | [**kotlin.collections.List&lt;ProductInventory&gt;**](ProductInventory.md) |  |  [optional] |
