@@ -657,6 +657,12 @@ class ProductAddTest : ShouldSpec() {
             //modelInstance.listingType shouldBe ("TODO")
         }
 
+        // to test the property `categoryType` - Specifies the type of category (e.g., apparel or other) for the product being added.
+        should("test categoryType") {
+            // uncomment below to test the property
+            //modelInstance.categoryType shouldBe ("TODO")
+        }
+
         // to test the property `returnAccepted` - Indicates whether the seller allows the buyer to return the item.
         should("test returnAccepted") {
             // uncomment below to test the property

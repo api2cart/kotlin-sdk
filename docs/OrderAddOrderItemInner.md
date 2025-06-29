@@ -12,6 +12,7 @@
 | **orderItemWeight** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Defines orders specified by order item weight |  [optional] |
 | **orderItemVariantId** | **kotlin.String** | Ordered product variant. Where x is order item ID |  [optional] |
 | **orderItemTax** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Percentage of tax for product order |  [optional] |
+| **orderItemTaxClass** | **kotlin.String** | Id of the tax class of product. |  [optional] |
 | **orderItemPriceIncludesTax** | **kotlin.Boolean** | Defines if item price includes tax |  [optional] |
 | **orderItemParent** | **kotlin.Int** | Index of the parent grouped/bundle product |  [optional] |
 | **orderItemParentOptionName** | **kotlin.String** | Option name of the parent grouped/bundle product |  [optional] |

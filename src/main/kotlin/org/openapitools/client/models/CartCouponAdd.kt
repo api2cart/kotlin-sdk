@@ -39,6 +39,7 @@ import com.squareup.moshi.JsonClass
  * @param actionConditionValue Defines condition attribute value/s. Can be comma separated string.
  * @param includeTax Indicates whether to apply a discount for taxes.
  * @param storeId Store Id
+ * @param freeCashOnDelivery Defines whether the coupon provides free cash on delivery
  */
 
 
@@ -110,7 +111,11 @@ data class CartCouponAdd (
 
     /* Store Id */
     @Json(name = "store_id")
-    val storeId: kotlin.String? = null
+    val storeId: kotlin.String? = null,
+
+    /* Defines whether the coupon provides free cash on delivery */
+    @Json(name = "free_cash_on_delivery")
+    val freeCashOnDelivery: kotlin.Boolean? = null
 
 ) {
 

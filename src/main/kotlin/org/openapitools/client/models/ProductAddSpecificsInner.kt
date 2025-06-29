@@ -30,6 +30,7 @@ import com.squareup.moshi.JsonClass
  * @param propertyValues 
  * @param usedForVariations 
  * @param scaleId 
+ * @param inputValue 
  * @param foodDetails 
  * @param groupProductsDetails 
  * @param bookingDetails 
@@ -52,6 +53,9 @@ data class ProductAddSpecificsInner (
 
     @Json(name = "scale_id")
     val scaleId: kotlin.Int? = null,
+
+    @Json(name = "input_value")
+    val inputValue: kotlin.String? = null,
 
     @Json(name = "food_details")
     val foodDetails: ProductAddSpecificsInnerFoodDetails? = null,

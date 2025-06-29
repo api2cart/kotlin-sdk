@@ -127,5 +127,11 @@ class CartCouponAddTest : ShouldSpec() {
             //modelInstance.storeId shouldBe ("TODO")
         }
 
+        // to test the property `freeCashOnDelivery` - Defines whether the coupon provides free cash on delivery
+        should("test freeCashOnDelivery") {
+            // uncomment below to test the property
+            //modelInstance.freeCashOnDelivery shouldBe ("TODO")
+        }
+
     }
 }

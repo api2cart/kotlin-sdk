@@ -139,6 +139,7 @@ import com.squareup.moshi.JsonClass
  * @param logisticInfo Defines product's logistic channel settings
  * @param listingDuration Describes the number of days the seller wants the listing to be active. Look at cart.info method response for allowed values.
  * @param listingType Indicates the selling format of the marketplace listing.
+ * @param categoryType Specifies the type of category (e.g., apparel or other) for the product being added.
  * @param returnAccepted Indicates whether the seller allows the buyer to return the item.
  * @param sellerProfiles 
  * @param auctionConfidentialityLevel This allows buyers to remain anonymous when the bid or buy an item.
@@ -563,6 +564,10 @@ data class ProductAdd (
     /* Indicates the selling format of the marketplace listing. */
     @Json(name = "listing_type")
     val listingType: kotlin.String? = "FixedPrice",
+
+    /* Specifies the type of category (e.g., apparel or other) for the product being added. */
+    @Json(name = "category_type")
+    val categoryType: kotlin.String? = null,
 
     /* Indicates whether the seller allows the buyer to return the item. */
     @Json(name = "return_accepted")

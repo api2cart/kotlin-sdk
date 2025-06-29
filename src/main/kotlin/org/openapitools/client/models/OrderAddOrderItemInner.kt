@@ -32,6 +32,7 @@ import com.squareup.moshi.JsonClass
  * @param orderItemWeight Defines orders specified by order item weight
  * @param orderItemVariantId Ordered product variant. Where x is order item ID
  * @param orderItemTax Percentage of tax for product order
+ * @param orderItemTaxClass Id of the tax class of product.
  * @param orderItemPriceIncludesTax Defines if item price includes tax
  * @param orderItemParent Index of the parent grouped/bundle product
  * @param orderItemParentOptionName Option name of the parent grouped/bundle product
@@ -75,6 +76,10 @@ data class OrderAddOrderItemInner (
     /* Percentage of tax for product order */
     @Json(name = "order_item_tax")
     val orderItemTax: java.math.BigDecimal? = java.math.BigDecimal("0"),
+
+    /* Id of the tax class of product. */
+    @Json(name = "order_item_tax_class")
+    val orderItemTaxClass: kotlin.String? = null,
 
     /* Defines if item price includes tax */
     @Json(name = "order_item_price_includes_tax")

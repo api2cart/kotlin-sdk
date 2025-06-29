@@ -1907,7 +1907,7 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
 
     /**
      * order.shipment.list
-     * Get list of shipments by orders.
+     * Get list of shipments per order.
      * @param orderId Retrieves shipments specified by order id
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
@@ -1949,7 +1949,7 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
 
     /**
      * order.shipment.list
-     * Get list of shipments by orders.
+     * Get list of shipments per order.
      * @param orderId Retrieves shipments specified by order id
      * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
      * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)

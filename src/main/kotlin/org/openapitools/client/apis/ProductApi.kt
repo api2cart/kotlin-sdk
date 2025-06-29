@@ -1230,6 +1230,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
+     * @param visible Filter items by visibility status (optional, default to "everywhere")
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts products that are searched specified by field (optional)
      * @param reportRequestId Report request id (optional)
@@ -1245,8 +1246,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productCount(productIds: kotlin.String? = null, sinceId: kotlin.String? = null, categoriesIds: kotlin.String? = null, categoryId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, availView: kotlin.Boolean? = null, availSale: kotlin.Boolean? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, brandName: kotlin.String? = null, productAttributes: kotlin.collections.List<kotlin.String>? = null, status: kotlin.String? = null, type: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, reportRequestId: kotlin.String? = null, returnGlobal: kotlin.Boolean? = false, disableReportCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : ProductCount200Response {
-        val localVarResponse = productCountWithHttpInfo(productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, returnGlobal = returnGlobal, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
+    fun productCount(productIds: kotlin.String? = null, sinceId: kotlin.String? = null, categoriesIds: kotlin.String? = null, categoryId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, availView: kotlin.Boolean? = null, availSale: kotlin.Boolean? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, brandName: kotlin.String? = null, productAttributes: kotlin.collections.List<kotlin.String>? = null, status: kotlin.String? = null, type: kotlin.String? = null, visible: kotlin.String? = "everywhere", findValue: kotlin.String? = null, findWhere: kotlin.String? = null, reportRequestId: kotlin.String? = null, returnGlobal: kotlin.Boolean? = false, disableReportCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : ProductCount200Response {
+        val localVarResponse = productCountWithHttpInfo(productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, brandName = brandName, productAttributes = productAttributes, status = status, type = type, visible = visible, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, returnGlobal = returnGlobal, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ProductCount200Response
@@ -1282,6 +1283,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
+     * @param visible Filter items by visibility status (optional, default to "everywhere")
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts products that are searched specified by field (optional)
      * @param reportRequestId Report request id (optional)
@@ -1294,8 +1296,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productCountWithHttpInfo(productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, returnGlobal: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ProductCount200Response?> {
-        val localVariableConfig = productCountRequestConfig(productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, returnGlobal = returnGlobal, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
+    fun productCountWithHttpInfo(productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, visible: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, returnGlobal: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ProductCount200Response?> {
+        val localVariableConfig = productCountRequestConfig(productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, brandName = brandName, productAttributes = productAttributes, status = status, type = type, visible = visible, findValue = findValue, findWhere = findWhere, reportRequestId = reportRequestId, returnGlobal = returnGlobal, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return request<Unit, ProductCount200Response>(
             localVariableConfig
@@ -1321,6 +1323,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
+     * @param visible Filter items by visibility status (optional, default to "everywhere")
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts products that are searched specified by field (optional)
      * @param reportRequestId Report request id (optional)
@@ -1329,7 +1332,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return RequestConfig
      */
-    fun productCountRequestConfig(productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, returnGlobal: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun productCountRequestConfig(productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, visible: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, reportRequestId: kotlin.String?, returnGlobal: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -1380,6 +1383,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (type != null) {
                     put("type", listOf(type.toString()))
+                }
+                if (visible != null) {
+                    put("visible", listOf(visible.toString()))
                 }
                 if (findValue != null) {
                     put("find_value", listOf(findValue.toString()))
@@ -2402,6 +2408,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
+     * @param visible Filter items by visibility status (optional, default to "everywhere")
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Product search that is specified by field (optional)
      * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
@@ -2423,8 +2430,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun productList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, productIds: kotlin.String? = null, sinceId: kotlin.String? = null, categoriesIds: kotlin.String? = null, categoryId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, currencyId: kotlin.String? = null, availView: kotlin.Boolean? = null, availSale: kotlin.Boolean? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, sku: kotlin.String? = null, brandName: kotlin.String? = null, productAttributes: kotlin.collections.List<kotlin.String>? = null, status: kotlin.String? = null, type: kotlin.String? = null, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, returnGlobal: kotlin.Boolean? = false, params: kotlin.String? = "id,name,description,price,categories_ids", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, sortBy: kotlin.String? = "id", sortDirection: kotlin.String? = "asc", reportRequestId: kotlin.String? = null, disableCache: kotlin.Boolean? = false, disableReportCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : ModelResponseProductList {
-        val localVarResponse = productListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, currencyId = currencyId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sku = sku, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, returnGlobal = returnGlobal, params = params, responseFields = responseFields, exclude = exclude, sortBy = sortBy, sortDirection = sortDirection, reportRequestId = reportRequestId, disableCache = disableCache, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
+    fun productList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, productIds: kotlin.String? = null, sinceId: kotlin.String? = null, categoriesIds: kotlin.String? = null, categoryId: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, currencyId: kotlin.String? = null, availView: kotlin.Boolean? = null, availSale: kotlin.Boolean? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, sku: kotlin.String? = null, brandName: kotlin.String? = null, productAttributes: kotlin.collections.List<kotlin.String>? = null, status: kotlin.String? = null, type: kotlin.String? = null, visible: kotlin.String? = "everywhere", findValue: kotlin.String? = null, findWhere: kotlin.String? = null, returnGlobal: kotlin.Boolean? = false, params: kotlin.String? = "id,name,description,price,categories_ids", responseFields: kotlin.String? = null, exclude: kotlin.String? = null, sortBy: kotlin.String? = "id", sortDirection: kotlin.String? = "asc", reportRequestId: kotlin.String? = null, disableCache: kotlin.Boolean? = false, disableReportCache: kotlin.Boolean? = false, useLatestApiVersion: kotlin.Boolean? = false) : ModelResponseProductList {
+        val localVarResponse = productListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, currencyId = currencyId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sku = sku, brandName = brandName, productAttributes = productAttributes, status = status, type = type, visible = visible, findValue = findValue, findWhere = findWhere, returnGlobal = returnGlobal, params = params, responseFields = responseFields, exclude = exclude, sortBy = sortBy, sortDirection = sortDirection, reportRequestId = reportRequestId, disableCache = disableCache, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseProductList
@@ -2465,6 +2472,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
+     * @param visible Filter items by visibility status (optional, default to "everywhere")
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Product search that is specified by field (optional)
      * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
@@ -2483,8 +2491,8 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun productListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sku: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, returnGlobal: kotlin.Boolean?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, reportRequestId: kotlin.String?, disableCache: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ModelResponseProductList?> {
-        val localVariableConfig = productListRequestConfig(start = start, count = count, pageCursor = pageCursor, productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, currencyId = currencyId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sku = sku, brandName = brandName, productAttributes = productAttributes, status = status, type = type, findValue = findValue, findWhere = findWhere, returnGlobal = returnGlobal, params = params, responseFields = responseFields, exclude = exclude, sortBy = sortBy, sortDirection = sortDirection, reportRequestId = reportRequestId, disableCache = disableCache, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
+    fun productListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sku: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, visible: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, returnGlobal: kotlin.Boolean?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, reportRequestId: kotlin.String?, disableCache: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : ApiResponse<ModelResponseProductList?> {
+        val localVariableConfig = productListRequestConfig(start = start, count = count, pageCursor = pageCursor, productIds = productIds, sinceId = sinceId, categoriesIds = categoriesIds, categoryId = categoryId, storeId = storeId, langId = langId, currencyId = currencyId, availView = availView, availSale = availSale, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sku = sku, brandName = brandName, productAttributes = productAttributes, status = status, type = type, visible = visible, findValue = findValue, findWhere = findWhere, returnGlobal = returnGlobal, params = params, responseFields = responseFields, exclude = exclude, sortBy = sortBy, sortDirection = sortDirection, reportRequestId = reportRequestId, disableCache = disableCache, disableReportCache = disableReportCache, useLatestApiVersion = useLatestApiVersion)
 
         return request<Unit, ModelResponseProductList>(
             localVariableConfig
@@ -2515,6 +2523,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param productAttributes Defines product attributes (optional)
      * @param status Defines product&#39;s status (optional)
      * @param type Defines products&#39;s type (optional)
+     * @param visible Filter items by visibility status (optional, default to "everywhere")
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Product search that is specified by field (optional)
      * @param returnGlobal Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. (optional, default to false)
@@ -2529,7 +2538,7 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
      * @param useLatestApiVersion Use the latest platform API version (optional, default to false)
      * @return RequestConfig
      */
-    fun productListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sku: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, returnGlobal: kotlin.Boolean?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, reportRequestId: kotlin.String?, disableCache: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
+    fun productListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, productIds: kotlin.String?, sinceId: kotlin.String?, categoriesIds: kotlin.String?, categoryId: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, currencyId: kotlin.String?, availView: kotlin.Boolean?, availSale: kotlin.Boolean?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sku: kotlin.String?, brandName: kotlin.String?, productAttributes: kotlin.collections.List<kotlin.String>?, status: kotlin.String?, type: kotlin.String?, visible: kotlin.String?, findValue: kotlin.String?, findWhere: kotlin.String?, returnGlobal: kotlin.Boolean?, params: kotlin.String?, responseFields: kotlin.String?, exclude: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, reportRequestId: kotlin.String?, disableCache: kotlin.Boolean?, disableReportCache: kotlin.Boolean?, useLatestApiVersion: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -2595,6 +2604,9 @@ class ProductApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory
                 }
                 if (type != null) {
                     put("type", listOf(type.toString()))
+                }
+                if (visible != null) {
+                    put("visible", listOf(visible.toString()))
                 }
                 if (findValue != null) {
                     put("find_value", listOf(findValue.toString()))

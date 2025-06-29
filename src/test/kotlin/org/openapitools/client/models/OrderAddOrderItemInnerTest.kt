@@ -75,6 +75,12 @@ class OrderAddOrderItemInnerTest : ShouldSpec() {
             //modelInstance.orderItemTax shouldBe ("TODO")
         }
 
+        // to test the property `orderItemTaxClass` - Id of the tax class of product.
+        should("test orderItemTaxClass") {
+            // uncomment below to test the property
+            //modelInstance.orderItemTaxClass shouldBe ("TODO")
+        }
+
         // to test the property `orderItemPriceIncludesTax` - Defines if item price includes tax
         should("test orderItemPriceIncludesTax") {
             // uncomment below to test the property

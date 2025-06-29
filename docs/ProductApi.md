@@ -678,7 +678,7 @@ Configure ApiKeyAuth:
 
 <a id="productCount"></a>
 # **productCount**
-> ProductCount200Response productCount(productIds, sinceId, categoriesIds, categoryId, storeId, langId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, brandName, productAttributes, status, type, findValue, findWhere, reportRequestId, returnGlobal, disableReportCache, useLatestApiVersion)
+> ProductCount200Response productCount(productIds, sinceId, categoriesIds, categoryId, storeId, langId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, brandName, productAttributes, status, type, visible, findValue, findWhere, reportRequestId, returnGlobal, disableReportCache, useLatestApiVersion)
 
 product.count
 
@@ -707,6 +707,7 @@ val brandName : kotlin.String = Abidas // kotlin.String | Retrieves brands speci
 val productAttributes : kotlin.collections.List<kotlin.String> = product_attributes[0][attribute_id]=132&product_attributes[0][values][0]=custom value 1&product_attributes[0][values][1]=custom value 2 // kotlin.collections.List<kotlin.String> | Defines product attributes
 val status : kotlin.String = disabled // kotlin.String | Defines product's status
 val type : kotlin.String = simple // kotlin.String | Defines products's type
+val visible : kotlin.String = everywhere // kotlin.String | Filter items by visibility status
 val findValue : kotlin.String = Phone // kotlin.String | Entity search that is specified by some value
 val findWhere : kotlin.String = name // kotlin.String | Counts products that are searched specified by field
 val reportRequestId : kotlin.String = 105245017661 // kotlin.String | Report request id
@@ -714,7 +715,7 @@ val returnGlobal : kotlin.Boolean = false // kotlin.Boolean | Determines the typ
 val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable report cache for current request
 val useLatestApiVersion : kotlin.Boolean = true // kotlin.Boolean | Use the latest platform API version
 try {
-    val result : ProductCount200Response = apiInstance.productCount(productIds, sinceId, categoriesIds, categoryId, storeId, langId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, brandName, productAttributes, status, type, findValue, findWhere, reportRequestId, returnGlobal, disableReportCache, useLatestApiVersion)
+    val result : ProductCount200Response = apiInstance.productCount(productIds, sinceId, categoriesIds, categoryId, storeId, langId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, brandName, productAttributes, status, type, visible, findValue, findWhere, reportRequestId, returnGlobal, disableReportCache, useLatestApiVersion)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProductApi#productCount")
@@ -742,6 +743,7 @@ try {
 | **productAttributes** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)| Defines product attributes | [optional] |
 | **status** | **kotlin.String**| Defines product&#39;s status | [optional] |
 | **type** | **kotlin.String**| Defines products&#39;s type | [optional] |
+| **visible** | **kotlin.String**| Filter items by visibility status | [optional] [default to &quot;everywhere&quot;] |
 | **findValue** | **kotlin.String**| Entity search that is specified by some value | [optional] |
 | **findWhere** | **kotlin.String**| Counts products that are searched specified by field | [optional] |
 | **reportRequestId** | **kotlin.String**| Report request id | [optional] |
@@ -1367,7 +1369,7 @@ Configure ApiKeyAuth:
 
 <a id="productList"></a>
 # **productList**
-> ModelResponseProductList productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion)
+> ModelResponseProductList productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion)
 
 product.list
 
@@ -1401,6 +1403,7 @@ val brandName : kotlin.String = Abidas // kotlin.String | Retrieves brands speci
 val productAttributes : kotlin.collections.List<kotlin.String> = product_attributes[0][attribute_id]=132&product_attributes[0][values][0]=custom value 1&product_attributes[0][values][1]=custom value 2 // kotlin.collections.List<kotlin.String> | Defines product attributes
 val status : kotlin.String = disabled // kotlin.String | Defines product's status
 val type : kotlin.String = simple // kotlin.String | Defines products's type
+val visible : kotlin.String = everywhere // kotlin.String | Filter items by visibility status
 val findValue : kotlin.String = Phone // kotlin.String | Entity search that is specified by some value
 val findWhere : kotlin.String = name // kotlin.String | Product search that is specified by field
 val returnGlobal : kotlin.Boolean = false // kotlin.Boolean | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
@@ -1414,7 +1417,7 @@ val disableCache : kotlin.Boolean = false // kotlin.Boolean | Disable cache for 
 val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable report cache for current request
 val useLatestApiVersion : kotlin.Boolean = true // kotlin.Boolean | Use the latest platform API version
 try {
-    val result : ModelResponseProductList = apiInstance.productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion)
+    val result : ModelResponseProductList = apiInstance.productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProductApi#productList")
@@ -1447,6 +1450,7 @@ try {
 | **productAttributes** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)| Defines product attributes | [optional] |
 | **status** | **kotlin.String**| Defines product&#39;s status | [optional] |
 | **type** | **kotlin.String**| Defines products&#39;s type | [optional] |
+| **visible** | **kotlin.String**| Filter items by visibility status | [optional] [default to &quot;everywhere&quot;] |
 | **findValue** | **kotlin.String**| Entity search that is specified by some value | [optional] |
 | **findWhere** | **kotlin.String**| Product search that is specified by field | [optional] |
 | **returnGlobal** | **kotlin.Boolean**| Determines the type of products to be returned. If set to &#39;true&#39;, only global products will be returned; if set to &#39;false&#39;, only local products will be returned. | [optional] [default to false] |

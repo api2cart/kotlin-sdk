@@ -58,6 +58,12 @@ class ProductAddSpecificsInnerTest : ShouldSpec() {
             //modelInstance.scaleId shouldBe ("TODO")
         }
 
+        // to test the property `inputValue`
+        should("test inputValue") {
+            // uncomment below to test the property
+            //modelInstance.inputValue shouldBe ("TODO")
+        }
+
         // to test the property `foodDetails`
         should("test foodDetails") {
             // uncomment below to test the property

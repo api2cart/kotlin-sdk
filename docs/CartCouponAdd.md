@@ -21,6 +21,7 @@
 | **actionConditionValue** | **kotlin.String** | Defines condition attribute value/s. Can be comma separated string. |  [optional] |
 | **includeTax** | **kotlin.Boolean** | Indicates whether to apply a discount for taxes. |  [optional] |
 | **storeId** | **kotlin.String** | Store Id |  [optional] |
+| **freeCashOnDelivery** | **kotlin.Boolean** | Defines whether the coupon provides free cash on delivery |  [optional] |
 
 
 <a id="ActionType"></a>

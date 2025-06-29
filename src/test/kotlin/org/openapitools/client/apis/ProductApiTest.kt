@@ -244,13 +244,14 @@ class ProductApiTest : ShouldSpec() {
             //val productAttributes : kotlin.collections.List<kotlin.String> = product_attributes[0][attribute_id]=132&product_attributes[0][values][0]=custom value 1&product_attributes[0][values][1]=custom value 2 // kotlin.collections.List<kotlin.String> | Defines product attributes
             //val status : kotlin.String = disabled // kotlin.String | Defines product's status
             //val type : kotlin.String = simple // kotlin.String | Defines products's type
+            //val visible : kotlin.String = everywhere // kotlin.String | Filter items by visibility status
             //val findValue : kotlin.String = Phone // kotlin.String | Entity search that is specified by some value
             //val findWhere : kotlin.String = name // kotlin.String | Counts products that are searched specified by field
             //val reportRequestId : kotlin.String = 105245017661 // kotlin.String | Report request id
             //val returnGlobal : kotlin.Boolean = false // kotlin.Boolean | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
             //val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable report cache for current request
             //val useLatestApiVersion : kotlin.Boolean = true // kotlin.Boolean | Use the latest platform API version
-            //val result : ProductCount200Response = apiInstance.productCount(productIds, sinceId, categoriesIds, categoryId, storeId, langId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, brandName, productAttributes, status, type, findValue, findWhere, reportRequestId, returnGlobal, disableReportCache, useLatestApiVersion)
+            //val result : ProductCount200Response = apiInstance.productCount(productIds, sinceId, categoriesIds, categoryId, storeId, langId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, brandName, productAttributes, status, type, visible, findValue, findWhere, reportRequestId, returnGlobal, disableReportCache, useLatestApiVersion)
             //result shouldBe ("TODO")
         }
 
@@ -396,6 +397,7 @@ class ProductApiTest : ShouldSpec() {
             //val productAttributes : kotlin.collections.List<kotlin.String> = product_attributes[0][attribute_id]=132&product_attributes[0][values][0]=custom value 1&product_attributes[0][values][1]=custom value 2 // kotlin.collections.List<kotlin.String> | Defines product attributes
             //val status : kotlin.String = disabled // kotlin.String | Defines product's status
             //val type : kotlin.String = simple // kotlin.String | Defines products's type
+            //val visible : kotlin.String = everywhere // kotlin.String | Filter items by visibility status
             //val findValue : kotlin.String = Phone // kotlin.String | Entity search that is specified by some value
             //val findWhere : kotlin.String = name // kotlin.String | Product search that is specified by field
             //val returnGlobal : kotlin.Boolean = false // kotlin.Boolean | Determines the type of products to be returned. If set to 'true', only global products will be returned; if set to 'false', only local products will be returned.
@@ -408,7 +410,7 @@ class ProductApiTest : ShouldSpec() {
             //val disableCache : kotlin.Boolean = false // kotlin.Boolean | Disable cache for current request
             //val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable report cache for current request
             //val useLatestApiVersion : kotlin.Boolean = true // kotlin.Boolean | Use the latest platform API version
-            //val result : ModelResponseProductList = apiInstance.productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion)
+            //val result : ModelResponseProductList = apiInstance.productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion)
             //result shouldBe ("TODO")
         }
 

@@ -9,6 +9,7 @@
 | **propertyValues** | **kotlin.collections.List&lt;kotlin.String&gt;** |  |  [optional] |
 | **usedForVariations** | **kotlin.Boolean** |  |  [optional] |
 | **scaleId** | **kotlin.Int** |  |  [optional] |
+| **inputValue** | **kotlin.String** |  |  [optional] |
 | **foodDetails** | [**ProductAddSpecificsInnerFoodDetails**](ProductAddSpecificsInnerFoodDetails.md) |  |  [optional] |
 | **groupProductsDetails** | [**kotlin.collections.List&lt;ProductAddSpecificsInnerGroupProductsDetailsInner&gt;**](ProductAddSpecificsInnerGroupProductsDetailsInner.md) |  |  [optional] |
 | **bookingDetails** | [**ProductAddSpecificsInnerBookingDetails**](ProductAddSpecificsInnerBookingDetails.md) |  |  [optional] |
