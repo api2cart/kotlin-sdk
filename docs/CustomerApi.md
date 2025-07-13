@@ -190,7 +190,7 @@ Configure ApiKeyAuth:
 
 <a id="customerCount"></a>
 # **customerCount**
-> CustomerCount200Response customerCount(ids, sinceId, customerListId, groupId, storeId, avail, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo)
+> CustomerCount200Response customerCount(ids, sinceId, customerListId, groupId, storeId, avail, includeGuests, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo)
 
 customer.count
 
@@ -209,6 +209,7 @@ val customerListId : kotlin.String = exampleListId // kotlin.String | The numeri
 val groupId : kotlin.String = 3 // kotlin.String | Customer group_id
 val storeId : kotlin.String = 1 // kotlin.String | Counts customer specified by store id
 val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
+val includeGuests : kotlin.Boolean = true // kotlin.Boolean | Indicates whether to include guest customers in the total count.
 val findValue : kotlin.String = mail@gmail.com // kotlin.String | Entity search that is specified by some value
 val findWhere : kotlin.String = email // kotlin.String | Counts customers that are searched specified by field
 val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
@@ -216,7 +217,7 @@ val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve 
 val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
 val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
 try {
-    val result : CustomerCount200Response = apiInstance.customerCount(ids, sinceId, customerListId, groupId, storeId, avail, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo)
+    val result : CustomerCount200Response = apiInstance.customerCount(ids, sinceId, customerListId, groupId, storeId, avail, includeGuests, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CustomerApi#customerCount")
@@ -234,6 +235,7 @@ try {
 | **groupId** | **kotlin.String**| Customer group_id | [optional] |
 | **storeId** | **kotlin.String**| Counts customer specified by store id | [optional] |
 | **avail** | **kotlin.Boolean**| Defines category&#39;s visibility status | [optional] [default to true] |
+| **includeGuests** | **kotlin.Boolean**| Indicates whether to include guest customers in the total count. | [optional] [default to false] |
 | **findValue** | **kotlin.String**| Entity search that is specified by some value | [optional] |
 | **findWhere** | **kotlin.String**| Counts customers that are searched specified by field | [optional] |
 | **createdFrom** | **kotlin.String**| Retrieve entities from their creation date | [optional] |
@@ -316,7 +318,7 @@ Configure ApiKeyAuth:
 
 <a id="customerFind"></a>
 # **customerFind**
-> CustomerFind200Response customerFind(findValue, findWhere, findParams, storeId)
+> CustomerFind200Response customerFind(findValue, findWhere, findParams, storeId, includeGuests)
 
 customer.find
 
@@ -333,8 +335,9 @@ val findValue : kotlin.String = mail@gmail.com // kotlin.String | Entity search 
 val findWhere : kotlin.String = email // kotlin.String | Entity search that is specified by the comma-separated unique fields
 val findParams : kotlin.String = regex // kotlin.String | Entity search that is specified by comma-separated parameters
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
+val includeGuests : kotlin.Boolean = true // kotlin.Boolean | Indicates whether to search among guest customers when looking up a customer.
 try {
-    val result : CustomerFind200Response = apiInstance.customerFind(findValue, findWhere, findParams, storeId)
+    val result : CustomerFind200Response = apiInstance.customerFind(findValue, findWhere, findParams, storeId, includeGuests)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CustomerApi#customerFind")
@@ -349,9 +352,10 @@ try {
 | **findValue** | **kotlin.String**| Entity search that is specified by some value | |
 | **findWhere** | **kotlin.String**| Entity search that is specified by the comma-separated unique fields | [optional] [default to &quot;email&quot;] |
 | **findParams** | **kotlin.String**| Entity search that is specified by comma-separated parameters | [optional] [default to &quot;whole_words&quot;] |
+| **storeId** | **kotlin.String**| Store Id | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **storeId** | **kotlin.String**| Store Id | [optional] |
+| **includeGuests** | **kotlin.Boolean**| Indicates whether to search among guest customers when looking up a customer. | [optional] [default to false] |
 
 ### Return type
 
@@ -560,7 +564,7 @@ Configure ApiKeyAuth:
 
 <a id="customerList"></a>
 # **customerList**
-> ModelResponseCustomerList customerList(start, count, pageCursor, ids, sinceId, customerListId, groupId, storeId, avail, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo, sortBy, sortDirection, responseFields, params, exclude)
+> ModelResponseCustomerList customerList(start, count, pageCursor, ids, sinceId, customerListId, groupId, storeId, avail, includeGuests, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo, sortBy, sortDirection, responseFields, params, exclude)
 
 customer.list
 
@@ -582,6 +586,7 @@ val customerListId : kotlin.String = exampleListId // kotlin.String | The numeri
 val groupId : kotlin.String = 3 // kotlin.String | Customer group_id
 val storeId : kotlin.String = 1 // kotlin.String | Retrieves customers specified by store id
 val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
+val includeGuests : kotlin.Boolean = true // kotlin.Boolean | Indicates whether to include guest customers in the list results.
 val findValue : kotlin.String = mail@gmail.com // kotlin.String | Entity search that is specified by some value
 val findWhere : kotlin.String = email // kotlin.String | Customer search that is specified by field
 val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
@@ -594,7 +599,7 @@ val responseFields : kotlin.String = {result{customer}} // kotlin.String | Set t
 val params : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : ModelResponseCustomerList = apiInstance.customerList(start, count, pageCursor, ids, sinceId, customerListId, groupId, storeId, avail, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo, sortBy, sortDirection, responseFields, params, exclude)
+    val result : ModelResponseCustomerList = apiInstance.customerList(start, count, pageCursor, ids, sinceId, customerListId, groupId, storeId, avail, includeGuests, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo, sortBy, sortDirection, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CustomerApi#customerList")
@@ -615,6 +620,7 @@ try {
 | **groupId** | **kotlin.String**| Customer group_id | [optional] |
 | **storeId** | **kotlin.String**| Retrieves customers specified by store id | [optional] |
 | **avail** | **kotlin.Boolean**| Defines category&#39;s visibility status | [optional] [default to true] |
+| **includeGuests** | **kotlin.Boolean**| Indicates whether to include guest customers in the list results. | [optional] [default to false] |
 | **findValue** | **kotlin.String**| Entity search that is specified by some value | [optional] |
 | **findWhere** | **kotlin.String**| Customer search that is specified by field | [optional] |
 | **createdFrom** | **kotlin.String**| Retrieve entities from their creation date | [optional] |

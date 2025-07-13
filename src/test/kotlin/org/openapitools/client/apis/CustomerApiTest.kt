@@ -80,13 +80,14 @@ class CustomerApiTest : ShouldSpec() {
             //val groupId : kotlin.String = 3 // kotlin.String | Customer group_id
             //val storeId : kotlin.String = 1 // kotlin.String | Counts customer specified by store id
             //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
+            //val includeGuests : kotlin.Boolean = true // kotlin.Boolean | Indicates whether to include guest customers in the total count.
             //val findValue : kotlin.String = mail@gmail.com // kotlin.String | Entity search that is specified by some value
             //val findWhere : kotlin.String = email // kotlin.String | Counts customers that are searched specified by field
             //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
             //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
             //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
             //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-            //val result : CustomerCount200Response = apiInstance.customerCount(ids, sinceId, customerListId, groupId, storeId, avail, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo)
+            //val result : CustomerCount200Response = apiInstance.customerCount(ids, sinceId, customerListId, groupId, storeId, avail, includeGuests, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo)
             //result shouldBe ("TODO")
         }
 
@@ -105,7 +106,8 @@ class CustomerApiTest : ShouldSpec() {
             //val findWhere : kotlin.String = email // kotlin.String | Entity search that is specified by the comma-separated unique fields
             //val findParams : kotlin.String = regex // kotlin.String | Entity search that is specified by comma-separated parameters
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val result : CustomerFind200Response = apiInstance.customerFind(findValue, findWhere, findParams, storeId)
+            //val includeGuests : kotlin.Boolean = true // kotlin.Boolean | Indicates whether to search among guest customers when looking up a customer.
+            //val result : CustomerFind200Response = apiInstance.customerFind(findValue, findWhere, findParams, storeId, includeGuests)
             //result shouldBe ("TODO")
         }
 
@@ -160,6 +162,7 @@ class CustomerApiTest : ShouldSpec() {
             //val groupId : kotlin.String = 3 // kotlin.String | Customer group_id
             //val storeId : kotlin.String = 1 // kotlin.String | Retrieves customers specified by store id
             //val avail : kotlin.Boolean = false // kotlin.Boolean | Defines category's visibility status
+            //val includeGuests : kotlin.Boolean = true // kotlin.Boolean | Indicates whether to include guest customers in the list results.
             //val findValue : kotlin.String = mail@gmail.com // kotlin.String | Entity search that is specified by some value
             //val findWhere : kotlin.String = email // kotlin.String | Customer search that is specified by field
             //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
@@ -171,7 +174,7 @@ class CustomerApiTest : ShouldSpec() {
             //val responseFields : kotlin.String = {result{customer}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val params : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = id,email // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : ModelResponseCustomerList = apiInstance.customerList(start, count, pageCursor, ids, sinceId, customerListId, groupId, storeId, avail, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo, sortBy, sortDirection, responseFields, params, exclude)
+            //val result : ModelResponseCustomerList = apiInstance.customerList(start, count, pageCursor, ids, sinceId, customerListId, groupId, storeId, avail, includeGuests, findValue, findWhere, createdFrom, createdTo, modifiedFrom, modifiedTo, sortBy, sortDirection, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 

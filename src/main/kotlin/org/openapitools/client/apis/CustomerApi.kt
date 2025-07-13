@@ -328,6 +328,7 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param groupId Customer group_id (optional)
      * @param storeId Counts customer specified by store id (optional)
      * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param includeGuests Indicates whether to include guest customers in the total count. (optional, default to false)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts customers that are searched specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
@@ -343,8 +344,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun customerCount(ids: kotlin.String? = null, sinceId: kotlin.String? = null, customerListId: kotlin.String? = null, groupId: kotlin.String? = null, storeId: kotlin.String? = null, avail: kotlin.Boolean? = true, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null) : CustomerCount200Response {
-        val localVarResponse = customerCountWithHttpInfo(ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo)
+    fun customerCount(ids: kotlin.String? = null, sinceId: kotlin.String? = null, customerListId: kotlin.String? = null, groupId: kotlin.String? = null, storeId: kotlin.String? = null, avail: kotlin.Boolean? = true, includeGuests: kotlin.Boolean? = false, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null) : CustomerCount200Response {
+        val localVarResponse = customerCountWithHttpInfo(ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, includeGuests = includeGuests, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CustomerCount200Response
@@ -370,6 +371,7 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param groupId Customer group_id (optional)
      * @param storeId Counts customer specified by store id (optional)
      * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param includeGuests Indicates whether to include guest customers in the total count. (optional, default to false)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts customers that are searched specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
@@ -382,8 +384,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun customerCountWithHttpInfo(ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?) : ApiResponse<CustomerCount200Response?> {
-        val localVariableConfig = customerCountRequestConfig(ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo)
+    fun customerCountWithHttpInfo(ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, includeGuests: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?) : ApiResponse<CustomerCount200Response?> {
+        val localVariableConfig = customerCountRequestConfig(ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, includeGuests = includeGuests, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo)
 
         return request<Unit, CustomerCount200Response>(
             localVariableConfig
@@ -399,6 +401,7 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param groupId Customer group_id (optional)
      * @param storeId Counts customer specified by store id (optional)
      * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param includeGuests Indicates whether to include guest customers in the total count. (optional, default to false)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Counts customers that are searched specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
@@ -407,7 +410,7 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param modifiedTo Retrieve entities to their modification date (optional)
      * @return RequestConfig
      */
-    fun customerCountRequestConfig(ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?) : RequestConfig<Unit> {
+    fun customerCountRequestConfig(ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, includeGuests: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -428,6 +431,9 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 }
                 if (avail != null) {
                     put("avail", listOf(avail.toString()))
+                }
+                if (includeGuests != null) {
+                    put("include_guests", listOf(includeGuests.toString()))
                 }
                 if (findValue != null) {
                     put("find_value", listOf(findValue.toString()))
@@ -542,6 +548,7 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param findWhere Entity search that is specified by the comma-separated unique fields (optional, default to "email")
      * @param findParams Entity search that is specified by comma-separated parameters (optional, default to "whole_words")
      * @param storeId Store Id (optional)
+     * @param includeGuests Indicates whether to search among guest customers when looking up a customer. (optional, default to false)
      * @return CustomerFind200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
@@ -551,8 +558,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun customerFind(findValue: kotlin.String, findWhere: kotlin.String? = "email", findParams: kotlin.String? = "whole_words", storeId: kotlin.String? = null) : CustomerFind200Response {
-        val localVarResponse = customerFindWithHttpInfo(findValue = findValue, findWhere = findWhere, findParams = findParams, storeId = storeId)
+    fun customerFind(findValue: kotlin.String, findWhere: kotlin.String? = "email", findParams: kotlin.String? = "whole_words", storeId: kotlin.String? = null, includeGuests: kotlin.Boolean? = false) : CustomerFind200Response {
+        val localVarResponse = customerFindWithHttpInfo(findValue = findValue, findWhere = findWhere, findParams = findParams, storeId = storeId, includeGuests = includeGuests)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as CustomerFind200Response
@@ -576,14 +583,15 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param findWhere Entity search that is specified by the comma-separated unique fields (optional, default to "email")
      * @param findParams Entity search that is specified by comma-separated parameters (optional, default to "whole_words")
      * @param storeId Store Id (optional)
+     * @param includeGuests Indicates whether to search among guest customers when looking up a customer. (optional, default to false)
      * @return ApiResponse<CustomerFind200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun customerFindWithHttpInfo(findValue: kotlin.String, findWhere: kotlin.String?, findParams: kotlin.String?, storeId: kotlin.String?) : ApiResponse<CustomerFind200Response?> {
-        val localVariableConfig = customerFindRequestConfig(findValue = findValue, findWhere = findWhere, findParams = findParams, storeId = storeId)
+    fun customerFindWithHttpInfo(findValue: kotlin.String, findWhere: kotlin.String?, findParams: kotlin.String?, storeId: kotlin.String?, includeGuests: kotlin.Boolean?) : ApiResponse<CustomerFind200Response?> {
+        val localVariableConfig = customerFindRequestConfig(findValue = findValue, findWhere = findWhere, findParams = findParams, storeId = storeId, includeGuests = includeGuests)
 
         return request<Unit, CustomerFind200Response>(
             localVariableConfig
@@ -597,9 +605,10 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param findWhere Entity search that is specified by the comma-separated unique fields (optional, default to "email")
      * @param findParams Entity search that is specified by comma-separated parameters (optional, default to "whole_words")
      * @param storeId Store Id (optional)
+     * @param includeGuests Indicates whether to search among guest customers when looking up a customer. (optional, default to false)
      * @return RequestConfig
      */
-    fun customerFindRequestConfig(findValue: kotlin.String, findWhere: kotlin.String?, findParams: kotlin.String?, storeId: kotlin.String?) : RequestConfig<Unit> {
+    fun customerFindRequestConfig(findValue: kotlin.String, findWhere: kotlin.String?, findParams: kotlin.String?, storeId: kotlin.String?, includeGuests: kotlin.Boolean?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -612,6 +621,9 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 }
                 if (storeId != null) {
                     put("store_id", listOf(storeId.toString()))
+                }
+                if (includeGuests != null) {
+                    put("include_guests", listOf(includeGuests.toString()))
                 }
             }
         val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
@@ -953,6 +965,7 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param groupId Customer group_id (optional)
      * @param storeId Retrieves customers specified by store id (optional)
      * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param includeGuests Indicates whether to include guest customers in the list results. (optional, default to false)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Customer search that is specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
@@ -973,8 +986,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun customerList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, ids: kotlin.String? = null, sinceId: kotlin.String? = null, customerListId: kotlin.String? = null, groupId: kotlin.String? = null, storeId: kotlin.String? = null, avail: kotlin.Boolean? = true, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, sortBy: kotlin.String? = "created_time", sortDirection: kotlin.String? = "asc", responseFields: kotlin.String? = null, params: kotlin.String? = "id,email,first_name,last_name", exclude: kotlin.String? = null) : ModelResponseCustomerList {
-        val localVarResponse = customerListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sortBy = sortBy, sortDirection = sortDirection, responseFields = responseFields, params = params, exclude = exclude)
+    fun customerList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, ids: kotlin.String? = null, sinceId: kotlin.String? = null, customerListId: kotlin.String? = null, groupId: kotlin.String? = null, storeId: kotlin.String? = null, avail: kotlin.Boolean? = true, includeGuests: kotlin.Boolean? = false, findValue: kotlin.String? = null, findWhere: kotlin.String? = null, createdFrom: kotlin.String? = null, createdTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, sortBy: kotlin.String? = "created_time", sortDirection: kotlin.String? = "asc", responseFields: kotlin.String? = null, params: kotlin.String? = "id,email,first_name,last_name", exclude: kotlin.String? = null) : ModelResponseCustomerList {
+        val localVarResponse = customerListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, includeGuests = includeGuests, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sortBy = sortBy, sortDirection = sortDirection, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCustomerList
@@ -1003,6 +1016,7 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param groupId Customer group_id (optional)
      * @param storeId Retrieves customers specified by store id (optional)
      * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param includeGuests Indicates whether to include guest customers in the list results. (optional, default to false)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Customer search that is specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
@@ -1020,8 +1034,8 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun customerListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCustomerList?> {
-        val localVariableConfig = customerListRequestConfig(start = start, count = count, pageCursor = pageCursor, ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sortBy = sortBy, sortDirection = sortDirection, responseFields = responseFields, params = params, exclude = exclude)
+    fun customerListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, includeGuests: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCustomerList?> {
+        val localVariableConfig = customerListRequestConfig(start = start, count = count, pageCursor = pageCursor, ids = ids, sinceId = sinceId, customerListId = customerListId, groupId = groupId, storeId = storeId, avail = avail, includeGuests = includeGuests, findValue = findValue, findWhere = findWhere, createdFrom = createdFrom, createdTo = createdTo, modifiedFrom = modifiedFrom, modifiedTo = modifiedTo, sortBy = sortBy, sortDirection = sortDirection, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseCustomerList>(
             localVariableConfig
@@ -1040,6 +1054,7 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param groupId Customer group_id (optional)
      * @param storeId Retrieves customers specified by store id (optional)
      * @param avail Defines category&#39;s visibility status (optional, default to true)
+     * @param includeGuests Indicates whether to include guest customers in the list results. (optional, default to false)
      * @param findValue Entity search that is specified by some value (optional)
      * @param findWhere Customer search that is specified by field (optional)
      * @param createdFrom Retrieve entities from their creation date (optional)
@@ -1053,7 +1068,7 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun customerListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun customerListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, ids: kotlin.String?, sinceId: kotlin.String?, customerListId: kotlin.String?, groupId: kotlin.String?, storeId: kotlin.String?, avail: kotlin.Boolean?, includeGuests: kotlin.Boolean?, findValue: kotlin.String?, findWhere: kotlin.String?, createdFrom: kotlin.String?, createdTo: kotlin.String?, modifiedFrom: kotlin.String?, modifiedTo: kotlin.String?, sortBy: kotlin.String?, sortDirection: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -1083,6 +1098,9 @@ class CustomerApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
                 }
                 if (avail != null) {
                     put("avail", listOf(avail.toString()))
+                }
+                if (includeGuests != null) {
+                    put("include_guests", listOf(includeGuests.toString()))
                 }
                 if (findValue != null) {
                     put("find_value", listOf(findValue.toString()))

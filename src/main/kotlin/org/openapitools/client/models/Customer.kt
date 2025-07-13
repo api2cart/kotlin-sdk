@@ -38,6 +38,7 @@ import com.squareup.moshi.JsonClass
  * @param lastLogin 
  * @param birthDay 
  * @param status 
+ * @param isGuest 
  * @param newsLetterSubscription 
  * @param consents 
  * @param gender 
@@ -92,6 +93,9 @@ data class Customer (
 
     @Json(name = "status")
     val status: kotlin.String? = null,
+
+    @Json(name = "is_guest")
+    val isGuest: kotlin.Boolean? = null,
 
     @Json(name = "news_letter_subscription")
     val newsLetterSubscription: kotlin.Boolean? = null,

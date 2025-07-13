@@ -101,6 +101,12 @@ class CustomerTest : ShouldSpec() {
             //modelInstance.status shouldBe ("TODO")
         }
 
+        // to test the property `isGuest`
+        should("test isGuest") {
+            // uncomment below to test the property
+            //modelInstance.isGuest shouldBe ("TODO")
+        }
+
         // to test the property `newsLetterSubscription`
         should("test newsLetterSubscription") {
             // uncomment below to test the property

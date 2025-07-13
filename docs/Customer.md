@@ -16,6 +16,7 @@
 | **lastLogin** | [**A2CDateTime**](A2CDateTime.md) |  |  [optional] |
 | **birthDay** | [**A2CDateTime**](A2CDateTime.md) |  |  [optional] |
 | **status** | **kotlin.String** |  |  [optional] |
+| **isGuest** | **kotlin.Boolean** |  |  [optional] |
 | **newsLetterSubscription** | **kotlin.Boolean** |  |  [optional] |
 | **consents** | [**kotlin.collections.List&lt;CustomerConsent&gt;**](CustomerConsent.md) |  |  [optional] |
 | **gender** | **kotlin.String** |  |  [optional] |
