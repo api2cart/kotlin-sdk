@@ -19,26 +19,17 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import org.openapitools.client.apis.CartApi
-import org.openapitools.client.models.AccountCartAdd200Response
 import org.openapitools.client.models.AttributeAdd200Response
 import org.openapitools.client.models.AttributeDelete200Response
 import org.openapitools.client.models.BasketLiveShippingServiceDelete200Response
-import org.openapitools.client.models.CartBridge200Response
 import org.openapitools.client.models.CartCatalogPriceRulesCount200Response
-import org.openapitools.client.models.CartClearCache200Response
-import org.openapitools.client.models.CartConfig200Response
-import org.openapitools.client.models.CartConfigUpdate
-import org.openapitools.client.models.CartConfigUpdate200Response
 import org.openapitools.client.models.CartCouponAdd
 import org.openapitools.client.models.CartCouponAdd200Response
 import org.openapitools.client.models.CartCouponCount200Response
-import org.openapitools.client.models.CartCreate
 import org.openapitools.client.models.CartDelete200Response
-import org.openapitools.client.models.CartDisconnect200Response
 import org.openapitools.client.models.CartGiftcardAdd200Response
 import org.openapitools.client.models.CartGiftcardCount200Response
 import org.openapitools.client.models.CartInfo200Response
-import org.openapitools.client.models.CartList200Response
 import org.openapitools.client.models.CartMethods200Response
 import org.openapitools.client.models.CartPluginList200Response
 import org.openapitools.client.models.CartScriptAdd200Response
@@ -54,13 +45,6 @@ class CartApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of CartApi
         //val apiInstance = CartApi()
-
-        // to test cartBridge
-        should("test cartBridge") {
-            // uncomment below to test cartBridge
-            //val result : CartBridge200Response = apiInstance.cartBridge()
-            //result shouldBe ("TODO")
-        }
 
         // to test cartCatalogPriceRulesCount
         should("test cartCatalogPriceRulesCount") {
@@ -80,31 +64,6 @@ class CartApiTest : ShouldSpec() {
             //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
             //val result : ModelResponseCartCatalogPriceRulesList = apiInstance.cartCatalogPriceRulesList(start, count, pageCursor, ids, responseFields, params, exclude)
-            //result shouldBe ("TODO")
-        }
-
-        // to test cartClearCache
-        should("test cartClearCache") {
-            // uncomment below to test cartClearCache
-            //val cacheType : kotlin.String = storage_cache // kotlin.String | Defines which cache should be cleared.
-            //val result : CartClearCache200Response = apiInstance.cartClearCache(cacheType)
-            //result shouldBe ("TODO")
-        }
-
-        // to test cartConfig
-        should("test cartConfig") {
-            // uncomment below to test cartConfig
-            //val params : kotlin.String = store_name,store_url,db_prefix // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = store_name,store_url,db_prefix // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : CartConfig200Response = apiInstance.cartConfig(params, exclude)
-            //result shouldBe ("TODO")
-        }
-
-        // to test cartConfigUpdate
-        should("test cartConfigUpdate") {
-            // uncomment below to test cartConfigUpdate
-            //val cartConfigUpdate : CartConfigUpdate =  // CartConfigUpdate | 
-            //val result : CartConfigUpdate200Response = apiInstance.cartConfigUpdate(cartConfigUpdate)
             //result shouldBe ("TODO")
         }
 
@@ -175,27 +134,11 @@ class CartApiTest : ShouldSpec() {
             //result shouldBe ("TODO")
         }
 
-        // to test cartCreate
-        should("test cartCreate") {
-            // uncomment below to test cartCreate
-            //val cartCreate : CartCreate =  // CartCreate | 
-            //val result : AccountCartAdd200Response = apiInstance.cartCreate(cartCreate)
-            //result shouldBe ("TODO")
-        }
-
         // to test cartDelete
         should("test cartDelete") {
             // uncomment below to test cartDelete
             //val deleteBridge : kotlin.Boolean = true // kotlin.Boolean | Identifies if there is a necessity to delete bridge
             //val result : CartDelete200Response = apiInstance.cartDelete(deleteBridge)
-            //result shouldBe ("TODO")
-        }
-
-        // to test cartDisconnect
-        should("test cartDisconnect") {
-            // uncomment below to test cartDisconnect
-            //val deleteBridge : kotlin.Boolean = true // kotlin.Boolean | Identifies if there is a necessity to delete bridge
-            //val result : CartDisconnect200Response = apiInstance.cartDisconnect(deleteBridge)
             //result shouldBe ("TODO")
         }
 
@@ -250,13 +193,6 @@ class CartApiTest : ShouldSpec() {
             //val params : kotlin.String = name,url // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = name,url // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
             //val result : CartInfo200Response = apiInstance.cartInfo(storeId, responseFields, params, exclude)
-            //result shouldBe ("TODO")
-        }
-
-        // to test cartList
-        should("test cartList") {
-            // uncomment below to test cartList
-            //val result : CartList200Response = apiInstance.cartList()
             //result shouldBe ("TODO")
         }
 

@@ -1,6 +1,6 @@
 # OrderApi
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -8,7 +8,6 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 | [**orderAdd**](OrderApi.md#orderAdd) | **POST** /order.add.json | order.add |
 | [**orderCount**](OrderApi.md#orderCount) | **GET** /order.count.json | order.count |
 | [**orderFinancialStatusList**](OrderApi.md#orderFinancialStatusList) | **GET** /order.financial_status.list.json | order.financial_status.list |
-| [**orderFind**](OrderApi.md#orderFind) | **GET** /order.find.json | order.find |
 | [**orderFulfillmentStatusList**](OrderApi.md#orderFulfillmentStatusList) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list |
 | [**orderInfo**](OrderApi.md#orderInfo) | **GET** /order.info.json | order.info |
 | [**orderList**](OrderApi.md#orderList) | **GET** /order.list.json | order.list |
@@ -282,80 +281,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**OrderFinancialStatusList200Response**](OrderFinancialStatusList200Response.md)
-
-### Authorization
-
-
-Configure StoreKeyAuth:
-    ApiClient.apiKey["x-store-key"] = ""
-    ApiClient.apiKeyPrefix["x-store-key"] = ""
-Configure ApiKeyAuth:
-    ApiClient.apiKey["x-api-key"] = ""
-    ApiClient.apiKeyPrefix["x-api-key"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="orderFind"></a>
-# **orderFind**
-> OrderFind200Response orderFind(start, count, customerId, customerEmail, orderStatus, financialStatus, createdTo, createdFrom, modifiedTo, modifiedFrom, params, exclude)
-
-order.find
-
-This method is deprecated and won&#39;t be supported in the future. Please use \&quot;order.list\&quot; instead.
-
-### Example
-```kotlin
-// Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
-
-val apiInstance = OrderApi()
-val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
-val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-val customerId : kotlin.String = 5 // kotlin.String | Retrieves orders specified by customer id
-val customerEmail : kotlin.String = jubari@hannsgroup.com // kotlin.String | Retrieves orders specified by customer email
-val orderStatus : kotlin.String = Completed // kotlin.String | Retrieves orders specified by order status
-val financialStatus : kotlin.String = paid // kotlin.String | Retrieves orders specified by financial status
-val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
-val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
-val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
-val params : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-val exclude : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-try {
-    val result : OrderFind200Response = apiInstance.orderFind(start, count, customerId, customerEmail, orderStatus, financialStatus, createdTo, createdFrom, modifiedTo, modifiedFrom, params, exclude)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling OrderApi#orderFind")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling OrderApi#orderFind")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
-| **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **customerId** | **kotlin.String**| Retrieves orders specified by customer id | [optional] |
-| **customerEmail** | **kotlin.String**| Retrieves orders specified by customer email | [optional] |
-| **orderStatus** | **kotlin.String**| Retrieves orders specified by order status | [optional] |
-| **financialStatus** | **kotlin.String**| Retrieves orders specified by financial status | [optional] |
-| **createdTo** | **kotlin.String**| Retrieve entities to their creation date | [optional] |
-| **createdFrom** | **kotlin.String**| Retrieve entities from their creation date | [optional] |
-| **modifiedTo** | **kotlin.String**| Retrieve entities to their modification date | [optional] |
-| **modifiedFrom** | **kotlin.String**| Retrieve entities from their modification date | [optional] |
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;order_id,customer,totals,address,items,bundles,status&quot;] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-
-### Return type
-
-[**OrderFind200Response**](OrderFind200Response.md)
 
 ### Authorization
 

@@ -44,6 +44,30 @@ class AccountCartAddTest : ShouldSpec() {
             //modelInstance.bigcartelPassword shouldBe ("TODO")
         }
 
+        // to test the property `bricklinkConsumerKey` - Bricklink Consumer Key
+        should("test bricklinkConsumerKey") {
+            // uncomment below to test the property
+            //modelInstance.bricklinkConsumerKey shouldBe ("TODO")
+        }
+
+        // to test the property `bricklinkConsumerSecret` - Bricklink Consumer Secret
+        should("test bricklinkConsumerSecret") {
+            // uncomment below to test the property
+            //modelInstance.bricklinkConsumerSecret shouldBe ("TODO")
+        }
+
+        // to test the property `bricklinkToken` - Bricklink Access Token
+        should("test bricklinkToken") {
+            // uncomment below to test the property
+            //modelInstance.bricklinkToken shouldBe ("TODO")
+        }
+
+        // to test the property `bricklinkTokenSecret` - Bricklink Access Token Secret
+        should("test bricklinkTokenSecret") {
+            // uncomment below to test the property
+            //modelInstance.bricklinkTokenSecret shouldBe ("TODO")
+        }
+
         // to test the property `wixAppId` - Wix App ID
         should("test wixAppId") {
             // uncomment below to test the property

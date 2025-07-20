@@ -21,10 +21,10 @@ import io.kotlintest.specs.ShouldSpec
 import org.openapitools.client.apis.CategoryApi
 import org.openapitools.client.models.AccountConfigUpdate200Response
 import org.openapitools.client.models.AttributeDelete200Response
-import org.openapitools.client.models.CartConfigUpdate200Response
 import org.openapitools.client.models.CategoryAdd200Response
 import org.openapitools.client.models.CategoryAddBatch
 import org.openapitools.client.models.CategoryAddBatch200Response
+import org.openapitools.client.models.CategoryAssign200Response
 import org.openapitools.client.models.CategoryCount200Response
 import org.openapitools.client.models.CategoryDelete200Response
 import org.openapitools.client.models.CategoryFind200Response
@@ -73,7 +73,7 @@ class CategoryApiTest : ShouldSpec() {
             //val categoryId : kotlin.String = 6 // kotlin.String | Defines category assign, specified by category id
             //val productId : kotlin.String = 10 // kotlin.String | Defines category assign to the product, specified by product id
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val result : CartConfigUpdate200Response = apiInstance.categoryAssign(categoryId, productId, storeId)
+            //val result : CategoryAssign200Response = apiInstance.categoryAssign(categoryId, productId, storeId)
             //result shouldBe ("TODO")
         }
 
@@ -192,7 +192,7 @@ class CategoryApiTest : ShouldSpec() {
             //val categoryId : kotlin.String = 6 // kotlin.String | Defines category unassign, specified by category id
             //val productId : kotlin.String = 10 // kotlin.String | Defines category unassign to the product, specified by product id
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val result : CartConfigUpdate200Response = apiInstance.categoryUnassign(categoryId, productId, storeId)
+            //val result : CategoryAssign200Response = apiInstance.categoryUnassign(categoryId, productId, storeId)
             //result shouldBe ("TODO")
         }
 

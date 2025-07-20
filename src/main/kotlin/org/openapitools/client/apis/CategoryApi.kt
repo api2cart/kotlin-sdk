@@ -21,10 +21,10 @@ import okhttp3.HttpUrl
 
 import org.openapitools.client.models.AccountConfigUpdate200Response
 import org.openapitools.client.models.AttributeDelete200Response
-import org.openapitools.client.models.CartConfigUpdate200Response
 import org.openapitools.client.models.CategoryAdd200Response
 import org.openapitools.client.models.CategoryAddBatch
 import org.openapitools.client.models.CategoryAddBatch200Response
+import org.openapitools.client.models.CategoryAssign200Response
 import org.openapitools.client.models.CategoryCount200Response
 import org.openapitools.client.models.CategoryDelete200Response
 import org.openapitools.client.models.CategoryFind200Response
@@ -52,7 +52,7 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://api.api2cart.com/v1.1")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://api.api2cart.local.com/v1.1")
         }
     }
 
@@ -292,7 +292,7 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param categoryId Defines category assign, specified by category id
      * @param productId Defines category assign to the product, specified by product id
      * @param storeId Store Id (optional)
-     * @return CartConfigUpdate200Response
+     * @return CategoryAssign200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -301,11 +301,11 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun categoryAssign(categoryId: kotlin.String, productId: kotlin.String, storeId: kotlin.String? = null) : CartConfigUpdate200Response {
+    fun categoryAssign(categoryId: kotlin.String, productId: kotlin.String, storeId: kotlin.String? = null) : CategoryAssign200Response {
         val localVarResponse = categoryAssignWithHttpInfo(categoryId = categoryId, productId = productId, storeId = storeId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as CartConfigUpdate200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CategoryAssign200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -325,16 +325,16 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param categoryId Defines category assign, specified by category id
      * @param productId Defines category assign to the product, specified by product id
      * @param storeId Store Id (optional)
-     * @return ApiResponse<CartConfigUpdate200Response?>
+     * @return ApiResponse<CategoryAssign200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun categoryAssignWithHttpInfo(categoryId: kotlin.String, productId: kotlin.String, storeId: kotlin.String?) : ApiResponse<CartConfigUpdate200Response?> {
+    fun categoryAssignWithHttpInfo(categoryId: kotlin.String, productId: kotlin.String, storeId: kotlin.String?) : ApiResponse<CategoryAssign200Response?> {
         val localVariableConfig = categoryAssignRequestConfig(categoryId = categoryId, productId = productId, storeId = storeId)
 
-        return request<Unit, CartConfigUpdate200Response>(
+        return request<Unit, CategoryAssign200Response>(
             localVariableConfig
         )
     }
@@ -1225,7 +1225,7 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param categoryId Defines category unassign, specified by category id
      * @param productId Defines category unassign to the product, specified by product id
      * @param storeId Store Id (optional)
-     * @return CartConfigUpdate200Response
+     * @return CategoryAssign200Response
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      * @throws UnsupportedOperationException If the API returns an informational or redirection response
@@ -1234,11 +1234,11 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun categoryUnassign(categoryId: kotlin.String, productId: kotlin.String, storeId: kotlin.String? = null) : CartConfigUpdate200Response {
+    fun categoryUnassign(categoryId: kotlin.String, productId: kotlin.String, storeId: kotlin.String? = null) : CategoryAssign200Response {
         val localVarResponse = categoryUnassignWithHttpInfo(categoryId = categoryId, productId = productId, storeId = storeId)
 
         return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as CartConfigUpdate200Response
+            ResponseType.Success -> (localVarResponse as Success<*>).data as CategoryAssign200Response
             ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
             ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
             ResponseType.ClientError -> {
@@ -1258,16 +1258,16 @@ class CategoryApi(basePath: kotlin.String = defaultBasePath, client: Call.Factor
      * @param categoryId Defines category unassign, specified by category id
      * @param productId Defines category unassign to the product, specified by product id
      * @param storeId Store Id (optional)
-     * @return ApiResponse<CartConfigUpdate200Response?>
+     * @return ApiResponse<CategoryAssign200Response?>
      * @throws IllegalStateException If the request is not correctly configured
      * @throws IOException Rethrows the OkHttp execute method exception
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun categoryUnassignWithHttpInfo(categoryId: kotlin.String, productId: kotlin.String, storeId: kotlin.String?) : ApiResponse<CartConfigUpdate200Response?> {
+    fun categoryUnassignWithHttpInfo(categoryId: kotlin.String, productId: kotlin.String, storeId: kotlin.String?) : ApiResponse<CategoryAssign200Response?> {
         val localVariableConfig = categoryUnassignRequestConfig(categoryId = categoryId, productId = productId, storeId = storeId)
 
-        return request<Unit, CartConfigUpdate200Response>(
+        return request<Unit, CategoryAssign200Response>(
             localVariableConfig
         )
     }

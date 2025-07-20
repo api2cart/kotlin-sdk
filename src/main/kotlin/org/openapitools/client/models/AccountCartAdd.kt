@@ -26,6 +26,10 @@ import com.squareup.moshi.JsonClass
  * @param cartId Store’s identifier which you can get from cart_list method
  * @param bigcartelUserName Subdomain of store
  * @param bigcartelPassword BigCartel account password
+ * @param bricklinkConsumerKey Bricklink Consumer Key
+ * @param bricklinkConsumerSecret Bricklink Consumer Secret
+ * @param bricklinkToken Bricklink Access Token
+ * @param bricklinkTokenSecret Bricklink Access Token Secret
  * @param wixAppId Wix App ID
  * @param wixAppSecretKey Wix App Secret Key
  * @param temuAccessToken Temu Access Token
@@ -200,6 +204,22 @@ data class AccountCartAdd (
     /* BigCartel account password */
     @Json(name = "bigcartel_password")
     val bigcartelPassword: kotlin.String,
+
+    /* Bricklink Consumer Key */
+    @Json(name = "bricklink_consumer_key")
+    val bricklinkConsumerKey: kotlin.String,
+
+    /* Bricklink Consumer Secret */
+    @Json(name = "bricklink_consumer_secret")
+    val bricklinkConsumerSecret: kotlin.String,
+
+    /* Bricklink Access Token */
+    @Json(name = "bricklink_token")
+    val bricklinkToken: kotlin.String,
+
+    /* Bricklink Access Token Secret */
+    @Json(name = "bricklink_token_secret")
+    val bricklinkTokenSecret: kotlin.String,
 
     /* Wix App ID */
     @Json(name = "wix_app_id")

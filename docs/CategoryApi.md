@@ -1,6 +1,6 @@
 # CategoryApi
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -152,7 +152,7 @@ Configure ApiKeyAuth:
 
 <a id="categoryAssign"></a>
 # **categoryAssign**
-> CartConfigUpdate200Response categoryAssign(categoryId, productId, storeId)
+> CategoryAssign200Response categoryAssign(categoryId, productId, storeId)
 
 category.assign
 
@@ -169,7 +169,7 @@ val categoryId : kotlin.String = 6 // kotlin.String | Defines category assign, s
 val productId : kotlin.String = 10 // kotlin.String | Defines category assign to the product, specified by product id
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
 try {
-    val result : CartConfigUpdate200Response = apiInstance.categoryAssign(categoryId, productId, storeId)
+    val result : CategoryAssign200Response = apiInstance.categoryAssign(categoryId, productId, storeId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CategoryApi#categoryAssign")
@@ -189,7 +189,7 @@ try {
 
 ### Return type
 
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
+[**CategoryAssign200Response**](CategoryAssign200Response.md)
 
 ### Authorization
 
@@ -678,7 +678,7 @@ Configure ApiKeyAuth:
 
 <a id="categoryUnassign"></a>
 # **categoryUnassign**
-> CartConfigUpdate200Response categoryUnassign(categoryId, productId, storeId)
+> CategoryAssign200Response categoryUnassign(categoryId, productId, storeId)
 
 category.unassign
 
@@ -695,7 +695,7 @@ val categoryId : kotlin.String = 6 // kotlin.String | Defines category unassign,
 val productId : kotlin.String = 10 // kotlin.String | Defines category unassign to the product, specified by product id
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
 try {
-    val result : CartConfigUpdate200Response = apiInstance.categoryUnassign(categoryId, productId, storeId)
+    val result : CategoryAssign200Response = apiInstance.categoryUnassign(categoryId, productId, storeId)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CategoryApi#categoryUnassign")
@@ -715,7 +715,7 @@ try {
 
 ### Return type
 
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
+[**CategoryAssign200Response**](CategoryAssign200Response.md)
 
 ### Authorization
 

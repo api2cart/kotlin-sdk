@@ -41,7 +41,7 @@ This runs all tests and packages the library.
 <a id="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 | Class | Method | HTTP request | Description |
 | ------------ | ------------- | ------------- | ------------- |
@@ -76,26 +76,19 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 | *BridgeApi* | [**bridgeDelete**](docs/BridgeApi.md#bridgedelete) | **POST** /bridge.delete.json | bridge.delete |
 | *BridgeApi* | [**bridgeDownload**](docs/BridgeApi.md#bridgedownload) | **GET** /bridge.download.file | bridge.download |
 | *BridgeApi* | [**bridgeUpdate**](docs/BridgeApi.md#bridgeupdate) | **POST** /bridge.update.json | bridge.update |
-| *CartApi* | [**cartBridge**](docs/CartApi.md#cartbridge) | **GET** /cart.bridge.json | cart.bridge |
 | *CartApi* | [**cartCatalogPriceRulesCount**](docs/CartApi.md#cartcatalogpricerulescount) | **GET** /cart.catalog_price_rules.count.json | cart.catalog_price_rules.count |
 | *CartApi* | [**cartCatalogPriceRulesList**](docs/CartApi.md#cartcatalogpriceruleslist) | **GET** /cart.catalog_price_rules.list.json | cart.catalog_price_rules.list |
-| *CartApi* | [**cartClearCache**](docs/CartApi.md#cartclearcache) | **POST** /cart.clear_cache.json | cart.clear_cache |
-| *CartApi* | [**cartConfig**](docs/CartApi.md#cartconfig) | **GET** /cart.config.json | cart.config |
-| *CartApi* | [**cartConfigUpdate**](docs/CartApi.md#cartconfigupdate) | **PUT** /cart.config.update.json | cart.config.update |
 | *CartApi* | [**cartCouponAdd**](docs/CartApi.md#cartcouponadd) | **POST** /cart.coupon.add.json | cart.coupon.add |
 | *CartApi* | [**cartCouponConditionAdd**](docs/CartApi.md#cartcouponconditionadd) | **POST** /cart.coupon.condition.add.json | cart.coupon.condition.add |
 | *CartApi* | [**cartCouponCount**](docs/CartApi.md#cartcouponcount) | **GET** /cart.coupon.count.json | cart.coupon.count |
 | *CartApi* | [**cartCouponDelete**](docs/CartApi.md#cartcoupondelete) | **DELETE** /cart.coupon.delete.json | cart.coupon.delete |
 | *CartApi* | [**cartCouponList**](docs/CartApi.md#cartcouponlist) | **GET** /cart.coupon.list.json | cart.coupon.list |
-| *CartApi* | [**cartCreate**](docs/CartApi.md#cartcreate) | **POST** /cart.create.json | cart.create |
 | *CartApi* | [**cartDelete**](docs/CartApi.md#cartdelete) | **DELETE** /cart.delete.json | cart.delete |
-| *CartApi* | [**cartDisconnect**](docs/CartApi.md#cartdisconnect) | **GET** /cart.disconnect.json | cart.disconnect |
 | *CartApi* | [**cartGiftcardAdd**](docs/CartApi.md#cartgiftcardadd) | **POST** /cart.giftcard.add.json | cart.giftcard.add |
 | *CartApi* | [**cartGiftcardCount**](docs/CartApi.md#cartgiftcardcount) | **GET** /cart.giftcard.count.json | cart.giftcard.count |
 | *CartApi* | [**cartGiftcardDelete**](docs/CartApi.md#cartgiftcarddelete) | **DELETE** /cart.giftcard.delete.json | cart.giftcard.delete |
 | *CartApi* | [**cartGiftcardList**](docs/CartApi.md#cartgiftcardlist) | **GET** /cart.giftcard.list.json | cart.giftcard.list |
 | *CartApi* | [**cartInfo**](docs/CartApi.md#cartinfo) | **GET** /cart.info.json | cart.info |
-| *CartApi* | [**cartList**](docs/CartApi.md#cartlist) | **GET** /cart.list.json | cart.list |
 | *CartApi* | [**cartMetaDataList**](docs/CartApi.md#cartmetadatalist) | **GET** /cart.meta_data.list.json | cart.meta_data.list |
 | *CartApi* | [**cartMetaDataSet**](docs/CartApi.md#cartmetadataset) | **POST** /cart.meta_data.set.json | cart.meta_data.set |
 | *CartApi* | [**cartMetaDataUnset**](docs/CartApi.md#cartmetadataunset) | **DELETE** /cart.meta_data.unset.json | cart.meta_data.unset |
@@ -135,7 +128,6 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 | *OrderApi* | [**orderAdd**](docs/OrderApi.md#orderadd) | **POST** /order.add.json | order.add |
 | *OrderApi* | [**orderCount**](docs/OrderApi.md#ordercount) | **GET** /order.count.json | order.count |
 | *OrderApi* | [**orderFinancialStatusList**](docs/OrderApi.md#orderfinancialstatuslist) | **GET** /order.financial_status.list.json | order.financial_status.list |
-| *OrderApi* | [**orderFind**](docs/OrderApi.md#orderfind) | **GET** /order.find.json | order.find |
 | *OrderApi* | [**orderFulfillmentStatusList**](docs/OrderApi.md#orderfulfillmentstatuslist) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list |
 | *OrderApi* | [**orderInfo**](docs/OrderApi.md#orderinfo) | **GET** /order.info.json | order.info |
 | *OrderApi* | [**orderList**](docs/OrderApi.md#orderlist) | **GET** /order.list.json | order.list |
@@ -168,7 +160,6 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 | *ProductApi* | [**productCurrencyList**](docs/ProductApi.md#productcurrencylist) | **GET** /product.currency.list.json | product.currency.list |
 | *ProductApi* | [**productDelete**](docs/ProductApi.md#productdelete) | **DELETE** /product.delete.json | product.delete |
 | *ProductApi* | [**productDeleteBatch**](docs/ProductApi.md#productdeletebatch) | **POST** /product.delete.batch.json | product.delete.batch |
-| *ProductApi* | [**productFields**](docs/ProductApi.md#productfields) | **GET** /product.fields.json | product.fields |
 | *ProductApi* | [**productFind**](docs/ProductApi.md#productfind) | **GET** /product.find.json | product.find |
 | *ProductApi* | [**productImageAdd**](docs/ProductApi.md#productimageadd) | **POST** /product.image.add.json | product.image.add |
 | *ProductApi* | [**productImageDelete**](docs/ProductApi.md#productimagedelete) | **DELETE** /product.image.delete.json | product.image.delete |
@@ -194,13 +185,10 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 | *ProductApi* | [**productUpdateBatch**](docs/ProductApi.md#productupdatebatch) | **POST** /product.update.batch.json | product.update.batch |
 | *ProductApi* | [**productVariantAdd**](docs/ProductApi.md#productvariantadd) | **POST** /product.variant.add.json | product.variant.add |
 | *ProductApi* | [**productVariantAddBatch**](docs/ProductApi.md#productvariantaddbatch) | **POST** /product.variant.add.batch.json | product.variant.add.batch |
-| *ProductApi* | [**productVariantCount**](docs/ProductApi.md#productvariantcount) | **GET** /product.variant.count.json | product.variant.count |
 | *ProductApi* | [**productVariantDelete**](docs/ProductApi.md#productvariantdelete) | **DELETE** /product.variant.delete.json | product.variant.delete |
 | *ProductApi* | [**productVariantDeleteBatch**](docs/ProductApi.md#productvariantdeletebatch) | **POST** /product.variant.delete.batch.json | product.variant.delete.batch |
 | *ProductApi* | [**productVariantImageAdd**](docs/ProductApi.md#productvariantimageadd) | **POST** /product.variant.image.add.json | product.variant.image.add |
 | *ProductApi* | [**productVariantImageDelete**](docs/ProductApi.md#productvariantimagedelete) | **DELETE** /product.variant.image.delete.json | product.variant.image.delete |
-| *ProductApi* | [**productVariantInfo**](docs/ProductApi.md#productvariantinfo) | **GET** /product.variant.info.json | product.variant.info |
-| *ProductApi* | [**productVariantList**](docs/ProductApi.md#productvariantlist) | **GET** /product.variant.list.json | product.variant.list |
 | *ProductApi* | [**productVariantPriceAdd**](docs/ProductApi.md#productvariantpriceadd) | **POST** /product.variant.price.add.json | product.variant.price.add |
 | *ProductApi* | [**productVariantPriceDelete**](docs/ProductApi.md#productvariantpricedelete) | **DELETE** /product.variant.price.delete.json | product.variant.price.delete |
 | *ProductApi* | [**productVariantPriceUpdate**](docs/ProductApi.md#productvariantpriceupdate) | **PUT** /product.variant.price.update.json | product.variant.price.update |
@@ -281,35 +269,21 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
  - [org.openapitools.client.models.Brand](docs/Brand.md)
  - [org.openapitools.client.models.Carrier](docs/Carrier.md)
  - [org.openapitools.client.models.Cart](docs/Cart.md)
- - [org.openapitools.client.models.CartBridge200Response](docs/CartBridge200Response.md)
- - [org.openapitools.client.models.CartBridge200ResponseResult](docs/CartBridge200ResponseResult.md)
  - [org.openapitools.client.models.CartCatalogPriceRulesCount200Response](docs/CartCatalogPriceRulesCount200Response.md)
  - [org.openapitools.client.models.CartCatalogPriceRulesCount200ResponseResult](docs/CartCatalogPriceRulesCount200ResponseResult.md)
  - [org.openapitools.client.models.CartChannel](docs/CartChannel.md)
- - [org.openapitools.client.models.CartClearCache200Response](docs/CartClearCache200Response.md)
- - [org.openapitools.client.models.CartClearCache200ResponseResult](docs/CartClearCache200ResponseResult.md)
- - [org.openapitools.client.models.CartConfig200Response](docs/CartConfig200Response.md)
- - [org.openapitools.client.models.CartConfig200ResponseResult](docs/CartConfig200ResponseResult.md)
- - [org.openapitools.client.models.CartConfigUpdate](docs/CartConfigUpdate.md)
- - [org.openapitools.client.models.CartConfigUpdate200Response](docs/CartConfigUpdate200Response.md)
  - [org.openapitools.client.models.CartCouponAdd](docs/CartCouponAdd.md)
  - [org.openapitools.client.models.CartCouponAdd200Response](docs/CartCouponAdd200Response.md)
  - [org.openapitools.client.models.CartCouponAdd200ResponseResult](docs/CartCouponAdd200ResponseResult.md)
  - [org.openapitools.client.models.CartCouponCount200Response](docs/CartCouponCount200Response.md)
  - [org.openapitools.client.models.CartCouponCount200ResponseResult](docs/CartCouponCount200ResponseResult.md)
- - [org.openapitools.client.models.CartCreate](docs/CartCreate.md)
  - [org.openapitools.client.models.CartDelete200Response](docs/CartDelete200Response.md)
  - [org.openapitools.client.models.CartDelete200ResponseResult](docs/CartDelete200ResponseResult.md)
- - [org.openapitools.client.models.CartDisconnect200Response](docs/CartDisconnect200Response.md)
- - [org.openapitools.client.models.CartDisconnect200ResponseResult](docs/CartDisconnect200ResponseResult.md)
  - [org.openapitools.client.models.CartGiftcardAdd200Response](docs/CartGiftcardAdd200Response.md)
  - [org.openapitools.client.models.CartGiftcardAdd200ResponseResult](docs/CartGiftcardAdd200ResponseResult.md)
  - [org.openapitools.client.models.CartGiftcardCount200Response](docs/CartGiftcardCount200Response.md)
  - [org.openapitools.client.models.CartGiftcardCount200ResponseResult](docs/CartGiftcardCount200ResponseResult.md)
  - [org.openapitools.client.models.CartInfo200Response](docs/CartInfo200Response.md)
- - [org.openapitools.client.models.CartList200Response](docs/CartList200Response.md)
- - [org.openapitools.client.models.CartList200ResponseResult](docs/CartList200ResponseResult.md)
- - [org.openapitools.client.models.CartList200ResponseResultSupportedCartsInner](docs/CartList200ResponseResultSupportedCartsInner.md)
  - [org.openapitools.client.models.CartMetaData](docs/CartMetaData.md)
  - [org.openapitools.client.models.CartMethods200Response](docs/CartMethods200Response.md)
  - [org.openapitools.client.models.CartMethods200ResponseResult](docs/CartMethods200ResponseResult.md)
@@ -335,6 +309,7 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
  - [org.openapitools.client.models.CategoryAddBatch200ResponseResult](docs/CategoryAddBatch200ResponseResult.md)
  - [org.openapitools.client.models.CategoryAddBatchPayloadInner](docs/CategoryAddBatchPayloadInner.md)
  - [org.openapitools.client.models.CategoryAddBatchPayloadInnerImagesInner](docs/CategoryAddBatchPayloadInnerImagesInner.md)
+ - [org.openapitools.client.models.CategoryAssign200Response](docs/CategoryAssign200Response.md)
  - [org.openapitools.client.models.CategoryCount200Response](docs/CategoryCount200Response.md)
  - [org.openapitools.client.models.CategoryCount200ResponseResult](docs/CategoryCount200ResponseResult.md)
  - [org.openapitools.client.models.CategoryDelete200Response](docs/CategoryDelete200Response.md)
@@ -432,8 +407,6 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
  - [org.openapitools.client.models.OrderFinancialStatusList200Response](docs/OrderFinancialStatusList200Response.md)
  - [org.openapitools.client.models.OrderFinancialStatusList200ResponseResult](docs/OrderFinancialStatusList200ResponseResult.md)
  - [org.openapitools.client.models.OrderFinancialStatusList200ResponseResultOrderFinancialStatusesInner](docs/OrderFinancialStatusList200ResponseResultOrderFinancialStatusesInner.md)
- - [org.openapitools.client.models.OrderFind200Response](docs/OrderFind200Response.md)
- - [org.openapitools.client.models.OrderFind200ResponseResult](docs/OrderFind200ResponseResult.md)
  - [org.openapitools.client.models.OrderFulfillmentStatusList200Response](docs/OrderFulfillmentStatusList200Response.md)
  - [org.openapitools.client.models.OrderFulfillmentStatusList200ResponseResult](docs/OrderFulfillmentStatusList200ResponseResult.md)
  - [org.openapitools.client.models.OrderInfo200Response](docs/OrderInfo200Response.md)
@@ -576,15 +549,11 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
  - [org.openapitools.client.models.ProductVariantAddBatch](docs/ProductVariantAddBatch.md)
  - [org.openapitools.client.models.ProductVariantAddBatchPayloadInner](docs/ProductVariantAddBatchPayloadInner.md)
  - [org.openapitools.client.models.ProductVariantAddBatchPayloadInnerCombinationInner](docs/ProductVariantAddBatchPayloadInnerCombinationInner.md)
- - [org.openapitools.client.models.ProductVariantCount200Response](docs/ProductVariantCount200Response.md)
- - [org.openapitools.client.models.ProductVariantCount200ResponseResult](docs/ProductVariantCount200ResponseResult.md)
  - [org.openapitools.client.models.ProductVariantDeleteBatch](docs/ProductVariantDeleteBatch.md)
  - [org.openapitools.client.models.ProductVariantDeleteBatchPayloadInner](docs/ProductVariantDeleteBatchPayloadInner.md)
  - [org.openapitools.client.models.ProductVariantImageAdd](docs/ProductVariantImageAdd.md)
  - [org.openapitools.client.models.ProductVariantImageAdd200Response](docs/ProductVariantImageAdd200Response.md)
  - [org.openapitools.client.models.ProductVariantImageAdd200ResponseResult](docs/ProductVariantImageAdd200ResponseResult.md)
- - [org.openapitools.client.models.ProductVariantList200Response](docs/ProductVariantList200Response.md)
- - [org.openapitools.client.models.ProductVariantList200ResponseResult](docs/ProductVariantList200ResponseResult.md)
  - [org.openapitools.client.models.ProductVariantPriceAdd](docs/ProductVariantPriceAdd.md)
  - [org.openapitools.client.models.ProductVariantPriceUpdate](docs/ProductVariantPriceUpdate.md)
  - [org.openapitools.client.models.ProductVariantUpdate](docs/ProductVariantUpdate.md)

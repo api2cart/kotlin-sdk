@@ -41,7 +41,7 @@ class MarketplaceApi(basePath: kotlin.String = defaultBasePath, client: Call.Fac
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://api.api2cart.com/v1.1")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://api.api2cart.local.com/v1.1")
         }
     }
 

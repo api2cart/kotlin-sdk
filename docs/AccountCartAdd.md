@@ -7,6 +7,10 @@
 | **cartId** | [**inline**](#CartId) | Store’s identifier which you can get from cart_list method |  |
 | **bigcartelUserName** | **kotlin.String** | Subdomain of store |  |
 | **bigcartelPassword** | **kotlin.String** | BigCartel account password |  |
+| **bricklinkConsumerKey** | **kotlin.String** | Bricklink Consumer Key |  |
+| **bricklinkConsumerSecret** | **kotlin.String** | Bricklink Consumer Secret |  |
+| **bricklinkToken** | **kotlin.String** | Bricklink Access Token |  |
+| **bricklinkTokenSecret** | **kotlin.String** | Bricklink Access Token Secret |  |
 | **wixAppId** | **kotlin.String** | Wix App ID |  |
 | **wixAppSecretKey** | **kotlin.String** | Wix App Secret Key |  |
 | **temuAccessToken** | **kotlin.String** | Temu Access Token |  |

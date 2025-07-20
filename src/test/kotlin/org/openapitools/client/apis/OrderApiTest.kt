@@ -32,7 +32,6 @@ import org.openapitools.client.models.OrderAdd
 import org.openapitools.client.models.OrderAdd200Response
 import org.openapitools.client.models.OrderCount200Response
 import org.openapitools.client.models.OrderFinancialStatusList200Response
-import org.openapitools.client.models.OrderFind200Response
 import org.openapitools.client.models.OrderFulfillmentStatusList200Response
 import org.openapitools.client.models.OrderInfo200Response
 import org.openapitools.client.models.OrderPreestimateShippingList
@@ -115,25 +114,6 @@ class OrderApiTest : ShouldSpec() {
         should("test orderFinancialStatusList") {
             // uncomment below to test orderFinancialStatusList
             //val result : OrderFinancialStatusList200Response = apiInstance.orderFinancialStatusList()
-            //result shouldBe ("TODO")
-        }
-
-        // to test orderFind
-        should("test orderFind") {
-            // uncomment below to test orderFind
-            //val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
-            //val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-            //val customerId : kotlin.String = 5 // kotlin.String | Retrieves orders specified by customer id
-            //val customerEmail : kotlin.String = jubari@hannsgroup.com // kotlin.String | Retrieves orders specified by customer email
-            //val orderStatus : kotlin.String = Completed // kotlin.String | Retrieves orders specified by order status
-            //val financialStatus : kotlin.String = paid // kotlin.String | Retrieves orders specified by financial status
-            //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
-            //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
-            //val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-            //val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
-            //val params : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-            //val exclude : kotlin.String = order_id,totals,status // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : OrderFind200Response = apiInstance.orderFind(start, count, customerId, customerEmail, orderStatus, financialStatus, createdTo, createdFrom, modifiedTo, modifiedFrom, params, exclude)
             //result shouldBe ("TODO")
         }
 

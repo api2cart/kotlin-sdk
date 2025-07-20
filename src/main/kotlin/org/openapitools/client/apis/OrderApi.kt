@@ -32,7 +32,6 @@ import org.openapitools.client.models.OrderAdd
 import org.openapitools.client.models.OrderAdd200Response
 import org.openapitools.client.models.OrderCount200Response
 import org.openapitools.client.models.OrderFinancialStatusList200Response
-import org.openapitools.client.models.OrderFind200Response
 import org.openapitools.client.models.OrderFulfillmentStatusList200Response
 import org.openapitools.client.models.OrderInfo200Response
 import org.openapitools.client.models.OrderPreestimateShippingList
@@ -70,7 +69,7 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
     companion object {
         @JvmStatic
         val defaultBasePath: String by lazy {
-            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://api.api2cart.com/v1.1")
+            System.getProperties().getProperty(ApiClient.baseUrlKey, "https://api.api2cart.local.com/v1.1")
         }
     }
 
@@ -551,153 +550,6 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
         return RequestConfig(
             method = RequestMethod.GET,
             path = "/order.financial_status.list.json",
-            query = localVariableQuery,
-            headers = localVariableHeaders,
-            requiresAuthentication = true,
-            body = localVariableBody
-        )
-    }
-
-    /**
-     * order.find
-     * This method is deprecated and won&#39;t be supported in the future. Please use \&quot;order.list\&quot; instead.
-     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param customerId Retrieves orders specified by customer id (optional)
-     * @param customerEmail Retrieves orders specified by customer email (optional)
-     * @param orderStatus Retrieves orders specified by order status (optional)
-     * @param financialStatus Retrieves orders specified by financial status (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @return OrderFind200Response
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     * @throws UnsupportedOperationException If the API returns an informational or redirection response
-     * @throws ClientException If the API returns a client error response
-     * @throws ServerException If the API returns a server error response
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun orderFind(start: kotlin.Int? = 0, count: kotlin.Int? = 10, customerId: kotlin.String? = null, customerEmail: kotlin.String? = null, orderStatus: kotlin.String? = null, financialStatus: kotlin.String? = null, createdTo: kotlin.String? = null, createdFrom: kotlin.String? = null, modifiedTo: kotlin.String? = null, modifiedFrom: kotlin.String? = null, params: kotlin.String? = "order_id,customer,totals,address,items,bundles,status", exclude: kotlin.String? = null) : OrderFind200Response {
-        @Suppress("DEPRECATION")
-        val localVarResponse = orderFindWithHttpInfo(start = start, count = count, customerId = customerId, customerEmail = customerEmail, orderStatus = orderStatus, financialStatus = financialStatus, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, params = params, exclude = exclude)
-
-        return when (localVarResponse.responseType) {
-            ResponseType.Success -> (localVarResponse as Success<*>).data as OrderFind200Response
-            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
-            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
-            ResponseType.ClientError -> {
-                val localVarError = localVarResponse as ClientError<*>
-                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
-            }
-            ResponseType.ServerError -> {
-                val localVarError = localVarResponse as ServerError<*>
-                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
-            }
-        }
-    }
-
-    /**
-     * order.find
-     * This method is deprecated and won&#39;t be supported in the future. Please use \&quot;order.list\&quot; instead.
-     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param customerId Retrieves orders specified by customer id (optional)
-     * @param customerEmail Retrieves orders specified by customer email (optional)
-     * @param orderStatus Retrieves orders specified by order status (optional)
-     * @param financialStatus Retrieves orders specified by financial status (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @return ApiResponse<OrderFind200Response?>
-     * @throws IllegalStateException If the request is not correctly configured
-     * @throws IOException Rethrows the OkHttp execute method exception
-     */
-    @Suppress("UNCHECKED_CAST")
-    @Throws(IllegalStateException::class, IOException::class)
-    @Deprecated(message = "This operation is deprecated.")
-    fun orderFindWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, customerId: kotlin.String?, customerEmail: kotlin.String?, orderStatus: kotlin.String?, financialStatus: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<OrderFind200Response?> {
-        @Suppress("DEPRECATION")
-        val localVariableConfig = orderFindRequestConfig(start = start, count = count, customerId = customerId, customerEmail = customerEmail, orderStatus = orderStatus, financialStatus = financialStatus, createdTo = createdTo, createdFrom = createdFrom, modifiedTo = modifiedTo, modifiedFrom = modifiedFrom, params = params, exclude = exclude)
-
-        return request<Unit, OrderFind200Response>(
-            localVariableConfig
-        )
-    }
-
-    /**
-     * To obtain the request config of the operation orderFind
-     *
-     * @param start This parameter sets the number from which you want to get entities (optional, default to 0)
-     * @param count This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 (optional, default to 10)
-     * @param customerId Retrieves orders specified by customer id (optional)
-     * @param customerEmail Retrieves orders specified by customer email (optional)
-     * @param orderStatus Retrieves orders specified by order status (optional)
-     * @param financialStatus Retrieves orders specified by financial status (optional)
-     * @param createdTo Retrieve entities to their creation date (optional)
-     * @param createdFrom Retrieve entities from their creation date (optional)
-     * @param modifiedTo Retrieve entities to their modification date (optional)
-     * @param modifiedFrom Retrieve entities from their modification date (optional)
-     * @param params Set this parameter in order to choose which entity fields you want to retrieve (optional, default to "order_id,customer,totals,address,items,bundles,status")
-     * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
-     * @return RequestConfig
-     */
-    @Deprecated(message = "This operation is deprecated.")
-    fun orderFindRequestConfig(start: kotlin.Int?, count: kotlin.Int?, customerId: kotlin.String?, customerEmail: kotlin.String?, orderStatus: kotlin.String?, financialStatus: kotlin.String?, createdTo: kotlin.String?, createdFrom: kotlin.String?, modifiedTo: kotlin.String?, modifiedFrom: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
-        val localVariableBody = null
-        val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
-            .apply {
-                if (start != null) {
-                    put("start", listOf(start.toString()))
-                }
-                if (count != null) {
-                    put("count", listOf(count.toString()))
-                }
-                if (customerId != null) {
-                    put("customer_id", listOf(customerId.toString()))
-                }
-                if (customerEmail != null) {
-                    put("customer_email", listOf(customerEmail.toString()))
-                }
-                if (orderStatus != null) {
-                    put("order_status", listOf(orderStatus.toString()))
-                }
-                if (financialStatus != null) {
-                    put("financial_status", listOf(financialStatus.toString()))
-                }
-                if (createdTo != null) {
-                    put("created_to", listOf(createdTo.toString()))
-                }
-                if (createdFrom != null) {
-                    put("created_from", listOf(createdFrom.toString()))
-                }
-                if (modifiedTo != null) {
-                    put("modified_to", listOf(modifiedTo.toString()))
-                }
-                if (modifiedFrom != null) {
-                    put("modified_from", listOf(modifiedFrom.toString()))
-                }
-                if (params != null) {
-                    put("params", listOf(params.toString()))
-                }
-                if (exclude != null) {
-                    put("exclude", listOf(exclude.toString()))
-                }
-            }
-        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
-        localVariableHeaders["Accept"] = "application/json"
-
-        return RequestConfig(
-            method = RequestMethod.GET,
-            path = "/order.find.json",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

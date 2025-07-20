@@ -1,6 +1,6 @@
 # ProductApi
 
-All URIs are relative to *https://api.api2cart.com/v1.1*
+All URIs are relative to *https://api.api2cart.local.com/v1.1*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -18,7 +18,6 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 | [**productCurrencyList**](ProductApi.md#productCurrencyList) | **GET** /product.currency.list.json | product.currency.list |
 | [**productDelete**](ProductApi.md#productDelete) | **DELETE** /product.delete.json | product.delete |
 | [**productDeleteBatch**](ProductApi.md#productDeleteBatch) | **POST** /product.delete.batch.json | product.delete.batch |
-| [**productFields**](ProductApi.md#productFields) | **GET** /product.fields.json | product.fields |
 | [**productFind**](ProductApi.md#productFind) | **GET** /product.find.json | product.find |
 | [**productImageAdd**](ProductApi.md#productImageAdd) | **POST** /product.image.add.json | product.image.add |
 | [**productImageDelete**](ProductApi.md#productImageDelete) | **DELETE** /product.image.delete.json | product.image.delete |
@@ -44,13 +43,10 @@ All URIs are relative to *https://api.api2cart.com/v1.1*
 | [**productUpdateBatch**](ProductApi.md#productUpdateBatch) | **POST** /product.update.batch.json | product.update.batch |
 | [**productVariantAdd**](ProductApi.md#productVariantAdd) | **POST** /product.variant.add.json | product.variant.add |
 | [**productVariantAddBatch**](ProductApi.md#productVariantAddBatch) | **POST** /product.variant.add.batch.json | product.variant.add.batch |
-| [**productVariantCount**](ProductApi.md#productVariantCount) | **GET** /product.variant.count.json | product.variant.count |
 | [**productVariantDelete**](ProductApi.md#productVariantDelete) | **DELETE** /product.variant.delete.json | product.variant.delete |
 | [**productVariantDeleteBatch**](ProductApi.md#productVariantDeleteBatch) | **POST** /product.variant.delete.batch.json | product.variant.delete.batch |
 | [**productVariantImageAdd**](ProductApi.md#productVariantImageAdd) | **POST** /product.variant.image.add.json | product.variant.image.add |
 | [**productVariantImageDelete**](ProductApi.md#productVariantImageDelete) | **DELETE** /product.variant.image.delete.json | product.variant.image.delete |
-| [**productVariantInfo**](ProductApi.md#productVariantInfo) | **GET** /product.variant.info.json | product.variant.info |
-| [**productVariantList**](ProductApi.md#productVariantList) | **GET** /product.variant.list.json | product.variant.list |
 | [**productVariantPriceAdd**](ProductApi.md#productVariantPriceAdd) | **POST** /product.variant.price.add.json | product.variant.price.add |
 | [**productVariantPriceDelete**](ProductApi.md#productVariantPriceDelete) | **DELETE** /product.variant.price.delete.json | product.variant.price.delete |
 | [**productVariantPriceUpdate**](ProductApi.md#productVariantPriceUpdate) | **PUT** /product.variant.price.update.json | product.variant.price.update |
@@ -1006,55 +1002,6 @@ Configure ApiKeyAuth:
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a id="productFields"></a>
-# **productFields**
-> CartConfigUpdate200Response productFields()
-
-product.fields
-
-Retrieve all available fields for product item in store.
-
-### Example
-```kotlin
-// Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
-
-val apiInstance = ProductApi()
-try {
-    val result : CartConfigUpdate200Response = apiInstance.productFields()
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProductApi#productFields")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProductApi#productFields")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**CartConfigUpdate200Response**](CartConfigUpdate200Response.md)
-
-### Authorization
-
-
-Configure StoreKeyAuth:
-    ApiClient.apiKey["x-store-key"] = ""
-    ApiClient.apiKeyPrefix["x-store-key"] = ""
-Configure ApiKeyAuth:
-    ApiClient.apiKey["x-api-key"] = ""
-    ApiClient.apiKeyPrefix["x-api-key"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a id="productFind"></a>
@@ -2565,70 +2512,6 @@ Configure ApiKeyAuth:
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a id="productVariantCount"></a>
-# **productVariantCount**
-> ProductVariantCount200Response productVariantCount(productId, categoryId, storeId, createdFrom, createdTo, modifiedFrom, modifiedTo)
-
-product.variant.count
-
-Get count variants.
-
-### Example
-```kotlin
-// Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
-
-val apiInstance = ProductApi()
-val productId : kotlin.String = 10 // kotlin.String | Retrieves products' variants specified by product id
-val categoryId : kotlin.String = 6 // kotlin.String | Counts products’ variants specified by category id
-val storeId : kotlin.String = 1 // kotlin.String | Retrieves variants specified by store id
-val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
-val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
-val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
-val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-try {
-    val result : ProductVariantCount200Response = apiInstance.productVariantCount(productId, categoryId, storeId, createdFrom, createdTo, modifiedFrom, modifiedTo)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProductApi#productVariantCount")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProductApi#productVariantCount")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **productId** | **kotlin.String**| Retrieves products&#39; variants specified by product id | |
-| **categoryId** | **kotlin.String**| Counts products’ variants specified by category id | [optional] |
-| **storeId** | **kotlin.String**| Retrieves variants specified by store id | [optional] |
-| **createdFrom** | **kotlin.String**| Retrieve entities from their creation date | [optional] |
-| **createdTo** | **kotlin.String**| Retrieve entities to their creation date | [optional] |
-| **modifiedFrom** | **kotlin.String**| Retrieve entities from their modification date | [optional] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **modifiedTo** | **kotlin.String**| Retrieve entities to their modification date | [optional] |
-
-### Return type
-
-[**ProductVariantCount200Response**](ProductVariantCount200Response.md)
-
-### Authorization
-
-
-Configure StoreKeyAuth:
-    ApiClient.apiKey["x-store-key"] = ""
-    ApiClient.apiKeyPrefix["x-store-key"] = ""
-Configure ApiKeyAuth:
-    ApiClient.apiKey["x-api-key"] = ""
-    ApiClient.apiKeyPrefix["x-api-key"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
 <a id="productVariantDelete"></a>
 # **productVariantDelete**
 > AttributeValueDelete200Response productVariantDelete(id, productId, storeId)
@@ -2831,136 +2714,6 @@ try {
 ### Return type
 
 [**AttributeDelete200Response**](AttributeDelete200Response.md)
-
-### Authorization
-
-
-Configure StoreKeyAuth:
-    ApiClient.apiKey["x-store-key"] = ""
-    ApiClient.apiKeyPrefix["x-store-key"] = ""
-Configure ApiKeyAuth:
-    ApiClient.apiKey["x-api-key"] = ""
-    ApiClient.apiKeyPrefix["x-api-key"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="productVariantInfo"></a>
-# **productVariantInfo**
-> ProductInfo200Response productVariantInfo(id, storeId, params, exclude)
-
-product.variant.info
-
-Get variant info. This method is deprecated, and its development is stopped. Please use \&quot;product.child_item.info\&quot; instead.
-
-### Example
-```kotlin
-// Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
-
-val apiInstance = ProductApi()
-val id : kotlin.String = 10 // kotlin.String | Retrieves variant's info specified by variant id
-val storeId : kotlin.String = 1 // kotlin.String | Retrieves variant info specified by store id
-val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-try {
-    val result : ProductInfo200Response = apiInstance.productVariantInfo(id, storeId, params, exclude)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProductApi#productVariantInfo")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProductApi#productVariantInfo")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **id** | **kotlin.String**| Retrieves variant&#39;s info specified by variant id | |
-| **storeId** | **kotlin.String**| Retrieves variant info specified by store id | [optional] |
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name,description,price&quot;] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-
-### Return type
-
-[**ProductInfo200Response**](ProductInfo200Response.md)
-
-### Authorization
-
-
-Configure StoreKeyAuth:
-    ApiClient.apiKey["x-store-key"] = ""
-    ApiClient.apiKeyPrefix["x-store-key"] = ""
-Configure ApiKeyAuth:
-    ApiClient.apiKey["x-api-key"] = ""
-    ApiClient.apiKeyPrefix["x-api-key"] = ""
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a id="productVariantList"></a>
-# **productVariantList**
-> ProductVariantList200Response productVariantList(start, count, productId, categoryId, storeId, createdFrom, createdTo, modifiedFrom, modifiedTo, params, exclude)
-
-product.variant.list
-
-Get a list of variants. This method is deprecated, and its development is stopped. Please use \&quot;product.child_item.list\&quot; instead.
-
-### Example
-```kotlin
-// Import classes:
-//import org.openapitools.client.infrastructure.*
-//import org.openapitools.client.models.*
-
-val apiInstance = ProductApi()
-val start : kotlin.Int = 0 // kotlin.Int | This parameter sets the number from which you want to get entities
-val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amount that has to be retrieved. Max allowed count=250
-val productId : kotlin.String = 10 // kotlin.String | Retrieves products' variants specified by product id
-val categoryId : kotlin.String = 6 // kotlin.String | Retrieves products’ variants specified by category id
-val storeId : kotlin.String = 1 // kotlin.String | Retrieves variants specified by store id
-val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
-val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
-val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
-val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
-val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
-val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-try {
-    val result : ProductVariantList200Response = apiInstance.productVariantList(start, count, productId, categoryId, storeId, createdFrom, createdTo, modifiedFrom, modifiedTo, params, exclude)
-    println(result)
-} catch (e: ClientException) {
-    println("4xx response calling ProductApi#productVariantList")
-    e.printStackTrace()
-} catch (e: ServerException) {
-    println("5xx response calling ProductApi#productVariantList")
-    e.printStackTrace()
-}
-```
-
-### Parameters
-| **start** | **kotlin.Int**| This parameter sets the number from which you want to get entities | [optional] [default to 0] |
-| **count** | **kotlin.Int**| This parameter sets the entity amount that has to be retrieved. Max allowed count&#x3D;250 | [optional] [default to 10] |
-| **productId** | **kotlin.String**| Retrieves products&#39; variants specified by product id | [optional] |
-| **categoryId** | **kotlin.String**| Retrieves products’ variants specified by category id | [optional] |
-| **storeId** | **kotlin.String**| Retrieves variants specified by store id | [optional] |
-| **createdFrom** | **kotlin.String**| Retrieve entities from their creation date | [optional] |
-| **createdTo** | **kotlin.String**| Retrieve entities to their creation date | [optional] |
-| **modifiedFrom** | **kotlin.String**| Retrieve entities from their modification date | [optional] |
-| **modifiedTo** | **kotlin.String**| Retrieve entities to their modification date | [optional] |
-| **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,name,description,price&quot;] |
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **exclude** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all | [optional] |
-
-### Return type
-
-[**ProductVariantList200Response**](ProductVariantList200Response.md)
 
 ### Authorization
 
