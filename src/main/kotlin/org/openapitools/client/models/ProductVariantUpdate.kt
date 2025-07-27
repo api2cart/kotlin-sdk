@@ -36,6 +36,7 @@ import com.squareup.moshi.JsonClass
  * @param visible Set visibility status
  * @param status Defines product variant's status
  * @param backorderStatus Set backorder status
+ * @param lowStockThreshold Specify the quantity threshold below which the product is considered low in stock
  * @param availableForSale Specifies the set of visible/invisible product's variants for sale
  * @param avail Defines category's visibility status
  * @param isDefault Defines as a default variant
@@ -132,6 +133,10 @@ data class ProductVariantUpdate (
     /* Set backorder status */
     @Json(name = "backorder_status")
     val backorderStatus: kotlin.String? = null,
+
+    /* Specify the quantity threshold below which the product is considered low in stock */
+    @Json(name = "low_stock_threshold")
+    val lowStockThreshold: java.math.BigDecimal? = null,
 
     /* Specifies the set of visible/invisible product's variants for sale */
     @Json(name = "available_for_sale")

@@ -50,6 +50,7 @@ import com.squareup.moshi.JsonClass
  * @param inStock Set stock status
  * @param backorderStatus Set backorder status
  * @param manageStock Defines inventory tracking for product variant
+ * @param lowStockThreshold Specify the quantity threshold below which the product is considered low in stock
  * @param weight Weight
  * @param width Defines product's width
  * @param height Defines product's height
@@ -184,6 +185,10 @@ data class ProductVariantAdd (
     /* Defines inventory tracking for product variant */
     @Json(name = "manage_stock")
     val manageStock: kotlin.Boolean? = null,
+
+    /* Specify the quantity threshold below which the product is considered low in stock */
+    @Json(name = "low_stock_threshold")
+    val lowStockThreshold: java.math.BigDecimal? = null,
 
     /* Weight */
     @Json(name = "weight")

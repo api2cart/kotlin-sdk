@@ -1316,7 +1316,7 @@ Configure ApiKeyAuth:
 
 <a id="productList"></a>
 # **productList**
-> ModelResponseProductList productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion)
+> ModelResponseProductList productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion, productType)
 
 product.list
 
@@ -1363,8 +1363,9 @@ val reportRequestId : kotlin.String = 105245017661 // kotlin.String | Report req
 val disableCache : kotlin.Boolean = false // kotlin.Boolean | Disable cache for current request
 val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable report cache for current request
 val useLatestApiVersion : kotlin.Boolean = true // kotlin.Boolean | Use the latest platform API version
+val productType : kotlin.String = BICYCLE // kotlin.String | A categorization for the product
 try {
-    val result : ModelResponseProductList = apiInstance.productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion)
+    val result : ModelResponseProductList = apiInstance.productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion, productType)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProductApi#productList")
@@ -1409,9 +1410,10 @@ try {
 | **reportRequestId** | **kotlin.String**| Report request id | [optional] |
 | **disableCache** | **kotlin.Boolean**| Disable cache for current request | [optional] [default to false] |
 | **disableReportCache** | **kotlin.Boolean**| Disable report cache for current request | [optional] [default to false] |
+| **useLatestApiVersion** | **kotlin.Boolean**| Use the latest platform API version | [optional] [default to false] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **useLatestApiVersion** | **kotlin.Boolean**| Use the latest platform API version | [optional] [default to false] |
+| **productType** | **kotlin.String**| A categorization for the product | [optional] |
 
 ### Return type
 

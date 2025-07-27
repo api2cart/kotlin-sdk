@@ -30,6 +30,7 @@
 | **inStock** | **kotlin.Boolean** | Set stock status |  [optional] |
 | **backorderStatus** | **kotlin.String** | Set backorder status |  [optional] |
 | **manageStock** | **kotlin.Boolean** | Defines inventory tracking for product variant |  [optional] |
+| **lowStockThreshold** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Specify the quantity threshold below which the product is considered low in stock |  [optional] |
 | **weight** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Weight |  [optional] |
 | **width** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Defines product&#39;s width |  [optional] |
 | **height** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Defines product&#39;s height |  [optional] |

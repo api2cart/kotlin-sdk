@@ -36,6 +36,7 @@
 | **inventoryLevel** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
 | **inventory** | [**kotlin.collections.List&lt;ProductInventory&gt;**](ProductInventory.md) |  |  [optional] |
 | **minQuantity** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
+| **lowStockThreshold** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
 | **defaultQtyInPack** | [**java.math.BigDecimal**](java.math.BigDecimal.md) |  |  [optional] |
 | **isQtyInPackFixed** | **kotlin.Boolean** |  |  [optional] |
 | **weightUnit** | **kotlin.String** |  |  [optional] |

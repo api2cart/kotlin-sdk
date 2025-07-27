@@ -64,6 +64,7 @@ import com.squareup.moshi.JsonClass
  * @param backorderStatus Set backorder status
  * @param increaseQuantity Defines the incremental changes in product quantity
  * @param reduceQuantity Defines the decrement changes in product quantity
+ * @param lowStockThreshold Specify the quantity threshold below which the product is considered low in stock
  * @param warehouseId This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
  * @param weight Weight
  * @param weightUnit Weight Unit
@@ -264,6 +265,10 @@ data class ProductUpdate (
     /* Defines the decrement changes in product quantity */
     @Json(name = "reduce_quantity")
     val reduceQuantity: java.math.BigDecimal? = null,
+
+    /* Specify the quantity threshold below which the product is considered low in stock */
+    @Json(name = "low_stock_threshold")
+    val lowStockThreshold: java.math.BigDecimal? = null,
 
     /* This parameter is used for selecting a warehouse where you need to set/modify a product quantity. */
     @Json(name = "warehouse_id")

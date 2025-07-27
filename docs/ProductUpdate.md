@@ -41,6 +41,7 @@
 | **backorderStatus** | **kotlin.String** | Set backorder status |  [optional] |
 | **increaseQuantity** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Defines the incremental changes in product quantity |  [optional] |
 | **reduceQuantity** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Defines the decrement changes in product quantity |  [optional] |
+| **lowStockThreshold** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Specify the quantity threshold below which the product is considered low in stock |  [optional] |
 | **warehouseId** | **kotlin.String** | This parameter is used for selecting a warehouse where you need to set/modify a product quantity. |  [optional] |
 | **weight** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Weight |  [optional] |
 | **weightUnit** | **kotlin.String** | Weight Unit |  [optional] |

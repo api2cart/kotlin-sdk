@@ -73,6 +73,7 @@ import com.squareup.moshi.JsonClass
  * @param backorderStatus Set backorder status
  * @param minOrderQuantity The minimum quantity an order must contain, to be eligible to purchase this product.
  * @param maxOrderQuantity The maximum quantity an order can contain when purchasing the product.
+ * @param lowStockThreshold Specify the quantity threshold below which the product is considered low in stock
  * @param weight Weight
  * @param weightUnit Weight Unit
  * @param width Defines product's width
@@ -304,6 +305,10 @@ data class ProductAdd (
     /* The maximum quantity an order can contain when purchasing the product. */
     @Json(name = "max_order_quantity")
     val maxOrderQuantity: java.math.BigDecimal? = null,
+
+    /* Specify the quantity threshold below which the product is considered low in stock */
+    @Json(name = "low_stock_threshold")
+    val lowStockThreshold: java.math.BigDecimal? = null,
 
     /* Weight */
     @Json(name = "weight")

@@ -261,6 +261,12 @@ class ProductAddTest : ShouldSpec() {
             //modelInstance.maxOrderQuantity shouldBe ("TODO")
         }
 
+        // to test the property `lowStockThreshold` - Specify the quantity threshold below which the product is considered low in stock
+        should("test lowStockThreshold") {
+            // uncomment below to test the property
+            //modelInstance.lowStockThreshold shouldBe ("TODO")
+        }
+
         // to test the property `weight` - Weight
         should("test weight") {
             // uncomment below to test the property

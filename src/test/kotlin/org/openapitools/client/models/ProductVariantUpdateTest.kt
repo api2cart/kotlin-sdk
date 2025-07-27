@@ -104,6 +104,12 @@ class ProductVariantUpdateTest : ShouldSpec() {
             //modelInstance.backorderStatus shouldBe ("TODO")
         }
 
+        // to test the property `lowStockThreshold` - Specify the quantity threshold below which the product is considered low in stock
+        should("test lowStockThreshold") {
+            // uncomment below to test the property
+            //modelInstance.lowStockThreshold shouldBe ("TODO")
+        }
+
         // to test the property `availableForSale` - Specifies the set of visible/invisible product's variants for sale
         should("test availableForSale") {
             // uncomment below to test the property

@@ -60,6 +60,7 @@ import com.squareup.moshi.JsonClass
  * @param inventoryLevel 
  * @param inventory 
  * @param minQuantity 
+ * @param lowStockThreshold 
  * @param defaultQtyInPack 
  * @param isQtyInPackFixed 
  * @param weightUnit 
@@ -175,6 +176,9 @@ data class Child (
 
     @Json(name = "min_quantity")
     val minQuantity: java.math.BigDecimal? = null,
+
+    @Json(name = "low_stock_threshold")
+    val lowStockThreshold: java.math.BigDecimal? = null,
 
     @Json(name = "default_qty_in_pack")
     val defaultQtyInPack: java.math.BigDecimal? = null,

@@ -252,6 +252,12 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.reduceQuantity shouldBe ("TODO")
         }
 
+        // to test the property `lowStockThreshold` - Specify the quantity threshold below which the product is considered low in stock
+        should("test lowStockThreshold") {
+            // uncomment below to test the property
+            //modelInstance.lowStockThreshold shouldBe ("TODO")
+        }
+
         // to test the property `warehouseId` - This parameter is used for selecting a warehouse where you need to set/modify a product quantity.
         should("test warehouseId") {
             // uncomment below to test the property

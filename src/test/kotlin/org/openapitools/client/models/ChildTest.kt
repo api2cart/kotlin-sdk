@@ -223,6 +223,12 @@ class ChildTest : ShouldSpec() {
             //modelInstance.minQuantity shouldBe ("TODO")
         }
 
+        // to test the property `lowStockThreshold`
+        should("test lowStockThreshold") {
+            // uncomment below to test the property
+            //modelInstance.lowStockThreshold shouldBe ("TODO")
+        }
+
         // to test the property `defaultQtyInPack`
         should("test defaultQtyInPack") {
             // uncomment below to test the property

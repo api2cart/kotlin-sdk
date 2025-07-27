@@ -41,6 +41,7 @@
 | **backorderStatus** | **kotlin.String** | Set backorder status |  [optional] |
 | **minOrderQuantity** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | The minimum quantity an order must contain, to be eligible to purchase this product. |  [optional] |
 | **maxOrderQuantity** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | The maximum quantity an order can contain when purchasing the product. |  [optional] |
+| **lowStockThreshold** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Specify the quantity threshold below which the product is considered low in stock |  [optional] |
 | **weight** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Weight |  [optional] |
 | **weightUnit** | **kotlin.String** | Weight Unit |  [optional] |
 | **width** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Defines product&#39;s width |  [optional] |

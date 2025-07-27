@@ -400,7 +400,8 @@ class ProductApiTest : ShouldSpec() {
             //val disableCache : kotlin.Boolean = false // kotlin.Boolean | Disable cache for current request
             //val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable report cache for current request
             //val useLatestApiVersion : kotlin.Boolean = true // kotlin.Boolean | Use the latest platform API version
-            //val result : ModelResponseProductList = apiInstance.productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion)
+            //val productType : kotlin.String = BICYCLE // kotlin.String | A categorization for the product
+            //val result : ModelResponseProductList = apiInstance.productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion, productType)
             //result shouldBe ("TODO")
         }
 

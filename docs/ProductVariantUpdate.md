@@ -17,6 +17,7 @@
 | **visible** | **kotlin.String** | Set visibility status |  [optional] |
 | **status** | **kotlin.String** | Defines product variant&#39;s status |  [optional] |
 | **backorderStatus** | **kotlin.String** | Set backorder status |  [optional] |
+| **lowStockThreshold** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Specify the quantity threshold below which the product is considered low in stock |  [optional] |
 | **availableForSale** | **kotlin.Boolean** | Specifies the set of visible/invisible product&#39;s variants for sale |  [optional] |
 | **avail** | **kotlin.Boolean** | Defines category&#39;s visibility status |  [optional] |
 | **isDefault** | **kotlin.Boolean** | Defines as a default variant |  [optional] |
