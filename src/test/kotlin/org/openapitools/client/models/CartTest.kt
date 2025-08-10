@@ -46,6 +46,12 @@ class CartTest : ShouldSpec() {
             //modelInstance.version shouldBe ("TODO")
         }
 
+        // to test the property `bridgeVersion`
+        should("test bridgeVersion") {
+            // uncomment below to test the property
+            //modelInstance.bridgeVersion shouldBe ("TODO")
+        }
+
         // to test the property `dbPrefix`
         should("test dbPrefix") {
             // uncomment below to test the property

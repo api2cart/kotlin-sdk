@@ -34,10 +34,10 @@
 | **weightUnit** | **kotlin.String** |  |  [optional] |
 | **sortOrder** | **kotlin.Int** |  |  [optional] |
 | **inStock** | **kotlin.Boolean** |  |  [optional] |
-| **onSale** | **kotlin.Boolean** |  |  [optional] |
 | **backorders** | **kotlin.String** |  |  [optional] |
 | **manageStock** | **kotlin.String** |  |  [optional] |
 | **isStockManaged** | **kotlin.Boolean** |  |  [optional] |
+| **onSale** | **kotlin.Boolean** |  |  [optional] |
 | **createAt** | [**A2CDateTime**](A2CDateTime.md) |  |  [optional] |
 | **modifiedAt** | [**A2CDateTime**](A2CDateTime.md) |  |  [optional] |
 | **taxClassId** | **kotlin.String** |  |  [optional] |

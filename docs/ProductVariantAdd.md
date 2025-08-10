@@ -12,6 +12,7 @@
 | **shortDescription** | **kotlin.String** | Defines short description |  [optional] |
 | **availableForView** | **kotlin.Boolean** | Specifies the set of visible/invisible product&#39;s variants for users |  [optional] |
 | **availableForSale** | **kotlin.Boolean** | Specifies the set of visible/invisible product&#39;s variants for sale |  [optional] |
+| **status** | **kotlin.String** | Defines status |  [optional] |
 | **isVirtual** | **kotlin.Boolean** | Defines whether the product is virtual |  [optional] |
 | **isDefault** | **kotlin.Boolean** | Defines as a default variant |  [optional] |
 | **storeId** | **kotlin.String** | Add variants specified by store id |  [optional] |
@@ -43,6 +44,7 @@
 | **ean** | **kotlin.String** | European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products. |  [optional] |
 | **mpn** | **kotlin.String** | Manufacturer Part Number. A MPN is an identifier of a particular part design or material used. |  [optional] |
 | **isbn** | **kotlin.String** | International Standard Book Number. An ISBN is a unique identifier for books. |  [optional] |
+| **seoUrl** | **kotlin.String** | Defines unique URL for SEO |  [optional] |
 | **manufacturer** | **kotlin.String** | Specifies the product variant&#39;s manufacturer |  [optional] |
 | **createdAt** | **kotlin.String** | Defines the date of entity creation |  [optional] |
 | **metaTitle** | **kotlin.String** | Defines unique meta title for each entity |  [optional] |

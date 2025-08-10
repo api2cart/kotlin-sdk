@@ -215,12 +215,6 @@ class ProductTest : ShouldSpec() {
             //modelInstance.inStock shouldBe ("TODO")
         }
 
-        // to test the property `onSale`
-        should("test onSale") {
-            // uncomment below to test the property
-            //modelInstance.onSale shouldBe ("TODO")
-        }
-
         // to test the property `backorders`
         should("test backorders") {
             // uncomment below to test the property
@@ -237,6 +231,12 @@ class ProductTest : ShouldSpec() {
         should("test isStockManaged") {
             // uncomment below to test the property
             //modelInstance.isStockManaged shouldBe ("TODO")
+        }
+
+        // to test the property `onSale`
+        should("test onSale") {
+            // uncomment below to test the property
+            //modelInstance.onSale shouldBe ("TODO")
         }
 
         // to test the property `createAt`

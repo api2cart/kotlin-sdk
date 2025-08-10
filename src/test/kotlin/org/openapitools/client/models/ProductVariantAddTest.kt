@@ -75,6 +75,12 @@ class ProductVariantAddTest : ShouldSpec() {
             //modelInstance.availableForSale shouldBe ("TODO")
         }
 
+        // to test the property `status` - Defines status
+        should("test status") {
+            // uncomment below to test the property
+            //modelInstance.status shouldBe ("TODO")
+        }
+
         // to test the property `isVirtual` - Defines whether the product is virtual
         should("test isVirtual") {
             // uncomment below to test the property
@@ -259,6 +265,12 @@ class ProductVariantAddTest : ShouldSpec() {
         should("test isbn") {
             // uncomment below to test the property
             //modelInstance.isbn shouldBe ("TODO")
+        }
+
+        // to test the property `seoUrl` - Defines unique URL for SEO
+        should("test seoUrl") {
+            // uncomment below to test the property
+            //modelInstance.seoUrl shouldBe ("TODO")
         }
 
         // to test the property `manufacturer` - Specifies the product variant's manufacturer

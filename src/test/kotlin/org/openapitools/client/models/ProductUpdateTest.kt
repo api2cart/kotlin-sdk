@@ -546,5 +546,17 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.personalizationDetails shouldBe ("TODO")
         }
 
+        // to test the property `marketplaceItemProperties` - String containing the JSON representation of the supplied data
+        should("test marketplaceItemProperties") {
+            // uncomment below to test the property
+            //modelInstance.marketplaceItemProperties shouldBe ("TODO")
+        }
+
+        // to test the property `minOrderQuantity` - The minimum quantity an order must contain, to be eligible to purchase this product.
+        should("test minOrderQuantity") {
+            // uncomment below to test the property
+            //modelInstance.minOrderQuantity shouldBe ("TODO")
+        }
+
     }
 }

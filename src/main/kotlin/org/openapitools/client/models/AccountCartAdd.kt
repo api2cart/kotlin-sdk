@@ -24,16 +24,6 @@ import com.squareup.moshi.JsonClass
  * 
  *
  * @param cartId Store’s identifier which you can get from cart_list method
- * @param bigcartelUserName Subdomain of store
- * @param bigcartelPassword BigCartel account password
- * @param bricklinkConsumerKey Bricklink Consumer Key
- * @param bricklinkConsumerSecret Bricklink Consumer Secret
- * @param bricklinkToken Bricklink Access Token
- * @param bricklinkTokenSecret Bricklink Access Token Secret
- * @param wixAppId Wix App ID
- * @param wixAppSecretKey Wix App Secret Key
- * @param temuAccessToken Temu Access Token
- * @param temuRegion Temu API endpoint Region.
  * @param storeUrl A web address of a store that you would like to connect to API2Cart
  * @param bridgeUrl This parameter allows to set up store with custom bridge url (also you must use store_root parameter if a bridge folder is not in the root folder of the store)
  * @param storeRoot Absolute path to the store root directory (used with \"bridge_url\" parameter)
@@ -67,6 +57,12 @@ import com.squareup.moshi.JsonClass
  * @param bolApiKey Bol API Key
  * @param bolApiSecret Bol API Secret
  * @param bolRetailerId Bol Retailer ID
+ * @param bigcartelUserName Subdomain of store
+ * @param bigcartelPassword BigCartel account password
+ * @param bricklinkConsumerKey Bricklink Consumer Key
+ * @param bricklinkConsumerSecret Bricklink Consumer Secret
+ * @param bricklinkToken Bricklink Access Token
+ * @param bricklinkTokenSecret Bricklink Access Token Secret
  * @param demandwareClientId Demandware client id
  * @param demandwareApiPassword Demandware api password
  * @param demandwareUserName Demandware user name
@@ -151,6 +147,8 @@ import com.squareup.moshi.JsonClass
  * @param magentoAccessToken Magento Access Token
  * @param magentoTokenSecret Magento Token Secret
  * @param prestashopWebserviceKey Prestashop webservice key
+ * @param wixAppId Wix App ID
+ * @param wixAppSecretKey Wix App Secret Key
  * @param wixInstanceId Wix Instance ID
  * @param wixRefreshToken Wix refresh token
  * @param mercadoLibreAppId Mercado Libre App ID
@@ -188,6 +186,8 @@ import com.squareup.moshi.JsonClass
  * @param sallaAccessToken Salla Access Token
  * @param temuAppKey Temu App Key
  * @param temuAppSecret Temu App Secret
+ * @param temuAccessToken Temu Access Token
+ * @param temuRegion Temu API endpoint Region.
  */
 
 
@@ -196,46 +196,6 @@ data class AccountCartAdd (
     /* Store’s identifier which you can get from cart_list method */
     @Json(name = "cart_id")
     val cartId: AccountCartAdd.CartId,
-
-    /* Subdomain of store */
-    @Json(name = "bigcartel_user_name")
-    val bigcartelUserName: kotlin.String,
-
-    /* BigCartel account password */
-    @Json(name = "bigcartel_password")
-    val bigcartelPassword: kotlin.String,
-
-    /* Bricklink Consumer Key */
-    @Json(name = "bricklink_consumer_key")
-    val bricklinkConsumerKey: kotlin.String,
-
-    /* Bricklink Consumer Secret */
-    @Json(name = "bricklink_consumer_secret")
-    val bricklinkConsumerSecret: kotlin.String,
-
-    /* Bricklink Access Token */
-    @Json(name = "bricklink_token")
-    val bricklinkToken: kotlin.String,
-
-    /* Bricklink Access Token Secret */
-    @Json(name = "bricklink_token_secret")
-    val bricklinkTokenSecret: kotlin.String,
-
-    /* Wix App ID */
-    @Json(name = "wix_app_id")
-    val wixAppId: kotlin.String,
-
-    /* Wix App Secret Key */
-    @Json(name = "wix_app_secret_key")
-    val wixAppSecretKey: kotlin.String,
-
-    /* Temu Access Token */
-    @Json(name = "temu_access_token")
-    val temuAccessToken: kotlin.String,
-
-    /* Temu API endpoint Region. */
-    @Json(name = "temu_region")
-    val temuRegion: AccountCartAdd.TemuRegion,
 
     /* A web address of a store that you would like to connect to API2Cart */
     @Json(name = "store_url")
@@ -368,6 +328,30 @@ data class AccountCartAdd (
     /* Bol Retailer ID */
     @Json(name = "bol_retailer_id")
     val bolRetailerId: kotlin.Int? = null,
+
+    /* Subdomain of store */
+    @Json(name = "bigcartel_user_name")
+    val bigcartelUserName: kotlin.String? = null,
+
+    /* BigCartel account password */
+    @Json(name = "bigcartel_password")
+    val bigcartelPassword: kotlin.String? = null,
+
+    /* Bricklink Consumer Key */
+    @Json(name = "bricklink_consumer_key")
+    val bricklinkConsumerKey: kotlin.String? = null,
+
+    /* Bricklink Consumer Secret */
+    @Json(name = "bricklink_consumer_secret")
+    val bricklinkConsumerSecret: kotlin.String? = null,
+
+    /* Bricklink Access Token */
+    @Json(name = "bricklink_token")
+    val bricklinkToken: kotlin.String? = null,
+
+    /* Bricklink Access Token Secret */
+    @Json(name = "bricklink_token_secret")
+    val bricklinkTokenSecret: kotlin.String? = null,
 
     /* Demandware client id */
     @Json(name = "demandware_client_id")
@@ -705,6 +689,14 @@ data class AccountCartAdd (
     @Json(name = "prestashop_webservice_key")
     val prestashopWebserviceKey: kotlin.String? = null,
 
+    /* Wix App ID */
+    @Json(name = "wix_app_id")
+    val wixAppId: kotlin.String? = null,
+
+    /* Wix App Secret Key */
+    @Json(name = "wix_app_secret_key")
+    val wixAppSecretKey: kotlin.String? = null,
+
     /* Wix Instance ID */
     @Json(name = "wix_instance_id")
     val wixInstanceId: kotlin.String? = null,
@@ -851,7 +843,15 @@ data class AccountCartAdd (
 
     /* Temu App Secret */
     @Json(name = "temu_app_secret")
-    val temuAppSecret: kotlin.String? = null
+    val temuAppSecret: kotlin.String? = null,
+
+    /* Temu Access Token */
+    @Json(name = "temu_access_token")
+    val temuAccessToken: kotlin.String? = null,
+
+    /* Temu API endpoint Region. */
+    @Json(name = "temu_region")
+    val temuRegion: kotlin.String? = null
 
 ) {
 
@@ -928,17 +928,6 @@ data class AccountCartAdd (
         @Json(name = "Zid") Zid("Zid"),
         @Json(name = "Zoey") Zoey("Zoey"),
         @Json(name = "Zoho") Zoho("Zoho");
-    }
-    /**
-     * Temu API endpoint Region.
-     *
-     * Values: US,EU,GLOBAL
-     */
-    @JsonClass(generateAdapter = false)
-    enum class TemuRegion(val value: kotlin.String) {
-        @Json(name = "US") US("US"),
-        @Json(name = "EU") EU("EU"),
-        @Json(name = "GLOBAL") GLOBAL("GLOBAL");
     }
 
 }

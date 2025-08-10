@@ -5,16 +5,6 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **cartId** | [**inline**](#CartId) | Store’s identifier which you can get from cart_list method |  |
-| **bigcartelUserName** | **kotlin.String** | Subdomain of store |  |
-| **bigcartelPassword** | **kotlin.String** | BigCartel account password |  |
-| **bricklinkConsumerKey** | **kotlin.String** | Bricklink Consumer Key |  |
-| **bricklinkConsumerSecret** | **kotlin.String** | Bricklink Consumer Secret |  |
-| **bricklinkToken** | **kotlin.String** | Bricklink Access Token |  |
-| **bricklinkTokenSecret** | **kotlin.String** | Bricklink Access Token Secret |  |
-| **wixAppId** | **kotlin.String** | Wix App ID |  |
-| **wixAppSecretKey** | **kotlin.String** | Wix App Secret Key |  |
-| **temuAccessToken** | **kotlin.String** | Temu Access Token |  |
-| **temuRegion** | [**inline**](#TemuRegion) | Temu API endpoint Region. |  |
 | **storeUrl** | **kotlin.String** | A web address of a store that you would like to connect to API2Cart |  [optional] |
 | **bridgeUrl** | **kotlin.String** | This parameter allows to set up store with custom bridge url (also you must use store_root parameter if a bridge folder is not in the root folder of the store) |  [optional] |
 | **storeRoot** | **kotlin.String** | Absolute path to the store root directory (used with \&quot;bridge_url\&quot; parameter) |  [optional] |
@@ -48,6 +38,12 @@
 | **bolApiKey** | **kotlin.String** | Bol API Key |  [optional] |
 | **bolApiSecret** | **kotlin.String** | Bol API Secret |  [optional] |
 | **bolRetailerId** | **kotlin.Int** | Bol Retailer ID |  [optional] |
+| **bigcartelUserName** | **kotlin.String** | Subdomain of store |  [optional] |
+| **bigcartelPassword** | **kotlin.String** | BigCartel account password |  [optional] |
+| **bricklinkConsumerKey** | **kotlin.String** | Bricklink Consumer Key |  [optional] |
+| **bricklinkConsumerSecret** | **kotlin.String** | Bricklink Consumer Secret |  [optional] |
+| **bricklinkToken** | **kotlin.String** | Bricklink Access Token |  [optional] |
+| **bricklinkTokenSecret** | **kotlin.String** | Bricklink Access Token Secret |  [optional] |
 | **demandwareClientId** | **kotlin.String** | Demandware client id |  [optional] |
 | **demandwareApiPassword** | **kotlin.String** | Demandware api password |  [optional] |
 | **demandwareUserName** | **kotlin.String** | Demandware user name |  [optional] |
@@ -132,6 +128,8 @@
 | **magentoAccessToken** | **kotlin.String** | Magento Access Token |  [optional] |
 | **magentoTokenSecret** | **kotlin.String** | Magento Token Secret |  [optional] |
 | **prestashopWebserviceKey** | **kotlin.String** | Prestashop webservice key |  [optional] |
+| **wixAppId** | **kotlin.String** | Wix App ID |  [optional] |
+| **wixAppSecretKey** | **kotlin.String** | Wix App Secret Key |  [optional] |
 | **wixInstanceId** | **kotlin.String** | Wix Instance ID |  [optional] |
 | **wixRefreshToken** | **kotlin.String** | Wix refresh token |  [optional] |
 | **mercadoLibreAppId** | **kotlin.String** | Mercado Libre App ID |  [optional] |
@@ -169,6 +167,8 @@
 | **sallaAccessToken** | **kotlin.String** | Salla Access Token |  [optional] |
 | **temuAppKey** | **kotlin.String** | Temu App Key |  [optional] |
 | **temuAppSecret** | **kotlin.String** | Temu App Secret |  [optional] |
+| **temuAccessToken** | **kotlin.String** | Temu Access Token |  [optional] |
+| **temuRegion** | **kotlin.String** | Temu API endpoint Region. |  [optional] |
 
 
 <a id="CartId"></a>
@@ -176,13 +176,6 @@
 | Name | Value |
 | ---- | ----- |
 | cartId | 3DCart, 3DCartApi, AceShop, AmazonSP, AspDotNetStorefront, BigCartel, BigcommerceApi, Bol, CommerceHQ, Creloaded, Cscart, Cubecart, Demandware, EBay, Ecwid, EtsyAPIv3, Flipkart, Gambio, Hybris, JooCart, Lazada, LightSpeed, Magento1212, Magento2Api, MercadoLibre, MijoShop, Miva, Neto, Opencart14, Oscmax2, Oscommerce22ms2, Otto, Oxid, Pinnacle, Prestashop, PrestashopApi, SSPremium, Salla, Shopify, Shopee, Shoplazza, Shopline, Shopware, ShopwareApi, Square, Squarespace, Temu, Tiendanube, TikTokShop, Tomatocart, Ubercart, Virtuemart, Volusion, WPecommerce, Walmart, WebAsyst, Wix, Woocommerce, WoocommerceApi, Xcart, Xtcommerce, XtcommerceVeyton, Zencart137, Zid, Zoey, Zoho |
-
-
-<a id="TemuRegion"></a>
-## Enum: temu_region
-| Name | Value |
-| ---- | ----- |
-| temuRegion | US, EU, GLOBAL |
 
 
 

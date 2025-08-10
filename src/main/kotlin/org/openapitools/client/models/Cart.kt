@@ -28,6 +28,7 @@ import com.squareup.moshi.JsonClass
  * @param name 
  * @param url 
  * @param version 
+ * @param bridgeVersion 
  * @param dbPrefix 
  * @param storesInfo 
  * @param warehouses 
@@ -47,6 +48,9 @@ data class Cart (
 
     @Json(name = "version")
     val version: kotlin.String? = null,
+
+    @Json(name = "bridge_version")
+    val bridgeVersion: kotlin.String? = null,
 
     @Json(name = "db_prefix")
     val dbPrefix: kotlin.String? = null,

@@ -32,6 +32,7 @@ import com.squareup.moshi.JsonClass
  * @param shortDescription Defines short description
  * @param availableForView Specifies the set of visible/invisible product's variants for users
  * @param availableForSale Specifies the set of visible/invisible product's variants for sale
+ * @param status Defines status
  * @param isVirtual Defines whether the product is virtual
  * @param isDefault Defines as a default variant
  * @param storeId Add variants specified by store id
@@ -63,6 +64,7 @@ import com.squareup.moshi.JsonClass
  * @param ean European Article Number. An EAN is a unique 8 or 13-digit identifier that many industries (such as book publishers) use to identify products.
  * @param mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
  * @param isbn International Standard Book Number. An ISBN is a unique identifier for books.
+ * @param seoUrl Defines unique URL for SEO
  * @param manufacturer Specifies the product variant's manufacturer
  * @param createdAt Defines the date of entity creation
  * @param metaTitle Defines unique meta title for each entity
@@ -113,6 +115,10 @@ data class ProductVariantAdd (
     /* Specifies the set of visible/invisible product's variants for sale */
     @Json(name = "available_for_sale")
     val availableForSale: kotlin.Boolean? = true,
+
+    /* Defines status */
+    @Json(name = "status")
+    val status: kotlin.String? = null,
 
     /* Defines whether the product is virtual */
     @Json(name = "is_virtual")
@@ -237,6 +243,10 @@ data class ProductVariantAdd (
     /* International Standard Book Number. An ISBN is a unique identifier for books. */
     @Json(name = "isbn")
     val isbn: kotlin.String? = null,
+
+    /* Defines unique URL for SEO */
+    @Json(name = "seo_url")
+    val seoUrl: kotlin.String? = null,
 
     /* Specifies the product variant's manufacturer */
     @Json(name = "manufacturer")

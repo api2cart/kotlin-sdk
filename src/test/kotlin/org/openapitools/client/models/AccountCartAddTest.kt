@@ -32,66 +32,6 @@ class AccountCartAddTest : ShouldSpec() {
             //modelInstance.cartId shouldBe ("TODO")
         }
 
-        // to test the property `bigcartelUserName` - Subdomain of store
-        should("test bigcartelUserName") {
-            // uncomment below to test the property
-            //modelInstance.bigcartelUserName shouldBe ("TODO")
-        }
-
-        // to test the property `bigcartelPassword` - BigCartel account password
-        should("test bigcartelPassword") {
-            // uncomment below to test the property
-            //modelInstance.bigcartelPassword shouldBe ("TODO")
-        }
-
-        // to test the property `bricklinkConsumerKey` - Bricklink Consumer Key
-        should("test bricklinkConsumerKey") {
-            // uncomment below to test the property
-            //modelInstance.bricklinkConsumerKey shouldBe ("TODO")
-        }
-
-        // to test the property `bricklinkConsumerSecret` - Bricklink Consumer Secret
-        should("test bricklinkConsumerSecret") {
-            // uncomment below to test the property
-            //modelInstance.bricklinkConsumerSecret shouldBe ("TODO")
-        }
-
-        // to test the property `bricklinkToken` - Bricklink Access Token
-        should("test bricklinkToken") {
-            // uncomment below to test the property
-            //modelInstance.bricklinkToken shouldBe ("TODO")
-        }
-
-        // to test the property `bricklinkTokenSecret` - Bricklink Access Token Secret
-        should("test bricklinkTokenSecret") {
-            // uncomment below to test the property
-            //modelInstance.bricklinkTokenSecret shouldBe ("TODO")
-        }
-
-        // to test the property `wixAppId` - Wix App ID
-        should("test wixAppId") {
-            // uncomment below to test the property
-            //modelInstance.wixAppId shouldBe ("TODO")
-        }
-
-        // to test the property `wixAppSecretKey` - Wix App Secret Key
-        should("test wixAppSecretKey") {
-            // uncomment below to test the property
-            //modelInstance.wixAppSecretKey shouldBe ("TODO")
-        }
-
-        // to test the property `temuAccessToken` - Temu Access Token
-        should("test temuAccessToken") {
-            // uncomment below to test the property
-            //modelInstance.temuAccessToken shouldBe ("TODO")
-        }
-
-        // to test the property `temuRegion` - Temu API endpoint Region.
-        should("test temuRegion") {
-            // uncomment below to test the property
-            //modelInstance.temuRegion shouldBe ("TODO")
-        }
-
         // to test the property `storeUrl` - A web address of a store that you would like to connect to API2Cart
         should("test storeUrl") {
             // uncomment below to test the property
@@ -288,6 +228,42 @@ class AccountCartAddTest : ShouldSpec() {
         should("test bolRetailerId") {
             // uncomment below to test the property
             //modelInstance.bolRetailerId shouldBe ("TODO")
+        }
+
+        // to test the property `bigcartelUserName` - Subdomain of store
+        should("test bigcartelUserName") {
+            // uncomment below to test the property
+            //modelInstance.bigcartelUserName shouldBe ("TODO")
+        }
+
+        // to test the property `bigcartelPassword` - BigCartel account password
+        should("test bigcartelPassword") {
+            // uncomment below to test the property
+            //modelInstance.bigcartelPassword shouldBe ("TODO")
+        }
+
+        // to test the property `bricklinkConsumerKey` - Bricklink Consumer Key
+        should("test bricklinkConsumerKey") {
+            // uncomment below to test the property
+            //modelInstance.bricklinkConsumerKey shouldBe ("TODO")
+        }
+
+        // to test the property `bricklinkConsumerSecret` - Bricklink Consumer Secret
+        should("test bricklinkConsumerSecret") {
+            // uncomment below to test the property
+            //modelInstance.bricklinkConsumerSecret shouldBe ("TODO")
+        }
+
+        // to test the property `bricklinkToken` - Bricklink Access Token
+        should("test bricklinkToken") {
+            // uncomment below to test the property
+            //modelInstance.bricklinkToken shouldBe ("TODO")
+        }
+
+        // to test the property `bricklinkTokenSecret` - Bricklink Access Token Secret
+        should("test bricklinkTokenSecret") {
+            // uncomment below to test the property
+            //modelInstance.bricklinkTokenSecret shouldBe ("TODO")
         }
 
         // to test the property `demandwareClientId` - Demandware client id
@@ -794,6 +770,18 @@ class AccountCartAddTest : ShouldSpec() {
             //modelInstance.prestashopWebserviceKey shouldBe ("TODO")
         }
 
+        // to test the property `wixAppId` - Wix App ID
+        should("test wixAppId") {
+            // uncomment below to test the property
+            //modelInstance.wixAppId shouldBe ("TODO")
+        }
+
+        // to test the property `wixAppSecretKey` - Wix App Secret Key
+        should("test wixAppSecretKey") {
+            // uncomment below to test the property
+            //modelInstance.wixAppSecretKey shouldBe ("TODO")
+        }
+
         // to test the property `wixInstanceId` - Wix Instance ID
         should("test wixInstanceId") {
             // uncomment below to test the property
@@ -1014,6 +1002,18 @@ class AccountCartAddTest : ShouldSpec() {
         should("test temuAppSecret") {
             // uncomment below to test the property
             //modelInstance.temuAppSecret shouldBe ("TODO")
+        }
+
+        // to test the property `temuAccessToken` - Temu Access Token
+        should("test temuAccessToken") {
+            // uncomment below to test the property
+            //modelInstance.temuAccessToken shouldBe ("TODO")
+        }
+
+        // to test the property `temuRegion` - Temu API endpoint Region.
+        should("test temuRegion") {
+            // uncomment below to test the property
+            //modelInstance.temuRegion shouldBe ("TODO")
         }
 
     }
