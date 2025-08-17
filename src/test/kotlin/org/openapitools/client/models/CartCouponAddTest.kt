@@ -133,5 +133,11 @@ class CartCouponAddTest : ShouldSpec() {
             //modelInstance.freeCashOnDelivery shouldBe ("TODO")
         }
 
+        // to test the property `customerId` - Retrieves orders specified by customer id
+        should("test customerId") {
+            // uncomment below to test the property
+            //modelInstance.customerId shouldBe ("TODO")
+        }
+
     }
 }

@@ -351,6 +351,12 @@ class ProductAddTest : ShouldSpec() {
             //modelInstance.productReference shouldBe ("TODO")
         }
 
+        // to test the property `externalProductLink` - External product link
+        should("test externalProductLink") {
+            // uncomment below to test the property
+            //modelInstance.externalProductLink shouldBe ("TODO")
+        }
+
         // to test the property `harmonizedSystemCode` - Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
         should("test harmonizedSystemCode") {
             // uncomment below to test the property

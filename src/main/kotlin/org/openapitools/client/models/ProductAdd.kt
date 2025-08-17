@@ -88,6 +88,7 @@ import com.squareup.moshi.JsonClass
  * @param mpn Manufacturer Part Number. A MPN is an identifier of a particular part design or material used.
  * @param asin Amazon Standard Identification Number.
  * @param productReference Groups all variations, that you want to combine into one product.
+ * @param externalProductLink External product link
  * @param harmonizedSystemCode Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
  * @param countryOfOrigin The country where the inventory item was made
  * @param manufacturer Defines product's manufacturer
@@ -365,6 +366,10 @@ data class ProductAdd (
     /* Groups all variations, that you want to combine into one product. */
     @Json(name = "product_reference")
     val productReference: kotlin.String? = null,
+
+    /* External product link */
+    @Json(name = "external_product_link")
+    val externalProductLink: kotlin.String? = null,
 
     /* Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes */
     @Json(name = "harmonized_system_code")

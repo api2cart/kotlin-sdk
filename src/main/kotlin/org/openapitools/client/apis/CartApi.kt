@@ -675,6 +675,7 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * @param storeId Filter coupons by store id (optional)
      * @param langId Language id (optional)
      * @param avail Filter coupons by avail status (optional)
+     * @param status Defines coupon&#39;s status (optional)
      * @param dateStartFrom Filter entity by date_start (greater or equal) (optional)
      * @param dateStartTo Filter entity by date_start (less or equal) (optional)
      * @param dateEndFrom Filter entity by date_end (greater or equal) (optional)
@@ -691,8 +692,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
-    fun cartCouponList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, couponsIds: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, avail: kotlin.Boolean? = null, dateStartFrom: kotlin.String? = null, dateStartTo: kotlin.String? = null, dateEndFrom: kotlin.String? = null, dateEndTo: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,code,name,description", exclude: kotlin.String? = null) : ModelResponseCartCouponList {
-        val localVarResponse = cartCouponListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, couponsIds = couponsIds, storeId = storeId, langId = langId, avail = avail, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo, responseFields = responseFields, params = params, exclude = exclude)
+    fun cartCouponList(start: kotlin.Int? = 0, count: kotlin.Int? = 10, pageCursor: kotlin.String? = null, couponsIds: kotlin.String? = null, storeId: kotlin.String? = null, langId: kotlin.String? = null, avail: kotlin.Boolean? = null, status: kotlin.String? = null, dateStartFrom: kotlin.String? = null, dateStartTo: kotlin.String? = null, dateEndFrom: kotlin.String? = null, dateEndTo: kotlin.String? = null, responseFields: kotlin.String? = null, params: kotlin.String? = "id,code,name,description", exclude: kotlin.String? = null) : ModelResponseCartCouponList {
+        val localVarResponse = cartCouponListWithHttpInfo(start = start, count = count, pageCursor = pageCursor, couponsIds = couponsIds, storeId = storeId, langId = langId, avail = avail, status = status, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return when (localVarResponse.responseType) {
             ResponseType.Success -> (localVarResponse as Success<*>).data as ModelResponseCartCouponList
@@ -719,6 +720,7 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * @param storeId Filter coupons by store id (optional)
      * @param langId Language id (optional)
      * @param avail Filter coupons by avail status (optional)
+     * @param status Defines coupon&#39;s status (optional)
      * @param dateStartFrom Filter entity by date_start (greater or equal) (optional)
      * @param dateStartTo Filter entity by date_start (less or equal) (optional)
      * @param dateEndFrom Filter entity by date_end (greater or equal) (optional)
@@ -732,8 +734,8 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      */
     @Suppress("UNCHECKED_CAST")
     @Throws(IllegalStateException::class, IOException::class)
-    fun cartCouponListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, couponsIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, avail: kotlin.Boolean?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartCouponList?> {
-        val localVariableConfig = cartCouponListRequestConfig(start = start, count = count, pageCursor = pageCursor, couponsIds = couponsIds, storeId = storeId, langId = langId, avail = avail, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo, responseFields = responseFields, params = params, exclude = exclude)
+    fun cartCouponListWithHttpInfo(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, couponsIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, avail: kotlin.Boolean?, status: kotlin.String?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : ApiResponse<ModelResponseCartCouponList?> {
+        val localVariableConfig = cartCouponListRequestConfig(start = start, count = count, pageCursor = pageCursor, couponsIds = couponsIds, storeId = storeId, langId = langId, avail = avail, status = status, dateStartFrom = dateStartFrom, dateStartTo = dateStartTo, dateEndFrom = dateEndFrom, dateEndTo = dateEndTo, responseFields = responseFields, params = params, exclude = exclude)
 
         return request<Unit, ModelResponseCartCouponList>(
             localVariableConfig
@@ -750,6 +752,7 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * @param storeId Filter coupons by store id (optional)
      * @param langId Language id (optional)
      * @param avail Filter coupons by avail status (optional)
+     * @param status Defines coupon&#39;s status (optional)
      * @param dateStartFrom Filter entity by date_start (greater or equal) (optional)
      * @param dateStartTo Filter entity by date_start (less or equal) (optional)
      * @param dateEndFrom Filter entity by date_end (greater or equal) (optional)
@@ -759,7 +762,7 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
      * @param exclude Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter &#x60;params&#x60; equal force_all (optional)
      * @return RequestConfig
      */
-    fun cartCouponListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, couponsIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, avail: kotlin.Boolean?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
+    fun cartCouponListRequestConfig(start: kotlin.Int?, count: kotlin.Int?, pageCursor: kotlin.String?, couponsIds: kotlin.String?, storeId: kotlin.String?, langId: kotlin.String?, avail: kotlin.Boolean?, status: kotlin.String?, dateStartFrom: kotlin.String?, dateStartTo: kotlin.String?, dateEndFrom: kotlin.String?, dateEndTo: kotlin.String?, responseFields: kotlin.String?, params: kotlin.String?, exclude: kotlin.String?) : RequestConfig<Unit> {
         val localVariableBody = null
         val localVariableQuery: MultiValueMap = mutableMapOf<kotlin.String, kotlin.collections.List<kotlin.String>>()
             .apply {
@@ -783,6 +786,9 @@ class CartApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory = 
                 }
                 if (avail != null) {
                     put("avail", listOf(avail.toString()))
+                }
+                if (status != null) {
+                    put("status", listOf(status.toString()))
                 }
                 if (dateStartFrom != null) {
                     put("date_start_from", listOf(dateStartFrom.toString()))

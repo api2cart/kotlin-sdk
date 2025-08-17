@@ -40,6 +40,7 @@ import com.squareup.moshi.JsonClass
  * @param includeTax Indicates whether to apply a discount for taxes.
  * @param storeId Store Id
  * @param freeCashOnDelivery Defines whether the coupon provides free cash on delivery
+ * @param customerId Retrieves orders specified by customer id
  */
 
 
@@ -115,7 +116,11 @@ data class CartCouponAdd (
 
     /* Defines whether the coupon provides free cash on delivery */
     @Json(name = "free_cash_on_delivery")
-    val freeCashOnDelivery: kotlin.Boolean? = null
+    val freeCashOnDelivery: kotlin.Boolean? = null,
+
+    /* Retrieves orders specified by customer id */
+    @Json(name = "customer_id")
+    val customerId: kotlin.String? = null
 
 ) {
 

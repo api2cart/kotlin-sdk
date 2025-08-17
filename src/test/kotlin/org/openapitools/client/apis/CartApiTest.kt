@@ -123,6 +123,7 @@ class CartApiTest : ShouldSpec() {
             //val storeId : kotlin.String = 1 // kotlin.String | Filter coupons by store id
             //val langId : kotlin.String = 3 // kotlin.String | Language id
             //val avail : kotlin.Boolean = false // kotlin.Boolean | Filter coupons by avail status
+            //val status : kotlin.String = disabled // kotlin.String | Defines coupon's status
             //val dateStartFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (greater or equal)
             //val dateStartTo : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (less or equal)
             //val dateEndFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_end (greater or equal)
@@ -130,7 +131,7 @@ class CartApiTest : ShouldSpec() {
             //val responseFields : kotlin.String = {pagination,result{coupon_count,coupon{id,code,name,conditions,actions{scope,amount,conditions{id,value,sub-conditions}},date_start,avail}}} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val params : kotlin.String = id,code,type,amount // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = usage_history,type // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : ModelResponseCartCouponList = apiInstance.cartCouponList(start, count, pageCursor, couponsIds, storeId, langId, avail, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, responseFields, params, exclude)
+            //val result : ModelResponseCartCouponList = apiInstance.cartCouponList(start, count, pageCursor, couponsIds, storeId, langId, avail, status, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 

@@ -380,7 +380,7 @@ Configure ApiKeyAuth:
 
 <a id="cartCouponList"></a>
 # **cartCouponList**
-> ModelResponseCartCouponList cartCouponList(start, count, pageCursor, couponsIds, storeId, langId, avail, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, responseFields, params, exclude)
+> ModelResponseCartCouponList cartCouponList(start, count, pageCursor, couponsIds, storeId, langId, avail, status, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, responseFields, params, exclude)
 
 cart.coupon.list
 
@@ -400,6 +400,7 @@ val couponsIds : kotlin.String = 1,2,3 // kotlin.String | Filter coupons by ids
 val storeId : kotlin.String = 1 // kotlin.String | Filter coupons by store id
 val langId : kotlin.String = 3 // kotlin.String | Language id
 val avail : kotlin.Boolean = false // kotlin.Boolean | Filter coupons by avail status
+val status : kotlin.String = disabled // kotlin.String | Defines coupon's status
 val dateStartFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (greater or equal)
 val dateStartTo : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_start (less or equal)
 val dateEndFrom : kotlin.String = 2016-12-29 16:44:30 // kotlin.String | Filter entity by date_end (greater or equal)
@@ -408,7 +409,7 @@ val responseFields : kotlin.String = {pagination,result{coupon_count,coupon{id,c
 val params : kotlin.String = id,code,type,amount // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = usage_history,type // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : ModelResponseCartCouponList = apiInstance.cartCouponList(start, count, pageCursor, couponsIds, storeId, langId, avail, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, responseFields, params, exclude)
+    val result : ModelResponseCartCouponList = apiInstance.cartCouponList(start, count, pageCursor, couponsIds, storeId, langId, avail, status, dateStartFrom, dateStartTo, dateEndFrom, dateEndTo, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling CartApi#cartCouponList")
@@ -427,6 +428,7 @@ try {
 | **storeId** | **kotlin.String**| Filter coupons by store id | [optional] |
 | **langId** | **kotlin.String**| Language id | [optional] |
 | **avail** | **kotlin.Boolean**| Filter coupons by avail status | [optional] |
+| **status** | **kotlin.String**| Defines coupon&#39;s status | [optional] |
 | **dateStartFrom** | **kotlin.String**| Filter entity by date_start (greater or equal) | [optional] |
 | **dateStartTo** | **kotlin.String**| Filter entity by date_start (less or equal) | [optional] |
 | **dateEndFrom** | **kotlin.String**| Filter entity by date_end (greater or equal) | [optional] |

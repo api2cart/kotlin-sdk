@@ -858,7 +858,7 @@ data class AccountCartAdd (
     /**
      * Store’s identifier which you can get from cart_list method
      *
-     * Values: _3DCart,_3DCartApi,AceShop,AmazonSP,AspDotNetStorefront,BigCartel,BigcommerceApi,Bol,CommerceHQ,Creloaded,Cscart,Cubecart,Demandware,EBay,Ecwid,EtsyAPIv3,Flipkart,Gambio,Hybris,JooCart,Lazada,LightSpeed,Magento1212,Magento2Api,MercadoLibre,MijoShop,Miva,Neto,Opencart14,Oscmax2,Oscommerce22ms2,Otto,Oxid,Pinnacle,Prestashop,PrestashopApi,SSPremium,Salla,Shopify,Shopee,Shoplazza,Shopline,Shopware,ShopwareApi,Square,Squarespace,Temu,Tiendanube,TikTokShop,Tomatocart,Ubercart,Virtuemart,Volusion,WPecommerce,Walmart,WebAsyst,Wix,Woocommerce,WoocommerceApi,Xcart,Xtcommerce,XtcommerceVeyton,Zencart137,Zid,Zoey,Zoho
+     * Values: _3DCart,_3DCartApi,AceShop,AmazonSP,AspDotNetStorefront,BigCartel,Bricklink,BigcommerceApi,Bol,CommerceHQ,Creloaded,Cscart,Cubecart,Demandware,EBay,Ecwid,EtsyAPIv3,Flipkart,Gambio,Hybris,JooCart,Lazada,LightSpeed,Magento1212,Magento2Api,MercadoLibre,MijoShop,Miva,Neto,Opencart14,Oscmax2,Oscommerce22ms2,Otto,Oxid,Pinnacle,Prestashop,PrestashopApi,SSPremium,Salla,Shopify,Shopee,Shoplazza,Shopline,Shopware,ShopwareApi,Square,Squarespace,Temu,Tiendanube,TikTokShop,Tomatocart,Ubercart,Virtuemart,Volusion,WPecommerce,Walmart,WebAsyst,Wix,Woocommerce,WoocommerceApi,Xcart,Xtcommerce,XtcommerceVeyton,Zencart137,Zid,Zoey,Zoho
      */
     @JsonClass(generateAdapter = false)
     enum class CartId(val value: kotlin.String) {
@@ -868,6 +868,7 @@ data class AccountCartAdd (
         @Json(name = "AmazonSP") AmazonSP("AmazonSP"),
         @Json(name = "AspDotNetStorefront") AspDotNetStorefront("AspDotNetStorefront"),
         @Json(name = "BigCartel") BigCartel("BigCartel"),
+        @Json(name = "Bricklink") Bricklink("Bricklink"),
         @Json(name = "BigcommerceApi") BigcommerceApi("BigcommerceApi"),
         @Json(name = "Bol") Bol("Bol"),
         @Json(name = "CommerceHQ") CommerceHQ("CommerceHQ"),

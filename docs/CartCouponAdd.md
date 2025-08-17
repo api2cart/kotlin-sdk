@@ -22,6 +22,7 @@
 | **includeTax** | **kotlin.Boolean** | Indicates whether to apply a discount for taxes. |  [optional] |
 | **storeId** | **kotlin.String** | Store Id |  [optional] |
 | **freeCashOnDelivery** | **kotlin.Boolean** | Defines whether the coupon provides free cash on delivery |  [optional] |
+| **customerId** | **kotlin.String** | Retrieves orders specified by customer id |  [optional] |
 
 
 <a id="ActionType"></a>
