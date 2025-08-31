@@ -546,6 +546,12 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.personalizationDetails shouldBe ("TODO")
         }
 
+        // to test the property `externalProductLink` - External product link
+        should("test externalProductLink") {
+            // uncomment below to test the property
+            //modelInstance.externalProductLink shouldBe ("TODO")
+        }
+
         // to test the property `marketplaceItemProperties` - String containing the JSON representation of the supplied data
         should("test marketplaceItemProperties") {
             // uncomment below to test the property

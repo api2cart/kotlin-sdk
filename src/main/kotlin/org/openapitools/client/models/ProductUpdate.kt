@@ -113,6 +113,7 @@ import com.squareup.moshi.JsonClass
  * @param specifics An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields->product_specifics).         <b>The structure of the parameter is different for specific platforms.</b>
  * @param shopSectionId Add Shop Section Id
  * @param personalizationDetails 
+ * @param externalProductLink External product link
  * @param marketplaceItemProperties String containing the JSON representation of the supplied data
  * @param minOrderQuantity The minimum quantity an order must contain, to be eligible to purchase this product.
  */
@@ -460,6 +461,10 @@ data class ProductUpdate (
 
     @Json(name = "personalization_details")
     val personalizationDetails: ProductAddPersonalizationDetails? = null,
+
+    /* External product link */
+    @Json(name = "external_product_link")
+    val externalProductLink: kotlin.String? = null,
 
     /* String containing the JSON representation of the supplied data */
     @Json(name = "marketplace_item_properties")

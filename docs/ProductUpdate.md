@@ -90,6 +90,7 @@
 | **specifics** | [**kotlin.collections.List&lt;ProductAddSpecificsInner&gt;**](ProductAddSpecificsInner.md) | An array of Item Specific Name/Value pairs used by the seller to provide descriptive details of an item in a structured manner.         The list of possible specifications can be obtained using the category.info method (additional_fields-&gt;product_specifics).         &lt;b&gt;The structure of the parameter is different for specific platforms.&lt;/b&gt; |  [optional] |
 | **shopSectionId** | **kotlin.Int** | Add Shop Section Id |  [optional] |
 | **personalizationDetails** | [**ProductAddPersonalizationDetails**](ProductAddPersonalizationDetails.md) |  |  [optional] |
+| **externalProductLink** | **kotlin.String** | External product link |  [optional] |
 | **marketplaceItemProperties** | **kotlin.String** | String containing the JSON representation of the supplied data |  [optional] |
 | **minOrderQuantity** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | The minimum quantity an order must contain, to be eligible to purchase this product. |  [optional] |
 
