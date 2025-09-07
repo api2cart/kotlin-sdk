@@ -27,6 +27,7 @@
 | **manageStock** | **kotlin.Boolean** |  |  [optional] |
 | **productType** | **kotlin.String** |  |  [optional] |
 | **marketplaceItemProperties** | [**kotlin.Any**](.md) |  |  [optional] |
+| **specifics** | [**kotlin.Any**](.md) |  |  [optional] |
 | **isFreeShipping** | **kotlin.Boolean** |  |  [optional] |
 | **taxable** | **kotlin.Boolean** |  |  [optional] |
 | **status** | **kotlin.String** |  |  [optional] |
@@ -61,6 +62,7 @@
 | **harmonizedSystemCode** | **kotlin.String** |  |  [optional] |
 | **url** | **kotlin.String** |  |  [optional] |
 | **seoUrl** | **kotlin.String** |  |  [optional] |
+| **externalProductLink** | **kotlin.String** |  |  [optional] |
 | **manufacturer** | **kotlin.String** |  |  [optional] |
 | **manufacturerId** | **kotlin.String** |  |  [optional] |
 | **backorderStatus** | **kotlin.String** |  |  [optional] |

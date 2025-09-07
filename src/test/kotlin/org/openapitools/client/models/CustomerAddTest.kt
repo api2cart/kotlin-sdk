@@ -57,6 +57,12 @@ class CustomerAddTest : ShouldSpec() {
             //modelInstance.group shouldBe ("TODO")
         }
 
+        // to test the property `groupId` - Customer group_id
+        should("test groupId") {
+            // uncomment below to test the property
+            //modelInstance.groupId shouldBe ("TODO")
+        }
+
         // to test the property `groupIds` - Groups that will be assigned to a customer
         should("test groupIds") {
             // uncomment below to test the property

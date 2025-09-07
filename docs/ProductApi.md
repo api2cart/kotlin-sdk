@@ -1436,7 +1436,7 @@ Configure ApiKeyAuth:
 
 <a id="productManufacturerAdd"></a>
 # **productManufacturerAdd**
-> ProductManufacturerAdd200Response productManufacturerAdd(productId, manufacturer, storeId)
+> ProductManufacturerAdd200Response productManufacturerAdd(productId, manufacturer, storeId, metaTitle, metaKeywords, metaDescription, searchKeywords, imageUrl, seoUrl)
 
 product.manufacturer.add
 
@@ -1452,8 +1452,14 @@ val apiInstance = ProductApi()
 val productId : kotlin.String = 10 // kotlin.String | Defines products specified by product id
 val manufacturer : kotlin.String = Samsung // kotlin.String | Defines product’s manufacturer's name
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
+val metaTitle : kotlin.String = category,test // kotlin.String | Defines unique meta title for each entity
+val metaKeywords : kotlin.String = category,test // kotlin.String | Defines unique meta keywords for each entity
+val metaDescription : kotlin.String = category,test // kotlin.String | Defines unique meta description of a entity
+val searchKeywords : kotlin.String = key1,key2,key3 // kotlin.String | Defines unique search keywords
+val imageUrl : kotlin.String = https://docs.api2cart.com/img/logo.png // kotlin.String | Image Url
+val seoUrl : kotlin.String = some seo url // kotlin.String | Defines unique URL for SEO
 try {
-    val result : ProductManufacturerAdd200Response = apiInstance.productManufacturerAdd(productId, manufacturer, storeId)
+    val result : ProductManufacturerAdd200Response = apiInstance.productManufacturerAdd(productId, manufacturer, storeId, metaTitle, metaKeywords, metaDescription, searchKeywords, imageUrl, seoUrl)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProductApi#productManufacturerAdd")
@@ -1467,9 +1473,15 @@ try {
 ### Parameters
 | **productId** | **kotlin.String**| Defines products specified by product id | |
 | **manufacturer** | **kotlin.String**| Defines product’s manufacturer&#39;s name | |
+| **storeId** | **kotlin.String**| Store Id | [optional] |
+| **metaTitle** | **kotlin.String**| Defines unique meta title for each entity | [optional] |
+| **metaKeywords** | **kotlin.String**| Defines unique meta keywords for each entity | [optional] |
+| **metaDescription** | **kotlin.String**| Defines unique meta description of a entity | [optional] |
+| **searchKeywords** | **kotlin.String**| Defines unique search keywords | [optional] |
+| **imageUrl** | **kotlin.String**| Image Url | [optional] |
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **storeId** | **kotlin.String**| Store Id | [optional] |
+| **seoUrl** | **kotlin.String**| Defines unique URL for SEO | [optional] |
 
 ### Return type
 
@@ -2132,7 +2144,7 @@ Configure ApiKeyAuth:
 
 <a id="productReviewList"></a>
 # **productReviewList**
-> ModelResponseProductReviewList productReviewList(productId, start, count, pageCursor, ids, storeId, status, responseFields, params, exclude)
+> ModelResponseProductReviewList productReviewList(productId, start, count, pageCursor, ids, storeId, langId, status, createdFrom, createdTo, customerId, sortBy, sortDirection, responseFields, params, exclude)
 
 product.review.list
 
@@ -2151,12 +2163,18 @@ val count : kotlin.Int = 20 // kotlin.Int | This parameter sets the entity amoun
 val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
 val ids : kotlin.String = 24,25 // kotlin.String | Retrieves reviews specified by ids
 val storeId : kotlin.String = 1 // kotlin.String | Store Id
+val langId : kotlin.String = 3 // kotlin.String | Language id
 val status : kotlin.String = disabled // kotlin.String | Defines status
+val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
+val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
+val customerId : kotlin.String = 5 // kotlin.String | Retrieves orders specified by customer id
+val sortBy : kotlin.String = value_id // kotlin.String | Set field to sort by
+val sortDirection : kotlin.String = asc // kotlin.String | Set sorting direction
 val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
 val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
 try {
-    val result : ModelResponseProductReviewList = apiInstance.productReviewList(productId, start, count, pageCursor, ids, storeId, status, responseFields, params, exclude)
+    val result : ModelResponseProductReviewList = apiInstance.productReviewList(productId, start, count, pageCursor, ids, storeId, langId, status, createdFrom, createdTo, customerId, sortBy, sortDirection, responseFields, params, exclude)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProductApi#productReviewList")
@@ -2174,7 +2192,13 @@ try {
 | **pageCursor** | **kotlin.String**| Used to retrieve entities via cursor-based pagination (it can&#39;t be used with any other filtering parameter) | [optional] |
 | **ids** | **kotlin.String**| Retrieves reviews specified by ids | [optional] |
 | **storeId** | **kotlin.String**| Store Id | [optional] |
+| **langId** | **kotlin.String**| Language id | [optional] |
 | **status** | **kotlin.String**| Defines status | [optional] |
+| **createdFrom** | **kotlin.String**| Retrieve entities from their creation date | [optional] |
+| **createdTo** | **kotlin.String**| Retrieve entities to their creation date | [optional] |
+| **customerId** | **kotlin.String**| Retrieves orders specified by customer id | [optional] |
+| **sortBy** | **kotlin.String**| Set field to sort by | [optional] [default to &quot;id&quot;] |
+| **sortDirection** | **kotlin.String**| Set sorting direction | [optional] [default to &quot;asc&quot;] |
 | **responseFields** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] |
 | **params** | **kotlin.String**| Set this parameter in order to choose which entity fields you want to retrieve | [optional] [default to &quot;id,customer_id,email,message,status,product_id,nick_name,summary,rating,ratings,status,created_time&quot;] |
 | Name | Type | Description  | Notes |

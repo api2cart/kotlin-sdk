@@ -9,6 +9,7 @@
 | **lastName** | **kotlin.String** | Defines customer&#39;s last name |  [optional] |
 | **password** | **kotlin.String** | Defines customer&#39;s unique password |  [optional] |
 | **group** | **kotlin.String** | Defines the group where the customer |  [optional] |
+| **groupId** | **kotlin.String** | Customer group_id |  [optional] |
 | **groupIds** | **kotlin.String** | Groups that will be assigned to a customer |  [optional] |
 | **status** | **kotlin.String** | Defines customer&#39;s status |  [optional] |
 | **createdTime** | **kotlin.String** | Entity&#39;s date creation |  [optional] |

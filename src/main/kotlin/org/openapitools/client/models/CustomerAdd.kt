@@ -29,6 +29,7 @@ import com.squareup.moshi.JsonClass
  * @param lastName Defines customer's last name
  * @param password Defines customer's unique password
  * @param group Defines the group where the customer
+ * @param groupId Customer group_id
  * @param groupIds Groups that will be assigned to a customer
  * @param status Defines customer's status
  * @param createdTime Entity's date creation
@@ -71,6 +72,10 @@ data class CustomerAdd (
     /* Defines the group where the customer */
     @Json(name = "group")
     val group: kotlin.String? = null,
+
+    /* Customer group_id */
+    @Json(name = "group_id")
+    val groupId: kotlin.String? = null,
 
     /* Groups that will be assigned to a customer */
     @Json(name = "group_ids")

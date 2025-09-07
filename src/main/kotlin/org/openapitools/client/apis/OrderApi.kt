@@ -30,6 +30,8 @@ import org.openapitools.client.models.ModelResponseOrderStatusList
 import org.openapitools.client.models.ModelResponseOrderTransactionList
 import org.openapitools.client.models.OrderAdd
 import org.openapitools.client.models.OrderAdd200Response
+import org.openapitools.client.models.OrderCalculate
+import org.openapitools.client.models.OrderCalculate200Response
 import org.openapitools.client.models.OrderCount200Response
 import org.openapitools.client.models.OrderFinancialStatusList200Response
 import org.openapitools.client.models.OrderFulfillmentStatusList200Response
@@ -292,6 +294,78 @@ class OrderApi(basePath: kotlin.String = defaultBasePath, client: Call.Factory =
         return RequestConfig(
             method = RequestMethod.POST,
             path = "/order.add.json",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = true,
+            body = localVariableBody
+        )
+    }
+
+    /**
+     * order.calculate
+     * &lt;p&gt;Calculates the total cost of an order for a given customer and a set of products, as well as the available shipping methods based on the specified address. The calculation takes into account store product prices, discounts, taxes, shipping costs, and other store settings. The result includes a detailed breakdown of the final order cost by its components.&lt;/p&gt; &lt;p&gt;Note that the final totals, taxes, and other amounts must include the corresponding values for the selected shipping method.&lt;/p&gt;&lt;p&gt;The result of this method can be used when creating an order using the &lt;strong&gt;order.add&lt;/strong&gt; method.&lt;/p&gt;
+     * @param orderCalculate 
+     * @return OrderCalculate200Response
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     * @throws UnsupportedOperationException If the API returns an informational or redirection response
+     * @throws ClientException If the API returns a client error response
+     * @throws ServerException If the API returns a server error response
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class, UnsupportedOperationException::class, ClientException::class, ServerException::class)
+    fun orderCalculate(orderCalculate: OrderCalculate) : OrderCalculate200Response {
+        val localVarResponse = orderCalculateWithHttpInfo(orderCalculate = orderCalculate)
+
+        return when (localVarResponse.responseType) {
+            ResponseType.Success -> (localVarResponse as Success<*>).data as OrderCalculate200Response
+            ResponseType.Informational -> throw UnsupportedOperationException("Client does not support Informational responses.")
+            ResponseType.Redirection -> throw UnsupportedOperationException("Client does not support Redirection responses.")
+            ResponseType.ClientError -> {
+                val localVarError = localVarResponse as ClientError<*>
+                throw ClientException("Client error : ${localVarError.statusCode} ${localVarError.message.orEmpty()}", localVarError.statusCode, localVarResponse)
+            }
+            ResponseType.ServerError -> {
+                val localVarError = localVarResponse as ServerError<*>
+                throw ServerException("Server error : ${localVarError.statusCode} ${localVarError.message.orEmpty()} ${localVarError.body}", localVarError.statusCode, localVarResponse)
+            }
+        }
+    }
+
+    /**
+     * order.calculate
+     * &lt;p&gt;Calculates the total cost of an order for a given customer and a set of products, as well as the available shipping methods based on the specified address. The calculation takes into account store product prices, discounts, taxes, shipping costs, and other store settings. The result includes a detailed breakdown of the final order cost by its components.&lt;/p&gt; &lt;p&gt;Note that the final totals, taxes, and other amounts must include the corresponding values for the selected shipping method.&lt;/p&gt;&lt;p&gt;The result of this method can be used when creating an order using the &lt;strong&gt;order.add&lt;/strong&gt; method.&lt;/p&gt;
+     * @param orderCalculate 
+     * @return ApiResponse<OrderCalculate200Response?>
+     * @throws IllegalStateException If the request is not correctly configured
+     * @throws IOException Rethrows the OkHttp execute method exception
+     */
+    @Suppress("UNCHECKED_CAST")
+    @Throws(IllegalStateException::class, IOException::class)
+    fun orderCalculateWithHttpInfo(orderCalculate: OrderCalculate) : ApiResponse<OrderCalculate200Response?> {
+        val localVariableConfig = orderCalculateRequestConfig(orderCalculate = orderCalculate)
+
+        return request<OrderCalculate, OrderCalculate200Response>(
+            localVariableConfig
+        )
+    }
+
+    /**
+     * To obtain the request config of the operation orderCalculate
+     *
+     * @param orderCalculate 
+     * @return RequestConfig
+     */
+    fun orderCalculateRequestConfig(orderCalculate: OrderCalculate) : RequestConfig<OrderCalculate> {
+        val localVariableBody = orderCalculate
+        val localVariableQuery: MultiValueMap = mutableMapOf()
+        val localVariableHeaders: MutableMap<String, String> = mutableMapOf()
+        localVariableHeaders["Content-Type"] = "application/json"
+        localVariableHeaders["Accept"] = "application/json"
+
+        return RequestConfig(
+            method = RequestMethod.POST,
+            path = "/order.calculate.json",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = true,

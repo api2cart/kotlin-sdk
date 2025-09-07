@@ -15,6 +15,7 @@
 | **ratings** | [**kotlin.collections.List&lt;ProductReviewRating&gt;**](ProductReviewRating.md) |  |  [optional] |
 | **status** | **kotlin.String** |  |  [optional] |
 | **createdTime** | [**A2CDateTime**](A2CDateTime.md) |  |  [optional] |
+| **modifiedTime** | [**A2CDateTime**](A2CDateTime.md) |  |  [optional] |
 | **medias** | [**kotlin.collections.List&lt;Media&gt;**](Media.md) |  |  [optional] |
 | **additionalFields** | [**kotlin.Any**](.md) |  |  [optional] |
 | **customFields** | [**kotlin.Any**](.md) |  |  [optional] |

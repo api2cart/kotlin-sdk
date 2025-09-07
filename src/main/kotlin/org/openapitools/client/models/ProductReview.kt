@@ -36,6 +36,7 @@ import com.squareup.moshi.JsonClass
  * @param ratings 
  * @param status 
  * @param createdTime 
+ * @param modifiedTime 
  * @param medias 
  * @param additionalFields 
  * @param customFields 
@@ -76,6 +77,9 @@ data class ProductReview (
 
     @Json(name = "created_time")
     val createdTime: A2CDateTime? = null,
+
+    @Json(name = "modified_time")
+    val modifiedTime: A2CDateTime? = null,
 
     @Json(name = "medias")
     val medias: kotlin.collections.List<Media>? = null,

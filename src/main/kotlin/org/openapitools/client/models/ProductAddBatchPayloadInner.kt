@@ -48,6 +48,7 @@ import com.squareup.moshi.JsonClass
  * @param manageStock 
  * @param productType 
  * @param marketplaceItemProperties 
+ * @param specifics 
  * @param isFreeShipping 
  * @param taxable 
  * @param status 
@@ -82,6 +83,7 @@ import com.squareup.moshi.JsonClass
  * @param harmonizedSystemCode 
  * @param url 
  * @param seoUrl 
+ * @param externalProductLink 
  * @param manufacturer 
  * @param manufacturerId 
  * @param backorderStatus 
@@ -161,6 +163,9 @@ data class ProductAddBatchPayloadInner (
 
     @Json(name = "marketplace_item_properties")
     val marketplaceItemProperties: kotlin.Any? = null,
+
+    @Json(name = "specifics")
+    val specifics: kotlin.Any? = null,
 
     @Json(name = "is_free_shipping")
     val isFreeShipping: kotlin.Boolean? = null,
@@ -263,6 +268,9 @@ data class ProductAddBatchPayloadInner (
 
     @Json(name = "seo_url")
     val seoUrl: kotlin.String? = null,
+
+    @Json(name = "external_product_link")
+    val externalProductLink: kotlin.String? = null,
 
     @Json(name = "manufacturer")
     val manufacturer: kotlin.String? = null,

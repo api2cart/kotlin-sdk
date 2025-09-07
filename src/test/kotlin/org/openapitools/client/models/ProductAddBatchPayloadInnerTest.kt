@@ -166,6 +166,12 @@ class ProductAddBatchPayloadInnerTest : ShouldSpec() {
             //modelInstance.marketplaceItemProperties shouldBe ("TODO")
         }
 
+        // to test the property `specifics`
+        should("test specifics") {
+            // uncomment below to test the property
+            //modelInstance.specifics shouldBe ("TODO")
+        }
+
         // to test the property `isFreeShipping`
         should("test isFreeShipping") {
             // uncomment below to test the property
@@ -368,6 +374,12 @@ class ProductAddBatchPayloadInnerTest : ShouldSpec() {
         should("test seoUrl") {
             // uncomment below to test the property
             //modelInstance.seoUrl shouldBe ("TODO")
+        }
+
+        // to test the property `externalProductLink`
+        should("test externalProductLink") {
+            // uncomment below to test the property
+            //modelInstance.externalProductLink shouldBe ("TODO")
         }
 
         // to test the property `manufacturer`

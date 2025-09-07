@@ -30,6 +30,8 @@ import org.openapitools.client.models.ModelResponseOrderStatusList
 import org.openapitools.client.models.ModelResponseOrderTransactionList
 import org.openapitools.client.models.OrderAdd
 import org.openapitools.client.models.OrderAdd200Response
+import org.openapitools.client.models.OrderCalculate
+import org.openapitools.client.models.OrderCalculate200Response
 import org.openapitools.client.models.OrderCount200Response
 import org.openapitools.client.models.OrderFinancialStatusList200Response
 import org.openapitools.client.models.OrderFulfillmentStatusList200Response
@@ -80,6 +82,14 @@ class OrderApiTest : ShouldSpec() {
             // uncomment below to test orderAdd
             //val orderAdd : OrderAdd =  // OrderAdd | 
             //val result : OrderAdd200Response = apiInstance.orderAdd(orderAdd)
+            //result shouldBe ("TODO")
+        }
+
+        // to test orderCalculate
+        should("test orderCalculate") {
+            // uncomment below to test orderCalculate
+            //val orderCalculate : OrderCalculate =  // OrderCalculate | 
+            //val result : OrderCalculate200Response = apiInstance.orderCalculate(orderCalculate)
             //result shouldBe ("TODO")
         }
 

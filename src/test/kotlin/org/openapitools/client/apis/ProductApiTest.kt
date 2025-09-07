@@ -411,7 +411,13 @@ class ProductApiTest : ShouldSpec() {
             //val productId : kotlin.String = 10 // kotlin.String | Defines products specified by product id
             //val manufacturer : kotlin.String = Samsung // kotlin.String | Defines product’s manufacturer's name
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
-            //val result : ProductManufacturerAdd200Response = apiInstance.productManufacturerAdd(productId, manufacturer, storeId)
+            //val metaTitle : kotlin.String = category,test // kotlin.String | Defines unique meta title for each entity
+            //val metaKeywords : kotlin.String = category,test // kotlin.String | Defines unique meta keywords for each entity
+            //val metaDescription : kotlin.String = category,test // kotlin.String | Defines unique meta description of a entity
+            //val searchKeywords : kotlin.String = key1,key2,key3 // kotlin.String | Defines unique search keywords
+            //val imageUrl : kotlin.String = https://docs.api2cart.com/img/logo.png // kotlin.String | Image Url
+            //val seoUrl : kotlin.String = some seo url // kotlin.String | Defines unique URL for SEO
+            //val result : ProductManufacturerAdd200Response = apiInstance.productManufacturerAdd(productId, manufacturer, storeId, metaTitle, metaKeywords, metaDescription, searchKeywords, imageUrl, seoUrl)
             //result shouldBe ("TODO")
         }
 
@@ -546,11 +552,17 @@ class ProductApiTest : ShouldSpec() {
             //val pageCursor : kotlin.String =  // kotlin.String | Used to retrieve entities via cursor-based pagination (it can't be used with any other filtering parameter)
             //val ids : kotlin.String = 24,25 // kotlin.String | Retrieves reviews specified by ids
             //val storeId : kotlin.String = 1 // kotlin.String | Store Id
+            //val langId : kotlin.String = 3 // kotlin.String | Language id
             //val status : kotlin.String = disabled // kotlin.String | Defines status
+            //val createdFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their creation date
+            //val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their creation date
+            //val customerId : kotlin.String = 5 // kotlin.String | Retrieves orders specified by customer id
+            //val sortBy : kotlin.String = value_id // kotlin.String | Set field to sort by
+            //val sortDirection : kotlin.String = asc // kotlin.String | Set sorting direction
             //val responseFields : kotlin.String = {return_code,return_message,pagination,result} // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val params : kotlin.String = id,model,price,images // kotlin.String | Set this parameter in order to choose which entity fields you want to retrieve
             //val exclude : kotlin.String = false // kotlin.String | Set this parameter in order to choose which entity fields you want to ignore. Works only if parameter `params` equal force_all
-            //val result : ModelResponseProductReviewList = apiInstance.productReviewList(productId, start, count, pageCursor, ids, storeId, status, responseFields, params, exclude)
+            //val result : ModelResponseProductReviewList = apiInstance.productReviewList(productId, start, count, pageCursor, ids, storeId, langId, status, createdFrom, createdTo, customerId, sortBy, sortDirection, responseFields, params, exclude)
             //result shouldBe ("TODO")
         }
 

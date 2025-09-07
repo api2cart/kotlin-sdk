@@ -126,6 +126,7 @@ All URIs are relative to *https://api.api2cart.local.com/v1.1*
 | *MarketplaceApi* | [**marketplaceProductFind**](docs/MarketplaceApi.md#marketplaceproductfind) | **GET** /marketplace.product.find.json | marketplace.product.find |
 | *OrderApi* | [**orderAbandonedList**](docs/OrderApi.md#orderabandonedlist) | **GET** /order.abandoned.list.json | order.abandoned.list |
 | *OrderApi* | [**orderAdd**](docs/OrderApi.md#orderadd) | **POST** /order.add.json | order.add |
+| *OrderApi* | [**orderCalculate**](docs/OrderApi.md#ordercalculate) | **POST** /order.calculate.json | order.calculate |
 | *OrderApi* | [**orderCount**](docs/OrderApi.md#ordercount) | **GET** /order.count.json | order.count |
 | *OrderApi* | [**orderFinancialStatusList**](docs/OrderApi.md#orderfinancialstatuslist) | **GET** /order.financial_status.list.json | order.financial_status.list |
 | *OrderApi* | [**orderFulfillmentStatusList**](docs/OrderApi.md#orderfulfillmentstatuslist) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list |
@@ -402,6 +403,15 @@ All URIs are relative to *https://api.api2cart.local.com/v1.1*
  - [org.openapitools.client.models.OrderAddOrderItemInner](docs/OrderAddOrderItemInner.md)
  - [org.openapitools.client.models.OrderAddOrderItemInnerOrderItemOptionInner](docs/OrderAddOrderItemInnerOrderItemOptionInner.md)
  - [org.openapitools.client.models.OrderAddOrderItemInnerOrderItemPropertyInner](docs/OrderAddOrderItemInnerOrderItemPropertyInner.md)
+ - [org.openapitools.client.models.OrderCalculate](docs/OrderCalculate.md)
+ - [org.openapitools.client.models.OrderCalculate200Response](docs/OrderCalculate200Response.md)
+ - [org.openapitools.client.models.OrderCalculateDiscount](docs/OrderCalculateDiscount.md)
+ - [org.openapitools.client.models.OrderCalculateItem](docs/OrderCalculateItem.md)
+ - [org.openapitools.client.models.OrderCalculateOrderItemInner](docs/OrderCalculateOrderItemInner.md)
+ - [org.openapitools.client.models.OrderCalculateOrderItemInnerOrderItemOptionInner](docs/OrderCalculateOrderItemInnerOrderItemOptionInner.md)
+ - [org.openapitools.client.models.OrderCalculateShippingRate](docs/OrderCalculateShippingRate.md)
+ - [org.openapitools.client.models.OrderCalculateSubtotal](docs/OrderCalculateSubtotal.md)
+ - [org.openapitools.client.models.OrderCalculateTax](docs/OrderCalculateTax.md)
  - [org.openapitools.client.models.OrderCount200Response](docs/OrderCount200Response.md)
  - [org.openapitools.client.models.OrderCount200ResponseResult](docs/OrderCount200ResponseResult.md)
  - [org.openapitools.client.models.OrderFinancialStatusList200Response](docs/OrderFinancialStatusList200Response.md)

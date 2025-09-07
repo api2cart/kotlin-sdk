@@ -6,6 +6,7 @@ All URIs are relative to *https://api.api2cart.local.com/v1.1*
 | ------------- | ------------- | ------------- |
 | [**orderAbandonedList**](OrderApi.md#orderAbandonedList) | **GET** /order.abandoned.list.json | order.abandoned.list |
 | [**orderAdd**](OrderApi.md#orderAdd) | **POST** /order.add.json | order.add |
+| [**orderCalculate**](OrderApi.md#orderCalculate) | **POST** /order.calculate.json | order.calculate |
 | [**orderCount**](OrderApi.md#orderCount) | **GET** /order.count.json | order.count |
 | [**orderFinancialStatusList**](OrderApi.md#orderFinancialStatusList) | **GET** /order.financial_status.list.json | order.financial_status.list |
 | [**orderFulfillmentStatusList**](OrderApi.md#orderFulfillmentStatusList) | **GET** /order.fulfillment_status.list.json | order.fulfillment_status.list |
@@ -142,6 +143,58 @@ try {
 ### Return type
 
 [**OrderAdd200Response**](OrderAdd200Response.md)
+
+### Authorization
+
+
+Configure StoreKeyAuth:
+    ApiClient.apiKey["x-store-key"] = ""
+    ApiClient.apiKeyPrefix["x-store-key"] = ""
+Configure ApiKeyAuth:
+    ApiClient.apiKey["x-api-key"] = ""
+    ApiClient.apiKeyPrefix["x-api-key"] = ""
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a id="orderCalculate"></a>
+# **orderCalculate**
+> OrderCalculate200Response orderCalculate(orderCalculate)
+
+order.calculate
+
+&lt;p&gt;Calculates the total cost of an order for a given customer and a set of products, as well as the available shipping methods based on the specified address. The calculation takes into account store product prices, discounts, taxes, shipping costs, and other store settings. The result includes a detailed breakdown of the final order cost by its components.&lt;/p&gt; &lt;p&gt;Note that the final totals, taxes, and other amounts must include the corresponding values for the selected shipping method.&lt;/p&gt;&lt;p&gt;The result of this method can be used when creating an order using the &lt;strong&gt;order.add&lt;/strong&gt; method.&lt;/p&gt;
+
+### Example
+```kotlin
+// Import classes:
+//import org.openapitools.client.infrastructure.*
+//import org.openapitools.client.models.*
+
+val apiInstance = OrderApi()
+val orderCalculate : OrderCalculate =  // OrderCalculate | 
+try {
+    val result : OrderCalculate200Response = apiInstance.orderCalculate(orderCalculate)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling OrderApi#orderCalculate")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling OrderApi#orderCalculate")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **orderCalculate** | [**OrderCalculate**](OrderCalculate.md)|  | |
+
+### Return type
+
+[**OrderCalculate200Response**](OrderCalculate200Response.md)
 
 ### Authorization
 

@@ -94,6 +94,12 @@ class ProductReviewTest : ShouldSpec() {
             //modelInstance.createdTime shouldBe ("TODO")
         }
 
+        // to test the property `modifiedTime`
+        should("test modifiedTime") {
+            // uncomment below to test the property
+            //modelInstance.modifiedTime shouldBe ("TODO")
+        }
+
         // to test the property `medias`
         should("test medias") {
             // uncomment below to test the property
