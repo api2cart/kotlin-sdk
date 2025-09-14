@@ -165,6 +165,12 @@ class ProductUpdateBatchPayloadInnerTest : ShouldSpec() {
             //modelInstance.condition shouldBe ("TODO")
         }
 
+        // to test the property `conditionDescription`
+        should("test conditionDescription") {
+            // uncomment below to test the property
+            //modelInstance.conditionDescription shouldBe ("TODO")
+        }
+
         // to test the property `visible`
         should("test visible") {
             // uncomment below to test the property

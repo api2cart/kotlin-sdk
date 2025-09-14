@@ -27,6 +27,7 @@
 | **status** | **kotlin.String** |  |  [optional] |
 | **type** | **kotlin.String** |  |  [optional] |
 | **condition** | **kotlin.String** |  |  [optional] |
+| **conditionDescription** | **kotlin.String** |  |  [optional] |
 | **visible** | **kotlin.String** |  |  [optional] |
 | **availableForView** | **kotlin.Boolean** |  |  [optional] |
 | **availableForSale** | **kotlin.Boolean** |  |  [optional] |

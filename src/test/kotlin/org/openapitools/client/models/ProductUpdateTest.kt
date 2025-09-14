@@ -192,6 +192,12 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.productClass shouldBe ("TODO")
         }
 
+        // to test the property `brandName` - Retrieves brands specified by brand name
+        should("test brandName") {
+            // uncomment below to test the property
+            //modelInstance.brandName shouldBe ("TODO")
+        }
+
         // to test the property `availableForView` - Specifies the set of visible/invisible products for users
         should("test availableForView") {
             // uncomment below to test the property

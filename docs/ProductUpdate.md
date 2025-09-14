@@ -31,6 +31,7 @@
 | **avail** | **kotlin.Boolean** | Defines category&#39;s visibility status |  [optional] |
 | **availFrom** | **kotlin.String** | Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time. |  [optional] |
 | **productClass** | **kotlin.String** | A categorization for the product |  [optional] |
+| **brandName** | **kotlin.String** | Retrieves brands specified by brand name |  [optional] |
 | **availableForView** | **kotlin.Boolean** | Specifies the set of visible/invisible products for users |  [optional] |
 | **storesIds** | **kotlin.String** | Assign product to the stores that is specified by comma-separated stores&#39; id |  [optional] |
 | **storeId** | **kotlin.String** | Defines store id where the product should be found |  [optional] |

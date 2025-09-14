@@ -47,6 +47,7 @@ import com.squareup.moshi.JsonClass
  * @param status 
  * @param type 
  * @param condition 
+ * @param conditionDescription 
  * @param visible 
  * @param availableForView 
  * @param availableForSale 
@@ -161,6 +162,9 @@ data class ProductUpdateBatchPayloadInner (
 
     @Json(name = "condition")
     val condition: kotlin.String? = null,
+
+    @Json(name = "condition_description")
+    val conditionDescription: kotlin.String? = null,
 
     @Json(name = "visible")
     val visible: kotlin.String? = null,

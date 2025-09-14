@@ -54,6 +54,7 @@ import com.squareup.moshi.JsonClass
  * @param avail Defines category's visibility status
  * @param availFrom Allows to schedule a time in the future that the item becomes available. The value should be greater than the current date and time.
  * @param productClass A categorization for the product
+ * @param brandName Retrieves brands specified by brand name
  * @param availableForView Specifies the set of visible/invisible products for users
  * @param storesIds Assign product to the stores that is specified by comma-separated stores' id
  * @param storeId Defines store id where the product should be found
@@ -228,6 +229,10 @@ data class ProductUpdate (
     /* A categorization for the product */
     @Json(name = "product_class")
     val productClass: kotlin.String? = null,
+
+    /* Retrieves brands specified by brand name */
+    @Json(name = "brand_name")
+    val brandName: kotlin.String? = null,
 
     /* Specifies the set of visible/invisible products for users */
     @Json(name = "available_for_view")
