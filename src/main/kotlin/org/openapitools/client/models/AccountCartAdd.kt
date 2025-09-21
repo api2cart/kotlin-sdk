@@ -116,6 +116,7 @@ import com.squareup.moshi.JsonClass
  * @param shoplazzaAccessToken Access token authorizing the app to access resources on behalf of a user
  * @param shoplazzaSharedSecret Shared secret
  * @param shopwareAccessKey Shopware access key
+ * @param unasApiKey UNAS API Key
  * @param shopwareApiKey Shopware api key
  * @param shopwareApiSecret Shopware client secret access key
  * @param mivaAccessToken Miva access token
@@ -564,6 +565,10 @@ data class AccountCartAdd (
     /* Shopware access key */
     @Json(name = "shopware_access_key")
     val shopwareAccessKey: kotlin.String? = null,
+
+    /* UNAS API Key */
+    @Json(name = "unas_api_key")
+    val unasApiKey: kotlin.String? = null,
 
     /* Shopware api key */
     @Json(name = "shopware_api_key")

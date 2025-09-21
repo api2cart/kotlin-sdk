@@ -56,6 +56,7 @@
 | **metaTitle** | **kotlin.String** | Defines unique meta title for each entity |  [optional] |
 | **metaDescription** | **kotlin.String** | Defines unique meta description of a entity |  [optional] |
 | **metaKeywords** | **kotlin.String** | Defines unique meta keywords for each entity |  [optional] |
+| **manufacturer** | **kotlin.String** | Specifies the product variant&#39;s manufacturer |  [optional] |
 | **reindex** | **kotlin.Boolean** | Is reindex required |  [optional] |
 | **clearCache** | **kotlin.Boolean** | Is cache clear required |  [optional] |
 

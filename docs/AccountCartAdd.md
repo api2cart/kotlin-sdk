@@ -97,6 +97,7 @@
 | **shoplazzaAccessToken** | **kotlin.String** | Access token authorizing the app to access resources on behalf of a user |  [optional] |
 | **shoplazzaSharedSecret** | **kotlin.String** | Shared secret |  [optional] |
 | **shopwareAccessKey** | **kotlin.String** | Shopware access key |  [optional] |
+| **unasApiKey** | **kotlin.String** | UNAS API Key |  [optional] |
 | **shopwareApiKey** | **kotlin.String** | Shopware api key |  [optional] |
 | **shopwareApiSecret** | **kotlin.String** | Shopware client secret access key |  [optional] |
 | **mivaAccessToken** | **kotlin.String** | Miva access token |  [optional] |

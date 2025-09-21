@@ -584,6 +584,12 @@ class AccountCartAddTest : ShouldSpec() {
             //modelInstance.shopwareAccessKey shouldBe ("TODO")
         }
 
+        // to test the property `unasApiKey` - UNAS API Key
+        should("test unasApiKey") {
+            // uncomment below to test the property
+            //modelInstance.unasApiKey shouldBe ("TODO")
+        }
+
         // to test the property `shopwareApiKey` - Shopware api key
         should("test shopwareApiKey") {
             // uncomment below to test the property

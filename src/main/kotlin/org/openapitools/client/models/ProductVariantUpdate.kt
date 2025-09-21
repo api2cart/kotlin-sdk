@@ -75,6 +75,7 @@ import com.squareup.moshi.JsonClass
  * @param metaTitle Defines unique meta title for each entity
  * @param metaDescription Defines unique meta description of a entity
  * @param metaKeywords Defines unique meta keywords for each entity
+ * @param manufacturer Specifies the product variant's manufacturer
  * @param reindex Is reindex required
  * @param clearCache Is cache clear required
  */
@@ -156,7 +157,7 @@ data class ProductVariantUpdate (
 
     /* Specifies whether a tax is charged */
     @Json(name = "taxable")
-    val taxable: kotlin.Boolean? = true,
+    val taxable: kotlin.Boolean? = null,
 
     /* Defines tax classes where entity has to be added */
     @Json(name = "tax_class_id")
@@ -289,6 +290,10 @@ data class ProductVariantUpdate (
     /* Defines unique meta keywords for each entity */
     @Json(name = "meta_keywords")
     val metaKeywords: kotlin.String? = null,
+
+    /* Specifies the product variant's manufacturer */
+    @Json(name = "manufacturer")
+    val manufacturer: kotlin.String? = null,
 
     /* Is reindex required */
     @Json(name = "reindex")

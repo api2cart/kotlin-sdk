@@ -192,7 +192,7 @@ data class ProductUpdate (
 
     /* Specifies whether a tax is charged */
     @Json(name = "taxable")
-    val taxable: kotlin.Boolean? = true,
+    val taxable: kotlin.Boolean? = null,
 
     /* Defines tax classes where entity has to be added */
     @Json(name = "tax_class_id")

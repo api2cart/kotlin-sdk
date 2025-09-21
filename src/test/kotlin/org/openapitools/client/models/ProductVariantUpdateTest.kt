@@ -338,6 +338,12 @@ class ProductVariantUpdateTest : ShouldSpec() {
             //modelInstance.metaKeywords shouldBe ("TODO")
         }
 
+        // to test the property `manufacturer` - Specifies the product variant's manufacturer
+        should("test manufacturer") {
+            // uncomment below to test the property
+            //modelInstance.manufacturer shouldBe ("TODO")
+        }
+
         // to test the property `reindex` - Is reindex required
         should("test reindex") {
             // uncomment below to test the property
