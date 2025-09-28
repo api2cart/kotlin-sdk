@@ -1,5 +1,5 @@
 
-# OrderCalculateItem
+# OrderCalculateBundle
 
 ## Properties
 | Name | Type | Description | Notes |
@@ -16,7 +16,6 @@
 | **weightUnit** | **kotlin.String** |  |  [optional] |
 | **barcode** | **kotlin.String** |  |  [optional] |
 | **variantId** | **kotlin.String** |  |  [optional] |
-| **bundleProductId** | **kotlin.String** |  |  [optional] |
 | **options** | [**kotlin.collections.List&lt;OrderItemOption&gt;**](OrderItemOption.md) |  |  [optional] |
 | **additionalFields** | [**kotlin.Any**](.md) |  |  [optional] |
 | **customFields** | [**kotlin.Any**](.md) |  |  [optional] |

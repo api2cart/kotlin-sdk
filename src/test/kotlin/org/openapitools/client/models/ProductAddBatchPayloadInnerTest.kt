@@ -21,6 +21,7 @@ import io.kotlintest.specs.ShouldSpec
 import org.openapitools.client.models.ProductAddBatchPayloadInner
 import org.openapitools.client.models.ProductAddBatchPayloadInnerAdvancedPricesInner
 import org.openapitools.client.models.ProductAddBatchPayloadInnerImagesInner
+import org.openapitools.client.models.ProductAddBatchPayloadInnerSalesTax
 import org.openapitools.client.models.ProductAddFilesInner
 
 class ProductAddBatchPayloadInnerTest : ShouldSpec() {
@@ -88,6 +89,12 @@ class ProductAddBatchPayloadInnerTest : ShouldSpec() {
             //modelInstance.mpn shouldBe ("TODO")
         }
 
+        // to test the property `isbn`
+        should("test isbn") {
+            // uncomment below to test the property
+            //modelInstance.isbn shouldBe ("TODO")
+        }
+
         // to test the property `barcode`
         should("test barcode") {
             // uncomment below to test the property
@@ -130,6 +137,12 @@ class ProductAddBatchPayloadInnerTest : ShouldSpec() {
             //modelInstance.spriceExpire shouldBe ("TODO")
         }
 
+        // to test the property `availFrom`
+        should("test availFrom") {
+            // uncomment below to test the property
+            //modelInstance.availFrom shouldBe ("TODO")
+        }
+
         // to test the property `advancedPrices`
         should("test advancedPrices") {
             // uncomment below to test the property
@@ -140,6 +153,24 @@ class ProductAddBatchPayloadInnerTest : ShouldSpec() {
         should("test fixedCostShippingPrice") {
             // uncomment below to test the property
             //modelInstance.fixedCostShippingPrice shouldBe ("TODO")
+        }
+
+        // to test the property `buyitnowPrice`
+        should("test buyitnowPrice") {
+            // uncomment below to test the property
+            //modelInstance.buyitnowPrice shouldBe ("TODO")
+        }
+
+        // to test the property `reservePrice`
+        should("test reservePrice") {
+            // uncomment below to test the property
+            //modelInstance.reservePrice shouldBe ("TODO")
+        }
+
+        // to test the property `bestOffer`
+        should("test bestOffer") {
+            // uncomment below to test the property
+            //modelInstance.bestOffer shouldBe ("TODO")
         }
 
         // to test the property `quantity`
@@ -196,6 +227,12 @@ class ProductAddBatchPayloadInnerTest : ShouldSpec() {
             //modelInstance.condition shouldBe ("TODO")
         }
 
+        // to test the property `conditionDescription`
+        should("test conditionDescription") {
+            // uncomment below to test the property
+            //modelInstance.conditionDescription shouldBe ("TODO")
+        }
+
         // to test the property `visible`
         should("test visible") {
             // uncomment below to test the property
@@ -230,6 +267,18 @@ class ProductAddBatchPayloadInnerTest : ShouldSpec() {
         should("test type") {
             // uncomment below to test the property
             //modelInstance.type shouldBe ("TODO")
+        }
+
+        // to test the property `listingType`
+        should("test listingType") {
+            // uncomment below to test the property
+            //modelInstance.listingType shouldBe ("TODO")
+        }
+
+        // to test the property `listingDuration`
+        should("test listingDuration") {
+            // uncomment below to test the property
+            //modelInstance.listingDuration shouldBe ("TODO")
         }
 
         // to test the property `downloadable`
@@ -332,6 +381,12 @@ class ProductAddBatchPayloadInnerTest : ShouldSpec() {
         should("test taxClassId") {
             // uncomment below to test the property
             //modelInstance.taxClassId shouldBe ("TODO")
+        }
+
+        // to test the property `salesTax`
+        should("test salesTax") {
+            // uncomment below to test the property
+            //modelInstance.salesTax shouldBe ("TODO")
         }
 
         // to test the property `metaTitle`

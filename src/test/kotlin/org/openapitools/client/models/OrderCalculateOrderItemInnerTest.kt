@@ -44,6 +44,18 @@ class OrderCalculateOrderItemInnerTest : ShouldSpec() {
             //modelInstance.orderItemVariantId shouldBe ("TODO")
         }
 
+        // to test the property `orderItemParent` - Index of the parent grouped/bundle product
+        should("test orderItemParent") {
+            // uncomment below to test the property
+            //modelInstance.orderItemParent shouldBe ("TODO")
+        }
+
+        // to test the property `orderItemParentOptionName` - Option name of the parent grouped/bundle product
+        should("test orderItemParentOptionName") {
+            // uncomment below to test the property
+            //modelInstance.orderItemParentOptionName shouldBe ("TODO")
+        }
+
         // to test the property `orderItemOption`
         should("test orderItemOption") {
             // uncomment below to test the property

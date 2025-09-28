@@ -201,6 +201,7 @@ docs/OrderAddOrderItemInnerOrderItemPropertyInner.md
 docs/OrderApi.md
 docs/OrderCalculate.md
 docs/OrderCalculate200Response.md
+docs/OrderCalculateBundle.md
 docs/OrderCalculateDiscount.md
 docs/OrderCalculateItem.md
 docs/OrderCalculateOrderItemInner.md
@@ -269,6 +270,7 @@ docs/ProductAddBatch.md
 docs/ProductAddBatchPayloadInner.md
 docs/ProductAddBatchPayloadInnerAdvancedPricesInner.md
 docs/ProductAddBatchPayloadInnerImagesInner.md
+docs/ProductAddBatchPayloadInnerSalesTax.md
 docs/ProductAddBestOffer.md
 docs/ProductAddCertificationsInner.md
 docs/ProductAddCertificationsInnerFilesInner.md
@@ -671,6 +673,7 @@ src/main/kotlin/org/openapitools/client/models/OrderAddOrderItemInnerOrderItemOp
 src/main/kotlin/org/openapitools/client/models/OrderAddOrderItemInnerOrderItemPropertyInner.kt
 src/main/kotlin/org/openapitools/client/models/OrderCalculate.kt
 src/main/kotlin/org/openapitools/client/models/OrderCalculate200Response.kt
+src/main/kotlin/org/openapitools/client/models/OrderCalculateBundle.kt
 src/main/kotlin/org/openapitools/client/models/OrderCalculateDiscount.kt
 src/main/kotlin/org/openapitools/client/models/OrderCalculateItem.kt
 src/main/kotlin/org/openapitools/client/models/OrderCalculateOrderItemInner.kt
@@ -739,6 +742,7 @@ src/main/kotlin/org/openapitools/client/models/ProductAddBatch.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddBatchPayloadInner.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddBatchPayloadInnerAdvancedPricesInner.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddBatchPayloadInnerImagesInner.kt
+src/main/kotlin/org/openapitools/client/models/ProductAddBatchPayloadInnerSalesTax.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddBestOffer.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddCertificationsInner.kt
 src/main/kotlin/org/openapitools/client/models/ProductAddCertificationsInnerFilesInner.kt
@@ -1112,6 +1116,7 @@ src/test/kotlin/org/openapitools/client/models/OrderAddOrderItemInnerOrderItemPr
 src/test/kotlin/org/openapitools/client/models/OrderAddOrderItemInnerTest.kt
 src/test/kotlin/org/openapitools/client/models/OrderAddTest.kt
 src/test/kotlin/org/openapitools/client/models/OrderCalculate200ResponseTest.kt
+src/test/kotlin/org/openapitools/client/models/OrderCalculateBundleTest.kt
 src/test/kotlin/org/openapitools/client/models/OrderCalculateDiscountTest.kt
 src/test/kotlin/org/openapitools/client/models/OrderCalculateItemTest.kt
 src/test/kotlin/org/openapitools/client/models/OrderCalculateOrderItemInnerOrderItemOptionInnerTest.kt
@@ -1178,6 +1183,7 @@ src/test/kotlin/org/openapitools/client/models/ProductAdd200ResponseResultTest.k
 src/test/kotlin/org/openapitools/client/models/ProductAdd200ResponseTest.kt
 src/test/kotlin/org/openapitools/client/models/ProductAddBatchPayloadInnerAdvancedPricesInnerTest.kt
 src/test/kotlin/org/openapitools/client/models/ProductAddBatchPayloadInnerImagesInnerTest.kt
+src/test/kotlin/org/openapitools/client/models/ProductAddBatchPayloadInnerSalesTaxTest.kt
 src/test/kotlin/org/openapitools/client/models/ProductAddBatchPayloadInnerTest.kt
 src/test/kotlin/org/openapitools/client/models/ProductAddBatchTest.kt
 src/test/kotlin/org/openapitools/client/models/ProductAddBestOfferTest.kt

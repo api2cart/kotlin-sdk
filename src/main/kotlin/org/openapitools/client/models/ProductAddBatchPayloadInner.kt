@@ -17,6 +17,7 @@ package org.openapitools.client.models
 
 import org.openapitools.client.models.ProductAddBatchPayloadInnerAdvancedPricesInner
 import org.openapitools.client.models.ProductAddBatchPayloadInnerImagesInner
+import org.openapitools.client.models.ProductAddBatchPayloadInnerSalesTax
 import org.openapitools.client.models.ProductAddFilesInner
 
 import com.squareup.moshi.Json
@@ -35,6 +36,7 @@ import com.squareup.moshi.JsonClass
  * @param ean 
  * @param gtin 
  * @param mpn 
+ * @param isbn 
  * @param barcode 
  * @param price 
  * @param oldPrice 
@@ -42,8 +44,12 @@ import com.squareup.moshi.JsonClass
  * @param specialPrice 
  * @param spriceCreate 
  * @param spriceExpire 
+ * @param availFrom 
  * @param advancedPrices 
  * @param fixedCostShippingPrice 
+ * @param buyitnowPrice 
+ * @param reservePrice 
+ * @param bestOffer 
  * @param quantity 
  * @param manageStock 
  * @param productType 
@@ -53,12 +59,15 @@ import com.squareup.moshi.JsonClass
  * @param taxable 
  * @param status 
  * @param condition 
+ * @param conditionDescription 
  * @param visible 
  * @param availableForView 
  * @param availableForSale 
  * @param isVirtual 
  * @param inStock 
  * @param type 
+ * @param listingType 
+ * @param listingDuration 
  * @param downloadable 
  * @param weight 
  * @param length 
@@ -76,6 +85,7 @@ import com.squareup.moshi.JsonClass
  * @param crossSellProductsIds 
  * @param storesIds 
  * @param taxClassId 
+ * @param salesTax 
  * @param metaTitle 
  * @param metaDescription 
  * @param metaKeywords 
@@ -125,6 +135,9 @@ data class ProductAddBatchPayloadInner (
     @Json(name = "mpn")
     val mpn: kotlin.String? = null,
 
+    @Json(name = "isbn")
+    val isbn: kotlin.String? = null,
+
     @Json(name = "barcode")
     val barcode: kotlin.String? = null,
 
@@ -146,11 +159,23 @@ data class ProductAddBatchPayloadInner (
     @Json(name = "sprice_expire")
     val spriceExpire: kotlin.String? = null,
 
+    @Json(name = "avail_from")
+    val availFrom: kotlin.String? = null,
+
     @Json(name = "advanced_prices")
     val advancedPrices: kotlin.collections.List<ProductAddBatchPayloadInnerAdvancedPricesInner>? = null,
 
     @Json(name = "fixed_cost_shipping_price")
     val fixedCostShippingPrice: java.math.BigDecimal? = null,
+
+    @Json(name = "buyitnow_price")
+    val buyitnowPrice: java.math.BigDecimal? = null,
+
+    @Json(name = "reserve_price")
+    val reservePrice: java.math.BigDecimal? = null,
+
+    @Json(name = "best_offer")
+    val bestOffer: java.math.BigDecimal? = null,
 
     @Json(name = "quantity")
     val quantity: java.math.BigDecimal? = null,
@@ -179,6 +204,9 @@ data class ProductAddBatchPayloadInner (
     @Json(name = "condition")
     val condition: kotlin.String? = null,
 
+    @Json(name = "condition_description")
+    val conditionDescription: kotlin.String? = null,
+
     @Json(name = "visible")
     val visible: kotlin.String? = null,
 
@@ -196,6 +224,12 @@ data class ProductAddBatchPayloadInner (
 
     @Json(name = "type")
     val type: kotlin.String? = null,
+
+    @Json(name = "listing_type")
+    val listingType: kotlin.String? = null,
+
+    @Json(name = "listing_duration")
+    val listingDuration: kotlin.String? = null,
 
     @Json(name = "downloadable")
     val downloadable: kotlin.Boolean? = null,
@@ -247,6 +281,9 @@ data class ProductAddBatchPayloadInner (
 
     @Json(name = "tax_class_id")
     val taxClassId: kotlin.String? = null,
+
+    @Json(name = "sales_tax")
+    val salesTax: ProductAddBatchPayloadInnerSalesTax? = null,
 
     @Json(name = "meta_title")
     val metaTitle: kotlin.String? = null,

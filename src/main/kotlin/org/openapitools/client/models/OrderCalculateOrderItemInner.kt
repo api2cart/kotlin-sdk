@@ -26,6 +26,8 @@ import com.squareup.moshi.JsonClass
  * @param orderItemId Defines orders specified by order item id
  * @param orderItemQuantity Defines orders specified by order item quantity
  * @param orderItemVariantId Ordered product variant. Where x is order item ID
+ * @param orderItemParent Index of the parent grouped/bundle product
+ * @param orderItemParentOptionName Option name of the parent grouped/bundle product
  * @param orderItemOption 
  */
 
@@ -43,6 +45,14 @@ data class OrderCalculateOrderItemInner (
     /* Ordered product variant. Where x is order item ID */
     @Json(name = "order_item_variant_id")
     val orderItemVariantId: kotlin.String? = null,
+
+    /* Index of the parent grouped/bundle product */
+    @Json(name = "order_item_parent")
+    val orderItemParent: kotlin.Int? = null,
+
+    /* Option name of the parent grouped/bundle product */
+    @Json(name = "order_item_parent_option_name")
+    val orderItemParentOptionName: kotlin.String? = null,
 
     @Json(name = "order_item_option")
     val orderItemOption: kotlin.collections.List<OrderCalculateOrderItemInnerOrderItemOptionInner>? = null

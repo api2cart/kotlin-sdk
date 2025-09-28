@@ -35,14 +35,13 @@ import com.squareup.moshi.JsonClass
  * @param weightUnit 
  * @param barcode 
  * @param variantId 
- * @param bundleProductId 
  * @param options 
  * @param additionalFields 
  * @param customFields 
  */
 
 
-data class OrderCalculateItem (
+data class OrderCalculateBundle (
 
     @Json(name = "product_id")
     val productId: kotlin.String? = null,
@@ -79,9 +78,6 @@ data class OrderCalculateItem (
 
     @Json(name = "variant_id")
     val variantId: kotlin.String? = null,
-
-    @Json(name = "bundle_product_id")
-    val bundleProductId: kotlin.String? = null,
 
     @Json(name = "options")
     val options: kotlin.collections.List<OrderItemOption>? = null,

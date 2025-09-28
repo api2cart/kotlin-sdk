@@ -18,13 +18,13 @@ package org.openapitools.client.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import org.openapitools.client.models.OrderCalculateItem
+import org.openapitools.client.models.OrderCalculateBundle
 import org.openapitools.client.models.OrderItemOption
 
-class OrderCalculateItemTest : ShouldSpec() {
+class OrderCalculateBundleTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of OrderCalculateItem
-        //val modelInstance = OrderCalculateItem()
+        // uncomment below to create an instance of OrderCalculateBundle
+        //val modelInstance = OrderCalculateBundle()
 
         // to test the property `productId`
         should("test productId") {
@@ -96,12 +96,6 @@ class OrderCalculateItemTest : ShouldSpec() {
         should("test variantId") {
             // uncomment below to test the property
             //modelInstance.variantId shouldBe ("TODO")
-        }
-
-        // to test the property `bundleProductId`
-        should("test bundleProductId") {
-            // uncomment below to test the property
-            //modelInstance.bundleProductId shouldBe ("TODO")
         }
 
         // to test the property `options`
