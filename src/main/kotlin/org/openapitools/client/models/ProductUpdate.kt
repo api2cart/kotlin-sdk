@@ -98,6 +98,7 @@ import com.squareup.moshi.JsonClass
  * @param countryOfOrigin The country where the inventory item was made
  * @param harmonizedSystemCode Harmonized System Code. An HSC is a 6-digit identifier that allows participating countries to classify traded goods on a common basis for customs purposes
  * @param shippingTemplateId The numeric ID of the shipping template associated with the products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field shipping_zones[]->id.
+ * @param processingProfileId The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field processing_profiles[]->readiness_state_id.
  * @param whenMade An enumerated string for the era in which the maker made the product.
  * @param isSupply If true, it indicates the product as a supply, otherwise it indicates that it is a finished product.
  * @param downloadable Defines whether the product is downloadable
@@ -404,6 +405,10 @@ data class ProductUpdate (
     /* The numeric ID of the shipping template associated with the products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field shipping_zones[]->id. */
     @Json(name = "shipping_template_id")
     val shippingTemplateId: kotlin.Int? = 0,
+
+    /* The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field processing_profiles[]->readiness_state_id. */
+    @Json(name = "processing_profile_id")
+    val processingProfileId: kotlin.Int? = null,
 
     /* An enumerated string for the era in which the maker made the product. */
     @Json(name = "when_made")

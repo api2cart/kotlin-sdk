@@ -52,6 +52,12 @@ class CartTest : ShouldSpec() {
             //modelInstance.bridgeVersion shouldBe ("TODO")
         }
 
+        // to test the property `defaultRoundingPrecision`
+        should("test defaultRoundingPrecision") {
+            // uncomment below to test the property
+            //modelInstance.defaultRoundingPrecision shouldBe ("TODO")
+        }
+
         // to test the property `dbPrefix`
         should("test dbPrefix") {
             // uncomment below to test the property

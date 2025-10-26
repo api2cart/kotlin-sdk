@@ -29,6 +29,7 @@ import com.squareup.moshi.JsonClass
  * @param url 
  * @param version 
  * @param bridgeVersion 
+ * @param defaultRoundingPrecision 
  * @param dbPrefix 
  * @param storesInfo 
  * @param warehouses 
@@ -51,6 +52,9 @@ data class Cart (
 
     @Json(name = "bridge_version")
     val bridgeVersion: kotlin.String? = null,
+
+    @Json(name = "default_rounding_precision")
+    val defaultRoundingPrecision: kotlin.Int? = null,
 
     @Json(name = "db_prefix")
     val dbPrefix: kotlin.String? = null,

@@ -456,6 +456,12 @@ class ProductUpdateTest : ShouldSpec() {
             //modelInstance.shippingTemplateId shouldBe ("TODO")
         }
 
+        // to test the property `processingProfileId` - The numeric ID of the processing profile (readiness state) for physical products in Etsy. You can find possible values in the \"cart.info\" API method response, in the field processing_profiles[]->readiness_state_id.
+        should("test processingProfileId") {
+            // uncomment below to test the property
+            //modelInstance.processingProfileId shouldBe ("TODO")
+        }
+
         // to test the property `whenMade` - An enumerated string for the era in which the maker made the product.
         should("test whenMade") {
             // uncomment below to test the property

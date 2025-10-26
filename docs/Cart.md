@@ -8,6 +8,7 @@
 | **url** | **kotlin.String** |  |  [optional] |
 | **version** | **kotlin.String** |  |  [optional] |
 | **bridgeVersion** | **kotlin.String** |  |  [optional] |
+| **defaultRoundingPrecision** | **kotlin.Int** |  |  [optional] |
 | **dbPrefix** | **kotlin.String** |  |  [optional] |
 | **storesInfo** | [**kotlin.collections.List&lt;CartStoreInfo&gt;**](CartStoreInfo.md) |  |  [optional] |
 | **warehouses** | [**kotlin.collections.List&lt;CartWarehouse&gt;**](CartWarehouse.md) |  |  [optional] |
