@@ -74,6 +74,7 @@
 | **noteAttributes** | [**kotlin.collections.List&lt;OrderAddNoteAttributesInner&gt;**](OrderAddNoteAttributesInner.md) | Defines note attributes |  [optional] |
 | **clearCache** | **kotlin.Boolean** | Is cache clear required |  [optional] |
 | **origin** | **kotlin.String** | The source of the order |  [optional] |
+| **feePrice** | [**java.math.BigDecimal**](java.math.BigDecimal.md) | Specifies refund&#39;s fee price |  [optional] |
 
 
 

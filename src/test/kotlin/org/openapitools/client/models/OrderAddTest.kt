@@ -447,5 +447,11 @@ class OrderAddTest : ShouldSpec() {
             //modelInstance.origin shouldBe ("TODO")
         }
 
+        // to test the property `feePrice` - Specifies refund's fee price
+        should("test feePrice") {
+            // uncomment below to test the property
+            //modelInstance.feePrice shouldBe ("TODO")
+        }
+
     }
 }

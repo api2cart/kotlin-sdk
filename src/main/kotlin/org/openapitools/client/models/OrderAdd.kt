@@ -94,6 +94,7 @@ import com.squareup.moshi.JsonClass
  * @param noteAttributes Defines note attributes
  * @param clearCache Is cache clear required
  * @param origin The source of the order
+ * @param feePrice Specifies refund's fee price
  */
 
 
@@ -376,7 +377,11 @@ data class OrderAdd (
 
     /* The source of the order */
     @Json(name = "origin")
-    val origin: kotlin.String? = null
+    val origin: kotlin.String? = null,
+
+    /* Specifies refund's fee price */
+    @Json(name = "fee_price")
+    val feePrice: java.math.BigDecimal? = null
 
 ) {
 

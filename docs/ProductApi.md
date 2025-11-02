@@ -674,7 +674,7 @@ Configure ApiKeyAuth:
 
 <a id="productCount"></a>
 # **productCount**
-> ProductCount200Response productCount(productIds, sinceId, categoriesIds, categoryId, storeId, langId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, brandName, productAttributes, status, type, visible, findValue, findWhere, reportRequestId, returnGlobal, disableReportCache, useLatestApiVersion)
+> ProductCount200Response productCount(sku, productIds, sinceId, categoriesIds, categoryId, storeId, langId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, brandName, manufacturerId, productAttributes, status, type, visible, findValue, findWhere, reportRequestId, returnGlobal, disableReportCache, useLatestApiVersion)
 
 product.count
 
@@ -687,6 +687,7 @@ Count products in store.
 //import org.openapitools.client.models.*
 
 val apiInstance = ProductApi()
+val sku : kotlin.String = bag_01 // kotlin.String | Filter by product's sku
 val productIds : kotlin.String = 4,5 // kotlin.String | Counts products specified by product ids
 val sinceId : kotlin.String = 56 // kotlin.String | Retrieve entities starting from the specified id.
 val categoriesIds : kotlin.String = 23,56 // kotlin.String | Defines product add that is specified by comma-separated categories id
@@ -700,6 +701,7 @@ val createdTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve 
 val modifiedFrom : kotlin.String = 2010-07-29 13:45:52 // kotlin.String | Retrieve entities from their modification date
 val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve entities to their modification date
 val brandName : kotlin.String = Abidas // kotlin.String | Retrieves brands specified by brand name
+val manufacturerId : kotlin.String = 1 // kotlin.String | Defines product's manufacturer by manufacturer_id
 val productAttributes : kotlin.collections.List<kotlin.String> = product_attributes[0][attribute_id]=132&product_attributes[0][values][0]=custom value 1&product_attributes[0][values][1]=custom value 2 // kotlin.collections.List<kotlin.String> | Defines product attributes
 val status : kotlin.String = disabled // kotlin.String | Defines product's status
 val type : kotlin.String = simple // kotlin.String | Defines products's type
@@ -711,7 +713,7 @@ val returnGlobal : kotlin.Boolean = false // kotlin.Boolean | Determines the typ
 val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable report cache for current request
 val useLatestApiVersion : kotlin.Boolean = true // kotlin.Boolean | Use the latest platform API version
 try {
-    val result : ProductCount200Response = apiInstance.productCount(productIds, sinceId, categoriesIds, categoryId, storeId, langId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, brandName, productAttributes, status, type, visible, findValue, findWhere, reportRequestId, returnGlobal, disableReportCache, useLatestApiVersion)
+    val result : ProductCount200Response = apiInstance.productCount(sku, productIds, sinceId, categoriesIds, categoryId, storeId, langId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, brandName, manufacturerId, productAttributes, status, type, visible, findValue, findWhere, reportRequestId, returnGlobal, disableReportCache, useLatestApiVersion)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProductApi#productCount")
@@ -723,6 +725,7 @@ try {
 ```
 
 ### Parameters
+| **sku** | **kotlin.String**| Filter by product&#39;s sku | [optional] |
 | **productIds** | **kotlin.String**| Counts products specified by product ids | [optional] |
 | **sinceId** | **kotlin.String**| Retrieve entities starting from the specified id. | [optional] |
 | **categoriesIds** | **kotlin.String**| Defines product add that is specified by comma-separated categories id | [optional] |
@@ -736,6 +739,7 @@ try {
 | **modifiedFrom** | **kotlin.String**| Retrieve entities from their modification date | [optional] |
 | **modifiedTo** | **kotlin.String**| Retrieve entities to their modification date | [optional] |
 | **brandName** | **kotlin.String**| Retrieves brands specified by brand name | [optional] |
+| **manufacturerId** | **kotlin.String**| Defines product&#39;s manufacturer by manufacturer_id | [optional] |
 | **productAttributes** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)| Defines product attributes | [optional] |
 | **status** | **kotlin.String**| Defines product&#39;s status | [optional] |
 | **type** | **kotlin.String**| Defines products&#39;s type | [optional] |
@@ -1316,7 +1320,7 @@ Configure ApiKeyAuth:
 
 <a id="productList"></a>
 # **productList**
-> ModelResponseProductList productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion, productType)
+> ModelResponseProductList productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, manufacturerId, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion, productType)
 
 product.list
 
@@ -1348,6 +1352,7 @@ val modifiedTo : kotlin.String = 2100-08-29 13:45:52 // kotlin.String | Retrieve
 val sku : kotlin.String = bag_01 // kotlin.String | Filter by product's sku
 val brandName : kotlin.String = Abidas // kotlin.String | Retrieves brands specified by brand name
 val productAttributes : kotlin.collections.List<kotlin.String> = product_attributes[0][attribute_id]=132&product_attributes[0][values][0]=custom value 1&product_attributes[0][values][1]=custom value 2 // kotlin.collections.List<kotlin.String> | Defines product attributes
+val manufacturerId : kotlin.String = 1 // kotlin.String | Defines product's manufacturer by manufacturer_id
 val status : kotlin.String = disabled // kotlin.String | Defines product's status
 val type : kotlin.String = simple // kotlin.String | Defines products's type
 val visible : kotlin.String = everywhere // kotlin.String | Filter items by visibility status
@@ -1365,7 +1370,7 @@ val disableReportCache : kotlin.Boolean = false // kotlin.Boolean | Disable repo
 val useLatestApiVersion : kotlin.Boolean = true // kotlin.Boolean | Use the latest platform API version
 val productType : kotlin.String = BICYCLE // kotlin.String | A categorization for the product
 try {
-    val result : ModelResponseProductList = apiInstance.productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion, productType)
+    val result : ModelResponseProductList = apiInstance.productList(start, count, pageCursor, productIds, sinceId, categoriesIds, categoryId, storeId, langId, currencyId, availView, availSale, createdFrom, createdTo, modifiedFrom, modifiedTo, sku, brandName, productAttributes, manufacturerId, status, type, visible, findValue, findWhere, returnGlobal, params, responseFields, exclude, sortBy, sortDirection, reportRequestId, disableCache, disableReportCache, useLatestApiVersion, productType)
     println(result)
 } catch (e: ClientException) {
     println("4xx response calling ProductApi#productList")
@@ -1396,6 +1401,7 @@ try {
 | **sku** | **kotlin.String**| Filter by product&#39;s sku | [optional] |
 | **brandName** | **kotlin.String**| Retrieves brands specified by brand name | [optional] |
 | **productAttributes** | [**kotlin.collections.List&lt;kotlin.String&gt;**](kotlin.String.md)| Defines product attributes | [optional] |
+| **manufacturerId** | **kotlin.String**| Defines product&#39;s manufacturer by manufacturer_id | [optional] |
 | **status** | **kotlin.String**| Defines product&#39;s status | [optional] |
 | **type** | **kotlin.String**| Defines products&#39;s type | [optional] |
 | **visible** | **kotlin.String**| Filter items by visibility status | [optional] [default to &quot;everywhere&quot;] |
